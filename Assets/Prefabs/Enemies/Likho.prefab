@@ -199,6 +199,7 @@ MonoBehaviour:
   m_EnemyController: {fileID: 6991446463954760582}
   m_Shooter: {fileID: 4499478629710808251}
   m_DamageDealer: {fileID: 860215310}
+  _attackAnimationSpeed: 1
 --- !u!1 &3897175842411909975
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,9 +320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7443aaeaed77a4e4580ea3514b0781c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 398065097370666156, guid: be962be87292fbb4caa58b83cbed63f4, type: 3}
-  shootPosition: {fileID: 7361191297829985817}
-  bulletSpeed: 3
+  _bullet: {fileID: 0}
+  _shootPosition: {fileID: 0}
+  _bulletSpeed: 0
+  _mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &860215311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89280019563a6e74aacee967af984e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 30
+  _hp: 60
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -350,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12898c6839c5b124fa7d04b46141d742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 6
+  damage: 15
   _damageTo:
     serializedVersion: 2
     m_Bits: 8
