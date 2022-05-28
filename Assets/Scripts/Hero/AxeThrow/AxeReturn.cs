@@ -9,6 +9,7 @@ public class AxeReturn : MonoBehaviour
     [SerializeField] private Transform playersHand;
     [SerializeField] private LayerMask playersLayer;
     [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private PlayerSounds sounds;
 
     private int counter = 0;
     private Rigidbody rigidBody;
@@ -22,8 +23,10 @@ public class AxeReturn : MonoBehaviour
     {
         if (other.gameObject.layer != playersLayer)
         {
+#if(UNITY_EDITOR)
             Debug.Log("AXEEEEEEEEEEEEEEE" + other.gameObject.name);
             Debug.DrawLine(transform.position, playersHand.position, Color.blue, 10f);
+#endif
             rigidBody.isKinematic = true;
             if (other.transform.TryGetComponent(out IDamageable damageable) && counter == 0)
             {
@@ -37,6 +40,7 @@ public class AxeReturn : MonoBehaviour
     private IEnumerator ReturnAxe()
     {
         yield return new WaitForSeconds(timeToRelocateAfterCollision);
+        sounds.PlayAxeAppearSound();
         counter = 0;
         gameObject.SetActive(false);
         gameObject.transform.parent = playersHand;

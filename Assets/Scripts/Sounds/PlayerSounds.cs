@@ -28,6 +28,12 @@ public class PlayerSounds : MonoBehaviour
     [Space(5)]
     [SerializeField] private AudioSource lowHPSound;
     [Space(5)]
+    [SerializeField] private AudioSource airCDSound;
+    [Space(5)]
+    [SerializeField] private AudioSource kickCDSound;
+    [Space(5)]
+    [SerializeField] private AudioSource throwCDSound;
+    [Space(5)]
     [Header("Clips Arrays")]
     [Space(5)]
     [SerializeField] private AudioClip[] stepsArray;
@@ -45,6 +51,21 @@ public class PlayerSounds : MonoBehaviour
     [SerializeField] private AudioClip[] dashArray;
     [Space(5)]
     [SerializeField] private AudioClip[] groundedArray;
+
+    public void KickCDSound()
+    {
+        kickCDSound.Play();
+    }
+
+    public void ThrowCDSound()
+    {
+        throwCDSound.Play();
+    }
+
+    public void AirAttackCDSound()
+    {
+        airCDSound.Play();
+    }
 
     public void PlayLowHPSound()
     {
@@ -65,25 +86,6 @@ public class PlayerSounds : MonoBehaviour
         kickSound.Play();
     }
 
-    public void PlayFootStepsSound()
-    {
-        int r = Random.Range(0, stepsArray.Length);
-        footSteps.clip = stepsArray[r];
-        footSteps.Play();
-    }
-    public void PlayJumpSound()
-    {
-        int r = Random.Range(0, jumpArray.Length);
-        jumpSound.clip = jumpArray[r];
-        jumpSound.Play();
-    }
-        public void PlaySwordSound()
-    {
-        int r = Random.Range(0, swingsArray.Length);
-        swingAttack.clip = swingsArray[r];
-        swingAttack.Play();
-    }
-
     public void PlayThrowSound()
     {
         int r = Random.Range(0, throwArray.Length);
@@ -102,11 +104,47 @@ public class PlayerSounds : MonoBehaviour
         dashSound.clip = dashArray[r];
         dashSound.Play();
     }
-    public void PlayGroundedSound()
+
+    private void OnLand(AnimationEvent animationEvent)
     {
-        int r = Random.Range(0, groundedArray.Length);
-        groundedSound.clip = groundedArray[r];
-        groundedSound.Play();
+        if (animationEvent.animatorClipInfo.weight > 0.5f)
+        {
+            int r = Random.Range(0, groundedArray.Length);
+            groundedSound.clip = groundedArray[r];
+            groundedSound.Play();
+        }
     }
 
+    public void SwingSound(AnimationEvent animationEvent)
+    {
+        if (animationEvent.animatorClipInfo.weight > 0.3f)
+        {
+            int r = Random.Range(0, swingsArray.Length);
+            swingAttack.clip = swingsArray[r];
+            swingAttack.Play();
+        }
+    }
+
+    public void JumpSound(AnimationEvent animationEvent)
+    {
+        if (animationEvent.animatorClipInfo.weight > 0.3f)
+        {
+            int r = Random.Range(0, jumpArray.Length);
+            jumpSound.clip = jumpArray[r];
+            jumpSound.Play();
+        }
+    }
+
+    private void OnFootstep(AnimationEvent animationEvent)
+    {
+        if (animationEvent.animatorClipInfo.weight > 0.5f)
+        {
+            if (stepsArray.Length > 0)
+            {
+                int r = Random.Range(0, stepsArray.Length);
+                footSteps.clip = stepsArray[r];
+                footSteps.Play();
+            }
+        }
+    }
 }
