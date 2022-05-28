@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2287172012278378361}
   - component: {fileID: 6966397171615254048}
   - component: {fileID: 8406467988662976541}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RayMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 7430526403089571830}
   - component: {fileID: 3550580172329609148}
   - component: {fileID: 5588546788441917657}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}

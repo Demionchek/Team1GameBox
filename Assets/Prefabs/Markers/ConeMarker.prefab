@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5840848923336789199}
   - component: {fileID: 7971023169152705469}
   - component: {fileID: -9179955751997747998}
-  m_Layer: 0
+  - component: {fileID: -8983776698463547173}
+  m_Layer: 2
   m_Name: ConeMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +110,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526938575598bea46869dfd72bff4865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8983776698463547173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274135164454032761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66aba0b7198140441aaa01d5b4c52192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mask:
+    serializedVersion: 2
+    m_Bits: 64

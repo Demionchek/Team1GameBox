@@ -22,7 +22,7 @@ public class LikhoChargingState : EnemyStates
                             _enemyController.SpecialAnimLength;
         CreateMarker(markerTarget, deleteTime);
         _enemyController.Agent.enabled = false;
-        float lookHeight = _enemyController.transform.localScale.y;
+        float lookHeight = _enemyController.transform.position.y;
         markerTarget.y = lookHeight;
         _enemyController.transform.LookAt(markerTarget);
         _enemyController.TmpTarget = markerTarget;

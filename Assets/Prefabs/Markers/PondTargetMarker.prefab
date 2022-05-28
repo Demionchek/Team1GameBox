@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2736937280384257477}
   - component: {fileID: 7700633859097227989}
   - component: {fileID: 6254497186044217696}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PondTargetMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

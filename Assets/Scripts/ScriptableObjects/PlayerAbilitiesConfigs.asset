@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
-  airAtackDamage: 10
+    m_Bits: 64
+  axeThrowDmg: 1
+  axeThrowCooldown: 1.5
+  airAtackDamage: 30
   airAtackCost: 10
   airAtackCooldown: 5
-  airAtackRange: 3
-  mightyPunchDamage: 10
+  airAtackRange: 2
+  mightyPunchDamage: 25
   mightyPunchCost: 10
   mightyPunchCooldown: 5
   mightyPunchRange: 5
+  mightyPunchForce: 6

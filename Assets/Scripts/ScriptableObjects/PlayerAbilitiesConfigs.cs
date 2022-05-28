@@ -9,6 +9,10 @@ public class PlayerAbilitiesConfigs : ScriptableObject
 {
     public LayerMask enemyLayer;
 
+    [Header("Axe Throw")]
+    public float axeThrowDmg;
+    public float axeThrowCooldown;
+
     [Header("Air Atack")]
     public float airAtackDamage;
     public float airAtackCost;
@@ -16,8 +20,9 @@ public class PlayerAbilitiesConfigs : ScriptableObject
     public float airAtackRange;
 
     [Header("Mighty Punch")]
-    public float mightyPunchDamage;
+    public int mightyPunchDamage;
     public float mightyPunchCost;
     public float mightyPunchCooldown;
     public float mightyPunchRange;
+    public float mightyPunchForce;
 }

@@ -37,13 +37,6 @@ public class MousePositionManager : MonoBehaviour
         return MousePosition;
     }
 
-    private Vector3 CalculateMousePosition()
-    {
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-        mousePos.z = player.transform.position.z;
-        return mousePos;
-    }
-
     private void OnRaycastSystem()
     {
         Ray ray = Camera.main.ScreenPointToRay(CalculateMousePosition());
@@ -51,6 +44,13 @@ public class MousePositionManager : MonoBehaviour
         {
             MousePosition = raycastHit.point;
         }
+    }
+
+    private Vector3 CalculateMousePosition()
+    {
+        Vector3 mousePos = Mouse.current.position.ReadValue();
+        mousePos.z = player.transform.position.z;
+        return mousePos;
     }
 
     public void LookAtMouseDirection() 

@@ -6,9 +6,14 @@ using StarterAssets;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private DeathArena deathArena;
     [SerializeField] private ThirdPersonController _controller;
-    [SerializeField] private List<Enemy> enemies;
-    [SerializeField] private List<GameObject> enemiesOnScene;
+    [SerializeField] private List<Enemy> bossMinions;
+    [SerializeField] private List<Enemy> arenaMinions;
+    [SerializeField] private List<GameObject> enemiesOnBossScene;
+    [SerializeField] private List<GameObject> enemiesOnArena;
+    [SerializeField] private Transform ArenaPos;
+    [SerializeField] private Transform BossArenaPos;
     [SerializeField] private float _spawnMaxDistance;
     [SerializeField] private float _spawnMinDistance;
     [SerializeField] private float _spawnDelay;
@@ -32,23 +37,34 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < enemies.Count; i++)
+        for (int i = 0; i < bossMinions.Count; i++)
         {
-            for (int j = 0; j < enemies[i].count; j++)
+            for (int j = 0; j < bossMinions[i].count; j++)
             {
-                GameObject enemyObject = Instantiate(enemies[i].prefab);
-                enemiesOnScene.Add(enemyObject);
+                GameObject enemyObject = Instantiate(bossMinions[i].prefab);
+                enemiesOnBossScene.Add(enemyObject);
                 enemyObject.SetActive(false);
             }
-        }       
+        }
+
+        for (int i = 0; i < arenaMinions.Count; i++)
+        {
+            for (int j = 0; j < arenaMinions[i].count; j++)
+            {
+                GameObject enemyObject = Instantiate(arenaMinions[i].prefab);
+                enemiesOnArena.Add(enemyObject);
+                enemyObject.SetActive(false);
+            }
+        }
     }
 
     private void Start()
     {
-        Shuffle(enemiesOnScene);
+        Shuffle(enemiesOnBossScene);
     }
 
-    public void EnemySummon(int enemiesCount) => StartCoroutine(SummonCorutine(enemiesCount));
+    public void ArenaSummon() => StartCoroutine(ArenaSummonCorutine());
+    public void EnemySummon(int enemiesCount) => StartCoroutine(BossSummonCorutine(enemiesCount));
 
     private void Shuffle(List<GameObject> list)
     {
@@ -60,13 +76,44 @@ public class EnemySpawner : MonoBehaviour
 
             GameObject tmp = list[j];
             list[j] = list[i];
-            enemiesOnScene[i] = tmp;
+            enemiesOnBossScene[i] = tmp;
         }
     }
 
-    private IEnumerator SummonCorutine(int enemiesCount)
+    private IEnumerator ArenaSummonCorutine()
     {
-        for (int i = 0; i < enemiesOnScene.Count; i++)
+        for (int i = 0; i < enemiesOnArena.Count; i++)
+        {
+            yield return new WaitForSeconds(_spawnDelay);
+            Vector3 point;
+            while (!(RandomPoint(ArenaPos.position, _spawnMaxDistance, out point) &&
+                                Vector3.Distance(transform.position, point) > _spawnMinDistance))
+            {
+#if(UNITY_EDITOR)
+                Debug.Log("Looking for a new point to spawn");
+#endif
+            }
+
+            if (i > enemiesOnArena.Count)
+            {
+                StopCoroutine(BossSummonCorutine(enemiesOnArena.Count));
+                break;
+            }
+            else
+            {
+                deathArena.EnemiesAlive++;
+                var enemyController = enemiesOnArena[i].GetComponent<EnemyController>();
+                enemyController.Target = _controller.transform;
+                enemiesOnArena[i].transform.position = point;
+                enemiesOnArena[i].SetActive(true);
+                enemyController.Agressive();
+            }
+        }
+    }
+
+    private IEnumerator BossSummonCorutine(int enemiesCount)
+    {
+        for (int i = 0; i < enemiesOnBossScene.Count; i++)
         {
             yield return new WaitForSeconds(_spawnDelay);
             Vector3 point;
@@ -81,15 +128,15 @@ public class EnemySpawner : MonoBehaviour
 
             if (i > enemiesCount)
             {
-                StopCoroutine(SummonCorutine(enemiesCount));
-                Shuffle(enemiesOnScene);
+                StopCoroutine(BossSummonCorutine(enemiesCount));
+                Shuffle(enemiesOnBossScene);
                 break;
             }
             else
             {
-                enemiesOnScene[i].GetComponent<EnemyController>().Target = _controller.transform;
-                enemiesOnScene[i].transform.position = point;
-                enemiesOnScene[i].SetActive(true);
+                enemiesOnBossScene[i].GetComponent<EnemyController>().Target = _controller.transform;
+                enemiesOnBossScene[i].transform.position = point;
+                enemiesOnBossScene[i].SetActive(true);
             }
         }
     }

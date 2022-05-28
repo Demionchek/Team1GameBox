@@ -96,9 +96,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Inventory",
+                    "name": "InventoryFirstSlot",
                     "type": "Button",
                     "id": "f0161080-3eb6-4816-b24a-1ffec7f4664f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InventorySecondSlot",
+                    "type": "Button",
+                    "id": "c0add7b6-2e5f-4e81-aa46-fb85d5339867",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -333,18 +342,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Inventory",
+                    "action": "InventoryFirstSlot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "e96ad513-a01e-454c-b5f9-894feb6daf53",
+                    "id": "063f0930-0c73-41e5-95a3-b9a5738461e2",
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Inventory",
+                    "action": "InventorySecondSlot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

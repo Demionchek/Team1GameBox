@@ -28,7 +28,7 @@ MonoBehaviour:
   giantSpecialAttackCooldownTime: 3
   giantSpecialAttackDelay: 2
   giantSpecialAttackDamage: 0
-  giantDamage: 0
+  giantDamage: 5
   giantHealth: 0
   sniperReactDistance: 7
   sniperStoppingDistance: 7

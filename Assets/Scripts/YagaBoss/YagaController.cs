@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using StarterAssets;
 
-public class YagaController : YagaStateMachine
+public class YagaController : MonoBehaviour
 {
     [SerializeField] public Transform Target;
     [SerializeField] private SpellCaster _kettle;
@@ -11,7 +11,6 @@ public class YagaController : YagaStateMachine
     [SerializeField] private float _attackCooldown;
     [SerializeField] private float _markerDelay;
     private ThirdPersonController _controller;
-
 
     private const float _lookHeight = 1f;
     private const float _cycleDelay = 0.5f;
@@ -46,6 +45,10 @@ public class YagaController : YagaStateMachine
 
     private void Update()
     {
+        if (!IsAlive)
+        {
+            CurrentState = _deadState;
+        }
 
         switch (CurrentState)
         {
@@ -76,9 +79,7 @@ public class YagaController : YagaStateMachine
                 castPos.y = _lookHeight;
                 transform.LookAt(castPos);
                 break;
-
             case _deadState:
-
                 break;
         }
     }
@@ -90,7 +91,11 @@ public class YagaController : YagaStateMachine
         {
             StartCoroutine(AttackCooling(_attackCooldown));
         }
-        CurrentState = _idleState;
+        if (IsAlive)
+        {
+            CurrentState = _idleState;
+
+        }
     }
 
     private IEnumerator AttackCooling(float cooldownTime)

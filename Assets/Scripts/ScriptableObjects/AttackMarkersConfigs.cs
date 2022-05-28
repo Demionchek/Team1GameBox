@@ -16,6 +16,8 @@ public class AttackMarkersConfigs : ScriptableObject
     public float bossClowdMarkerSize = 3f;
     public float bossClowdMarkerSpeed = 3f;
     public float bossClowdMarkerLifetime = 6f;
+    [Range (0,1)] public float bossClowdMarkerSlowing = 0.5f;
+    public float bossClowdEffectTimer = 3f;
     [Space(5)]
     public float bossPondMarkerSize = 3f;
     public int bossPondMarkerDamage = 10;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Environment
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - PostProcessing
   - Not in Reflection
-  - 
-  - 
+  - CustomPass
+  - Cullable
   - 
   - 
   - 

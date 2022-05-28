@@ -1,5 +1,4 @@
 using StarterAssets;
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,7 +9,7 @@ public class AxeThrow : MonoBehaviour
     [SerializeField] private GameObject axe;
     [SerializeField] private Transform hand;
     [SerializeField] private float throwPower;
-    [SerializeField] private float coolDown;
+    [SerializeField] private PlayerAbilitiesConfigs configs;
     [SerializeField] private UnityEvent axeThrowEvent;
 
     private AnimatorManager animatorManager;
@@ -30,15 +29,15 @@ public class AxeThrow : MonoBehaviour
 
     private void Update()
     {
-        CheckState();
+        CheckAxeThrowState();
     }
 
-    private void CheckState()
+    private void CheckAxeThrowState()
     {
         if (!isAxeThrow && input.throwAxe) 
         {
             TryUpdateUi();
-            ChangeState();
+            ChangeAxeThrowState();
         }
     }
 
@@ -48,7 +47,7 @@ public class AxeThrow : MonoBehaviour
             axeThrowEvent.Invoke();
     }
 
-    private void ChangeState()
+    private void ChangeAxeThrowState()
     {
         throwDirection = mouseManager.GetMousePosition();
         mouseManager.LookAtMouseDirection();
@@ -60,7 +59,7 @@ public class AxeThrow : MonoBehaviour
     private IEnumerator ThrowCoolDown()
     {
         isAxeThrow = true;
-        yield return new WaitForSeconds(coolDown);
+        yield return new WaitForSeconds(configs.axeThrowCooldown);
         resetThrowAxeState();
         isAxeThrow = false;
     }

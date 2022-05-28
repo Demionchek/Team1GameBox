@@ -4,35 +4,64 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    [Header("Sprites")]
+    [Header("Hp/Energy Bar")]
     [SerializeField] private Image hpBar;
     [SerializeField] private Image energyBar;
+
+    [Header("Abilities")]
     [SerializeField] private Image mightyPunchImage;
     [SerializeField] private Image axeThrowImage;
-    [SerializeField] private Image[] Slots = new Image[2];
+
+    [Header("Inentory")]
+    [SerializeField] private Image[] HealPotionSlots;
+    [SerializeField] private Image[] EnergyPotionSlots;
     [SerializeField] private Sprite emptyInventorySprite;
+    [SerializeField] private Sprite fullInventorySprite;
 
     [Header("Player")]
     [SerializeField] private GameObject player;
+    [SerializeField] PlayerAbilitiesConfigs configs;
 
     private void OnEnable()
     {
-        Inventory.UpdateUI += UpdateInventorySlotSprite;
+        Inventory.UpdateUI += UpdateInventorySprite;
+        Health.HPChanged += CheckHpBar;
+        Item.UpdateUi += CheckHpBar;
+        Item.UpdateUi += CheckEnergyBar;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        Inventory.UpdateUI -= UpdateInventorySlotSprite;
+        Inventory.UpdateUI -= UpdateInventorySprite;
+        Health.HPChanged -= CheckHpBar;
+        Item.UpdateUi -= CheckHpBar;
+        Item.UpdateUi -= CheckEnergyBar;
     }
 
-    public void UpdateInventorySlotSprite(int slotId, Item item, bool itemUsed)
+    public void UpdateInventorySprite(int dimensionIndex, int slotIndex, bool itemUsed)
+    {
+        switch(dimensionIndex)    
+        {
+            case (0):
+                UpdateInventorySprite(HealPotionSlots,slotIndex,itemUsed);
+                break;
+            case (1):
+                UpdateInventorySprite(EnergyPotionSlots, slotIndex, itemUsed);
+                break;
+        }
+    }
+
+    private void UpdateInventorySprite(Image[] ItemImage, int slotIndex,bool itemUsed)
     {
         if (itemUsed)
-            Slots[slotId].sprite = emptyInventorySprite;
+        {
+            ItemImage[slotIndex].sprite = emptyInventorySprite;
+        }
         else
-            Slots[slotId].sprite = item.ItemSprite;
+        {
+            ItemImage[slotIndex].sprite = fullInventorySprite;
+        }
     }
-
 
     public void CheckHpBar()
     {
@@ -44,33 +73,33 @@ public class UiManager : MonoBehaviour
         energyBar.fillAmount = player.GetComponent<Energy>().CurrentEnergy / 100;
     }
 
-    public void AxeThrowCooldownSprite(float cooldown)
+    public void AxeThrowCooldownSprite()
     {
-        StartCoroutine(UpdateAxeThrowCooldownSprite(cooldown));
+        StartCoroutine(UpdateAxeThrowCooldownSprite());
     }
     
-    private IEnumerator UpdateAxeThrowCooldownSprite(float cooldown)
+    private IEnumerator UpdateAxeThrowCooldownSprite()
     {
         axeThrowImage.fillAmount = 0;
-        for (float i=0; i<cooldown;i+=Time.deltaTime)
+        for (float i=0; i<configs.axeThrowCooldown;i+=Time.deltaTime)
         {
             yield return new WaitForSeconds(Time.deltaTime);
-            axeThrowImage.fillAmount = i / cooldown;
+            axeThrowImage.fillAmount = i / configs.axeThrowCooldown;
         }
     }
     
-    public void MightyPunchCooldownSprite(float cooldown)
+    public void MightyPunchCooldownSprite()
     {
-        StartCoroutine(UpdateMightyPunchCooldownSprite(cooldown));
+        StartCoroutine(UpdateMightyPunchCooldownSprite());
     }
 
-    private IEnumerator UpdateMightyPunchCooldownSprite(float cooldown)
+    private IEnumerator UpdateMightyPunchCooldownSprite()
     {
         mightyPunchImage.fillAmount = 0;
-        for (float i = 0; i < cooldown; i += Time.deltaTime)
+        for (float i = 0; i < configs.mightyPunchCooldown; i += Time.deltaTime)
         {
             yield return new WaitForSeconds(Time.deltaTime);
-            mightyPunchImage.fillAmount = i / cooldown;
+            mightyPunchImage.fillAmount = i / configs.mightyPunchCooldown;
         }
     }
 }

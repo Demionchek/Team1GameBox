@@ -18,7 +18,8 @@ namespace StarterAssets
 		public bool throwAxe;
 		public bool mightyPunch;
 		public bool dash;
-		public bool inventory;
+		public bool inventoryFirstSlot;
+		public bool inventorySecondSlot;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -69,12 +70,18 @@ namespace StarterAssets
 
 		public void OnMightyPunch(InputValue value)
 		{
+			if(TryGetComponent<AnimatorManager>(out AnimatorManager animatorManager) && animatorManager.isGrounded())
 			MightyPunchInput(value.isPressed);
 		}
 		
-		public void OnInventoryPunch(InputValue value)
+		public void OnInventoryFirstSlot(InputValue value)
 		{
-			InventoryInput(value.isPressed);
+			InventoryFirstSlotInput(value.isPressed);
+		}		
+		
+		public void OnInventorySecondSlot(InputValue value)
+		{
+			InventorySecondSlotInput(value.isPressed);
 		}
 
 		public void OnDash(InputValue value)
@@ -128,9 +135,14 @@ namespace StarterAssets
 			mightyPunch = newMightyPunchInputState;
 		}
 		
-		public void InventoryInput(bool newInventoryInputState)
+		public void InventoryFirstSlotInput(bool newInventoryFirstSlotInputState)
 		{
-			inventory = newInventoryInputState;
+			inventoryFirstSlot = newInventoryFirstSlotInputState;
+		}
+
+		public void InventorySecondSlotInput(bool newInventorySecondSlotInputState)
+		{
+			inventorySecondSlot = newInventorySecondSlotInputState;
 		}
 
 		public void DashInput(bool newDashState)

@@ -38,15 +38,12 @@ public class YagaSummons : MonoBehaviour
         switch (_lastSummon)
         {
             case _rocketsSummon:
-                Debug.Log("Rockets");
                 StartCoroutine(RocketsDelayCor(_rocketsDelay, controller, timeToDel));
                 break;
             case _minionsSummon:
-                Debug.Log("Minions");
                 _enemySpawner.EnemySummon(_enemiesCount);
                 break;
             case _hutSummon:
-                Debug.Log("HUT ON CHICKEN LEGS RUN!");
                 StartCoroutine(HutOnLegsRun(timeToDel, controller));
                 break;
         }
