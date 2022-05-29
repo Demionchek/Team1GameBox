@@ -1,27 +1,26 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CullingManager : MonoBehaviour
 {
-    public float m_occlusionCapsuleHeight = 0f;
+    [SerializeField] private float occlusionCapsuleHeight = 0f;
 
-    public float m_occlusionCapsuleRadius = 1f;
+    [SerializeField] private float occlusionCapsuleRadius = 1f;
 
     // list of objects that will trigger the culling effect
-    public List<GameObject> m_importantObjects = new List<GameObject>();
+    [SerializeField] private List<GameObject> importantObjects = new List<GameObject>();
 
     // include the mouse in the important objects
-    public bool m_includeMouse;
+    [SerializeField] private bool includeMouse;
 
-    public LayerMask m_layerMask;
-
-    // List of all the objects that we've set to occluding state
-    private List<Cullable> m_occludingObjects = new List<Cullable>();
-
-    private List<Cullable> cullableList = new List<Cullable>();
+    [SerializeField] private LayerMask layerMask;
 
     [SerializeField] private MousePositionManager mouseManager;
+
+    // List of all the objects that we've set to occluding state
+    private List<Cullable> occludingObjects = new List<Cullable>();
+
+    private List<Cullable> cullableList = new List<Cullable>();
 
     // Update is called once per frame // Handle per frame logic
     public void Update()
@@ -44,12 +43,13 @@ public class CullingManager : MonoBehaviour
         List<Vector3> positions = new List<Vector3>();
 
         // All units are important
-        foreach (GameObject unit in m_importantObjects)
+        foreach (GameObject unit in importantObjects)
         {
             positions.Add(unit.transform.position);
         }
 
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(mouseManager.GetMousePosition()), out RaycastHit hit, 999f, m_layerMask) && m_includeMouse)
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(mouseManager.GetMousePosition()), out RaycastHit hit, 999f, layerMask)
+            && includeMouse)
         {
             Vector3 mousePos = hit.point;
             if (!positions.Contains(mousePos))
@@ -71,9 +71,9 @@ public class CullingManager : MonoBehaviour
         foreach (Vector3 pos in importantPositions)
         {
             Vector3 capsuleStart = (pos);
-            capsuleStart.y += m_occlusionCapsuleHeight;
+            capsuleStart.y += occlusionCapsuleHeight;
 
-            Collider[] colliders = Physics.OverlapCapsule(capsuleStart, camera.transform.position, m_occlusionCapsuleRadius, m_layerMask, QueryTriggerInteraction.Ignore);
+            Collider[] colliders = Physics.OverlapCapsule(capsuleStart, camera.transform.position, occlusionCapsuleRadius, layerMask, QueryTriggerInteraction.Ignore);
 
             // Add cullable objects we found to the list
             foreach (Collider collider in colliders)
@@ -95,7 +95,7 @@ public class CullingManager : MonoBehaviour
     {
         foreach (Cullable cullable in newList)
         {
-            int foundIndex = m_occludingObjects.IndexOf(cullable);
+            int foundIndex = occludingObjects.IndexOf(cullable);
 
             if (foundIndex < 0)
             {
@@ -105,16 +105,16 @@ public class CullingManager : MonoBehaviour
             else
             {
                 // This object was already in the list, so remove it from the old list
-                m_occludingObjects.RemoveAt(foundIndex);
+                occludingObjects.RemoveAt(foundIndex);
             }
         }
 
         // Any object left in the old list, was not in the new list, so it's no longer occludding
-        foreach (Cullable cullable in m_occludingObjects)
+        foreach (Cullable cullable in occludingObjects)
         {
             cullable.Occluding = false;
         }
 
-        m_occludingObjects = newList;
+        occludingObjects = newList;
     }
 }
