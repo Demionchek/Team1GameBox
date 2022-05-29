@@ -6093,10 +6093,6 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2035208984368917542, guid: 63d13fe68ce5c4e44bb6fd2477f56008, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035208984368917542, guid: 63d13fe68ce5c4e44bb6fd2477f56008, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -8279,27 +8275,6 @@ MonoBehaviour:
   checkPoints:
   - {fileID: 294703991}
   - {fileID: 1608257097}
---- !u!1 &1124057934 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -99740307122898431, guid: 63d13fe68ce5c4e44bb6fd2477f56008, type: 3}
-  m_PrefabInstance: {fileID: 1124057928}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1124057935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124057934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62486bb2d5d7ef242afdd16971eb6aa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input: {fileID: 1676433513}
-  teleportationTarget: {fileID: 0}
-  nextLevel: 1
-  nextSceneNum: 1
 --- !u!4 &1129008907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8946642287416221804, guid: a3a94b0f9869fc549bfc48fc8c1430ab, type: 3}
@@ -10075,7 +10050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614868597017744952, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.67
+      value: 14.53
       objectReference: {fileID: 0}
     - target: {fileID: 5614868597017744952, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10083,7 +10058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614868597017744952, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -68.41
+      value: -68.98
       objectReference: {fileID: 0}
     - target: {fileID: 5614868597017744952, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: m_LocalRotation.w
