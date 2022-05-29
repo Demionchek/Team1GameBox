@@ -13,7 +13,7 @@ public class PortalScript : MonoBehaviour
 
     private void Start()
     {
-        PlayerInTrigger(false);
+        PlayerInTrigger?.Invoke(false);
     }
 
     public void SetTeleportTimer()
