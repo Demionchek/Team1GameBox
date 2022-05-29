@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3311078029008940723}
   - component: {fileID: 3311078029008940720}
   - component: {fileID: 3311078029008940721}
-  - component: {fileID: 3311078029008940722}
   m_Layer: 8
   m_Name: Axe
   m_TagString: Untagged
@@ -78,20 +77,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!114 &3311078029008940722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3311078029008940727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7820cf396ae7894abc812b3fae43c92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 50
-  timeToDestroyAfterCollision: 1
 --- !u!1 &3311078029367239673
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +136,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 9d588faaafd7b2a4eb97221d0dd1f18f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -232,7 +217,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 9d588faaafd7b2a4eb97221d0dd1f18f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

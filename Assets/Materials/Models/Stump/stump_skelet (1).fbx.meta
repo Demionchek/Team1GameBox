@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4228e240b46134b428d7588e95b0086a
+guid: 3e9e0628e9f93a14c93c488f1a3d0e0b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -89,15 +89,15 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: nurbsCircle2
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 70e49c99a86b9274b892312f069c73bd, type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
