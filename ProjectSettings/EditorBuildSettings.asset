@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MapTesting.unity
+    guid: cbdf5c4fd0f34724aa8c08102250a47c
+  - enabled: 1
+    path: Assets/Scenes/Swamp.unity
+    guid: 299849a600cd54e459aabbc58558fbb0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

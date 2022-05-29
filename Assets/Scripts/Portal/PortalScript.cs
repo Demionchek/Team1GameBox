@@ -2,11 +2,14 @@ using System.Collections;
 using UnityEngine;
 using StarterAssets;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PortalScript : MonoBehaviour
 {
     [SerializeField] private StarterAssetsInputs input;
     [SerializeField] private Transform teleportationTarget;
+    [SerializeField] private bool nextLevel;
+    [SerializeField] private int nextSceneNum;
     bool isTeleported = false;
 
     public static event Action<bool> PlayerInTrigger;
@@ -33,9 +36,9 @@ public class PortalScript : MonoBehaviour
 
         if (other.TryGetComponent(out ThirdPersonController thirdPerson))
         {
-            PlayerInTrigger(true);
+            PlayerInTrigger?.Invoke(true);
 
-            if (input.interact && !isTeleported)
+            if (input.interact && !isTeleported && !nextLevel)
             {
                 other.transform.position = teleportationTarget.position;
 
@@ -44,6 +47,11 @@ public class PortalScript : MonoBehaviour
                     portalScript.SetTeleportTimer();
                 }
             }
+
+            if (input.interact && !isTeleported && nextLevel)
+            {
+                SceneManager.LoadScene(nextSceneNum);
+            }
         }
     }
 
@@ -51,7 +59,7 @@ public class PortalScript : MonoBehaviour
     {
         if (other.TryGetComponent(out ThirdPersonController thirdPerson))
         {
-            PlayerInTrigger(false);
+            PlayerInTrigger?.Invoke(false);
         }
     }
 }
