@@ -11,7 +11,7 @@ public class Saver : MonoBehaviour
 {
     public int CheckPointToSave { get; private set; }
 
-    //[MenuItem("Utils/Clear progress")]
+    [MenuItem("Utils/Clear progress")]
     public static void ClearProgress()
     {
         if (File.Exists(Application.persistentDataPath + "/MySavedCheckPoint.dat"))
