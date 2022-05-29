@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 9d588faaafd7b2a4eb97221d0dd1f18f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_EnemyController: {fileID: 6991446463954760582}
   m_Shooter: {fileID: 4499478629710808251}
   m_DamageDealer: {fileID: 860215310}
+  _attackAnimationSpeed: 1
 --- !u!1 &3897175842411909975
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,9 +320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7443aaeaed77a4e4580ea3514b0781c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 398065097370666156, guid: be962be87292fbb4caa58b83cbed63f4, type: 3}
-  shootPosition: {fileID: 7361191297829985817}
-  bulletSpeed: 3
+  _bullet: {fileID: 0}
+  _shootPosition: {fileID: 0}
+  _bulletSpeed: 0
+  _mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &860215311
 MonoBehaviour:
   m_ObjectHideFlags: 0
