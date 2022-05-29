@@ -77,12 +77,12 @@ Material:
     - _BumpScale: 1
     - _CameraDepthFadeDistance: 1
     - _CameraDepthFadeOffset: 2
-    - _CameraDepthFadeRange: 2
+    - _CameraDepthFadeRange: 5
     - _CameraDepthFadeStart: 0
     - _CameraFadingEnabled: 1
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
-    - _CombinedNoiseRemap: 0
+    - _CombinedNoiseRemap: 0.093
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -105,11 +105,11 @@ Material:
     - _Parallax: 0.02
     - _QueueControl: -1
     - _QueueOffset: 0
-    - _SimpleNoiseAmount: 0.8
-    - _SimpleNoiseRemap: 0.5
+    - _SimpleNoiseAmount: 0.255
+    - _SimpleNoiseRemap: 0.465
     - _SimpleNoiseScale: 20
     - _SimplexNoiseAmount: 0
-    - _SimplexNoiseRemap: 0.5
+    - _SimplexNoiseRemap: 0.472
     - _SimplexNoiseScale: 2
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 1
@@ -117,11 +117,11 @@ Material:
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 5
-    - _SurfaceDepthFade: 0.5
+    - _SurfaceDepthFade: 0
     - _UVSec: 0
-    - _VoronoiNoiseAmount: 0.6
-    - _VoronoiNoiseRemap: 0.2
-    - _VoronoiScale: 5
+    - _VoronoiNoiseAmount: 0.614
+    - _VoronoiNoiseRemap: 0
+    - _VoronoiScale: 8.52
     - _ZWrite: 0
     - __dirty: 0
     m_Colors:
