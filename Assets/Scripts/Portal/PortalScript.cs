@@ -7,6 +7,7 @@ public class PortalScript : MonoBehaviour
 {
     [SerializeField] private StarterAssetsInputs input;
     [SerializeField] private Transform teleportationTarget;
+    [SerializeField] 
     bool isTeleported = false;
 
     public static event Action<bool> PlayerInTrigger;
