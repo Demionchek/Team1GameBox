@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using StarterAssets;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PortalScript : MonoBehaviour , IUse
 {
@@ -27,6 +28,7 @@ public class PortalScript : MonoBehaviour , IUse
 
         if (_isCooled && _isNextLevel)
         {
+            SceneManager.LoadScene(_nextLevelNum);
             LoadNextLevel?.Invoke(_nextLevelNum);
         }
     }

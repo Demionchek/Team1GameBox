@@ -13460,6 +13460,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -99740307122898431, guid: 63d13fe68ce5c4e44bb6fd2477f56008, type: 3}
   m_PrefabInstance: {fileID: 1124057928}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1104390440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104390439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62486bb2d5d7ef242afdd16971eb6aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _teleportationTarget: {fileID: 0}
+  _coolDown: 1
+  _isNextLevel: 1
+  _nextLevelNum: 2
 --- !u!64 &1104390443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18697,6 +18713,10 @@ PrefabInstance:
     - target: {fileID: -104486112538640488, guid: 63d13fe68ce5c4e44bb6fd2477f56008, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -99740307122898431, guid: 63d13fe68ce5c4e44bb6fd2477f56008, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -99740307122898431, guid: 63d13fe68ce5c4e44bb6fd2477f56008, type: 3}
       propertyPath: m_StaticEditorFlags
