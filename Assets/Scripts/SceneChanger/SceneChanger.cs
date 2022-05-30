@@ -5,6 +5,7 @@ public class SceneChanger : MonoBehaviour
 {
     private const string firstLevelSceneName = "Village";
     private const string mainMenuSceneName = "MainMenu";
+    private const string winSceneName = "WinScene";
 
     public void LoadFirstScene()
     {
@@ -14,6 +15,11 @@ public class SceneChanger : MonoBehaviour
     public void LoadMainMenuScene() 
     {
         LoadScene(mainMenuSceneName);
+    }
+
+    public void LoadWinScene()
+    {
+        LoadScene(winSceneName);
     }
 
     private void LoadScene(string sceneName)

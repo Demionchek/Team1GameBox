@@ -62,9 +62,9 @@ public class Health : MonoBehaviour, IDamageable
             {
                 yagaController.IsAlive = false;
             }
-            else if (TryGetComponent<ThirdPersonController>(out ThirdPersonController thirdPersonController))
+            else if (TryGetComponent<PlayerDeath>(out PlayerDeath death))
             {
-                
+                death.PlayersDeath();
             }
 
             Debug.Log(transform.name + " died");

@@ -11,6 +11,7 @@ public class AnimatorManager : MonoBehaviour
     private readonly int mightyPunch = Animator.StringToHash("MightyPunch");
     private readonly int Speed = Animator.StringToHash("Speed");
     private readonly int grounded = Animator.StringToHash("Grounded");
+    private readonly int dead = Animator.StringToHash("IsDead");
 
     private const int AngleOfView = 90;
     private bool backward;
@@ -47,6 +48,11 @@ public class AnimatorManager : MonoBehaviour
     public void SetMightyPunch(bool value)
     {
         animator.SetBool(mightyPunch, value);
+    }
+
+    public void SetDeadAnimation(bool value)
+    {
+        animator.SetBool(dead, value);
     }
 
     public bool GetMightyPunch()
