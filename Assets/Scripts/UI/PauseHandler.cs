@@ -10,6 +10,7 @@ public class PauseHandler : MonoBehaviour
     [SerializeField] private GameObject settingsBar;
 
     private bool isPaused;
+    private bool isSettings;
 
     private void Update()
     {
@@ -32,9 +33,31 @@ public class PauseHandler : MonoBehaviour
     {
         pauseScreen.SetActive(isActive);
         if (playerInputs.gameObject.TryGetComponent<PlayerInput>(out PlayerInput input))
+        {
             input.enabled = !isActive;
+            playerInputs.atack = !isActive; 
+        }
         Time.timeScale = timeScale;
         isPaused = !isPaused;
+    }
+
+    public void ChangeSettingsBar()
+    {
+        if(!isSettings)
+        {
+            UseSettingsBar(isSettings);
+        }
+        else
+        {
+            UseSettingsBar(isSettings);
+        }
+        isSettings = !isSettings;
+    }
+
+    private void UseSettingsBar(bool isSettings)
+    {
+        pauseBar.SetActive(isSettings);
+        settingsBar.SetActive(!isSettings);
     }
 
     public void BackToMenu()
