@@ -76,7 +76,6 @@ public class Inventory : MonoBehaviour
             var length = countOfItemsInSlot;
             for (int i = 0; i < length; i++)
             {
-                Debug.Log(inventory.GetLength(dimensionIndex));
                 if (inventory[dimensionIndex, i] == null)
                     return i;
             }

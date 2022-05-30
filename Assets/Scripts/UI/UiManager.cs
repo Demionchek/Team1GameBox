@@ -100,8 +100,8 @@ public class UiManager : MonoBehaviour
         abilityImage.fillAmount = 0;
         for (float i = 0; i < abilityCooldown; i += Time.deltaTime)
         {
-            yield return new WaitForSeconds(Time.deltaTime);
             abilityImage.fillAmount = i / abilityCooldown;
+            yield return new WaitForSeconds(Time.deltaTime);
         }
     }
 }
