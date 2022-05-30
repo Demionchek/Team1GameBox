@@ -98,10 +98,12 @@ public class UiManager : MonoBehaviour
     private IEnumerator UpdateAbilityCooldownSprite(Image abilityImage, float abilityCooldown)
     {
         abilityImage.fillAmount = 0;
-        for (float i = 0; i < abilityCooldown; i += Time.deltaTime)
+        float i = 0f;
+        while(i < abilityCooldown)
         {
+            i += Time.deltaTime;
             abilityImage.fillAmount = i / abilityCooldown;
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSeconds(Time.deltaTime/2);
         }
     }
 }
