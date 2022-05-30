@@ -19,6 +19,8 @@ namespace StarterAssets
 		public bool dash;
 		public bool inventoryFirstSlot;
 		public bool inventorySecondSlot;
+		public bool pause;
+
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -90,6 +92,11 @@ namespace StarterAssets
 		public void OnInventorySecondSlot(InputValue value)
 		{
 			InventorySecondSlotInput(value.isPressed);
+		}		
+		
+		public void OnPause(InputValue value)
+		{
+			PauseInput(value.isPressed);
 		}
 
 		public void OnDash(InputValue value)
@@ -151,6 +158,11 @@ namespace StarterAssets
 		public void InventorySecondSlotInput(bool newInventorySecondSlotInputState)
 		{
 			inventorySecondSlot = newInventorySecondSlotInputState;
+		}		
+		
+		public void PauseInput(bool pauseInputState)
+		{
+			pause = pauseInputState;
 		}
 
 		public void DashInput(bool newDashState)

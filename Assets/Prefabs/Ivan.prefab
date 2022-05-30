@@ -2883,6 +2883,7 @@ GameObject:
   - component: {fileID: 4416926083347132241}
   - component: {fileID: 4416926083347132228}
   - component: {fileID: 8289181969762562424}
+  - component: {fileID: 2002089021637328882}
   m_Layer: 3
   m_Name: Ivan
   m_TagString: Player
@@ -3032,6 +3033,7 @@ MonoBehaviour:
   dash: 0
   inventoryFirstSlot: 0
   inventorySecondSlot: 0
+  pause: 0
   analogMovement: 0
   cursorLocked: 0
   cursorInputForLook: 0
@@ -3329,7 +3331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24b2d75529dc1d44aca2a932d1275c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commonInventorySlotIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  commonInventorySlotIcon: {fileID: 21300000, guid: 49ff963e672e931478211146d19b9fda, type: 3}
   maxInventorySlots: 2
   countOfItemsInSlot: 5
 --- !u!114 &4416926083347132241
@@ -3380,6 +3382,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countOfItemsToUnlock: 2
+--- !u!114 &2002089021637328882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9212772854674117790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b132514beac2a64e96b2e25e76360aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathScreen: {fileID: 0}
 --- !u!1001 &1688165873869747063
 PrefabInstance:
   m_ObjectHideFlags: 0
