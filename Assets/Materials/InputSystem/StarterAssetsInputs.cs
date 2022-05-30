@@ -2,7 +2,6 @@ using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
-
 namespace StarterAssets
 {
 	public class StarterAssetsInputs : MonoBehaviour
@@ -28,8 +27,16 @@ namespace StarterAssets
 		public bool cursorLocked = false;
 		public bool cursorInputForLook = true;
 
+		private UseInteractor interactor;
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-		public void OnMove(InputValue value)
+
+        private void Start()
+        {
+            interactor = GetComponent<UseInteractor>();
+        }
+
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}
@@ -55,6 +62,7 @@ namespace StarterAssets
 		public void OnInteract(InputValue value)
 		{
 			InteractInput(value.isPressed);
+			interactor.TryInteract();
 		}
 
 		public void OnAtack(InputValue value)
