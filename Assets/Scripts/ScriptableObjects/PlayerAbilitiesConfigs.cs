@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -25,4 +23,9 @@ public class PlayerAbilitiesConfigs : ScriptableObject
     public float mightyPunchCooldown;
     public float mightyPunchRange;
     public float mightyPunchForce;
+
+    [Header("Dash")]
+    public int dashCooldown;
+    public float dashTime;
+    public float dashSpeed;
 }
