@@ -15,12 +15,12 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
+  - Fog
   - PostProcessing
   - Not in Reflection
   - CustomPass
   - Cullable
-  - 
+  - Portals
   - 
   - 
   - 

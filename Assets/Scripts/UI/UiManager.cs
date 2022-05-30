@@ -11,6 +11,8 @@ public class UiManager : MonoBehaviour
     [Header("Abilities")]
     [SerializeField] private Image mightyPunchImage;
     [SerializeField] private Image axeThrowImage;
+    [SerializeField] private Image airAtackImage;   
+    [SerializeField] private Image dashImage;
 
     [Header("Inentory")]
     [SerializeField] private Image[] HealPotionSlots;
@@ -75,31 +77,31 @@ public class UiManager : MonoBehaviour
 
     public void AxeThrowCooldownSprite()
     {
-        StartCoroutine(UpdateAxeThrowCooldownSprite());
-    }
-    
-    private IEnumerator UpdateAxeThrowCooldownSprite()
-    {
-        axeThrowImage.fillAmount = 0;
-        for (float i=0; i<configs.axeThrowCooldown;i+=Time.deltaTime)
-        {
-            yield return new WaitForSeconds(Time.deltaTime);
-            axeThrowImage.fillAmount = i / configs.axeThrowCooldown;
-        }
+        StartCoroutine(UpdateAbilityCooldownSprite(axeThrowImage,configs.axeThrowCooldown));
     }
     
     public void MightyPunchCooldownSprite()
     {
-        StartCoroutine(UpdateMightyPunchCooldownSprite());
-    }
-
-    private IEnumerator UpdateMightyPunchCooldownSprite()
+        StartCoroutine(UpdateAbilityCooldownSprite(mightyPunchImage,configs.mightyPunchCooldown));
+    }    
+    
+    public void AirAtackCooldownSprite()
     {
-        mightyPunchImage.fillAmount = 0;
-        for (float i = 0; i < configs.mightyPunchCooldown; i += Time.deltaTime)
+        StartCoroutine(UpdateAbilityCooldownSprite(airAtackImage,configs.airAtackCooldown));
+    }    
+
+    public void DashCooldownSprite()
+    {
+        StartCoroutine(UpdateAbilityCooldownSprite(dashImage, configs.dashCooldown));
+    }
+    
+    private IEnumerator UpdateAbilityCooldownSprite(Image abilityImage, float abilityCooldown)
+    {
+        abilityImage.fillAmount = 0;
+        for (float i = 0; i < abilityCooldown; i += Time.deltaTime)
         {
             yield return new WaitForSeconds(Time.deltaTime);
-            mightyPunchImage.fillAmount = i / configs.mightyPunchCooldown;
+            abilityImage.fillAmount = i / abilityCooldown;
         }
     }
 }

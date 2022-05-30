@@ -26,3 +26,6 @@ MonoBehaviour:
   mightyPunchCooldown: 5
   mightyPunchRange: 5
   mightyPunchForce: 6
+  dashCooldown: 2
+  dashTime: 0.1
+  dashSpeed: 20
