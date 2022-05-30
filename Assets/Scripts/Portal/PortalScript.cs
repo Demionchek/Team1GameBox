@@ -5,28 +5,35 @@ using System;
 
 public class PortalScript : MonoBehaviour
 {
-    [SerializeField] private StarterAssetsInputs input;
-    [SerializeField] private Transform teleportationTarget;
-    [SerializeField] 
-    bool isTeleported = false;
+    [SerializeField] private StarterAssetsInputs _input;
+    [SerializeField] private Transform _teleportationTarget;
+    [SerializeField] private bool _isNextLevel;
+    [SerializeField] private int _nextLevelNum;
+    private bool _isTeleported = false;
+    private int counter;
 
-    public static event Action<bool> PlayerInTrigger;
+    private const float kTime = 1f;
+
+    public static event Action Teleported;
+    public static event Action<int> LoadNextLevel;
 
     private void Start()
     {
-        PlayerInTrigger(false);
+        PortalScript.Teleported += SetTeleportTimer;
+        counter = 0;
     }
 
     public void SetTeleportTimer()
     {
-        isTeleported = true;
+        _isTeleported = true;
         StartCoroutine(TeleportTimerCorutine());
     } 
 
     private IEnumerator TeleportTimerCorutine()
     {
-        yield return new WaitForSeconds(1f);
-        isTeleported = false;
+        yield return new WaitForSeconds(kTime);
+        counter = 0;
+        _isTeleported = false;
     }
 
     private void OnTriggerStay(Collider other)
@@ -34,25 +41,23 @@ public class PortalScript : MonoBehaviour
 
         if (other.TryGetComponent(out ThirdPersonController thirdPerson))
         {
-            PlayerInTrigger(true);
 
-            if (input.interact && !isTeleported)
+            if (_input.interact && !_isTeleported && !_isNextLevel && counter == 0 )
             {
-                other.transform.position = teleportationTarget.position;
+                other.transform.position = _teleportationTarget.position;
+                counter++;
+                Teleported?.Invoke();
+            }
 
-                if (teleportationTarget.TryGetComponent(out PortalScript portalScript))
-                {
-                    portalScript.SetTeleportTimer();
-                }
+            if (_input.interact && !_isTeleported && _isNextLevel)
+            {
+                LoadNextLevel?.Invoke(_nextLevelNum);
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnDestroy()
     {
-        if (other.TryGetComponent(out ThirdPersonController thirdPerson))
-        {
-            PlayerInTrigger(false);
-        }
+        PortalScript.Teleported -= SetTeleportTimer;
     }
 }
