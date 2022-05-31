@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
-    [SerializeField] private GameObject deathScreen;
+    [SerializeField] private GameObject _deathScreen;
+    [SerializeField] private Saver _saver;
 
     public void PlayersDeath()
     {
@@ -20,14 +21,13 @@ public class PlayerDeath : MonoBehaviour
     private IEnumerator DeathScreen()
     {
         yield return new WaitForSeconds(0.1f);
-        deathScreen.SetActive(true);
+        _deathScreen.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         Restart();
     }
 
     private void Restart()
     {
-        int currentScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentScene);
+        SceneManager.LoadScene(_saver.LevelToSave);
     }
 }

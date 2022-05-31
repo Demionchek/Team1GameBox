@@ -107,7 +107,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 2720519723002769577}
     m_Modifications:
     - target: {fileID: 2002089021637328882, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: _saver
+      value: 
+      objectReference: {fileID: 2720519723248160275}
+    - target: {fileID: 2002089021637328882, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 3879397082357845277}
+    - target: {fileID: 2002089021637328882, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: _deathScreen
       value: 
       objectReference: {fileID: 3879397082357845277}
     - target: {fileID: 4416926083347132230, guid: 91c687c4626af4c4799542635206a26c, type: 3}

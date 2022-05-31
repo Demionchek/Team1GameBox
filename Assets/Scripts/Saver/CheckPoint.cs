@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using UnityEngine.SceneManagement;
 
 public class CheckPoint : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.TryGetComponent(out ThirdPersonController controller))
         {
+                int scene = SceneManager.GetActiveScene().buildIndex;
+                _saver.SaveLevel(scene);
             if (!_isActivated)
             {
                 _saver.SaveCheckPoint(PointNumber);

@@ -10,6 +10,7 @@ using UnityEditor;
 public class Saver : MonoBehaviour
 {
     public int CheckPointToSave { get; private set; }
+    public int LevelToSave { get; private set; }
 
     [MenuItem("Utils/Clear progress")]
     public static void ClearProgress()
@@ -18,11 +19,17 @@ public class Saver : MonoBehaviour
         {
             File.Delete(Application.persistentDataPath + "/MySavedCheckPoint.dat");
         }
+
+        if (File.Exists(Application.persistentDataPath + "/MySavedLevel.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/MySavedLevel.dat");
+        }
         Debug.Log("Progress Data Cleared!");
     }
 
     private void Awake()
     {
+        LoadLevel();
         LoadCheckPoint();
     }
 
@@ -49,10 +56,36 @@ public class Saver : MonoBehaviour
         }
     }
 
+    public void SaveLevel(int levelNumber)
+    {
+        Debug.Log($"Saved level = {LevelToSave}");
+        LevelToSave = levelNumber;
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/MySavedLevel.dat");
+        SaveData data = new SaveData();
+        data.SavedLevel = LevelToSave;
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    public void LoadLevel()
+    {
+        if (File.Exists(Application.persistentDataPath + "/MySavedLevel.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/MySavedLevel.dat", FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+            LevelToSave = data.SavedLevel;
+        }
+        Debug.Log($"Loaded level = {LevelToSave}");
+    }
+
 }
 [Serializable]
 class SaveData
 {
     public int SavedCheckPoint;
+    public int SavedLevel;
 }
 
