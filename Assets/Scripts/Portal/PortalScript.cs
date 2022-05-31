@@ -12,8 +12,6 @@ public class PortalScript : MonoBehaviour , IUse
     [SerializeField] private int _nextLevelNum;
     private bool _isCooled = true;
 
-    public static event Action<int> LoadNextLevel;
-
     public void Use(CharacterController controller)
     {
         if (_isCooled && !_isNextLevel)
@@ -29,7 +27,7 @@ public class PortalScript : MonoBehaviour , IUse
         if (_isCooled && _isNextLevel)
         {
             SceneManager.LoadScene(_nextLevelNum);
-            LoadNextLevel?.Invoke(_nextLevelNum);
+
         }
     }
 
