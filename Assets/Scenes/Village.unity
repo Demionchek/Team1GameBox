@@ -67309,60 +67309,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPresets
       objectReference: {fileID: 0}
-    - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 99.118576
-      objectReference: {fileID: 0}
-    - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 19.215
-      objectReference: {fileID: 0}
-    - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -163.09967
-      objectReference: {fileID: 0}
-    - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9059367
-      objectReference: {fileID: 0}
-    - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.42341322
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859379872155337675, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 99.118576
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859379872155337675, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859379872155337675, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -154.57967
-      objectReference: {fileID: 0}
-    - target: {fileID: 6476616665485306115, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 99.118576
-      objectReference: {fileID: 0}
-    - target: {fileID: 6476616665485306115, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 19.215
-      objectReference: {fileID: 0}
-    - target: {fileID: 6476616665485306115, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -163.09967
-      objectReference: {fileID: 0}
-    - target: {fileID: 6476616665485306115, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9059367
-      objectReference: {fileID: 0}
-    - target: {fileID: 6476616665485306115, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.42341322
+    - target: {fileID: 7446544210033720557, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: UpdateUI.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2720519722575707551}
+    - target: {fileID: 7446544210033720557, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: UpdateUI.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DashCooldownSprite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+--- !u!114 &2720519722575707551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3691655537792010142, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+  m_PrefabInstance: {fileID: 2720519722575707549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e2e5dd4e9e2d84ea5d95bd406866ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5614868596723139918
 PrefabInstance:
   m_ObjectHideFlags: 0
