@@ -22,8 +22,9 @@ public class AxeReturn : MonoBehaviour
     {
         if (other.gameObject.layer != playersLayer)
         {
-            Debug.Log("AXEEEEEEEEEEEEEEE" + other.gameObject.name);
-            Debug.DrawLine(transform.position, playersHand.position, Color.blue, 10f);
+
+            //Debug.Log("AXEEEEEEEEEEEEEEE" + other.gameObject.name);
+            //Debug.DrawLine(transform.position, playersHand.position, Color.blue, 10f);
             rigidBody.isKinematic = true;
             if (other.transform.TryGetComponent(out IDamageable damageable) && counter == 0)
             {

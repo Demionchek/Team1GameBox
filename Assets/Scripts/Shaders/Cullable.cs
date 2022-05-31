@@ -8,10 +8,10 @@ public class Cullable : MonoBehaviour
     public float alphaChangeSpeed = 3f;
 
     // name of the variable in the shader that will be adjusted
-    public string shaderVariableName = "Alpha";
+    public string shaderVariableName = "_Alpha";
 
     // end point of culling
-    public float fadeTo = 0;
+    public float fadeTo = 0.5f;
     // start point of culling
     public float fadeFrom = 1;
 
