@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
+    [SerializeField] private CharacterController controller;
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private float _damage = 10;
     [SerializeField] private Saver _saver;
@@ -11,18 +12,35 @@ public class Teleporter : MonoBehaviour
     [Header("CheckPoints")]
     [SerializeField] private CheckPoint[] checkPoints;
 
+    private void Start()
+    {
+        Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
+
+        foreach (var point in checkPoints)
+        {
+            if (_saver.CheckPointToSave == point.PointNumber)
+            {
+                spawnPosition = point.SpawnPoint.position;
+                break;
+            }
+        }
+        controller.enabled = false;
+        controller.transform.position = spawnPosition;
+        controller.enabled = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.TryGetComponent<ThirdPersonController>(out ThirdPersonController playerController))
+        if (other.transform.TryGetComponent<CharacterController>(out CharacterController playerController))
         {
-            StartCoroutine(TelerportToSafePosition(playerController.transform));
+            StartCoroutine(TelerportToSafePosition(playerController));
         }
     }
 
-    private IEnumerator TelerportToSafePosition(Transform player)
+    private IEnumerator TelerportToSafePosition(CharacterController controller)
     {
         yield return new WaitForSeconds(_teleportDelay);
-        if (player.TryGetComponent<IDamageable>(out IDamageable playerHealth))
+        if (controller.TryGetComponent<IDamageable>(out IDamageable playerHealth))
             playerHealth.TakeDamage(_damage, _playerLayer);
 
         Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
@@ -35,7 +53,8 @@ public class Teleporter : MonoBehaviour
                 break;
             }
         }
-
-        player.position = spawnPosition;
+        controller.enabled = false;
+        controller.transform.position = spawnPosition;
+        controller.enabled = true;
     }
 }

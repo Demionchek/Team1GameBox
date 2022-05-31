@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PlayerDeath : MonoBehaviour
 
     private void Restart()
     {
-
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene);
     }
 }

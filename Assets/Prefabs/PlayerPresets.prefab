@@ -411,6 +411,10 @@ PrefabInstance:
       propertyPath: aimColliderLayerMask.m_Bits
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 8800532875544861488, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
+      propertyPath: _saver
+      value: 
+      objectReference: {fileID: 2720519723248160275}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
 --- !u!4 &6734549052596317469 stripped
@@ -795,3 +799,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2007311802013051704, guid: a3276366bcc28784a92a060c1d4643cc, type: 3}
   m_PrefabInstance: {fileID: 4474991661369877802}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2720519723248160275 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2007311802013051705, guid: a3276366bcc28784a92a060c1d4643cc, type: 3}
+  m_PrefabInstance: {fileID: 4474991661369877802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31906269592a24b40beb557d65304b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
