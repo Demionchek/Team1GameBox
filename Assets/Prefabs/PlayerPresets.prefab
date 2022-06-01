@@ -130,6 +130,18 @@ PrefabInstance:
       propertyPath: UpdateUI.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3691655537792010142}
+    - target: {fileID: 4798104673400631605, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: UpdateUI.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3691655537792010142}
+    - target: {fileID: 4798104673400631605, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: UpdateUI.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckEnergyBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798104673400631605, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: UpdateUI.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4798104673400631608, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: mousePositionManager
       value: 

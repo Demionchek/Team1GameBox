@@ -74744,10 +74744,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPresets
       objectReference: {fileID: 0}
-    - target: {fileID: 2720519723232162030, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeSettingsBar
-      objectReference: {fileID: 0}
     - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: _enemyPacks.Array.data[0]
       value: 
