@@ -1693,6 +1693,41 @@ Transform:
   m_Father: {fileID: 2127700764}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
+--- !u!1 &1308625448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6862617456792498724, guid: a3a94b0f9869fc549bfc48fc8c1430ab, type: 3}
+  m_PrefabInstance: {fileID: 892114920801975568}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1308625454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308625448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89280019563a6e74aacee967af984e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 30
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!64 &1308625455
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308625448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1334439079
 GameObject:
   m_ObjectHideFlags: 0
@@ -74743,10 +74778,6 @@ PrefabInstance:
     - target: {fileID: 2720519723002769582, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_Name
       value: PlayerPresets
-      objectReference: {fileID: 0}
-    - target: {fileID: 2720519723232162030, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeSettingsBar
       objectReference: {fileID: 0}
     - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: _enemyPacks.Array.data[0]
