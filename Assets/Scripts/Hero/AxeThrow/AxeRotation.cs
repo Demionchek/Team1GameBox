@@ -12,6 +12,6 @@ public class AxeRotation : MonoBehaviour
     private void Update()
     {
         if (enabled && rigidboy.isKinematic == false)
-            gameObject.transform.Rotate(Vector3.up, 5f);
+            gameObject.transform.Rotate(Vector3.right, 10f);
     }
 }
