@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Energy))]
 public class MIghtyPunch : MonoBehaviour
@@ -22,6 +23,7 @@ public class MIghtyPunch : MonoBehaviour
     private Energy energy;
     private MousePositionManager mouseMangaer;
     private ThirdPersonController playerController;
+    private PlayerInput inputSystem;
 
     private float sprintSpeed;
     private bool isMightyPunchCooled = true;
@@ -34,6 +36,7 @@ public class MIghtyPunch : MonoBehaviour
         playerController = GetComponent<ThirdPersonController>();
         energy = GetComponent<Energy>();
         sprintSpeed = playerController.SprintSpeed;
+        inputSystem = GetComponent<PlayerInput>();
     }
 
     void Update()
@@ -59,6 +62,7 @@ public class MIghtyPunch : MonoBehaviour
 
     private void Punch()
     {
+        inputSystem.enabled = false;
         energy.UseEnergy(configs.mightyPunchCost);
         mouseMangaer.LookAtMouseDirection();
         animatorManager.SetMightyPunch(true);
@@ -114,11 +118,14 @@ public class MIghtyPunch : MonoBehaviour
     private void StopMovement()
     {
         if (animatorManager.GetMightyPunch())
+        {
             playerController.SprintSpeed = 0;
+        }    
     }
 
     public void ResetMightyPunch()
     {
+        inputSystem.enabled = true;
         mouseMangaer.StopLookingAtMouseDirection();
         playerInputs.mightyPunch = false;
         animatorManager.SetMightyPunch(false);
