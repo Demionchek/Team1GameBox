@@ -4,13 +4,13 @@ using StarterAssets;
 
 public class Health : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float _hp;
+    [SerializeField] private int _hp;
     [SerializeField] private LayerMask _layerMask;
 
     public static Action HPChanged;
 
-    public float Hp { get; set; }
-    public float FullHP { get; private set; }
+    public int Hp { get; set; }
+    public int FullHP { get; private set; }
 
     private bool _isPlayer;
 
@@ -24,13 +24,13 @@ public class Health : MonoBehaviour, IDamageable
         }
     }
 
-    public void RestoreHealth(float amount)
+    public void RestoreHealth(int amount)
     {
         Hp += amount;
         Hp = Mathf.Min(Hp, _hp);
     }
 
-    public void TakeDamage(float damage, LayerMask mask)
+    public void TakeDamage(int damage, LayerMask mask)
     {
         if (_layerMask == mask)
         {

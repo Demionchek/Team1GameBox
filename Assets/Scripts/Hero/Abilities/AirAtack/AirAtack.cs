@@ -50,7 +50,7 @@ public class AirAtack : MonoBehaviour
     {
         if (animatorManager.GetAirAtack() && animatorManager.isGrounded())
         {
-            energy.UseEnergy(configs.airAtackCost);
+            energy.UseEnergy((int)configs.airAtackCost);
             UpdateUI.Invoke();
             animatorManager.SetAirAtack(false);
             AirHit();

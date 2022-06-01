@@ -28,8 +28,8 @@ public abstract class Item : MonoBehaviour
 
     public virtual void Use()
     {
-        playersHealth.RestoreHealth(hpRestore);
-        playersEnergy.RestoreEnergy(energyRestore);
+        playersHealth.RestoreHealth((int)hpRestore);
+        playersEnergy.RestoreEnergy((int)energyRestore);
         UpdateUi?.Invoke();
         Destroy(this, 1f);
     }

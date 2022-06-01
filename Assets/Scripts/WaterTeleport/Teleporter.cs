@@ -14,6 +14,12 @@ public class Teleporter : MonoBehaviour
 
     private void Start()
     {
+        SetPlayerPos();
+        SetPlayersData();
+    }
+
+    private void SetPlayerPos()
+    {
         Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
 
         foreach (var point in checkPoints)
@@ -27,7 +33,13 @@ public class Teleporter : MonoBehaviour
         controller.enabled = false;
         controller.transform.position = spawnPosition;
         controller.enabled = true;
-    }
+    } 
+
+    private void SetPlayersData()
+    {
+        controller.GetComponent<Health>().Hp = _saver.HealthToSave;
+        controller.GetComponent<Energy>().CurrentEnergy = _saver.EnergyToSave;
+    } 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -40,8 +52,8 @@ public class Teleporter : MonoBehaviour
     private IEnumerator TelerportToSafePosition(CharacterController controller)
     {
         yield return new WaitForSeconds(_teleportDelay);
-        if (controller.TryGetComponent<IDamageable>(out IDamageable playerHealth))
-            playerHealth.TakeDamage(_damage, _playerLayer);
+        if (controller.TryGetComponent(out IDamageable playerHealth))
+            playerHealth.TakeDamage((int)_damage, _playerLayer);
 
         Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
 
