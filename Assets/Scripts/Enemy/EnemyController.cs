@@ -12,6 +12,7 @@ public class EnemyController : EnemyStateMachine
     [Header("EnemyType")]
     [SerializeField] private EnemyType _enemyType;
     [SerializeField] private float _maxSpecialMoveDistance = 7f;
+    [SerializeField] private float _maxSpecialMoveHeight = 1f;
     [Header("SpecialAttackAnimation")]
     [Tooltip("Special Animation of your enemy type")]
     [SerializeField] private AnimationClip _specialAttack;
@@ -54,12 +55,14 @@ public class EnemyController : EnemyStateMachine
 
     public static Action EnemyDeathAction;
 
-    private bool CanDoSpecialDistance(float maxSpecialDistance)
+    private bool CanDoSpecialDistance(float maxDistance, float maxHeight)
     {
-        if (Vector3.Distance(transform.position, Target.position) > maxSpecialDistance)
+        if (Vector3.Distance(transform.position, Target.position) < maxDistance 
+           && Math.Abs(transform.position.y - transform.localScale.y - Target.position.y) < maxHeight)
         {
             return true;
         }
+
         else return false;
     }
 
@@ -329,19 +332,15 @@ public class EnemyController : EnemyStateMachine
             transform.LookAt(lastPlayerPos);
 
         }
-
-        if (_isAttaking == false && _enemyType != EnemyType.Normal &&
-                                    CanDoSpecialDistance(_maxSpecialMoveDistance))
-        {
             SpecialAttackChance();
-        }
     }
 
     public void SpecialAttackChance()
     {
         bool canDoSpecial = _isSpecialAttackCooled && UnityEngine.Random.value < _specialChance;
-
-        if (canDoSpecial)
+        bool enemyType = _isAttaking == false && _enemyType != EnemyType.Normal;
+        bool special =  CanDoSpecialDistance(_maxSpecialMoveDistance, _maxSpecialMoveHeight);
+        if (canDoSpecial && enemyType && special)
         {
             _isSpecialAttackCooled = false;
             CurrState = _chargeState;
