@@ -155,6 +155,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3691655537792010142}
     - target: {fileID: 4798104673400631605, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: markerPrefab
+      value: 
+      objectReference: {fileID: 8393332626735128054, guid: 77d0f53f97b56cf489b4eb1db0681694, type: 3}
+    - target: {fileID: 4798104673400631605, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: UpdateUI.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3691655537792010142}
