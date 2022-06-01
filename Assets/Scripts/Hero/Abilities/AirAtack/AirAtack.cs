@@ -74,7 +74,8 @@ public class AirAtack : MonoBehaviour
                 {
                     damageable.TakeDamage(configs.mightyPunchDamage, configs.enemyLayer);
                     Vector3 pushVector = hit.transform.position - transform.position;
-                    hit.transform.GetComponent<NavMeshAgent>().velocity = pushVector.normalized * configs.mightyPunchForce;
+                   if(hit.transform.TryGetComponent<NavMeshAgent>(out NavMeshAgent agent))
+                        agent.velocity = pushVector.normalized * configs.mightyPunchForce;
 #if (UNITY_EDITOR)
                     Debug.Log($"AirHit {hit.transform.name}");
 #endif
