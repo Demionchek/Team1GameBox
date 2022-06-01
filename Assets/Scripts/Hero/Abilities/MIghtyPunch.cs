@@ -101,7 +101,8 @@ public class MIghtyPunch : MonoBehaviour
                 {
                     damageable.TakeDamage(configs.mightyPunchDamage, _mask);
                     Vector3 pushVector = hit.transform.position - transform.position;
-                    hit.transform.GetComponent<NavMeshAgent>().velocity = pushVector.normalized * configs.mightyPunchForce;
+                    if(hit.transform.TryGetComponent<NavMeshAgent>(out NavMeshAgent agent))
+                        agent.velocity = pushVector.normalized * configs.mightyPunchForce;
 #if (UNITY_EDITOR)
                     Debug.Log("hit " + hit.transform.name);
 #endif

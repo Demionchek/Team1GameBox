@@ -1,5 +1,4 @@
 using StarterAssets;
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,18 +8,17 @@ using UnityEngine.AI;
 public class AirAtack : MonoBehaviour
 {
     [SerializeField] private PlayerAbilitiesConfigs configs;
+    [SerializeField] private GameObject markerPrefab;
 
     private AnimatorManager animatorManager;
     private StarterAssetsInputs inputs;
     private Energy energy;
     private bool isAirAtackCooled = true;
-
     public bool IsAirAtack { get { return !animatorManager.isGrounded() && inputs.atack; } }
 
-    public UnityEvent UpdateUI;
-
-    public static event Action<Vector3, float> CreateMarker;
     private const int hitCount = 15;
+
+    public UnityEvent UpdateUI;
 
     void Start()
     {
@@ -56,10 +54,7 @@ public class AirAtack : MonoBehaviour
             UpdateUI.Invoke();
             animatorManager.SetAirAtack(false);
             AirHit();
-            if (CreateMarker != null)
-            {
-                CreateMarker(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z) + transform.forward, 0.1f);
-            }
+            StartCoroutine(PondCorutine(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), 0.1f));
             StartCoroutine(BlockThrowAxe());
             StartCoroutine(CoolDown());
         }
@@ -86,7 +81,30 @@ public class AirAtack : MonoBehaviour
                 }
             }
         }
-    } 
+    }
+
+    ///
+    private IEnumerator PondCorutine(Vector3 pos, float timeToDel)
+    {
+        GameObject pond = Instantiate(markerPrefab, pos, Quaternion.identity);
+        float delay = timeToDel / 3;
+        var pondMaterial = pond.GetComponent<Renderer>().material;
+        MaterialSetAlfa(pondMaterial, Color.green);
+        yield return new WaitForSeconds(delay);
+        MaterialSetAlfa(pondMaterial, Color.yellow);
+        yield return new WaitForSeconds(delay);
+        MaterialSetAlfa(pondMaterial, Color.red);
+        yield return new WaitForSeconds(delay);
+        Destroy(pond);
+    }
+
+    private Material MaterialSetAlfa(Material material, Color color)
+    {
+        Color newAlfa = new Color(0, 0, 0, 0.5f);
+        material.color = color - newAlfa;
+        return material;
+    }
+    ///
 
     private IEnumerator CoolDown()
     {
