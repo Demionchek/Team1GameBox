@@ -26,7 +26,7 @@ public class PauseHandler : MonoBehaviour
             UsePause(true, 0);
         }
         else if (isPaused)
-            UsePause(false,1);
+            Unpause();
     }
 
     private void UsePause(bool isActive, float timeScale)
@@ -62,6 +62,7 @@ public class PauseHandler : MonoBehaviour
 
     public void BackToMenu()
     {
+        Unpause();
         SceneChanger sceneChanger = new SceneChanger();
         sceneChanger.LoadMainMenuScene();
     }

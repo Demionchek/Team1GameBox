@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  axeThrowDmg: 1
+  axeThrowDmg: 25
   axeThrowCooldown: 1.5
   airAtackDamage: 30
   airAtackCost: 10
