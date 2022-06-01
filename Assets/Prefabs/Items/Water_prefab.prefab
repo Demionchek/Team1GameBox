@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpRestore: 0
-  energyRestore: 10
+  energyRestore: 20
 --- !u!135 &5957119149117471074
 SphereCollider:
   m_ObjectHideFlags: 0

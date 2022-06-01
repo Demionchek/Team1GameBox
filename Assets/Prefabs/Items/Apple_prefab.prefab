@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d3d4d0db4265c47a9ed4d8ab6f484b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpRestore: 10
+  hpRestore: 20
   energyRestore: 0
 --- !u!1 &2619717941506534403
 GameObject:
