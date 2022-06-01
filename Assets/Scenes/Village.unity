@@ -74731,10 +74731,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1332384412883666680, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2720519723002769577, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -74783,10 +74779,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPresets
       objectReference: {fileID: 0}
-    - target: {fileID: 6734549053333737289, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: aimColliderLayerMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: _enemyPacks.Array.data[0]
       value: 
@@ -74799,42 +74791,6 @@ PrefabInstance:
       propertyPath: _enemyPacks.Array.data[2]
       value: 
       objectReference: {fileID: 565234879}
-    - target: {fileID: 7446544208399531032, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446544208399531039, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_Size.x
-      value: 0.07452668
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446544208399531039, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_Size.y
-      value: 0.5499682
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446544208399531039, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_Size.z
-      value: 0.09537973
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446544208399531039, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446544208399531039, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_Center.x
-      value: -0.012294498
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446544208399531039, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_Center.y
-      value: 0.007835631
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446544208399531039, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_Center.z
-      value: 0.6255395
-      objectReference: {fileID: 0}
-    - target: {fileID: 7446544210033720532, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: throwPower
-      value: 25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
 --- !u!1001 &3573061891448043014
