@@ -3447,7 +3447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7842708213875595277, guid: dc4523f1adfc4d143bab80ecf4635e24, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7842708213875595277, guid: dc4523f1adfc4d143bab80ecf4635e24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9689,6 +9689,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2434475554903127538, guid: dc4523f1adfc4d143bab80ecf4635e24, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e4c98df545d9f547bfd260a552af75b, type: 2}
     - target: {fileID: 2440316523463888473, guid: dc4523f1adfc4d143bab80ecf4635e24, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -40968,22 +40972,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798478901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e10f9ad3a7c85f5429de88ff7579d94f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alphaChangeSpeed: 3
-  shaderVariableName: _Alpha
-  fadeTo: 0.5
-  fadeFrom: 1
---- !u!114 &1798480272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798478902}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e10f9ad3a7c85f5429de88ff7579d94f, type: 3}
