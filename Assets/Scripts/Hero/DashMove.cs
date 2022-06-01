@@ -12,6 +12,7 @@ public class DashMove : MonoBehaviour
     private Animator animator;
     private int baseLayer;
     private bool isDashCooled;
+    private Energy playerEnergy;
 
     public UnityEvent UpdateUI;
 
@@ -22,12 +23,14 @@ public class DashMove : MonoBehaviour
         animator = GetComponent<Animator>();
         baseLayer = animator.GetLayerIndex("Base Layer");
         isDashCooled = true;
+        playerEnergy = GetComponent<Energy>();
     }
 
     void Update()
     {
-        if (inputs.dash && !personController.IsDashing && isDashCooled)
+        if (DashUsed())
         {
+            playerEnergy.UseEnergy(playerConfigs.dashCost);
             personController.IsDashing = true;
             inputs.dash = false;
             isDashCooled = false;
@@ -38,6 +41,11 @@ public class DashMove : MonoBehaviour
         }
 
         if (personController.IsDashing) Dash();
+    }
+
+    private bool DashUsed()
+    {
+        return inputs.dash && !personController.IsDashing && isDashCooled && playerEnergy.CurrentEnergy > playerConfigs.dashCost;
     }
 
     private void Dash()

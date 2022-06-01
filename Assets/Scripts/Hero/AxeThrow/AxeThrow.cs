@@ -74,7 +74,7 @@ public class AxeThrow : MonoBehaviour
         axe.SetActive(true);
         axeRigidBody.isKinematic = false;
         axeRigidBody.transform.parent = null;
-        if (throwDirection.y < hand.position.y)
+        if (throwDirection.y < hand.position.y && animatorManager.isGrounded())
             throwDirection.y = hand.position.y;
         axe.transform.LookAt(throwDirection);
         Vector3 direction = (throwDirection - axe.transform.position).normalized;

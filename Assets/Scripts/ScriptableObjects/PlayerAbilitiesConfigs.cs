@@ -25,7 +25,8 @@ public class PlayerAbilitiesConfigs : ScriptableObject
     public float mightyPunchForce;
 
     [Header("Dash")]
-    public int dashCooldown;
     public float dashTime;
     public float dashSpeed;
+    public int dashCost;
+    public int dashCooldown;
 }
