@@ -43,7 +43,7 @@ public class DeathArena : MonoBehaviour
         while (_isActive)
         {
             yield return new WaitForSeconds(k_delay);
-            if (EnemiesAlive == 0)
+            if (EnemiesAlive <= 0)
             {
                 _isActive = false;
             }
