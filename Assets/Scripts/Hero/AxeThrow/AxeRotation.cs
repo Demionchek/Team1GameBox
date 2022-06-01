@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class AxeRotation : MonoBehaviour
 {
-    private float xRotation;
-
+    private Rigidbody rigidboy;
+    private void Start()
+    {
+        rigidboy = GetComponent<Rigidbody>();
+    }
     private void Update()
     {
-        if (this.enabled)
-            RotateAxe();
-    }
-
-    private void RotateAxe()
-    {
-        Quaternion angle = new Quaternion(transform.rotation.x,50, 90,0f);
-        angle.y += 10;
-        transform.localRotation = angle;
+        if (enabled && rigidboy.isKinematic == false)
+            gameObject.transform.Rotate(Vector3.up, 5f);
     }
 }
