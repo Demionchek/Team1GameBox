@@ -63,7 +63,7 @@ public class MIghtyPunch : MonoBehaviour
     private void Punch()
     {
         inputSystem.enabled = false;
-        energy.UseEnergy(configs.mightyPunchCost);
+        energy.UseEnergy((int)configs.mightyPunchCost);
         mouseMangaer.LookAtMouseDirection();
         animatorManager.SetMightyPunch(true);
         StartCoroutine(ShowPunchZone());

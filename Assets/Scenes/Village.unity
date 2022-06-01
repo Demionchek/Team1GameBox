@@ -1576,6 +1576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1851314121}
+  uiManager: {fileID: 1856008398}
   _playerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -41682,6 +41683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _teleportationTarget: {fileID: 0}
+  _saver: {fileID: 674706318}
   _coolDown: 1
   _isNextLevel: 1
   _nextLevelNum: 2
@@ -61825,6 +61827,17 @@ CharacterController:
   m_CorrespondingSourceObject: {fileID: 6492891450384374139, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
   m_PrefabInstance: {fileID: 2720519722575707549}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1856008398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3691655537792010142, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+  m_PrefabInstance: {fileID: 2720519722575707549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e2e5dd4e9e2d84ea5d95bd406866ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1893100986
 GameObject:
   m_ObjectHideFlags: 0
@@ -74725,15 +74738,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2720519723002769577, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 31.5
       objectReference: {fileID: 0}
     - target: {fileID: 2720519723002769577, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 18.72
       objectReference: {fileID: 0}
     - target: {fileID: 2720519723002769577, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -83.78
       objectReference: {fileID: 0}
     - target: {fileID: 2720519723002769577, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_LocalRotation.w
@@ -74767,34 +74780,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPresets
       objectReference: {fileID: 0}
-    - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 43.14485
-      objectReference: {fileID: 0}
-    - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 19.204998
-      objectReference: {fileID: 0}
-    - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -92.11601
-      objectReference: {fileID: 0}
-    - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.4234131
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859379872155337675, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 43.14485
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859379872155337675, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859379872155337675, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -83.59601
-      objectReference: {fileID: 0}
     - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: _enemyPacks.Array.data[0]
       value: 
@@ -74807,22 +74792,6 @@ PrefabInstance:
       propertyPath: _enemyPacks.Array.data[2]
       value: 
       objectReference: {fileID: 565234879}
-    - target: {fileID: 7690895737987162133, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 43.14485
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690895737987162133, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 19.204998
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690895737987162133, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -92.11601
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690895737987162133, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.4234131
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
 --- !u!1001 &3573061891448043014

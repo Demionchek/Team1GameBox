@@ -5,6 +5,7 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     [SerializeField] private CharacterController controller;
+    [SerializeField] private UiManager uiManager;
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private float _damage = 10;
     [SerializeField] private Saver _saver;
@@ -13,6 +14,14 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private CheckPoint[] checkPoints;
 
     private void Start()
+    {
+        SetPlayerPos();
+        SetPlayersData();
+        uiManager.CheckEnergyBar();
+        uiManager.CheckHpBar();
+    }
+
+    private void SetPlayerPos()
     {
         Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
 
@@ -27,7 +36,15 @@ public class Teleporter : MonoBehaviour
         controller.enabled = false;
         controller.transform.position = spawnPosition;
         controller.enabled = true;
-    }
+    } 
+
+    private void SetPlayersData()
+    {
+        _saver.LoadEnergy();
+        _saver.LoadHealth();
+        controller.GetComponent<Health>().Hp = _saver.HealthToSave;
+        controller.GetComponent<Energy>().CurrentEnergy = _saver.EnergyToSave;
+    } 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -40,8 +57,8 @@ public class Teleporter : MonoBehaviour
     private IEnumerator TelerportToSafePosition(CharacterController controller)
     {
         yield return new WaitForSeconds(_teleportDelay);
-        if (controller.TryGetComponent<IDamageable>(out IDamageable playerHealth))
-            playerHealth.TakeDamage(_damage, _playerLayer);
+        if (controller.TryGetComponent(out IDamageable playerHealth))
+            playerHealth.TakeDamage((int)_damage, _playerLayer);
 
         Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
 

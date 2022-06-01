@@ -24,13 +24,13 @@ public class Health : MonoBehaviour, IDamageable
         }
     }
 
-    public void RestoreHealth(float amount)
+    public void RestoreHealth(int amount)
     {
         Hp += amount;
         Hp = Mathf.Min(Hp, _hp);
     }
 
-    public void TakeDamage(float damage, LayerMask mask)
+    public void TakeDamage(int damage, LayerMask mask)
     {
         if (_layerMask == mask)
         {
