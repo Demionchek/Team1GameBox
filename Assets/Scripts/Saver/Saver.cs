@@ -56,7 +56,7 @@ public class Saver : MonoBehaviour
         LoadHealthPacks();
     }
 
-    public void SaveCheckPoint( int checkPointNumber)
+    public void SaveCheckPoint(int checkPointNumber)
     {
         CheckPointToSave = checkPointNumber;
         BinaryFormatter bf = new BinaryFormatter();
@@ -101,11 +101,15 @@ public class Saver : MonoBehaviour
             file.Close();
             LevelToSave = data.SavedLevel;
         }
+        if (LevelToSave == 0)
+        {
+
+        }
     }
 
     public void SaveHealth(int health)
     {
-        Debug.Log($"Saved level = {LevelToSave}");
+        Debug.Log($"Saved Health = {HealthToSave}");
         HealthToSave = health;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedHealth.dat");
@@ -124,11 +128,10 @@ public class Saver : MonoBehaviour
             SaveData data = (SaveData)bf.Deserialize(file);
             file.Close();
             HealthToSave = data.SavedHealth;
-
-            if (HealthToSave == 0)
-            {
-                HealthToSave = 100;
-            }
+        }
+        if (HealthToSave == 0)
+        {
+            HealthToSave = 100;
         }
     }
 
@@ -153,11 +156,11 @@ public class Saver : MonoBehaviour
             SaveData data = (SaveData)bf.Deserialize(file);
             file.Close();
             EnergyToSave = data.SavedEnergy;
+        }
 
-            if (EnergyToSave == 0)
-            {
-                EnergyToSave = 100;
-            }
+        if (EnergyToSave == 0)
+        {
+            EnergyToSave = 100;
         }
     }
 

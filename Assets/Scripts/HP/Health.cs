@@ -4,13 +4,13 @@ using StarterAssets;
 
 public class Health : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int _hp;
+    [SerializeField] private float _hp;
     [SerializeField] private LayerMask _layerMask;
 
     public static Action HPChanged;
 
-    public int Hp { get; set; }
-    public int FullHP { get; private set; }
+    public float Hp { get; set; }
+    public float FullHP { get; private set; }
 
     private bool _isPlayer;
 

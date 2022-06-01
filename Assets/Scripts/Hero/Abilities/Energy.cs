@@ -3,7 +3,7 @@ using UnityEngine;
 public class Energy : MonoBehaviour
 {
     [SerializeField] private int energy;
-    public int CurrentEnergy { get; set; }
+    public float CurrentEnergy { get; set; }
 
     private void Start()
     {

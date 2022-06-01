@@ -1576,6 +1576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1851314121}
+  uiManager: {fileID: 2060605985}
   _playerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -41682,6 +41683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _teleportationTarget: {fileID: 0}
+  _saver: {fileID: 674706318}
   _coolDown: 1
   _isNextLevel: 1
   _nextLevelNum: 2
@@ -62100,6 +62102,17 @@ Transform:
   m_Father: {fileID: 565234880}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -255, z: 0}
+--- !u!114 &2060605985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3691655537792010142, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+  m_PrefabInstance: {fileID: 2720519722575707549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e2e5dd4e9e2d84ea5d95bd406866ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2070973628
 GameObject:
   m_ObjectHideFlags: 0
@@ -74561,7 +74574,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 302195315208296835, guid: 9c0bb4e6e22ed6e42ba5267bc2b403e0, type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 302195315208296835, guid: 9c0bb4e6e22ed6e42ba5267bc2b403e0, type: 3}
       propertyPath: m_LocalScale.x

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     [SerializeField] private CharacterController controller;
+    [SerializeField] private UiManager uiManager;
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private float _damage = 10;
     [SerializeField] private Saver _saver;
@@ -16,6 +17,8 @@ public class Teleporter : MonoBehaviour
     {
         SetPlayerPos();
         SetPlayersData();
+        uiManager.CheckEnergyBar();
+        uiManager.CheckHpBar();
     }
 
     private void SetPlayerPos()
@@ -37,6 +40,8 @@ public class Teleporter : MonoBehaviour
 
     private void SetPlayersData()
     {
+        _saver.LoadEnergy();
+        _saver.LoadHealth();
         controller.GetComponent<Health>().Hp = _saver.HealthToSave;
         controller.GetComponent<Energy>().CurrentEnergy = _saver.EnergyToSave;
     } 
