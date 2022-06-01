@@ -8,7 +8,6 @@ public class AxeReturn : MonoBehaviour
     [SerializeField] private float timeToRelocateAfterCollision;
     [SerializeField] private Transform playersHand;
     [SerializeField] private LayerMask playersLayer;
-    [SerializeField] private LayerMask enemyLayer;
 
     private int counter = 0;
     private Rigidbody rigidBody;
@@ -22,14 +21,12 @@ public class AxeReturn : MonoBehaviour
     {
         if (other.gameObject.layer != playersLayer)
         {
-
-            //Debug.Log("AXEEEEEEEEEEEEEEE" + other.gameObject.name);
-            //Debug.DrawLine(transform.position, playersHand.position, Color.blue, 10f);
             rigidBody.isKinematic = true;
             if (other.transform.TryGetComponent(out IDamageable damageable) && counter == 0)
             {
+                gameObject.transform.parent = other.transform;
                 counter++;
-                damageable.TakeDamage(configs.axeThrowDmg, enemyLayer);
+                damageable.TakeDamage(configs.axeThrowDmg, configs.enemyLayer);
             }
             StartCoroutine(ReturnAxe());
         }

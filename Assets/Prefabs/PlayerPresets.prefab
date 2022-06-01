@@ -114,6 +114,10 @@ PrefabInstance:
       propertyPath: _deathScreen
       value: 
       objectReference: {fileID: 3879397082357845277}
+    - target: {fileID: 4016277203805293335, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4416926083347132230, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: mightyPunchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -122,6 +126,30 @@ PrefabInstance:
       propertyPath: mightyPunchEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3691655537792010142}
+    - target: {fileID: 4798104671829357040, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.07452668
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798104671829357040, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5499682
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798104671829357040, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.09537973
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798104671829357040, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: m_Center.x
+      value: -0.012294498
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798104671829357040, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: m_Center.y
+      value: 0.007835631
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798104671829357040, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.6255395
+      objectReference: {fileID: 0}
     - target: {fileID: 4798104673400631554, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: UpdateUI.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -146,6 +174,10 @@ PrefabInstance:
       propertyPath: mousePositionManager
       value: 
       objectReference: {fileID: 6734549053333737289}
+    - target: {fileID: 4798104673400631611, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: throwPower
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4798104673400631611, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: axeThrowEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -333,6 +365,10 @@ PrefabInstance:
       propertyPath: input
       value: 
       objectReference: {fileID: 7400889128310670605}
+    - target: {fileID: 8697813075947007674, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
+      propertyPath: aimColliderLayerMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8800532875544861488, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
       propertyPath: _saver
       value: 
