@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public abstract class Item : MonoBehaviour
 {
-    [SerializeField] private float hpRestore;
-    [SerializeField] private float energyRestore;
+    [SerializeField] private int hpRestore;
+    [SerializeField] private int energyRestore;
 
     private Health playersHealth;
     private Energy playersEnergy;
@@ -26,10 +25,16 @@ public abstract class Item : MonoBehaviour
         return inventory.AddItem(this);
     }
 
+    public virtual void SetPlayersHealthAndEnergy(Health health, Energy energy)
+    {
+        playersHealth = health;
+        playersEnergy = energy;
+    }
+
     public virtual void Use()
     {
-        playersHealth.RestoreHealth((int)hpRestore);
-        playersEnergy.RestoreEnergy((int)energyRestore);
+        playersHealth.RestoreHealth(hpRestore);
+        playersEnergy.RestoreEnergy(energyRestore);
         UpdateUi?.Invoke();
         Destroy(this, 1f);
     }

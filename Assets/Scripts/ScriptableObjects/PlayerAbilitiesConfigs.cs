@@ -13,7 +13,7 @@ public class PlayerAbilitiesConfigs : ScriptableObject
 
     [Header("Air Atack")]
     public float airAtackDamage;
-    public float airAtackCost;
+    public int airAtackCost;
     public float airAtackCooldown;
     public float airAtackRange;
 
