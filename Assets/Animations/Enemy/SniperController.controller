@@ -48,7 +48,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e8b06e9612c70d24796465ffd523df04, type: 2}
+  m_Motion: {fileID: -203655887218126122, guid: cb0e25a2d45bf574c85c6c19b3fc416d, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -99,7 +99,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e84102f4f7489644384efb2611c68ff2, type: 2}
+  m_Motion: {fileID: -203655887218126122, guid: b341b21d354572d4c970dff3b40126f2, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -137,8 +137,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack
-  m_Speed: 0.5
+  m_Name: Shoot
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 9812982625026617}
@@ -153,7 +153,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 466ad878ee9e50d45bf397055c25d6a6, type: 2}
+  m_Motion: {fileID: -203655887218126122, guid: 1014fcd5b89c1984a8d051f8061de6cb, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -207,7 +207,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7aa1fe54a1a8f294f9e4d7a0ee975df5, type: 2}
+  m_Motion: {fileID: -203655887218126122, guid: 77a3495c94bd8524f8f37ffb729b1e99, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -236,7 +236,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 40c08a65791d24e45a2cde39947d6a6f, type: 2}
+  m_Motion: {fileID: -203655887218126122, guid: 0d6491318ab17fa41b9145975f4bee79, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

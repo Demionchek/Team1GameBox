@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 74bef4a4a5612fb4891a7c9990b9ec59
+guid: 0a68306a854887e4d85797966ede6a8a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -39,18 +39,18 @@ ModelImporter:
       takeName: Take 001
       internalID: 0
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      hasAdditiveReferencePose: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -118,15 +118,15 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: nurbsCircle2
+    rootMotionBoneName: full
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 17c1b5b95c0541f41a1985fcdc57854a, type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
