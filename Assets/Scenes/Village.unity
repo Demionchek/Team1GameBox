@@ -61670,10 +61670,6 @@ PrefabInstance:
       value: PlayerPresets
       objectReference: {fileID: 0}
     - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: _enemyPacks.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: _enemyPacks.Array.data[0]
       value: 
       objectReference: {fileID: 1463433655}

@@ -1,6 +1,5 @@
 using StarterAssets;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PauseHandler : MonoBehaviour
 {
@@ -32,11 +31,6 @@ public class PauseHandler : MonoBehaviour
     private void UsePause(bool isActive, float timeScale)
     {
         pauseScreen.SetActive(isActive);
-        if (playerInputs.gameObject.TryGetComponent<PlayerInput>(out PlayerInput input))
-        {
-            input.enabled = !isActive;
-            playerInputs.atack = !isActive; 
-        }
         Time.timeScale = timeScale;
         isPaused = !isPaused;
     }
@@ -75,5 +69,6 @@ public class PauseHandler : MonoBehaviour
     public void Unpause()
     {
         UsePause(false,1);
+        playerInputs.atack = false;
     }
 }

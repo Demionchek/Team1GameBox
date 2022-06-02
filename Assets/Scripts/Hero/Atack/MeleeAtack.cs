@@ -33,7 +33,8 @@ public class MeleeAtack : MonoBehaviour
 
     //to reset player rotation
     private void resetRotationState()
-    {
+    {        
+        //input.atack = false;
         mousePositionManager.StopLookingAtMouseDirection();
         animatorManager.ResetBackwardRun();
     }

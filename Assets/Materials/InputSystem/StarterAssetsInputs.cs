@@ -21,7 +21,6 @@ namespace StarterAssets
 		public bool inventorySecondSlot;
 		public bool pause;
 
-
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -30,17 +29,19 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 		private UseInteractor interactor;
+		private bool isPaused;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 
-        private void Start()
+		private void Start()
         {
             interactor = GetComponent<UseInteractor>();
         }
 
         public void OnMove(InputValue value)
 		{
-			MoveInput(value.Get<Vector2>());
+			if(!isPaused)
+				MoveInput(value.Get<Vector2>());
 		}
 
 		public void OnLook(InputValue value)
@@ -63,45 +64,53 @@ namespace StarterAssets
 
 		public void OnInteract(InputValue value)
 		{
-			InteractInput(value.isPressed);
+			if (!isPaused)
+				InteractInput(value.isPressed);
 			interactor.TryInteract();
 		}
 
 		public void OnAtack(InputValue value)
 		{
-			AtackInput(value.isPressed);
+			if (!isPaused)
+				AtackInput(value.isPressed);
 		}
 
 		public void OnThrowAxe(InputValue value)
 		{
-			if(TryGetComponent<AnimatorManager>(out AnimatorManager animatorManager) && !animatorManager.GetMightyPunch())
+			if(TryGetComponent<AnimatorManager>(out AnimatorManager animatorManager)
+				&& !animatorManager.GetMightyPunch() && !isPaused)
 				ThrowAxeInput(value.isPressed);
 		}
 
 		public void OnMightyPunch(InputValue value)
 		{
-			if(TryGetComponent<AnimatorManager>(out AnimatorManager animatorManager) && animatorManager.isGrounded())
+			if(TryGetComponent<AnimatorManager>(out AnimatorManager animatorManager)
+				&& animatorManager.isGrounded() && !isPaused)
 			MightyPunchInput(value.isPressed);
 		}
 		
 		public void OnInventoryFirstSlot(InputValue value)
 		{
-			InventoryFirstSlotInput(value.isPressed);
+			if (!isPaused)
+				InventoryFirstSlotInput(value.isPressed);
 		}		
 		
 		public void OnInventorySecondSlot(InputValue value)
 		{
-			InventorySecondSlotInput(value.isPressed);
+			if (!isPaused)
+				InventorySecondSlotInput(value.isPressed);
 		}		
 		
 		public void OnPause(InputValue value)
 		{
 			PauseInput(value.isPressed);
+			isPaused = !isPaused;
 		}
 
 		public void OnDash(InputValue value)
 		{
-			DashInput(value.isPressed);
+			if (!isPaused)
+				DashInput(value.isPressed);
 		}
 
 		public void OnSprint(InputValue value)

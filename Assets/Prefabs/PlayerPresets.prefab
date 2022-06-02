@@ -130,6 +130,14 @@ PrefabInstance:
       propertyPath: mightyPunchEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3691655537792010142}
+    - target: {fileID: 4416926083347132240, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: energyItemPrefab
+      value: 
+      objectReference: {fileID: 8239540357060027237, guid: 2224a9c02de66434984abc030c7a1ea6, type: 3}
+    - target: {fileID: 4416926083347132240, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: healthItemPrefab
+      value: 
+      objectReference: {fileID: 363463885388783538, guid: bc2dc8da74dd2964e94e33a983af1509, type: 3}
     - target: {fileID: 4798104673400631554, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: UpdateUI.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -430,6 +438,10 @@ PrefabInstance:
       propertyPath: _saver
       value: 
       objectReference: {fileID: 2720519723248160275}
+    - target: {fileID: 8800532875544861488, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
+      propertyPath: _enemyPacks.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
 --- !u!114 &3691655537792010142 stripped
