@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(MeleeAtack))]
 public class AirAtack : MonoBehaviour
 {
     [SerializeField] private PlayerAbilitiesConfigs configs;
@@ -14,6 +13,7 @@ public class AirAtack : MonoBehaviour
     private StarterAssetsInputs inputs;
     private Energy energy;
     private bool isAirAtackCooled = true;
+
     public bool IsAirAtack { get { return !animatorManager.isGrounded() && inputs.atack; } }
 
     private const int hitCount = 15;
@@ -34,23 +34,23 @@ public class AirAtack : MonoBehaviour
 
     private void CheckAirAtack()
     {
-        if (AirAtackAvailable())
+        if (IsAirAtack && AirAtackAvailable())
         {
             animatorManager.SetAirAtack(IsAirAtack);
         }
         TryUseAirAtack();
     }
 
-    private bool AirAtackAvailable()
+    public bool AirAtackAvailable()
     {
-        return IsAirAtack && energy.CheckEnergyAvailable(configs.airAtackCost) && isAirAtackCooled;
+        return   energy.CheckEnergyAvailable(configs.airAtackCost) && isAirAtackCooled;
     }
 
     private void TryUseAirAtack()
     {
         if (animatorManager.GetAirAtack() && animatorManager.isGrounded())
         {
-            energy.UseEnergy((int)configs.airAtackCost);
+            energy.UseEnergy(configs.airAtackCost);
             UpdateUI.Invoke();
             animatorManager.SetAirAtack(false);
             AirHit();
