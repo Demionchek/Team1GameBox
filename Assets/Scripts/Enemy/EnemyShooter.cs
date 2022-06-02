@@ -15,7 +15,7 @@ public class EnemyShooter : MonoBehaviour
     {
         target.y += k_targetHeightCorrection;
         GameObject newBullet = Instantiate(_bullet, _shootPosition.position, Quaternion.identity);
-        newBullet.GetComponent<Bullet>().SetDamageAndMask(damage, _mask);
+        newBullet.GetComponent<DamageObj>().SetDamageAndMask(damage, _mask);
         var rb = newBullet.GetComponent<Rigidbody>();
         Vector3 pushVector = target - _shootPosition.position;
         rb.AddForce(pushVector.normalized * _bulletSpeed, ForceMode.Impulse);

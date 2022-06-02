@@ -30,6 +30,11 @@ public class YagaSummons : MonoBehaviour
         _hutRb = _hutOnLegs.GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        //Debug.Log($"Hut pos = {_hutOnLegs.transform.position}");
+    }
+
     public void GetNewRandomSummon(ThirdPersonController controller, float timeToDel)
     {
         int r = Random.Range(0, _summonsCount);
@@ -53,15 +58,19 @@ public class YagaSummons : MonoBehaviour
     {
         _rotator.Rotate(0, Random.Range(0, 360),0);
         Vector3 pos = _rotator.GetChild(0).position;
-        _attackMarkers.CreateHutRaySpell(pos, controller.transform.position, delay);
+        //_attackMarkers.CreateHutRaySpell(pos, controller.transform.position, delay);
         Vector3 lookDir = controller.transform.position;
+
         yield return new WaitForSeconds(delay);
+
         _hutOnLegs.transform.position = pos;
         lookDir.y = 0;
         _hutOnLegs.transform.LookAt(lookDir);
         Vector3 forceVector = lookDir - pos;
         _hutRb.AddForce(forceVector.normalized * _hutSpeed, ForceMode.Impulse);
+
         yield return new WaitForSeconds(_hutRunTime);
+
         _hutRb.velocity = Vector3.zero;
     }
 

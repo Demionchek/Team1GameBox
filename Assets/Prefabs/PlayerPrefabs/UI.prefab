@@ -394,7 +394,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseHandler, Assembly-CSharp
-        m_MethodName: Unpause
+        m_MethodName: ChangeSettingsBar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -527,7 +527,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseHandler, Assembly-CSharp
-        m_MethodName: OpenSettingsScreen
+        m_MethodName: ChangeSettingsBar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 75e2dfb37b0c9b74f8d20ed45d3fc0ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 468701f88e1f0d7418b8d0a1604c0fee, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4867,7 +4867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5051051912512145923
 RectTransform:
   m_ObjectHideFlags: 0
