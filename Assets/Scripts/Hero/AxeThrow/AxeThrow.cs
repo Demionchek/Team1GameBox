@@ -68,6 +68,11 @@ public class AxeThrow : MonoBehaviour
         mouseManager.LookAtMouseDirection();
     }
 
+    public void SmoothLookAtThrowDirection()
+    {
+        mouseManager.SmoothLookAtMouseDirection();
+    }
+
     //Called in the middle of Animation
     private void ThrowAxe()
     {
