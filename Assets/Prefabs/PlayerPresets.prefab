@@ -153,7 +153,7 @@ PrefabInstance:
     - target: {fileID: 4798104673400631611, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: axe
       value: 
-      objectReference: {fileID: 4627441218816632525}
+      objectReference: {fileID: 906487694254348503}
     - target: {fileID: 4798104673400631611, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: hand
       value: 
@@ -247,9 +247,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3543280864232451522, guid: 91c687c4626af4c4799542635206a26c, type: 3}
   m_PrefabInstance: {fileID: 2720519722337734127}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4627441218816632525 stripped
+--- !u!1 &906487694254348503 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7347274261715905314, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2978365375183951160, guid: 91c687c4626af4c4799542635206a26c, type: 3}
   m_PrefabInstance: {fileID: 2720519722337734127}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2720519722582352371
@@ -415,6 +415,10 @@ PrefabInstance:
       propertyPath: _saver
       value: 
       objectReference: {fileID: 2720519723248160275}
+    - target: {fileID: 8800532875544861488, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
+      propertyPath: _enemyPacks.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
 --- !u!4 &6734549052596317469 stripped

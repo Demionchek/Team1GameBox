@@ -2184,7 +2184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 623408506313326126, guid: f834a62774e224c43bcd09c3fb52bff4, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 623408506313326126, guid: f834a62774e224c43bcd09c3fb52bff4, type: 3}
       propertyPath: m_IsActive
@@ -61668,10 +61668,6 @@ PrefabInstance:
     - target: {fileID: 2720519723002769582, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_Name
       value: PlayerPresets
-      objectReference: {fileID: 0}
-    - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-      propertyPath: _enemyPacks.Array.size
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: _enemyPacks.Array.data[0]
