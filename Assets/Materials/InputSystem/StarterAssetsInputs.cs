@@ -20,6 +20,7 @@ namespace StarterAssets
 		public bool inventoryFirstSlot;
 		public bool inventorySecondSlot;
 		public bool pause;
+		public bool isPaused;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -29,7 +30,7 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 		private UseInteractor interactor;
-		private bool isPaused;
+
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 
@@ -104,7 +105,6 @@ namespace StarterAssets
 		public void OnPause(InputValue value)
 		{
 			PauseInput(value.isPressed);
-			isPaused = !isPaused;
 		}
 
 		public void OnDash(InputValue value)
