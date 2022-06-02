@@ -302,11 +302,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06082c877af382d45b2ae375a623fde4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  Target: {fileID: 8399645091220033060, guid: 91c687c4626af4c4799542635206a26c, type: 3}
   EnemiesConfigs: {fileID: 11400000, guid: 27a95c0492d17d74fadb6425e9c5ea24, type: 2}
   DOMoveSpeed: 0.7
   _enemyType: 1
   _maxSpecialMoveDistance: 7
+  _maxSpecialMoveHeight: 1
   _specialAttack: {fileID: 7400000, guid: e8b06e9612c70d24796465ffd523df04, type: 2}
 --- !u!114 &3761463602285258528
 MonoBehaviour:
