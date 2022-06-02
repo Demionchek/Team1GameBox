@@ -76,9 +76,13 @@ public class AxeThrow : MonoBehaviour
     //Called in the middle of Animation
     private void ThrowAxe()
     {
+        if (axe.TryGetComponent<AxeReturn>(out AxeReturn axeReturn))
+            axeReturn.isActive = true;
+
         axe.SetActive(true);
         axeRigidBody.isKinematic = false;
         axeRigidBody.transform.parent = null;
+
         if (throwDirection.y < hand.position.y && animatorManager.isGrounded())
             throwDirection.y = hand.position.y;
         axe.transform.LookAt(throwDirection);
