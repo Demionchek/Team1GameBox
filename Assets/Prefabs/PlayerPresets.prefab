@@ -626,10 +626,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8140726235682760265}
-    - target: {fileID: 1908635409, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeSettingsBar
-      objectReference: {fileID: 0}
     - target: {fileID: 719757473193722177, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -678,42 +674,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6010483232648832814, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6184102958556457179, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8140726235682760265}
-    - target: {fileID: 6184102958556457179, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
-      objectReference: {fileID: 0}
     - target: {fileID: 7273254024700419735, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8140726235682760265}
-    - target: {fileID: 7273254024700419735, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 7453247851256123281, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8140726235682760265}
-    - target: {fileID: 7453247851256123281, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Unpause
-      objectReference: {fileID: 0}
     - target: {fileID: 7472591728869914714, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8140726235682760265}
-    - target: {fileID: 7472591728869914714, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeSettingsBar
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b636504a6bc23c478037a74a3c54646, type: 3}
 --- !u!1 &8550291571143647441 stripped
