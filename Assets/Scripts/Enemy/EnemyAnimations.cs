@@ -29,7 +29,7 @@ public class EnemyAnimations : MonoBehaviour
     private bool _isDead;
 
     public void Shoot() 
-        => m_Shooter.Shoot(m_EnemyController.Target.position, m_EnemyController.EnemiesConfigs.giantDamage);
+        => m_Shooter.Shooting(m_EnemyController.Target.position, m_EnemyController.EnemiesConfigs.giantDamage);
     public void SpecialFinished() => m_EnemyController.SpecialIsFinished();
     public void TrySpecial() => m_EnemyController.SpecialAttackChance();
     public void StartAttackEvent() => m_EnemyController.SetIsAttacking(true);

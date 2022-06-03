@@ -826,12 +826,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5300578265587573231}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.016666666, y: 0.01, z: 0.016666666}
   m_Children: []
-  m_Father: {fileID: 6154573279999343676}
-  m_RootOrder: 1
+  m_Father: {fileID: 302195315208296835}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &9111292169419408017
 SkinnedMeshRenderer:
@@ -1104,83 +1104,14 @@ Transform:
   m_GameObject: {fileID: 6766330974447404509}
   m_LocalRotation: {x: 0.1321262, y: -0, z: 0.002161186, w: 0.9912306}
   m_LocalPosition: {x: 0, y: 1.550106, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.666646, y: 1.028226, z: 1.5937679}
   m_Children:
   - {fileID: 8171709363539535316}
   - {fileID: 2575123134383745943}
   - {fileID: 2112686104560578363}
-  m_Father: {fileID: 6154573279999343676}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 26.806622, y: -3.7050614, z: 0.650754}
---- !u!1 &6783194436412696198
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6154573279999343676}
-  - component: {fileID: 254808653121807942}
-  - component: {fileID: 8123116695761286418}
-  m_Layer: 0
-  m_Name: Giant Zombie Run
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6154573279999343676
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6783194436412696198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6666666, y: 1, z: 1.6666666}
-  m_Children:
-  - {fileID: 1817551022910266536}
-  - {fileID: 4017255308001282372}
   m_Father: {fileID: 302195315208296835}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &254808653121807942
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6783194436412696198}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0d6491318ab17fa41b9145975f4bee79, type: 3}
-  m_Controller: {fileID: 9100000, guid: 4a2113bd492c0fa45ae7babc1812b1f1, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8123116695761286418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6783194436412696198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8cb30bbf830a546bc31691d9e23f7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EnemyController: {fileID: 7729486799591362589}
-  m_Shooter: {fileID: 3761463602285258528}
-  m_DamageDealer: {fileID: 1980173214}
-  _attackAnimationSpeed: 2
+  m_LocalEulerAnglesHint: {x: 26.806622, y: -3.7050614, z: 0.650754}
 --- !u!1 &6931798365769710400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1311,8 @@ GameObject:
   - component: {fileID: 1980173215}
   - component: {fileID: 1980173214}
   - component: {fileID: 1203382570}
+  - component: {fileID: 4943656074276199498}
+  - component: {fileID: 4537458247037899840}
   m_Layer: 6
   m_Name: Giant
   m_TagString: Enemy
@@ -1399,7 +1332,8 @@ Transform:
   m_LocalScale: {x: 0.6, y: 1, z: 0.6}
   m_Children:
   - {fileID: 7812066077130866050}
-  - {fileID: 6154573279999343676}
+  - {fileID: 1817551022910266536}
+  - {fileID: 4017255308001282372}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1511,6 +1445,41 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!95 &4943656074276199498
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699334395585826986}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0d6491318ab17fa41b9145975f4bee79, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4a2113bd492c0fa45ae7babc1812b1f1, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4537458247037899840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699334395585826986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8cb30bbf830a546bc31691d9e23f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EnemyController: {fileID: 7729486799591362589}
+  m_Shooter: {fileID: 3761463602285258528}
+  m_DamageDealer: {fileID: 1980173214}
+  _attackAnimationSpeed: 2
 --- !u!1 &7778894938669692646
 GameObject:
   m_ObjectHideFlags: 0
