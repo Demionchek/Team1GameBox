@@ -31,18 +31,12 @@ public class MeleeAtack : MonoBehaviour
         }
     }
 
-    //to reset player rotation
-    private void resetRotationState()
-    {        
-        //input.atack = false;
+    //to reset state in first frame of Atack animation by AnimationEvent
+    public void resetAtackStates()
+    {
+        animatorManager.SetAtack(false);        
         mousePositionManager.StopLookingAtMouseDirection();
         animatorManager.ResetBackwardRun();
-    }
-
-    //to reset state in first frame of Atack animation by AnimationEvent
-    public void resetAtackState()
-    {
-        animatorManager.SetAtack(false);
     }
     
     public MousePositionManager GetMouseManager() 
