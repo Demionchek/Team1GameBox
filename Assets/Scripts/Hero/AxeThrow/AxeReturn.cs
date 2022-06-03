@@ -7,7 +7,7 @@ public class AxeReturn : MonoBehaviour
     [SerializeField] private PlayerAbilitiesConfigs configs;
     [SerializeField] private float timeToRelocateAfterCollision;
     [SerializeField] private Transform playersHand;
-    [SerializeField] private LayerMask playersLayer;
+    [SerializeField] private LayerMask layersToIgnore;
     [SerializeField] private float timeToReturn;
 
     private int counter = 0;
@@ -44,8 +44,10 @@ public class AxeReturn : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
+        if (!other.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller)
+            && other.gameObject.layer != layersToIgnore)
         {
+            Debug.Log(other.name);
             rigidBody.isKinematic = true;
             if (other.transform.TryGetComponent(out IDamageable damageable) && counter == 0)
             {

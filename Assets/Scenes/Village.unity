@@ -61813,6 +61813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPresets
       objectReference: {fileID: 0}
+    - target: {fileID: 4980250838476743831, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: layersToIgnore.m_Bits
+      value: 4236
+      objectReference: {fileID: 0}
     - target: {fileID: 6734549053333737289, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: aimColliderLayerMask.m_Bits
       value: 8183
