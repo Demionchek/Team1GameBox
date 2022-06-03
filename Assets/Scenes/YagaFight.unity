@@ -3301,6 +3301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: yaga_Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 7756935160170860496, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7756935160170860500, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
       propertyPath: Target
       value: 
