@@ -15,9 +15,10 @@ public class AxeThrow : MonoBehaviour
     private AnimatorManager animatorManager;
     private MousePositionManager mouseManager;
     private StarterAssetsInputs input;
+
+    private Rigidbody axeRigidBody;
     private Vector3 throwDirection;
     private bool isAxeThrow;
-    private Rigidbody axeRigidBody;
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class AxeThrow : MonoBehaviour
 
     private void CheckAxeThrowState()
     {
-        if (!isAxeThrow && input.throwAxe) 
+        if (!isAxeThrow && input.throwAxe && !animatorManager.GetAtack()) 
         {
             TryUpdateUi();
             ChangeAxeThrowState();
@@ -43,8 +44,7 @@ public class AxeThrow : MonoBehaviour
 
     private void TryUpdateUi()
     {
-        if (axeThrowEvent != null)
-            axeThrowEvent.Invoke();
+        axeThrowEvent?.Invoke();
     }
 
     private void ChangeAxeThrowState()
@@ -76,9 +76,13 @@ public class AxeThrow : MonoBehaviour
     //Called in the middle of Animation
     private void ThrowAxe()
     {
+        if (axe.TryGetComponent<AxeReturn>(out AxeReturn axeReturn))
+            axeReturn.isActive = true;
+
         axe.SetActive(true);
         axeRigidBody.isKinematic = false;
         axeRigidBody.transform.parent = null;
+
         if (throwDirection.y < hand.position.y && animatorManager.isGrounded())
             throwDirection.y = hand.position.y;
         axe.transform.LookAt(throwDirection);
@@ -96,7 +100,6 @@ public class AxeThrow : MonoBehaviour
 
     private void resetThrowAxeState()
     {
-        input.throwAxe = false;
         animatorManager.SetAxeThrow(false);
     }
 }

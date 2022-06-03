@@ -6,12 +6,16 @@ public class AnimatorManager : MonoBehaviour
     private Animator animator;
 
     private readonly int atack = Animator.StringToHash("Atack");
+    private readonly int atackType = Animator.StringToHash("AtackType");
+    private readonly int countOfAtackTypies = 3;
+
     private readonly int axeThrow = Animator.StringToHash("AxeThrow"); 
     private readonly int airAtack = Animator.StringToHash("AirAtack");
     private readonly int mightyPunch = Animator.StringToHash("MightyPunch");
     private readonly int Speed = Animator.StringToHash("Speed");
     private readonly int grounded = Animator.StringToHash("Grounded");
     private readonly int dead = Animator.StringToHash("IsDead");
+
 
     private const int AngleOfView = 90;
     private bool backward;
@@ -25,7 +29,8 @@ public class AnimatorManager : MonoBehaviour
     public void SetAtack(bool value)
     {
         animator.SetBool(atack, value);
-        SetAxeThrow(false);
+        if(!animator.GetBool(atack))
+            animator.SetInteger(atackType, Random.Range(0, countOfAtackTypies));
     }
 
     public void SetAxeThrow(bool value)
@@ -53,6 +58,16 @@ public class AnimatorManager : MonoBehaviour
     public void SetDeadAnimation(bool value)
     {
         animator.SetBool(dead, value);
+    }
+
+    public bool GetAtack()
+    {
+        return animator.GetBool(atack);
+    }
+
+    public bool GetAxeThrow()
+    {
+        return animator.GetBool(axeThrow);
     }
 
     public bool GetMightyPunch()
