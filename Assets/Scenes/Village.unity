@@ -321,6 +321,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -686318331032246733, guid: dc4523f1adfc4d143bab80ecf4635e24, type: 3}
+--- !u!1 &732949953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 906487694254348503, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+  m_PrefabInstance: {fileID: 2720519722575707549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &786235829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1193,6 +1198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Groups Enemies Forest
       objectReference: {fileID: 0}
+    - target: {fileID: 7525407919601486643, guid: 849b7acc1f366d74299a4e7351b74d32, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7630804878197072438, guid: 849b7acc1f366d74299a4e7351b74d32, type: 3}
       propertyPath: Target
       value: 
@@ -1957,6 +1966,10 @@ PrefabInstance:
     - target: {fileID: 1259109204597477552, guid: 9feeee989550a8d4a9308d61edaf256c, type: 3}
       propertyPath: m_Name
       value: Groups Enemies
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259109204597477552, guid: 9feeee989550a8d4a9308d61edaf256c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2250828163495650556, guid: 9feeee989550a8d4a9308d61edaf256c, type: 3}
       propertyPath: Target
@@ -61693,6 +61706,10 @@ PrefabInstance:
       propertyPath: _enemyPacks.Array.data[5]
       value: 
       objectReference: {fileID: 864162118}
+    - target: {fileID: 7446544210033720532, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: axe
+      value: 
+      objectReference: {fileID: 732949953}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
 --- !u!1001 &7787167169138748252
