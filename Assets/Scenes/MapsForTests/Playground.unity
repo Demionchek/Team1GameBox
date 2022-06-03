@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpRestore: 0
-  energyRestore: 10
+  energyRestore: 0
 --- !u!135 &196664168
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d3d4d0db4265c47a9ed4d8ab6f484b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpRestore: 10
+  hpRestore: 0
   energyRestore: 0
 --- !u!135 &253057395
 SphereCollider:
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpRestore: 0
-  energyRestore: 10
+  energyRestore: 0
 --- !u!135 &504087601
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d3d4d0db4265c47a9ed4d8ab6f484b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpRestore: 10
+  hpRestore: 0
   energyRestore: 0
 --- !u!135 &952948742
 SphereCollider:
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d3d4d0db4265c47a9ed4d8ab6f484b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpRestore: 10
+  hpRestore: 0
   energyRestore: 0
 --- !u!135 &1092409448
 SphereCollider:
@@ -1664,6 +1664,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092409445}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1132058277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 906487694254348503, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+  m_PrefabInstance: {fileID: 1193668263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1193668263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1671,6 +1676,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 906487694254348503, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2720519723002769577, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1735,6 +1744,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
       value: 0.42341325
       objectReference: {fileID: 0}
+    - target: {fileID: 6957141622590685466, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6ee6e78c28c4ac94aa98fd8fdbbf9f26, type: 2}
+    - target: {fileID: 7446544210033720532, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: axe
+      value: 
+      objectReference: {fileID: 1132058277}
     - target: {fileID: 7690895737987162133, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_LocalPosition.y
       value: 11.565
@@ -1928,7 +1945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d3d4d0db4265c47a9ed4d8ab6f484b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpRestore: 10
+  hpRestore: 0
   energyRestore: 0
 --- !u!135 &1646063323
 SphereCollider:
@@ -2560,7 +2577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d3d4d0db4265c47a9ed4d8ab6f484b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpRestore: 10
+  hpRestore: 0
   energyRestore: 0
 --- !u!1 &1829365993
 GameObject:
@@ -2609,7 +2626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpRestore: 0
-  energyRestore: 10
+  energyRestore: 0
 --- !u!135 &1829365996
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2719,7 +2736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpRestore: 0
-  energyRestore: 10
+  energyRestore: 0
 --- !u!135 &1946405078
 SphereCollider:
   m_ObjectHideFlags: 0

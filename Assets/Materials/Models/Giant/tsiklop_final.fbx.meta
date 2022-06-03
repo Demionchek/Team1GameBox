@@ -3,7 +3,12 @@ guid: 9737e79fe5e4f774cb30aeffb9f1c03c
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn21
+    second: {fileID: 2100000, guid: 38c84876e08ac8548aa3eaddb25344b0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
