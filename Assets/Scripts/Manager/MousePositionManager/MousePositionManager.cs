@@ -6,7 +6,8 @@ public class MousePositionManager : MonoBehaviour
 {
     [SerializeField] private StarterAssetsInputs input;
     [SerializeField] private LayerMask aimColliderLayerMask;
-    
+    [SerializeField] private float playerRotationSpeed = 5f;
+
     private RaycastHit raycastHit;
     private GameObject player;
     private ThirdPersonController playerController;
@@ -58,7 +59,17 @@ public class MousePositionManager : MonoBehaviour
         GetMousePosition();
         playerController.isAtacking = true;
         Vector3 direction = new Vector3(MousePosition.x, player.transform.position.y, MousePosition.z);
-        player.transform.LookAt(Vector3.Lerp(player.transform.position, direction, 1f));
+        player.transform.LookAt(Vector3.Lerp(player.transform.position, direction, Time.deltaTime));
+        GetAngleBetweenMouseAndPlayer();
+    }
+
+    public void SmoothLookAtMouseDirection()
+    {
+        GetMousePosition();
+        playerController.isAtacking = true;
+        Vector3 direction = new Vector3(MousePosition.x, player.transform.position.y, MousePosition.z);
+        var targetRotation = Quaternion.LookRotation(direction - player.transform.position);
+        player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetRotation, playerRotationSpeed * Time.deltaTime);
         GetAngleBetweenMouseAndPlayer();
     }
 

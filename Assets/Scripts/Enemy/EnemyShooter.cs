@@ -11,7 +11,7 @@ public class EnemyShooter : MonoBehaviour
 
     private const float k_targetHeightCorrection = 1f;
 
-    public void Shoot( Vector3 target, int damage)
+    public void Shooting( Vector3 target, int damage)
     {
         target.y += k_targetHeightCorrection;
         GameObject newBullet = Instantiate(_bullet, _shootPosition.position, Quaternion.identity);

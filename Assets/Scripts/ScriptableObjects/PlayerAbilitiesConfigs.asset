@@ -18,7 +18,7 @@ MonoBehaviour:
   axeThrowDmg: 25
   axeThrowCooldown: 1.5
   airAtackDamage: 30
-  airAtackCost: 10
+  airAtackCost: 5
   airAtackCooldown: 5
   airAtackRange: 2
   mightyPunchDamage: 25

@@ -26,14 +26,15 @@ public class MeleeAtack : MonoBehaviour
         if (input.atack && animatorManager.isGrounded())
         {
             animatorManager.SetAtack(true);
-            mousePositionManager.LookAtMouseDirection();
+            mousePositionManager.SmoothLookAtMouseDirection();
             animatorManager.CheckBackwardRun();
         }
     }
 
     //to reset player rotation
     private void resetRotationState()
-    {
+    {        
+        //input.atack = false;
         mousePositionManager.StopLookingAtMouseDirection();
         animatorManager.ResetBackwardRun();
     }
@@ -41,7 +42,6 @@ public class MeleeAtack : MonoBehaviour
     //to reset state in first frame of Atack animation by AnimationEvent
     public void resetAtackState()
     {
-        input.atack = false;
         animatorManager.SetAtack(false);
     }
     
