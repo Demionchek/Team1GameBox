@@ -1067,7 +1067,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AirAtack
+  m_Name: Specials
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 2770064613313578811}
@@ -1403,7 +1403,7 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: AirAtack
+    m_Name: Specials
     m_StateMachine: {fileID: -2733082626430586183}
     m_Mask: {fileID: 0}
     m_Motions: []
