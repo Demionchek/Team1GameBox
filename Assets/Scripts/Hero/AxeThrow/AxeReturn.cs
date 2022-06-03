@@ -7,29 +7,29 @@ public class AxeReturn : MonoBehaviour
     [SerializeField] private PlayerAbilitiesConfigs configs;
     [SerializeField] private float timeToRelocateAfterCollision;
     [SerializeField] private Transform playersHand;
-    [SerializeField] private LayerMask layersToIgnore;
-    [SerializeField] private float timeToReturn;
+    [SerializeField] private LayerMask playersLayer;
 
     private int counter = 0;
     private Rigidbody rigidBody;
-    public bool isActive { get; set; }
 
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if (isActive)
-            StartCoroutine(ReturnCoroutine());
-    }
-
-    private IEnumerator ReturnCoroutine()
-    {
-        yield return new WaitForSeconds(timeToReturn);
-        isActive = false;
-        StartCoroutine(ReturnAxe());
+        if (!other.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
+        {
+            rigidBody.isKinematic = true;
+            if (other.transform.TryGetComponent(out IDamageable damageable) && counter == 0)
+            {
+                gameObject.transform.parent = other.transform;
+                counter++;
+                damageable.TakeDamage((int)configs.axeThrowDmg, configs.enemyLayer);
+            }
+            StartCoroutine(ReturnAxe());
+        }
     }
 
     private IEnumerator ReturnAxe()
@@ -40,22 +40,5 @@ public class AxeReturn : MonoBehaviour
         gameObject.transform.parent = playersHand;
         gameObject.transform.localPosition = new Vector3(0, 0, 0);
         gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
-    }    
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller)
-            && other.gameObject.layer != layersToIgnore)
-        {
-            Debug.Log(other.name);
-            rigidBody.isKinematic = true;
-            if (other.transform.TryGetComponent(out IDamageable damageable) && counter == 0)
-            {
-                gameObject.transform.parent = other.transform;
-                counter++;
-                damageable.TakeDamage((int)configs.axeThrowDmg, configs.enemyLayer);
-            }
-            StartCoroutine(ReturnAxe());
-        }
     }
 }

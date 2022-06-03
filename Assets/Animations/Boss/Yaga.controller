@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b0ce0ceb840b96a4fa90389950380ec1, type: 2}
+  m_Motion: {fileID: 7400000, guid: b33c3665fd96d5146a3d684070f2a223, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -41,10 +41,10 @@ AnimatorStateMachine:
     m_Position: {x: 30, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8910971787862691343}
-    m_Position: {x: -90, y: 290, z: 0}
+    m_Position: {x: -120, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 651035243371460234}
-    m_Position: {x: 200, y: 290, z: 0}
+    m_Position: {x: 30, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7712075006692716200}
     m_Position: {x: 30, y: -60, z: 0}
@@ -612,7 +612,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ConeAttack
-  m_Speed: 1
+  m_Speed: 0.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8231595591631447096}
@@ -625,7 +625,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f07a9dee134498846bbe09e73e3a22b5, type: 2}
+  m_Motion: {fileID: 7400000, guid: b33c3665fd96d5146a3d684070f2a223, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -780,7 +780,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 84f6d099becee1341b7f14fd84db266b, type: 2}
+  m_Motion: {fileID: 1827226128182048838, guid: cca05897c6d6c6148903634f02ee4e89, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
