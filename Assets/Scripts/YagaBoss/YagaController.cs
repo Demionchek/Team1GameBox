@@ -12,7 +12,7 @@ public class YagaController : MonoBehaviour
     [SerializeField] private float _markerDelay;
     private ThirdPersonController _controller;
 
-    private const float _lookHeight = 1f;
+    private const float _lookHeight = 0f;
     private const float _cycleDelay = 0.5f;
 
 

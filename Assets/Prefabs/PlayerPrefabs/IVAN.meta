@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Materials/Textures.meta
-guid: 849c8f97d0f0ccf4c9a86cc982d45708
-========
 guid: b6e393a66680d144bb6f366974b3ae7b
->>>>>>>> parent of 96d0331 (AtackAniamtionsAdded):Assets/Prefabs/PlayerPrefabs/IVAN.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

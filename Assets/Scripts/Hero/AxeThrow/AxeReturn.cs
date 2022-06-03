@@ -8,40 +8,15 @@ public class AxeReturn : MonoBehaviour
     [SerializeField] private float timeToRelocateAfterCollision;
     [SerializeField] private Transform playersHand;
     [SerializeField] private LayerMask playersLayer;
-    [SerializeField] private float timeToReturn;
 
     private int counter = 0;
     private Rigidbody rigidBody;
-    public bool isActive { get; set; }
 
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-        if (isActive)
-            StartCoroutine(ReturnCoroutine());
-    }
-
-    private IEnumerator ReturnCoroutine()
-    {
-        yield return new WaitForSeconds(timeToReturn);
-        isActive = false;
-        StartCoroutine(ReturnAxe());
-    }
-
-    private IEnumerator ReturnAxe()
-    {
-        yield return new WaitForSeconds(timeToRelocateAfterCollision);
-        counter = 0;
-        gameObject.SetActive(false);
-        gameObject.transform.parent = playersHand;
-        gameObject.transform.localPosition = new Vector3(0, 0, 0);
-        gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
-    }    
-    
     private void OnTriggerEnter(Collider other)
     {
         if (!other.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
@@ -55,5 +30,15 @@ public class AxeReturn : MonoBehaviour
             }
             StartCoroutine(ReturnAxe());
         }
+    }
+
+    private IEnumerator ReturnAxe()
+    {
+        yield return new WaitForSeconds(timeToRelocateAfterCollision);
+        counter = 0;
+        gameObject.SetActive(false);
+        gameObject.transform.parent = playersHand;
+        gameObject.transform.localPosition = new Vector3(0, 0, 0);
+        gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 }
