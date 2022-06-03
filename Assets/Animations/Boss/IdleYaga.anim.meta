@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/Hero/Materials.meta
+guid: 7c454d25090985143834e74a61cae2d2
+folderAsset: yes
+DefaultImporter:
+========
 guid: 84f6d099becee1341b7f14fd84db266b
 NativeFormatImporter:
+>>>>>>>> parent of c95d445 (YagaAnimations added):Assets/Animations/Boss/IdleYaga.anim.meta
   externalObjects: {}
   mainObjectFileID: 7400000
   userData: 

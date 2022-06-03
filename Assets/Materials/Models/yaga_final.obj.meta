@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Enemies/Stump/stump_atak.fbx.meta
+guid: ffb90bfa55536bb47bd6227cd1713588
+========
 guid: 58d642d3f3b44e1498714b34aed4788d
+>>>>>>>> parent of c95d445 (YagaAnimations added):Assets/Materials/Models/yaga_final.obj.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []

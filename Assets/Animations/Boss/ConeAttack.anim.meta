@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/Hero/Materials/pCube3Mat.mat.meta
+guid: 63345e78715901741adeb9442b8d2708
+========
 guid: f07a9dee134498846bbe09e73e3a22b5
+>>>>>>>> parent of c95d445 (YagaAnimations added):Assets/Animations/Boss/ConeAttack.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
