@@ -17,7 +17,7 @@ public class EnemyAnimations : MonoBehaviour
     private int _animIDSpecial;
     private int _animIDDeath;
 
-    private int _currAnimState;
+    private int _currAnimState = 10;
     private const int _idleState = 0;
     private const int _moveState = 1;
     private const int _attackState = 2;
@@ -43,16 +43,25 @@ public class EnemyAnimations : MonoBehaviour
         m_EnemyController = GetComponent<EnemyController>();
         m_DamageDealer = GetComponent<DamageDealer>();
         AssignAnimationsIDs();
+        //OnStateChange(_idleState);
     }
 
     private void Update()
     {
-        _currAnimState = m_EnemyController.CurrState;
-        if (_animator != null)
+        if (_currAnimState != m_EnemyController.CurrState)
         {
+            _currAnimState = m_EnemyController.CurrState;
             StateSwitcher();
         }
     }
+
+    //public void OnStateChange(int currState)
+    //{
+    //    if (_animator != null)
+    //    {
+    //        StateSwitcher();
+    //    }
+    //}
 
     private void StateSwitcher()
     {

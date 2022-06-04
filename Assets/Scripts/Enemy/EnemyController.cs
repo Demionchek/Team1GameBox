@@ -17,6 +17,8 @@ public class EnemyController : EnemyStateMachine
     [Tooltip("Special Animation of your enemy type")]
     [SerializeField] private AnimationClip _specialAttack;
     private CapsuleCollider _capsule;
+    private EnemyAnimations _enemyAnimations;
+
     private enum EnemyType
     {
         Likho,
@@ -24,6 +26,7 @@ public class EnemyController : EnemyStateMachine
         Normal
     }
     private int deathActionCounter = 0;
+    private int lastState = 10;
 
     private const int _idleState = 0;
     private const int _moveState = 1;
@@ -74,7 +77,7 @@ public class EnemyController : EnemyStateMachine
     private void EnemyPresetsOnType()
     {
         Agent = GetComponent<NavMeshAgent>();
-
+        _enemyAnimations = GetComponent<EnemyAnimations>();
         switch (_enemyType)
         {
             case EnemyType.Likho:
@@ -109,8 +112,19 @@ public class EnemyController : EnemyStateMachine
         if (Target != null)
         {
             EnemyBehaviour();
+            //AnimatorUpdater();
         }
     }
+
+    //private void AnimatorUpdater()
+    //{
+    //    if (CurrState != lastState)
+    //    {
+    //        Debug.Log($" {CurrState}  {lastState}");
+    //        lastState = CurrState;
+    //        _enemyAnimations.OnStateChange(CurrState);
+    //    }
+    //}
 
     public void Revive()
     {
@@ -266,6 +280,8 @@ public class EnemyController : EnemyStateMachine
         {
             _isCharging = false;
         }
+
+
 
         switch (CurrState)
         {

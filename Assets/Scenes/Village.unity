@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: f1061e770fac646499186fcd4d315953
+  m_OcclusionCullingData: {fileID: 36300000, guid: af6284b10bcebbe40a36525752ae432c, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -1195,7 +1195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7525407919601486643, guid: 849b7acc1f366d74299a4e7351b74d32, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7630804878197072438, guid: 849b7acc1f366d74299a4e7351b74d32, type: 3}
       propertyPath: Target
@@ -61710,6 +61710,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4957137726339755806, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957137727638594586, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957137727779978243, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957137727823295510, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957137727864279579, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957137728283576937, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957137728329718010, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957137728452761965, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957137728461386377, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7787167168267814217, guid: e7ad729a8de550649899c31cb32cd28b, type: 3}
       propertyPath: m_Name
       value: Fogs
