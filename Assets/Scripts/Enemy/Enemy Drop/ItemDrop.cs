@@ -7,7 +7,7 @@ public class ItemDrop : MonoBehaviour
     [SerializeField] private float timeToSpawnAfterDeath;
 
     private Health health;
-    private bool isDead { get { return health.Hp > 1; } }
+    private bool isDead { get { return health.Hp < 1; } }
     private int counter;
 
     private void Start()

@@ -237,12 +237,15 @@ GameObject:
   m_Component:
   - component: {fileID: 8847994372289558530}
   - component: {fileID: 8847994372289558533}
-  m_Layer: 0
+  - component: {fileID: 2146230580}
+  - component: {fileID: 2146230578}
+  - component: {fileID: 2146230579}
+  m_Layer: 6
   m_Name: Yaga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8847994372289558530
 Transform:
@@ -276,3 +279,45 @@ MonoBehaviour:
   AttackDistance: 6
   _attackCooldown: 5
   _markerDelay: 2
+--- !u!136 &2146230580
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847994372289558532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2146230578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847994372289558532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89280019563a6e74aacee967af984e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 20
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &2146230579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847994372289558532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6ef1430134d2240aab1d0d698b6090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

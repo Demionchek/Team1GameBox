@@ -5,36 +5,36 @@ using UnityEngine;
 public class Cullable : MonoBehaviour
 {
     //speed of the transition
-    public float m_alphaChangeSpeed = 3f;
+    public float alphaChangeSpeed = 3f;
 
     // name of the variable in the shader that will be adjusted
-    public string m_shaderVariableName = "Alpha";
+    public string shaderVariableName = "_Alpha";
 
     // end point of culling
-    public float m_fadeTo = 0;
+    public float fadeTo = 0.5f;
     // start point of culling
-    public float m_fadeFrom = 1;
+    public float fadeFrom = 1;
 
     // the float for the transition
-    private float m_currentAlpha = 1.0f;
+    private float currentAlpha = 1.0f;
 
     // The material that will be affected by the transition 
-    private Material m_mat;
+    private Material mat;
     // Set to true if we want to fade the object out because it's in the way
-    private bool m_occluding;
+    private bool occluding;
 
     // Set to true when the fade control co-routine is active
-    private bool m_inCoroutine = false;
+    private bool inCoroutine = false;
 
 
     public bool Occluding
     {
-        get { return m_occluding; }
+        get { return occluding; }
         set
         {
-            if (m_occluding != value)
+            if (occluding != value)
             {
-                m_occluding = value;
+                occluding = value;
                 OnOccludingChanged();
             }
         }
@@ -44,63 +44,63 @@ public class Cullable : MonoBehaviour
     void Start()
     {
         // grab the renderer's material and set the current alpha 
-        m_mat = GetComponent<Renderer>().material;
-        m_currentAlpha = m_fadeFrom;
+        mat = GetComponent<Renderer>().material;
+        currentAlpha = fadeFrom;
     }
 
     // Called when the Occluding value is changed
     private void OnOccludingChanged()
     {
-        if (!m_inCoroutine)
+        if (!inCoroutine)
         {
             StartCoroutine(FadeAlphaRoutine());
-            m_inCoroutine = true;
+            inCoroutine = true;
             Debug.Log("Started OnOccludingChanged");
         }
     }
 
     private IEnumerator FadeAlphaRoutine()
     {
-        while (m_currentAlpha != GetTargetAlpha())
+        while (currentAlpha != GetTargetAlpha())
         {
-            float alphaShift = m_alphaChangeSpeed * Time.deltaTime;
+            float alphaShift = alphaChangeSpeed * Time.deltaTime;
 
             float targetAlpha = GetTargetAlpha();
-            if (m_currentAlpha < targetAlpha)
+            if (currentAlpha < targetAlpha)
             {
-                m_currentAlpha += alphaShift;
-                if (m_currentAlpha > targetAlpha)
+                currentAlpha += alphaShift;
+                if (currentAlpha > targetAlpha)
                 {
-                    m_currentAlpha = targetAlpha;
+                    currentAlpha = targetAlpha;
                 }
             }
             else
             {
-                m_currentAlpha -= alphaShift;
-                if (m_currentAlpha < targetAlpha)
+                currentAlpha -= alphaShift;
+                if (currentAlpha < targetAlpha)
                 {
-                    m_currentAlpha = targetAlpha;
+                    currentAlpha = targetAlpha;
                 }
             }
 
             /*m_mat.color = new Color(m_mat.color.r, m_mat.color.g, m_mat.color.b, m_currentAlpha); */
-            m_mat.SetFloat(m_shaderVariableName, m_currentAlpha);
+            mat.SetFloat(shaderVariableName, currentAlpha);
 
             yield return null;
         }
-        m_inCoroutine = false;
+        inCoroutine = false;
     }
 
     // Return the alpha value we want on all of our models
     private float GetTargetAlpha()
     {
-        if (m_occluding)
+        if (occluding)
         {
-            return m_fadeTo;
+            return fadeTo;
         }
         else
         {
-            return m_fadeFrom;
+            return fadeFrom;
         }
     }
 }

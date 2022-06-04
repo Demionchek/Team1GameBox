@@ -4,23 +4,74 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    [SerializeField] private Transform safePosition;
-    [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private float damage;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private UiManager uiManager;
+    [SerializeField] private LayerMask _playerLayer;
+    [SerializeField] private float _damage = 10;
+    [SerializeField] private Saver _saver;
+    [SerializeField] private float _teleportDelay = 0.5f;
+    [Header("CheckPoints")]
+    [SerializeField] private CheckPoint[] checkPoints;
+
+    private void Start()
+    {
+        SetPlayerPos();
+        SetPlayersData();
+        uiManager.CheckEnergyBar();
+        uiManager.CheckHpBar();
+    }
+
+    private void SetPlayerPos()
+    {
+        Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
+
+        foreach (var point in checkPoints)
+        {
+            if (_saver.CheckPointToSave == point.PointNumber)
+            {
+                spawnPosition = point.SpawnPoint.position;
+                break;
+            }
+        }
+        controller.enabled = false;
+        controller.transform.position = spawnPosition;
+        controller.enabled = true;
+    } 
+
+    private void SetPlayersData()
+    {
+        _saver.LoadEnergy();
+        _saver.LoadHealth();
+        controller.GetComponent<Health>().Hp = _saver.HealthToSave;
+        controller.GetComponent<Energy>().CurrentEnergy = _saver.EnergyToSave;
+    } 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.TryGetComponent<ThirdPersonController>(out ThirdPersonController playerController))
+        if (other.transform.TryGetComponent<CharacterController>(out CharacterController playerController))
         {
-            StartCoroutine(TelerportToSafePosition(playerController.transform));
+            StartCoroutine(TelerportToSafePosition(playerController));
         }
     }
 
-    private IEnumerator TelerportToSafePosition(Transform player)
+    private IEnumerator TelerportToSafePosition(CharacterController controller)
     {
-        yield return new WaitForSeconds(1f);
-        if (player.TryGetComponent<IDamageable>(out IDamageable playerHealth))
-            playerHealth.TakeDamage(damage, playerLayer);
-        player.position = safePosition.position;
+        yield return new WaitForSeconds(_teleportDelay);
+        if (controller.TryGetComponent(out IDamageable playerHealth))
+            playerHealth.TakeDamage((int)_damage, _playerLayer);
+
+        Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
+
+        foreach (var point in checkPoints)
+        {
+            if (_saver.CheckPointToSave == point.PointNumber)
+            {
+                spawnPosition = point.SpawnPoint.position;
+                break;
+            }
+        }
+        controller.enabled = false;
+        controller.transform.position = spawnPosition;
+        controller.enabled = true;
     }
 }

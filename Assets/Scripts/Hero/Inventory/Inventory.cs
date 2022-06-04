@@ -2,11 +2,20 @@ using System;
 using UnityEngine;
 using StarterAssets;
 
+public enum ItemType
+{
+    HealthPotion = 0,
+    EnergyPotion = 1
+}
+
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private Sprite commonInventorySlotIcon;
     [SerializeField] private int maxInventorySlots;
     [SerializeField] private int countOfItemsInSlot;
+    [SerializeField] private GameObject healthItemPrefab;
+    [SerializeField] private GameObject energyItemPrefab;
+
 
     private Item[,] inventory;
     private StarterAssetsInputs playerInputs;
@@ -14,12 +23,6 @@ public class Inventory : MonoBehaviour
     public Sprite CommonSlotImage { get { return commonInventorySlotIcon; } }
 
     public static event Action<int, int, bool> UpdateUI;
-
-    enum ItemType
-    {
-        HealthPotion = 0,
-        EnergyPotion = 1
-    }
 
     private void Start()
     {
@@ -48,7 +51,7 @@ public class Inventory : MonoBehaviour
 
     public bool AddItem<T>(T item) where T : Item
     {
-        var dimensionIndex = GetItemType<T>(item);
+        var dimensionIndex = GetItemType(item);
         var emptySlot = FindFirstEmptySlot(dimensionIndex);
         if (emptySlot != -1)
         {
@@ -76,7 +79,6 @@ public class Inventory : MonoBehaviour
             var length = countOfItemsInSlot;
             for (int i = 0; i < length; i++)
             {
-                Debug.Log(inventory.GetLength(dimensionIndex));
                 if (inventory[dimensionIndex, i] == null)
                     return i;
             }
@@ -115,5 +117,46 @@ public class Inventory : MonoBehaviour
                 return i;
         }
         return -1;
+    }
+
+    public int GetCountOfItem(ItemType itemType)
+    {
+        switch (itemType)
+        {
+            case (ItemType.HealthPotion):
+                return FindLastItemInInventory((int)ItemType.HealthPotion) + 1;
+            case (ItemType.EnergyPotion):
+                return FindLastItemInInventory((int)ItemType.EnergyPotion) + 1;
+            default:
+                return -1;
+        }
+    }
+
+    public void AddCountOfItem(ItemType itemType, int count)
+    {
+        for(int i=0; i < count; i++)
+            AddItem(itemType);
+    }
+
+    private void AddItem(ItemType itemType)
+    {
+        var dimensionIndex = ((int)itemType);
+        var emptySlot = FindFirstEmptySlot(dimensionIndex);
+        if (emptySlot != -1)
+        {
+            TryUpdateUI(dimensionIndex, emptySlot, false);
+            if (itemType == ItemType.HealthPotion)
+            {
+                var item = Instantiate(healthItemPrefab).GetComponent<HealthItem>();
+                item.SetHealthItem(this);
+                inventory[dimensionIndex, emptySlot] = item;
+            }
+            else
+            {
+                var item = Instantiate(energyItemPrefab).GetComponent<EnergyItem>();
+                item.SetEnergyItem(this);
+                inventory[dimensionIndex, emptySlot] = item;
+            }
+        }
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63c84b93e8419a4e948f8b6b3a1ebde, type: 3}
   m_Name: EnemiesConfig
   m_EditorClassIdentifier: 
+  sightAngle: 0.7
   likhoReactDistance: 5
   likhoStoppingDistance: 1.5
   likhoSpeed: 3

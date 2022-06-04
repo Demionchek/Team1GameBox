@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8959322806773069669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8959322806773069671}
+  - component: {fileID: 8959322806773069670}
+  m_Layer: 0
+  m_Name: MarkersController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8959322806773069671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959322806773069669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.856083, y: -9.678712, z: 12.795981}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8959322806773069670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959322806773069669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2673d5bc005d1dc4a90834c891c3a74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _markersConfigs: {fileID: 0}
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _alfaValue: 0.5
+  _pondMarkerPrefab: {fileID: 4658799616723373051, guid: 657801eb17e163640bf843eaad054d14, type: 3}
+  _rayMarkerPrefab: {fileID: 5840802410234470765, guid: 919e1e41f96889a4bb6b8a49ee65cec8, type: 3}
+  _coneMarkerPrefab: {fileID: 8274135164454032761, guid: e7c9a4e3173417848a89677e2dcf5e36, type: 3}

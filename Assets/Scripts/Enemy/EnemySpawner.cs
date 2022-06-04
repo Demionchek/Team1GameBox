@@ -129,14 +129,15 @@ public class EnemySpawner : MonoBehaviour
             if (i > enemiesCount)
             {
                 StopCoroutine(BossSummonCorutine(enemiesCount));
-                Shuffle(enemiesOnBossScene);
                 break;
             }
             else
             {
-                enemiesOnBossScene[i].GetComponent<EnemyController>().Target = _controller.transform;
+                var enemyController = enemiesOnBossScene[i].GetComponent<EnemyController>();
+                enemyController.Target = _controller.transform;
                 enemiesOnBossScene[i].transform.position = point;
                 enemiesOnBossScene[i].SetActive(true);
+                enemyController.Agressive();
             }
         }
     }

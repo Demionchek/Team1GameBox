@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3215328108704002920}
   - component: {fileID: 3132377724380714395}
+  - component: {fileID: 8432349929179509592}
   m_Layer: 0
   m_Name: HutObj
   m_TagString: Untagged
@@ -24,8 +25,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4701095037354869645}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 45.44, y: 0, z: 0}
+  m_LocalRotation: {x: 0.004843768, y: 0.7513709, z: -0.0055156853, w: 0.6598394}
+  m_LocalPosition: {x: -25.764297, y: 0.53999996, z: -0.89971733}
   m_LocalScale: {x: 4, y: 3, z: 4}
   m_Children:
   - {fileID: 3085327754986296946}
@@ -48,6 +49,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &8432349929179509592
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701095037354869645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5731369614898141425
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +154,6 @@ GameObject:
   - component: {fileID: 3085327754986296946}
   - component: {fileID: 1590288866764107159}
   - component: {fileID: 8813999624302284745}
-  - component: {fileID: 222878665180148757}
   m_Layer: 0
   m_Name: HutOnLegs
   m_TagString: Untagged
@@ -212,17 +225,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &222878665180148757
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8005215630134559640}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

@@ -5,4 +5,11 @@ public class EnergyItem : Item
     {
         base.Use();
     }
+
+    public void SetEnergyItem(Inventory inventory)
+    {
+        inventory.gameObject.TryGetComponent<Health>(out Health health);
+        inventory.gameObject.TryGetComponent<Energy>(out Energy energy);
+        SetPlayersHealthAndEnergy(health, energy);
+    }
 }

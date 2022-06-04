@@ -1,20 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
-using System;
+using UnityEngine.Events;
 
 public class DashMove : MonoBehaviour
 {
-    [SerializeField] private float dashSpeed = 10;
-    [SerializeField] private float dashTime = 0.1f;
-    [SerializeField] private float dashCooldown = 2f;
+    [SerializeField] private PlayerAbilitiesConfigs playerConfigs;
 
     private ThirdPersonController personController;
     private StarterAssetsInputs inputs;
     private Animator animator;
     private int baseLayer;
     private bool isDashCooled;
+    private Energy playerEnergy;
+
+    public UnityEvent UpdateUI;
 
     private void Start()
     {
@@ -23,12 +23,14 @@ public class DashMove : MonoBehaviour
         animator = GetComponent<Animator>();
         baseLayer = animator.GetLayerIndex("Base Layer");
         isDashCooled = true;
+        playerEnergy = GetComponent<Energy>();
     }
 
     void Update()
     {
-        if (inputs.dash && !personController.IsDashing && isDashCooled)
+        if (DashUsed())
         {
+            playerEnergy.UseEnergy(playerConfigs.dashCost);
             personController.IsDashing = true;
             inputs.dash = false;
             isDashCooled = false;
@@ -41,16 +43,22 @@ public class DashMove : MonoBehaviour
         if (personController.IsDashing) Dash();
     }
 
+    private bool DashUsed()
+    {
+        return inputs.dash && !personController.IsDashing && isDashCooled && playerEnergy.CurrentEnergy > playerConfigs.dashCost;
+    }
+
     private void Dash()
     {
         Vector3 targetDirection = Quaternion.Euler(0.0f, personController._targetRotation, 0.0f) * Vector3.forward;
-        personController.Controller.Move(targetDirection.normalized * (dashSpeed * Time.deltaTime) +
+        personController.Controller.Move(targetDirection.normalized * (playerConfigs.dashSpeed * Time.deltaTime) +
                  new Vector3(0.0f, personController._verticalVelocity, 0.0f) * Time.deltaTime);
+        UpdateUI.Invoke();
     }
 
     private IEnumerator DashCorutine()
     {
-        yield return new WaitForSeconds(dashTime);
+        yield return new WaitForSeconds(playerConfigs.dashTime);
         animator.SetBool("Dash", false);
         animator.SetLayerWeight(baseLayer, 1f);
         personController.IsDashing = false;
@@ -58,7 +66,7 @@ public class DashMove : MonoBehaviour
 
     private IEnumerator TimerCorutine()
     {
-        yield return new WaitForSeconds(dashCooldown);
+        yield return new WaitForSeconds(playerConfigs.dashCooldown);
         isDashCooled = true;
     }
 }

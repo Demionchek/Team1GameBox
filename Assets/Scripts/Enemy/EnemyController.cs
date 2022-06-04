@@ -12,6 +12,7 @@ public class EnemyController : EnemyStateMachine
     [Header("EnemyType")]
     [SerializeField] private EnemyType _enemyType;
     [SerializeField] private float _maxSpecialMoveDistance = 7f;
+    [SerializeField] private float _maxSpecialMoveHeight = 1f;
     [Header("SpecialAttackAnimation")]
     [Tooltip("Special Animation of your enemy type")]
     [SerializeField] private AnimationClip _specialAttack;
@@ -54,12 +55,14 @@ public class EnemyController : EnemyStateMachine
 
     public static Action EnemyDeathAction;
 
-    private bool CanDoSpecialDistance(float maxSpecialDistance)
+    private bool CanDoSpecialDistance(float maxDistance, float maxHeight)
     {
-        if (Vector3.Distance(transform.position, Target.position) > maxSpecialDistance)
+        if (Vector3.Distance(transform.position, Target.position) < maxDistance
+           && Math.Abs(transform.position.y - transform.localScale.y - Target.position.y) < maxHeight)
         {
             return true;
         }
+
         else return false;
     }
 
@@ -160,11 +163,7 @@ public class EnemyController : EnemyStateMachine
                 SetState(new IdleState(this));
                 break;
             case _moveState:
-                SetState(new MoveState(this));
-                if (distanceToTarget <= _stopDistanceCorrection)
-                {
-                    CurrState = _attackState;
-                }
+                CheckSight(distanceToTarget);
                 break;
             case _attackState:
                 SetState(new AttackState(this));
@@ -199,11 +198,7 @@ public class EnemyController : EnemyStateMachine
                 SetState(new IdleState(this));
                 break;
             case _moveState:
-                SetState(new MoveState(this));
-                if (distanceToTarget <= Agent.stoppingDistance)
-                {
-                    CurrState = _attackState;
-                }
+                CheckSight(distanceToTarget);
                 break;
             case _attackState:
                 SetState(new AttackState(this));
@@ -244,6 +239,25 @@ public class EnemyController : EnemyStateMachine
         }
     }
 
+    private void CheckSight(float distanceToTarget)
+    {
+        if (distanceToTarget <= Agent.stoppingDistance)
+        {
+            if (IsInSight())
+            {
+                CurrState = _attackState;
+            }
+            else
+            {
+                Rotate();
+            }
+        }
+        else
+        {
+            SetState(new MoveState(this));
+        }
+    }
+
     private void LikhoControll()
     {
         float distanceToTarget = Vector3.Distance(transform.position, Target.position);
@@ -260,14 +274,13 @@ public class EnemyController : EnemyStateMachine
                 {
                     CurrState = _moveState;
                 }
-                SetState(new IdleState(this));
+                else
+                {
+                    SetState(new IdleState(this));
+                }
                 break;
             case _moveState:
-                SetState(new MoveState(this));
-                if (distanceToTarget <= _stopDistanceCorrection)
-                {
-                    CurrState = _attackState;
-                }
+                CheckSight(distanceToTarget);
                 break;
             case _attackState:
                 SetState(new AttackState(this));
@@ -306,6 +319,16 @@ public class EnemyController : EnemyStateMachine
         }
     }
 
+    private void Rotate()
+    {
+        Vector3 lookAt = Target.transform.position;
+        lookAt.y = transform.position.y;
+        Vector3 lookDir = (lookAt - transform.position).normalized;
+        Agent.enabled = false;
+        transform.forward = lookDir.normalized;
+        Agent.enabled = true;
+    }
+
     public void Agressive() => StartCoroutine(SetToMoveState());
 
     private IEnumerator SetToMoveState()
@@ -324,24 +347,32 @@ public class EnemyController : EnemyStateMachine
         _isAttaking = isAttacking;
         if (isAttacking == false)
         {
-            Vector3 lastPlayerPos = Target.position;
-            lastPlayerPos.y = transform.position.y;
-            transform.LookAt(lastPlayerPos);
-
+            Debug.Log("Look At");
+            if (IsInSight())
+            {
+                SpecialAttackChance();
+            }
+            else
+            {
+                CurrState = _moveState;
+            }
         }
+    }
 
-        if (_isAttaking == false && _enemyType != EnemyType.Normal &&
-                                    CanDoSpecialDistance(_maxSpecialMoveDistance))
-        {
-            SpecialAttackChance();
-        }
+    private bool IsInSight()
+    {
+        Vector3 lastPlayerPos = Target.position;
+        lastPlayerPos.y = transform.position.y;
+        Vector3 lookVector = lastPlayerPos - transform.position;
+        return Vector3.Dot(transform.forward, lookVector.normalized) >= EnemiesConfigs.sightAngle;
     }
 
     public void SpecialAttackChance()
     {
         bool canDoSpecial = _isSpecialAttackCooled && UnityEngine.Random.value < _specialChance;
-
-        if (canDoSpecial)
+        bool enemyType = _isAttaking == false && _enemyType != EnemyType.Normal;
+        bool special = CanDoSpecialDistance(_maxSpecialMoveDistance, _maxSpecialMoveHeight);
+        if (canDoSpecial && enemyType && special)
         {
             _isSpecialAttackCooled = false;
             CurrState = _chargeState;

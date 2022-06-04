@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -15,7 +13,7 @@ public class PlayerAbilitiesConfigs : ScriptableObject
 
     [Header("Air Atack")]
     public float airAtackDamage;
-    public float airAtackCost;
+    public int airAtackCost;
     public float airAtackCooldown;
     public float airAtackRange;
 
@@ -25,4 +23,10 @@ public class PlayerAbilitiesConfigs : ScriptableObject
     public float mightyPunchCooldown;
     public float mightyPunchRange;
     public float mightyPunchForce;
+
+    [Header("Dash")]
+    public float dashTime;
+    public float dashSpeed;
+    public int dashCost;
+    public int dashCooldown;
 }

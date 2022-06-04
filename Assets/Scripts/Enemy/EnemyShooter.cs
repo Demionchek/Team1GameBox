@@ -11,11 +11,11 @@ public class EnemyShooter : MonoBehaviour
 
     private const float k_targetHeightCorrection = 1f;
 
-    public void Shoot( Vector3 target, int damage)
+    public void Shooting( Vector3 target, int damage)
     {
         target.y += k_targetHeightCorrection;
         GameObject newBullet = Instantiate(_bullet, _shootPosition.position, Quaternion.identity);
-        newBullet.GetComponent<Bullet>().SetDamageAndMask(damage, _mask);
+        newBullet.GetComponent<DamageObj>().SetDamageAndMask(damage, _mask);
         var rb = newBullet.GetComponent<Rigidbody>();
         Vector3 pushVector = target - _shootPosition.position;
         rb.AddForce(pushVector.normalized * _bulletSpeed, ForceMode.Impulse);

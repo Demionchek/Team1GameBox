@@ -22,7 +22,6 @@ public class AttackMarkersController : MonoBehaviour
     {
         LikhoChargingState.CreateMarker += CreateEnemyPondMarker;
         GiantChargeState.CreateMarker += CreateEnemyRayMarker;
-        AirAtack.CreateMarker += CreateEnemyPondMarker;
         YagaController.CreateConeMarker += CreateSingeConeMarker;
     }
 
@@ -204,7 +203,6 @@ public class AttackMarkersController : MonoBehaviour
     {
         LikhoChargingState.CreateMarker -= CreateEnemyPondMarker;
         GiantChargeState.CreateMarker -= CreateEnemyRayMarker;
-        AirAtack.CreateMarker -= CreateEnemyPondMarker;
         YagaController.CreateConeMarker -= CreateSingeConeMarker;
     }
 }

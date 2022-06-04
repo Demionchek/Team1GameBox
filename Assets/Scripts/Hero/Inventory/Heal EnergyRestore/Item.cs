@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public abstract class Item : MonoBehaviour
 {
-    [SerializeField] private float hpRestore;
-    [SerializeField] private float energyRestore;
+    [SerializeField] private int hpRestore;
+    [SerializeField] private int energyRestore;
 
     private Health playersHealth;
     private Energy playersEnergy;
@@ -24,6 +23,12 @@ public abstract class Item : MonoBehaviour
     private bool PickUp(Inventory inventory)
     {
         return inventory.AddItem(this);
+    }
+
+    public virtual void SetPlayersHealthAndEnergy(Health health, Energy energy)
+    {
+        playersHealth = health;
+        playersEnergy = energy;
     }
 
     public virtual void Use()

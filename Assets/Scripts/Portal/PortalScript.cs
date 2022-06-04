@@ -2,56 +2,43 @@ using System.Collections;
 using UnityEngine;
 using StarterAssets;
 using System;
+using UnityEngine.SceneManagement;
 
-public class PortalScript : MonoBehaviour
+public class PortalScript : MonoBehaviour , IUse
 {
-    [SerializeField] private StarterAssetsInputs input;
-    [SerializeField] private Transform teleportationTarget;
-    bool isTeleported = false;
+    [SerializeField] private Transform _teleportationTarget;
+    [SerializeField] private Saver _saver;
+    [SerializeField] private float _coolDown = 1f;
+    [SerializeField] private bool _isNextLevel;
+    [SerializeField] private int _nextLevelNum;
+    private bool _isCooled = true;
 
-    public static event Action<bool> PlayerInTrigger;
-
-    private void Start()
+    public void Use(CharacterController controller)
     {
-        PlayerInTrigger(false);
-    }
-
-    public void SetTeleportTimer()
-    {
-        isTeleported = true;
-        StartCoroutine(TeleportTimerCorutine());
-    } 
-
-    private IEnumerator TeleportTimerCorutine()
-    {
-        yield return new WaitForSeconds(1f);
-        isTeleported = false;
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-
-        if (other.TryGetComponent(out ThirdPersonController thirdPerson))
+        if (_isCooled && !_isNextLevel)
         {
-            PlayerInTrigger(true);
+            controller.enabled = false;
+            controller.transform.position = _teleportationTarget.position;
+            controller.enabled = true;
+            _isCooled = false;
+            StartCoroutine(CoolDown());
+        }
 
-            if (input.interact && !isTeleported)
-            {
-                other.transform.position = teleportationTarget.position;
+        if (_isCooled && _isNextLevel)
+        {
+            _saver.SaveCheckPoint(0);
+            int health = (int)controller.GetComponent<Health>().Hp;
+            _saver.SaveHealth(health);
+            int energy = (int)controller.GetComponent<Energy>().CurrentEnergy;
+            _saver.SaveEnergy(energy);
+            SceneManager.LoadScene(_nextLevelNum);
 
-                if (teleportationTarget.TryGetComponent(out PortalScript portalScript))
-                {
-                    portalScript.SetTeleportTimer();
-                }
-            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private IEnumerator CoolDown()
     {
-        if (other.TryGetComponent(out ThirdPersonController thirdPerson))
-        {
-            PlayerInTrigger(false);
-        }
+        yield return new WaitForSeconds(_coolDown);
+        _isCooled = true;
     }
 }
