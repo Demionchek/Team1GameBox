@@ -1329,7 +1329,7 @@ Transform:
   m_GameObject: {fileID: 7699334395585826986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.14322178, y: 1.03, z: 7.742}
-  m_LocalScale: {x: 0.6, y: 1, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7812066077130866050}
   - {fileID: 1817551022910266536}
@@ -1476,9 +1476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8cb30bbf830a546bc31691d9e23f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnemyController: {fileID: 7729486799591362589}
-  m_Shooter: {fileID: 3761463602285258528}
-  m_DamageDealer: {fileID: 1980173214}
   _attackAnimationSpeed: 2
 --- !u!1 &7778894938669692646
 GameObject:
