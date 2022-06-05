@@ -100,9 +100,12 @@ public class PlayerSounds : MonoBehaviour
     }
     public void PlayDashSound()
     {
-        int r = Random.Range(0, dashArray.Length);
-        dashSound.clip = dashArray[r];
-        dashSound.Play();
+        if (dashSound.isPlaying == false)
+        {
+            int r = Random.Range(0, dashArray.Length);
+            dashSound.clip = dashArray[r];
+            dashSound.Play();
+        }
     }
 
     private void OnLand(AnimationEvent animationEvent)
