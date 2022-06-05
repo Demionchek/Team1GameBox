@@ -31,7 +31,6 @@ public class MousePositionManager : MonoBehaviour
         return angle;
     }
 
-    // MOUSEUPDATE
     public Vector3 GetMousePosition()
     {
         OnRaycastSystem();
@@ -58,19 +57,22 @@ public class MousePositionManager : MonoBehaviour
     {
         GetMousePosition();
         playerController.isAtacking = true;
-        Vector3 direction = new Vector3(MousePosition.x, player.transform.position.y, MousePosition.z);
-        player.transform.LookAt(Vector3.Lerp(player.transform.position, direction, Time.deltaTime));
+        player.transform.LookAt(new Vector3(MousePosition.x,player.transform.position.y,MousePosition.z));
         GetAngleBetweenMouseAndPlayer();
     }
 
     public void SmoothLookAtMouseDirection()
     {
-        GetMousePosition();
         playerController.isAtacking = true;
-        Vector3 direction = new Vector3(MousePosition.x, player.transform.position.y, MousePosition.z);
-        var targetRotation = Quaternion.LookRotation(direction - player.transform.position);
+        var targetRotation = Quaternion.LookRotation(GetDirection() - player.transform.position);
         player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetRotation, playerRotationSpeed * Time.deltaTime);
         GetAngleBetweenMouseAndPlayer();
+    }
+
+    private Vector3 GetDirection()
+    {
+        GetMousePosition();
+        return  new Vector3(MousePosition.x, player.transform.position.y, MousePosition.z);
     }
 
     public void StopLookingAtMouseDirection()

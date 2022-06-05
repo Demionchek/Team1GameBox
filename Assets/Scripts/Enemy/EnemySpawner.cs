@@ -18,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float _spawnMinDistance;
     [SerializeField] private float _spawnDelay;
 
+    private int currentEnemyFromList; 
 
     private bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
@@ -56,6 +57,7 @@ public class EnemySpawner : MonoBehaviour
                 enemyObject.SetActive(false);
             }
         }
+        currentEnemyFromList = 0;
     }
 
     private void Start()
@@ -113,7 +115,8 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator BossSummonCorutine(int enemiesCount)
     {
-        for (int i = 0; i < enemiesOnBossScene.Count; i++)
+
+        for (int i = currentEnemyFromList; i < enemiesOnBossScene.Count; i++)
         {
             yield return new WaitForSeconds(_spawnDelay);
             Vector3 point;
@@ -126,7 +129,7 @@ public class EnemySpawner : MonoBehaviour
 #endif
             }
 
-            if (i > enemiesCount)
+            if (i > (currentEnemyFromList + enemiesCount))
             {
                 StopCoroutine(BossSummonCorutine(enemiesCount));
                 break;
@@ -138,7 +141,17 @@ public class EnemySpawner : MonoBehaviour
                 enemiesOnBossScene[i].transform.position = point;
                 enemiesOnBossScene[i].SetActive(true);
                 enemyController.Agressive();
+                enemyController.Revive();
             }
+        }
+
+        if (currentEnemyFromList <= enemiesOnBossScene.Count)
+        {
+            currentEnemyFromList += enemiesCount +1;
+        }
+        else
+        {
+            currentEnemyFromList = 0;
         }
     }
 }
