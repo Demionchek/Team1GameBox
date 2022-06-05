@@ -51,6 +51,8 @@ public class PlayerSounds : MonoBehaviour
     [SerializeField] private AudioClip[] dashArray;
     [Space(5)]
     [SerializeField] private AudioClip[] groundedArray;
+    [Space(5)]
+    [SerializeField] private AudioClip[] damagedArray;
 
     public void KickCDSound()
     {
@@ -84,6 +86,17 @@ public class PlayerSounds : MonoBehaviour
     public void PlayKickSound()
     {
         kickSound.Play();
+    }
+
+    public void PlayDamagedSound()
+    {
+        int r = Random.Range(0, damagedArray.Length);
+        if (r! > damagedArray.Length)
+        {
+
+            takeDamageSound.clip = damagedArray[r];
+            takeDamageSound.Play();
+        }
     }
 
     public void PlayThrowSound()
