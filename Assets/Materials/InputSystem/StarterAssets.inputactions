@@ -315,7 +315,7 @@
                     "name": "",
                     "id": "fe39a828-1955-4efa-bcd2-4bd9d0387ba8",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "ThrowAxe",

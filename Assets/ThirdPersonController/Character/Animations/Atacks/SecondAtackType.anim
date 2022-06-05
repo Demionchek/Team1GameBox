@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AtackAnimation
+  m_Name: SecondAtackType
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -45969,15 +45969,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
+  - time: 0.033333335
     functionName: resetAtackState
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.16666667
-    functionName: SwingSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -45985,13 +45978,6 @@ AnimationClip:
     messageOptions: 0
   - time: 0.36666667
     functionName: AttackSphereCast
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.96666664
-    functionName: resetRotationState
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

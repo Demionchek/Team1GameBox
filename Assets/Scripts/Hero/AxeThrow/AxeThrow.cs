@@ -15,9 +15,11 @@ public class AxeThrow : MonoBehaviour
     private AnimatorManager animatorManager;
     private MousePositionManager mouseManager;
     private StarterAssetsInputs input;
+
+    private Rigidbody axeRigidBody;
     private Vector3 throwDirection;
     private bool isAxeThrow;
-    private Rigidbody axeRigidBody;
+    private AxeReturn isAxeReturn;
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class AxeThrow : MonoBehaviour
         axeRigidBody = axe.GetComponent<Rigidbody>();
         animatorManager = GetComponent<AnimatorManager>();
         mouseManager = GetComponent<MeleeAtack>().GetMouseManager();
+        isAxeReturn = axe.GetComponent<AxeReturn>();
     }
 
     private void Update()
@@ -34,17 +37,23 @@ public class AxeThrow : MonoBehaviour
 
     private void CheckAxeThrowState()
     {
-        if (!isAxeThrow && input.throwAxe) 
+        if (ThrowAxe()) 
         {
             TryUpdateUi();
             ChangeAxeThrowState();
         }
     }
 
+    private bool ThrowAxe()
+    {
+        Debug.Log($"!isAxeThrow {!isAxeThrow}");
+        Debug.Log($"isAxeReturn {!isAxeReturn.isActive}");
+        return !isAxeThrow && input.throwAxe && !isAxeReturn.isActive;
+    }
+
     private void TryUpdateUi()
     {
-        if (axeThrowEvent != null)
-            axeThrowEvent.Invoke();
+        axeThrowEvent?.Invoke();
     }
 
     private void ChangeAxeThrowState()
@@ -74,11 +83,15 @@ public class AxeThrow : MonoBehaviour
     }
 
     //Called in the middle of Animation
-    private void ThrowAxe()
+    private void ThrowAxeEvent()
     {
+        if (axe.TryGetComponent<AxeReturn>(out AxeReturn axeReturn))
+            axeReturn.isActive = true;
+
         axe.SetActive(true);
         axeRigidBody.isKinematic = false;
         axeRigidBody.transform.parent = null;
+
         if (throwDirection.y < hand.position.y && animatorManager.isGrounded())
             throwDirection.y = hand.position.y;
         axe.transform.LookAt(throwDirection);
@@ -96,7 +109,6 @@ public class AxeThrow : MonoBehaviour
 
     private void resetThrowAxeState()
     {
-        input.throwAxe = false;
         animatorManager.SetAxeThrow(false);
     }
 }

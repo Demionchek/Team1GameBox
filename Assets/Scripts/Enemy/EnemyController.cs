@@ -69,6 +69,14 @@ public class EnemyController : EnemyStateMachine
         else return false;
     }
 
+    private void Awake()
+    {
+        Agent = GetComponent<NavMeshAgent>();
+        _enemyAnimations = GetComponent<EnemyAnimations>();
+        _capsule = GetComponent<CapsuleCollider>();
+        
+    }
+
     private void Start()
     {
         EnemyPresetsOnType();
@@ -76,8 +84,6 @@ public class EnemyController : EnemyStateMachine
 
     private void EnemyPresetsOnType()
     {
-        Agent = GetComponent<NavMeshAgent>();
-        _enemyAnimations = GetComponent<EnemyAnimations>();
         switch (_enemyType)
         {
             case EnemyType.Likho:
@@ -98,7 +104,6 @@ public class EnemyController : EnemyStateMachine
                 Agent.stoppingDistance = EnemiesConfigs.normalStoppingDistance;
                 break;
         }
-        _capsule = GetComponent<CapsuleCollider>();
         _stopDistanceCorrection += Agent.stoppingDistance;
         CurrState = _idleState;
         SpecialAnimLength = _specialAttack.length;
@@ -132,9 +137,10 @@ public class EnemyController : EnemyStateMachine
     {
         IsAlive = true;
         Agent.enabled = true;
-        _capsule.enabled = false;
-        CurrState = _idleState;
+        _capsule.enabled = true;
+        CurrState = _moveState;
         GetComponent<Health>().Revive();
+        GetComponent<Animator>().SetTrigger("Revive");
     }
 
     private void EnemyBehaviour()
