@@ -94,6 +94,7 @@ public class EnemyController : EnemyStateMachine
                 break;
             case EnemyType.Normal:
                 Agent.speed = EnemiesConfigs.normalSpeed;
+
                 Agent.stoppingDistance = EnemiesConfigs.normalStoppingDistance;
                 break;
         }
@@ -109,6 +110,7 @@ public class EnemyController : EnemyStateMachine
 
     private void Update()
     {
+        
         if (Target != null)
         {
             EnemyBehaviour();
@@ -170,13 +172,16 @@ public class EnemyController : EnemyStateMachine
         switch (CurrState)
         {
             case _idleState:
-                if (distanceToTarget <= EnemiesConfigs.likhoReactDistance)
+                
+                if (distanceToTarget <= EnemiesConfigs.normalReactDistance)
                 {
                     CurrState = _moveState;
                 }
                 SetState(new IdleState(this));
                 break;
             case _moveState:
+                GetPathPoints();
+                Debug.Log(Agent.velocity);
                 CheckSight(distanceToTarget);
                 break;
             case _attackState:
@@ -191,6 +196,12 @@ public class EnemyController : EnemyStateMachine
                 Agent.enabled = false;
                 break;
         }
+    }
+
+    private void GetPathPoints()
+    {
+        NavMeshPath navMeshPath = new NavMeshPath();
+        Agent.CalculatePath(Target.position, navMeshPath);
     }
 
     private void GiantControll()

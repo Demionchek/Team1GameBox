@@ -17,13 +17,13 @@ public class LikhoChargingState : EnemyStates
     public override IEnumerator CurrentState()
     {
         Vector3 lastPlayerPos = _enemyController.Target.position;
-        Vector3 markerTarget = new Vector3(lastPlayerPos.x, lastPlayerPos.y + yCorrection, lastPlayerPos.z);
+        float lookHeight = _enemyController.transform.position.y;
+        Vector3 markerTarget = new Vector3(lastPlayerPos.x, lookHeight, lastPlayerPos.z);
         float deleteTime = _enemyController.EnemiesConfigs.likhoSpecialAttackDelay +
                             _enemyController.SpecialAnimLength;
         CreateMarker(markerTarget, deleteTime);
         _enemyController.Agent.enabled = false;
-        float lookHeight = _enemyController.transform.position.y;
-        markerTarget.y = lookHeight;
+        //markerTarget.y = lookHeight;
         _enemyController.transform.LookAt(markerTarget);
         _enemyController.TmpTarget = markerTarget;
         yield return new WaitForSeconds(_enemyController.EnemiesConfigs.likhoSpecialAttackDelay);
