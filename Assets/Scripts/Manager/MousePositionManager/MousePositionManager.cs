@@ -55,8 +55,9 @@ public class MousePositionManager : MonoBehaviour
 
     public void LookAtMouseDirection() 
     {
+        GetMousePosition();
         playerController.isAtacking = true;
-        player.transform.LookAt(Vector3.Lerp(player.transform.position, GetDirection(), Time.deltaTime));
+        player.transform.LookAt(new Vector3(MousePosition.x,player.transform.position.y,MousePosition.z));
         GetAngleBetweenMouseAndPlayer();
     }
 

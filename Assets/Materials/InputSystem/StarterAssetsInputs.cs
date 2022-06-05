@@ -79,7 +79,7 @@ namespace StarterAssets
 		public void OnThrowAxe(InputValue value)
 		{
 			if(TryGetComponent<AnimatorManager>(out AnimatorManager animatorManager)
-				&& !animatorManager.GetMightyPunch() && !isPaused)
+				&& !animatorManager.GetMightyPunch() && !isPaused && !animatorManager.GetAtack())
 				ThrowAxeInput(value.isPressed);
 		}
 

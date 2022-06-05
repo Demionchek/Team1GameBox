@@ -28,7 +28,6 @@ public class AxeReturn : MonoBehaviour
     private IEnumerator ReturnCoroutine()
     {
         yield return new WaitForSeconds(timeToReturn);
-        isActive = false;
         StartCoroutine(ReturnAxe());
     }
 
@@ -40,6 +39,7 @@ public class AxeReturn : MonoBehaviour
         gameObject.transform.parent = playersHand;
         gameObject.transform.localPosition = new Vector3(0, 0, 0);
         gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        isActive = false;
     }    
     
     private void OnTriggerEnter(Collider other)
@@ -47,7 +47,6 @@ public class AxeReturn : MonoBehaviour
         if (!other.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller)
             && other.gameObject.layer != layersToIgnore)
         {
-            Debug.Log(other.name);
             rigidBody.isKinematic = true;
             if (other.transform.TryGetComponent(out IDamageable damageable) && counter == 0)
             {

@@ -19,6 +19,7 @@ public class AxeThrow : MonoBehaviour
     private Rigidbody axeRigidBody;
     private Vector3 throwDirection;
     private bool isAxeThrow;
+    private AxeReturn isAxeReturn;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class AxeThrow : MonoBehaviour
         axeRigidBody = axe.GetComponent<Rigidbody>();
         animatorManager = GetComponent<AnimatorManager>();
         mouseManager = GetComponent<MeleeAtack>().GetMouseManager();
+        isAxeReturn = axe.GetComponent<AxeReturn>();
     }
 
     private void Update()
@@ -35,11 +37,18 @@ public class AxeThrow : MonoBehaviour
 
     private void CheckAxeThrowState()
     {
-        if (!isAxeThrow && input.throwAxe && !animatorManager.GetAtack()) 
+        if (ThrowAxe()) 
         {
             TryUpdateUi();
             ChangeAxeThrowState();
         }
+    }
+
+    private bool ThrowAxe()
+    {
+        Debug.Log($"!isAxeThrow {!isAxeThrow}");
+        Debug.Log($"isAxeReturn {!isAxeReturn.isActive}");
+        return !isAxeThrow && input.throwAxe && !isAxeReturn.isActive;
     }
 
     private void TryUpdateUi()
@@ -74,7 +83,7 @@ public class AxeThrow : MonoBehaviour
     }
 
     //Called in the middle of Animation
-    private void ThrowAxe()
+    private void ThrowAxeEvent()
     {
         if (axe.TryGetComponent<AxeReturn>(out AxeReturn axeReturn))
             axeReturn.isActive = true;
