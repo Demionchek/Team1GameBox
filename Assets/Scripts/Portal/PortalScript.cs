@@ -26,7 +26,10 @@ public class PortalScript : MonoBehaviour , IUse
 
         if (_isCooled && _isNextLevel)
         {
-            _saver.SaveCheckPoint(0);
+            if (_nextLevelNum != 3)
+            {
+             _saver.SaveCheckPoint(0);
+            }
             int health = (int)controller.GetComponent<Health>().Hp;
             _saver.SaveHealth(health);
             int energy = (int)controller.GetComponent<Energy>().CurrentEnergy;

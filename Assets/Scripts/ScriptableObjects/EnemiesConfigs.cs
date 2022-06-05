@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemiesConfig", menuName = "ScriptableObject/EnemiesConfigs", order = 1)]
 public class EnemiesConfigs : ScriptableObject
 {
+    public float sightAngle = 0.3f;
+
     [Header("Likho")]
     public float likhoReactDistance;
     public float likhoStoppingDistance;
