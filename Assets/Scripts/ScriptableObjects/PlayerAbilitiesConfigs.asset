@@ -21,7 +21,7 @@ MonoBehaviour:
   airAtackCost: 5
   airAtackCooldown: 5
   airAtackRange: 2
-  mightyPunchDamage: 25
+  mightyPunchDamage: 15
   mightyPunchCost: 10
   mightyPunchCooldown: 5
   mightyPunchRange: 5

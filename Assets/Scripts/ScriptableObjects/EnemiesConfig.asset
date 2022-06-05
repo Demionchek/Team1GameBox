@@ -42,7 +42,7 @@ MonoBehaviour:
   sniperHealth: 0
   normalReactDistance: 10
   normalStoppingDistance: 1
-  normalSpeed: 3
+  normalSpeed: 100
   normalSpecialAttackChance: 0
   normalSpecialAttackCooldownTime: 0
   normalSpecialAttackDelay: 0
