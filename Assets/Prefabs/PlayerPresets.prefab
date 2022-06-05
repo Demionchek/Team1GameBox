@@ -44,6 +44,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2720519723002769577}
     m_Modifications:
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      propertyPath: far clip plane
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409498, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_Name
       value: MainCamera
@@ -106,6 +110,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2720519723002769577}
     m_Modifications:
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: dashArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: throwArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: swingsArray.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: dashArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e81b2d02eec35f54888cc36424e2cc1c, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: throwArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 77d9d2cfa1144434b9b158fb73838176, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: axeAppearArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: swingsArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: db7def23941694d49bacea57b5a16a1e, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: swingsArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: fc7ab477b6f79ac43bf9a54a7f98b81c, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: swingsArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f00a8687092ba0449def645e0110fe8, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: swingsArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 14075595b95879848b35d07bde4a9087, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: axeAppearArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c7298dc194803fe469727d8383bfb0cf, type: 3}
     - target: {fileID: 2002089021637328882, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: _saver
       value: 
@@ -656,6 +704,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1507994947526139949}
+    - target: {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+      propertyPath: m_Lens.FarClipPlane
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
 --- !u!4 &4142289049924326185 stripped
