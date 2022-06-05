@@ -1738,15 +1738,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1287109144681747874, guid: 72e2e90c00fb34e44aead213a956ca3c, type: 3}
       propertyPath: bossMinions.Array.data[0].count
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1287109144681747874, guid: 72e2e90c00fb34e44aead213a956ca3c, type: 3}
       propertyPath: bossMinions.Array.data[1].count
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1287109144681747874, guid: 72e2e90c00fb34e44aead213a956ca3c, type: 3}
       propertyPath: bossMinions.Array.data[2].count
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1287109144681747874, guid: 72e2e90c00fb34e44aead213a956ca3c, type: 3}
       propertyPath: bossMinions.Array.data[0].prefab
@@ -3579,6 +3579,10 @@ PrefabInstance:
     - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.42341325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734549053333737289, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: aimColliderLayerMask.m_Bits
+      value: 8187
       objectReference: {fileID: 0}
     - target: {fileID: 7446544210033720532, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: axe
