@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Check : MonoBehaviour
 {
-    private Health health;
+    [SerializeField] private Health health;
     private DissolveObject dissolve;
 
     private void Start()

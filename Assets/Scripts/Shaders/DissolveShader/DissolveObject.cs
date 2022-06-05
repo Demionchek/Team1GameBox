@@ -7,12 +7,12 @@ public class DissolveObject : MonoBehaviour
 
     private Material material;
     private float dissolveSpeed;
-    private readonly string dissolveParameterName = "CutoffHeigth";
+    private readonly string dissolveParameterName = "_CutoffHeigth";
     
     private void Start()
     {
         material = GetComponent<Renderer>().material;
-        dissolveSpeed = material.GetFloat(dissolveParameterName) / dissolveTime;
+        dissolveSpeed = material.GetFloat(dissolveParameterName) /dissolveTime*Time.fixedDeltaTime;
     }
 
     public void StartDissolve()
@@ -23,10 +23,12 @@ public class DissolveObject : MonoBehaviour
     private IEnumerator Dissolve()
     {
         float parameterValue = material.GetFloat(dissolveParameterName);
-        for (float i = 0; i < dissolveTime; i += Time.deltaTime, parameterValue -= dissolveSpeed)
+        while(parameterValue > 0)
         {
-            yield return new WaitForSeconds(Time.deltaTime/2);
+            parameterValue -= dissolveSpeed;
             material.SetFloat(dissolveParameterName, parameterValue);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
+        StopCoroutine(Dissolve());
     }
 }
