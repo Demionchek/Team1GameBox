@@ -55,6 +55,11 @@ public class AnimatorManager : MonoBehaviour
         animator.SetBool(dead, value);
     }
 
+    public bool GetAtack()
+    {
+        return animator.GetBool(atack);
+    }
+
     public bool GetMightyPunch()
     {
         return animator.GetBool(mightyPunch);
