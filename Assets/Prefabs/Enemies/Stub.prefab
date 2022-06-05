@@ -40,9 +40,9 @@ AudioSource:
   m_GameObject: {fileID: 158357205526325145}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8064515528503239930, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -167,7 +167,7 @@ AudioSource:
   m_GameObject: {fileID: 319809844869313685}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1376580881820964136, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -513,7 +513,7 @@ AudioSource:
   m_GameObject: {fileID: 1055166087007810941}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -6366817884212345020, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
+  OutputAudioMixerGroup: {fileID: -3861812187543327327, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
   m_audioClip: {fileID: 8300000, guid: ec68ad9359afd53488b34b001108c736, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -525,7 +525,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 7
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -960,10 +960,17 @@ MonoBehaviour:
   _deathSource: {fileID: 0}
   _attackSounds:
   - {fileID: 8300000, guid: 38f4d4ba2cacefa41b1a4dc1a1f522c9, type: 3}
+  - {fileID: 8300000, guid: a06689051b981c1409b94142987980e7, type: 3}
+  - {fileID: 8300000, guid: 8232b10b4d084bd4d81c829e3b30b32d, type: 3}
+  - {fileID: 8300000, guid: d93401022e1918143933775eb9d36bb9, type: 3}
   _chargingSounds: []
   _specialAttackSounds: []
   _footstepsSounds: []
-  _damagedSounds: []
+  _damagedSounds:
+  - {fileID: 8300000, guid: 2de103d2df3e6c34e87a9bde0f8a5122, type: 3}
+  - {fileID: 8300000, guid: 446389da75ec1024b934a8165ce47502, type: 3}
+  - {fileID: 8300000, guid: 9126d89c7df803b499309f0da3a2beec, type: 3}
+  - {fileID: 8300000, guid: 46c46525c1a3a234388328cf91d4f539, type: 3}
   _deathSounds: []
 --- !u!1 &1706606679599367134
 GameObject:
