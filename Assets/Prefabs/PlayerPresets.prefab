@@ -161,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 4798104673400631611, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: axe
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 906487694254348503}
     - target: {fileID: 4798104673400631611, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: hand
       value: 
