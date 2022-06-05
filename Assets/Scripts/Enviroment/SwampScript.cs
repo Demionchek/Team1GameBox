@@ -28,8 +28,8 @@ public class SwampScript : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(_damageDelay);
             _damageable.TakeDamage(_damage, _playerLayer);
+            yield return new WaitForSeconds(_damageDelay);
         }
     }
 
