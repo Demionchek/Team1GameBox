@@ -1072,7 +1072,7 @@ MonoBehaviour:
   DOMoveSpeed: 1.5
   _enemyType: 0
   _maxSpecialMoveDistance: 7
-  _maxSpecialMoveHeight: 1.5
+  _maxSpecialMoveHeight: 0.5
   _specialAttack: {fileID: 7400000, guid: b8c9956960f26ac42bcc603ec3627342, type: 2}
 --- !u!114 &4499478629710808251
 MonoBehaviour:
@@ -1172,9 +1172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8cb30bbf830a546bc31691d9e23f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnemyController: {fileID: 6991446463954760582}
-  m_Shooter: {fileID: 4499478629710808251}
-  m_DamageDealer: {fileID: 860215310}
   _attackAnimationSpeed: 3
 --- !u!1 &7710480804112752305
 GameObject:

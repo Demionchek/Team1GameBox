@@ -26,7 +26,7 @@ public class PortalScript : MonoBehaviour , IUse
 
         if (_isCooled && _isNextLevel)
         {
-            if (_nextLevelNum != 2)
+            if (_nextLevelNum != 3)
             {
              _saver.SaveCheckPoint(0);
             }
