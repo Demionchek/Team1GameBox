@@ -12,7 +12,7 @@ public class EnemyController : EnemyStateMachine
     [Header("EnemyType")]
     [SerializeField] private EnemyType _enemyType;
     [SerializeField] private float _maxSpecialMoveDistance = 7f;
-    [SerializeField] private float _maxSpecialMoveHeight = 1f;
+    [SerializeField] private float _maxSpecialMoveHeight = 0.5f;
     [Header("SpecialAttackAnimation")]
     [Tooltip("Special Animation of your enemy type")]
     [SerializeField] private AnimationClip _specialAttack;
@@ -61,7 +61,7 @@ public class EnemyController : EnemyStateMachine
     private bool CanDoSpecialDistance(float maxDistance, float maxHeight)
     {
         if (Vector3.Distance(transform.position, Target.position) < maxDistance
-           && Math.Abs(transform.position.y - transform.localScale.y - Target.position.y) < maxHeight)
+           && Math.Abs(transform.position.y - Target.position.y) < maxHeight)
         {
             return true;
         }
@@ -181,7 +181,6 @@ public class EnemyController : EnemyStateMachine
                 break;
             case _moveState:
                 GetPathPoints();
-                Debug.Log(Agent.velocity);
                 CheckSight(distanceToTarget);
                 break;
             case _attackState:
@@ -374,7 +373,6 @@ public class EnemyController : EnemyStateMachine
         _isAttaking = isAttacking;
         if (isAttacking == false)
         {
-            Debug.Log("Look At");
             if (IsInSight())
             {
                 SpecialAttackChance();

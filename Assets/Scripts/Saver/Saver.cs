@@ -59,6 +59,7 @@ public class Saver : MonoBehaviour
     public void SaveCheckPoint(int checkPointNumber)
     {
         CheckPointToSave = checkPointNumber;
+        Debug.Log($"Saved point = {CheckPointToSave}");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedCheckPoint.dat");
         SaveData data = new SaveData();
@@ -77,6 +78,7 @@ public class Saver : MonoBehaviour
             file.Close();
             CheckPointToSave = data.SavedCheckPoint;
         }
+        Debug.Log($"Loaded point = {CheckPointToSave}");
     }
 
     public void SaveLevel(int levelNumber)
@@ -93,6 +95,7 @@ public class Saver : MonoBehaviour
 
     public void LoadLevel()
     {
+
         if (File.Exists(Application.persistentDataPath + "/MySavedLevel.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
@@ -100,10 +103,6 @@ public class Saver : MonoBehaviour
             SaveData data = (SaveData)bf.Deserialize(file);
             file.Close();
             LevelToSave = data.SavedLevel;
-        }
-        if (LevelToSave == 0)
-        {
-
         }
     }
 
