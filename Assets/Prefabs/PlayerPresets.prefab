@@ -161,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 4798104673400631611, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: axe
       value: 
-      objectReference: {fileID: 4627441218816632525}
+      objectReference: {fileID: 906487694254348503}
     - target: {fileID: 4798104673400631611, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: hand
       value: 
@@ -229,9 +229,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8399645091220033060, guid: 91c687c4626af4c4799542635206a26c, type: 3}
   m_PrefabInstance: {fileID: 2720519722337734127}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4627441218816632525 stripped
+--- !u!1 &906487694254348503 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7347274261715905314, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2978365375183951160, guid: 91c687c4626af4c4799542635206a26c, type: 3}
   m_PrefabInstance: {fileID: 2720519722337734127}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6492891450384374129 stripped
