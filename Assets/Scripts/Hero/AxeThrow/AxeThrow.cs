@@ -46,8 +46,6 @@ public class AxeThrow : MonoBehaviour
 
     private bool ThrowAxe()
     {
-        Debug.Log($"!isAxeThrow {!isAxeThrow}");
-        Debug.Log($"isAxeReturn {!isAxeReturn.isActive}");
         return !isAxeThrow && input.throwAxe && !isAxeReturn.isActive;
     }
 
@@ -93,9 +91,11 @@ public class AxeThrow : MonoBehaviour
         axeRigidBody.transform.parent = null;
 
         if (throwDirection.y < hand.position.y && animatorManager.isGrounded())
-            throwDirection.y = hand.position.y;
-        axe.transform.LookAt(throwDirection);
+            throwDirection.y = hand.position.y-0.1f;
+        
         Vector3 direction = (throwDirection - axe.transform.position).normalized;
+        axe.transform.LookAt(throwDirection);
+        axe.transform.Rotate(Vector3.forward, 180f);
         axeRigidBody.AddForce(direction * throwPower, ForceMode.Impulse);
     }
 
