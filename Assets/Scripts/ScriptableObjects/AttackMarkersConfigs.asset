@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: AttackMarkersConfigs
   m_EditorClassIdentifier: 
   jumpMarkerSize: 3
-  jumpMarkerDamage: 10
+  jumpMarkerDamage: 20
   rayMarkerLength: 8
   rayMarkerWidth: 2
-  rayMarkerDamage: 10
+  rayMarkerDamage: 30
   bossClowdMarkerSize: 8
   bossClowdMarkerSpeed: 3.5
   bossClowdMarkerLifetime: 6

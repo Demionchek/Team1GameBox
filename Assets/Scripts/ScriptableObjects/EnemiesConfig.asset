@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightAngle: 0.7
   likhoReactDistance: 5
-  likhoStoppingDistance: 1.5
-  likhoSpeed: 3
-  likhoSpecialAttackChance: 0.3
+  likhoStoppingDistance: 1
+  likhoSpeed: 5
+  likhoSpecialAttackChance: 0.25
   likhoSpecialAttackCooldownTime: 3
-  likhoSpecialAttackDelay: 2
+  likhoSpecialAttackDelay: 0.5
   likhoSpecialAttackDamage: 0
   likhoDamage: 0
   likhoHealth: 0
   giantReactDistance: 7
   giantStoppingDistance: 7
   giantSpeed: 3
-  giantSpecialAttackChance: 0.3
+  giantSpecialAttackChance: 0.2
   giantSpecialAttackCooldownTime: 3
-  giantSpecialAttackDelay: 2
+  giantSpecialAttackDelay: 0.5
   giantSpecialAttackDamage: 0
-  giantDamage: 5
+  giantDamage: 0
   giantHealth: 0
   sniperReactDistance: 7
   sniperStoppingDistance: 7
@@ -40,9 +40,9 @@ MonoBehaviour:
   sniperSpecialAttackDamage: 0
   sniperDamage: 0
   sniperHealth: 0
-  normalReactDistance: 10
-  normalStoppingDistance: 1.5
-  normalSpeed: 5
+  normalReactDistance: 7
+  normalStoppingDistance: 1.25
+  normalSpeed: 7
   normalSpecialAttackChance: 0
   normalSpecialAttackCooldownTime: 0
   normalSpecialAttackDelay: 0
