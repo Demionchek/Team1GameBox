@@ -2006,6 +2006,7 @@ GameObject:
   - component: {fileID: 7756935160170860497}
   - component: {fileID: 7756935160170860490}
   - component: {fileID: 7756935160170860501}
+  - component: {fileID: 9061807298922478064}
   m_Layer: 0
   m_Name: yaga_Boss
   m_TagString: Untagged
@@ -2026,6 +2027,7 @@ Transform:
   m_Children:
   - {fileID: 8498714169907467716}
   - {fileID: 459660385938115936}
+  - {fileID: 6783428815389614980}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2062,6 +2064,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  lowHPSoundAt: 30
 --- !u!114 &7756935160170860502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,6 +2124,34 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &9061807298922478064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756935160170860496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7510e1a50ccea429dd87bf48ea7c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackSource: {fileID: 0}
+  _chargingSource: {fileID: 0}
+  _specialAttackSource: {fileID: 5219530637824232854}
+  _footstepsSource: {fileID: 0}
+  _damagedSource: {fileID: 1623338786883756004}
+  _deathSource: {fileID: 0}
+  _attackSounds: []
+  _chargingSounds: []
+  _specialAttackSounds:
+  - {fileID: 8300000, guid: ffe258de5fe1d6b4284bc118648c99dd, type: 3}
+  _footstepsSounds: []
+  _damagedSounds:
+  - {fileID: 8300000, guid: 18ccf883c36e6d0468805f46066a20c8, type: 3}
+  - {fileID: 8300000, guid: 2c509751616f15a47b134fb3c4005b0d, type: 3}
+  - {fileID: 8300000, guid: 3df4b7d2f8ac7494583d69a91a3a0297, type: 3}
+  _deathSounds: []
 --- !u!1 &8139442612562354274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,3 +2427,75 @@ Transform:
   m_Father: {fileID: 7948360403442806962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8803026634909682972
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6984515409995666794}
+    m_Modifications:
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.003899932
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9848882
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.016363531
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186533276112600306, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+      propertyPath: m_Name
+      value: Yaga Sounds
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+--- !u!4 &6783428815389614980 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2596666604048248472, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+  m_PrefabInstance: {fileID: 8803026634909682972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1623338786883756004 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7831161699750761208, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+  m_PrefabInstance: {fileID: 8803026634909682972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5219530637824232854 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3622544881753260170, guid: 836fdb92f3967724f878244b10cc9976, type: 3}
+  m_PrefabInstance: {fileID: 8803026634909682972}
+  m_PrefabAsset: {fileID: 0}
