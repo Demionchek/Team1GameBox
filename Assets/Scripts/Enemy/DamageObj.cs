@@ -7,6 +7,7 @@ public class DamageObj : MonoBehaviour
 
     [SerializeField] private int _damage;
     [SerializeField] private LayerMask _mask;
+    [SerializeField] private LayerMask[] _ignoreLayers;
     private bool _needDestroy = false;
 
     public void SetDamageAndMask(int dmg, LayerMask mask)
@@ -22,8 +23,15 @@ public class DamageObj : MonoBehaviour
         {
             var damageable = controller.GetComponent<IDamageable>();
             damageable.TakeDamage(_damage, _mask);
-            if (_needDestroy)
+        }
+        if (_needDestroy)
+        {
+            foreach (var layer in _ignoreLayers)
             {
+                if (other.gameObject.layer == layer)
+                {
+                    break;
+                }
                 Destroy(gameObject);
             }
         }

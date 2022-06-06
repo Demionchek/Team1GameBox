@@ -269,6 +269,25 @@ public class EnemyController : EnemyStateMachine
         }
     }
 
+    private bool CanSeeTarget()
+    {
+        RaycastHit hit;
+        Vector3 rayPoint = new Vector3(transform.position.x, transform.position.y + transform.localScale.y, transform.position.z);
+        Vector3 rayTarget = new Vector3(Target.position.x, Target.position.y + Target.localScale.y, Target.position.z);
+        Ray ray = new Ray(rayPoint, rayTarget);
+        if (Physics.Raycast(ray, out hit))
+        {
+#if (UNITY_EDITOR)
+        Debug.DrawLine(ray.origin, hit.point, Color.red);
+#endif
+            if (hit.collider.TryGetComponent(out CharacterController controller))
+            {
+                return true;
+            }
+        }
+                return false;
+    }
+
     private void CheckSight(float distanceToTarget)
     {
         if (distanceToTarget <= Agent.stoppingDistance)

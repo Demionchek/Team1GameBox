@@ -129,3 +129,6 @@ MonoBehaviour:
   _mask:
     serializedVersion: 2
     m_Bits: 0
+  _ignoreLayers:
+  - serializedVersion: 2
+    m_Bits: 64
