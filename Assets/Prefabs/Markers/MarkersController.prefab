@@ -47,7 +47,7 @@ MonoBehaviour:
   _targetMask:
     serializedVersion: 2
     m_Bits: 0
-  _alfaValue: 0.5
+  _alfaValue: 0.8
   _pondMarkerPrefab: {fileID: 4658799616723373051, guid: 657801eb17e163640bf843eaad054d14, type: 3}
   _rayMarkerPrefab: {fileID: 5840802410234470765, guid: 919e1e41f96889a4bb6b8a49ee65cec8, type: 3}
   _coneMarkerPrefab: {fileID: 8274135164454032761, guid: e7c9a4e3173417848a89677e2dcf5e36, type: 3}

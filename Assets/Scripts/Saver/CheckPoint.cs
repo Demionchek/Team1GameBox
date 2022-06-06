@@ -36,12 +36,16 @@ public class CheckPoint : MonoBehaviour
                 _saver.SaveLevel(scene);
             if (!_isActivated)
             {
+                var inventory = controller.GetComponent<Inventory>();
                 var health = controller.GetComponent<Health>();
                 var energy = controller.GetComponent<Energy>();
-                var hPakcs = controller.GetComponent<Inventory>();
+                int hPacks = inventory.GetCountOfItem(ItemType.HealthPotion);
+                int ePacks = inventory.GetCountOfItem(ItemType.EnergyPotion);
                 _saver.SaveCheckPoint(PointNumber);
                 _saver.SaveHealth((int)health.Hp);
                 _saver.SaveEnergy((int)energy.CurrentEnergy);
+                _saver.SaveHealthPacks(hPacks);
+                _saver.SaveEnergyPacks(ePacks);
                 _isActivated = true;
                 _material.color = Color.cyan;
             }
