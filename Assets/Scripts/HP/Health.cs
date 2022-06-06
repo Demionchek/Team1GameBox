@@ -6,6 +6,7 @@ public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] private float _hp;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private float lowHPSoundAt = 30f;
     private EnemySounds _enemySounds;
     private PlayerSounds _playerSounds;
     private BossSounds _bossSounds;
@@ -59,6 +60,10 @@ public class Health : MonoBehaviour, IDamageable
             {
                  HPChanged();
                 _playerSounds.PlayDamagedSound();
+                if (Hp < lowHPSoundAt)
+                {
+                    _playerSounds.PlayLowHPSound();
+                }
             }
             else if (_isBoss)
             {
@@ -83,17 +88,18 @@ public class Health : MonoBehaviour, IDamageable
             if (TryGetComponent<EnemyController>(out EnemyController enemyController))
             {
                 enemyController.IsAlive = false;
-                _enemySounds.PlayDamagedSound();
+                _enemySounds.PlayDeathSound();
             }
             else if (TryGetComponent<YagaController>(out YagaController yagaController))
             {
                 yagaController.IsAlive = false;
-                _bossSounds.PlayDamagedSound();
+                _bossSounds.PlayDeathSound();
             }
             else if (TryGetComponent<PlayerDeath>(out PlayerDeath death))
             {
                 death.PlayersDeath();
-                _playerSounds.PlayDamagedSound();
+                _playerSounds.PlayDeathSound();
+                _playerSounds.StopLowHPSound();
             }
 
             Debug.Log(transform.name + " died");
