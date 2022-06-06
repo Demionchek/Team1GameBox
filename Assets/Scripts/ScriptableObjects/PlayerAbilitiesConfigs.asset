@@ -15,16 +15,16 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  axeThrowDmg: 25
+  axeThrowDmg: 5
   axeThrowCooldown: 1.5
   airAtackDamage: 30
-  airAtackCost: 5
-  airAtackCooldown: 5
-  airAtackRange: 2
-  mightyPunchDamage: 15
-  mightyPunchCost: 10
+  airAtackCost: 25
+  airAtackCooldown: 15
+  airAtackRange: 5
+  mightyPunchDamage: 10
+  mightyPunchCost: 5
   mightyPunchCooldown: 5
-  mightyPunchRange: 5
+  mightyPunchRange: 3
   mightyPunchForce: 6
   dashTime: 0.1
   dashSpeed: 20
