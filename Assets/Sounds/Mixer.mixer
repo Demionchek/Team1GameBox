@@ -524,6 +524,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 5225939962238720696}
   - {fileID: 792001761650234179}
+  - {fileID: 6411915308052912774}
   m_Volume: cf1dc7b174f3960428708a8eaba3d189
   m_Pitch: 92cd69d24995b8748a76e533e9eb3053
   m_Send: 00000000000000000000000000000000
@@ -609,6 +610,7 @@ AudioMixerController:
     - d0f024bed396f8b48be03a31f8f9ebb3
     - d85fa00dc4413744fbbf42fc19467627
     - fefc43987ca36e6489ce723ccd9855eb
+    - 74e2f86266bef33499eb713d83d7d9e6
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -671,6 +673,7 @@ AudioMixerSnapshotController:
     2dcce075811f1fd4ebfdfff62765d7a5: -34.456287
     17935b362d7399541aa91c502c03b2d5: -17.29471
     d0d3e5d807816d14bb05877a1d3578af: -7.8940845
+    9f7d8cc90d250e84f915a15c3dd5baf1: -7.8940816
     2f00b05a94255ab4a899e60fce36490b: 4.2
     39a09d9a56bde59469c0ce13442a8ddb: -19.255655
     197ac12bf3db6f9458ba7f4429cb4e6d: 1.015
@@ -720,6 +723,20 @@ AudioMixerEffectController:
   m_EffectID: a751aeb510357004fb8c7907be23c608
   m_EffectName: Attenuation
   m_MixLevel: d9f6127ea5fd1674e8003069e49b8982
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &328171683371588653
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: a48f833df5bf16944b1c4f529652f8ec
+  m_EffectName: Attenuation
+  m_MixLevel: d2be76aad071b144bb07ed9d262d2055
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -1040,6 +1057,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -8463412702451813374}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &6411915308052912774
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Swamp
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 74e2f86266bef33499eb713d83d7d9e6
+  m_Children: []
+  m_Volume: 9f7d8cc90d250e84f915a15c3dd5baf1
+  m_Pitch: 7708e7ba849c56f4d8c40d43cb167137
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 328171683371588653}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
