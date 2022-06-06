@@ -51,8 +51,7 @@ public class PlayerSounds : MonoBehaviour
     [SerializeField] private AudioClip[] dashArray;
     [Space(5)]
     [SerializeField] private AudioClip[] groundedArray;
-    [Space(5)]
-    [SerializeField] private AudioClip[] damagedArray;
+
 
     public void KickCDSound()
     {
@@ -71,8 +70,17 @@ public class PlayerSounds : MonoBehaviour
 
     public void PlayLowHPSound()
     {
-        lowHPSound.Play();
+        if (lowHPSound.isPlaying == false)
+        {
+            lowHPSound.Play();
+        }
     }
+
+    public void StopLowHPSound()
+    {
+        lowHPSound.Stop();
+    }
+
     public void PlayAirAttackSound()
     {
         airAttackSound.Play();
@@ -90,13 +98,9 @@ public class PlayerSounds : MonoBehaviour
 
     public void PlayDamagedSound()
     {
-        int r = Random.Range(0, damagedArray.Length);
-        if (r! > damagedArray.Length)
-        {
-
-            takeDamageSound.clip = damagedArray[r];
+        int r = Random.Range(0, takeDamageArray.Length);
+            takeDamageSound.clip = takeDamageArray[r];
             takeDamageSound.Play();
-        }
     }
 
     public void PlayThrowSound()
