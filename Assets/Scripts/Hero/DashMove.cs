@@ -13,11 +13,13 @@ public class DashMove : MonoBehaviour
     private int baseLayer;
     private bool isDashCooled;
     private Energy playerEnergy;
+    private PlayerEffects playerEffects;
 
     public UnityEvent UpdateUI;
 
     private void Start()
     {
+        playerEffects = GetComponent<PlayerEffects>();
         personController = GetComponent<ThirdPersonController>();
         inputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
@@ -58,7 +60,9 @@ public class DashMove : MonoBehaviour
 
     private IEnumerator DashCorutine()
     {
+        playerEffects.PlayDashEffect();
         yield return new WaitForSeconds(playerConfigs.dashTime);
+        playerEffects.StopDashEffect();
         animator.SetBool("Dash", false);
         animator.SetLayerWeight(baseLayer, 1f);
         personController.IsDashing = false;

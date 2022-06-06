@@ -13,8 +13,15 @@ public class Teleporter : MonoBehaviour
     [Header("CheckPoints")]
     [SerializeField] private CheckPoint[] checkPoints;
 
+    private Health _health;
+    private Energy _energy;
+    private Inventory _inventory;
+
     private void Start()
     {
+        _health = controller.GetComponent<Health>();
+        _energy = controller.GetComponent<Energy>();
+        _inventory = controller.GetComponent<Inventory>();
         SetPlayerPos();
         SetPlayersData();
         uiManager.CheckEnergyBar();
@@ -36,15 +43,19 @@ public class Teleporter : MonoBehaviour
         controller.enabled = false;
         controller.transform.position = spawnPosition;
         controller.enabled = true;
-    } 
+    }
 
     private void SetPlayersData()
     {
         _saver.LoadEnergy();
         _saver.LoadHealth();
-        controller.GetComponent<Health>().Hp = _saver.HealthToSave;
-        controller.GetComponent<Energy>().CurrentEnergy = _saver.EnergyToSave;
-    } 
+        _saver.LoadHealthPacks();
+        _saver.LoadEnergyPacks();
+        _inventory.AddCountOfItem(ItemType.HealthPotion, _saver.HealthPacksToSave);
+        _inventory.AddCountOfItem(ItemType.EnergyPotion, _saver.EnergyPacksToSave);
+        _health.Hp = _saver.HealthToSave;
+        _energy.CurrentEnergy = _saver.EnergyToSave;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

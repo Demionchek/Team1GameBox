@@ -8,7 +8,7 @@ public class AttackMarkersController : MonoBehaviour
     [SerializeField] private AttackMarkersConfigs _markersConfigs;
     [SerializeField] private LayerMask _targetMask;
 
-    [SerializeField] private float _alfaValue = 0.5f;
+    [SerializeField] private float _alfaValue = 0.2f;
     [Header("Marker prefabs")]
     [SerializeField] private GameObject _pondMarkerPrefab;
     [SerializeField] private GameObject _rayMarkerPrefab;
