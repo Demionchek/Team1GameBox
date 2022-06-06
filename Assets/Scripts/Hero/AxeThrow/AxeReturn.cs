@@ -53,8 +53,8 @@ public class AxeReturn : MonoBehaviour
                 gameObject.transform.parent = other.transform;
                 counter++;
                 damageable.TakeDamage((int)configs.axeThrowDmg, configs.enemyLayer);
-            }
-            StartCoroutine(ReturnAxe());
+            }    
         }
+        StartCoroutine(ReturnAxe());
     }
 }

@@ -33,9 +33,15 @@ public class UnlockSystemManager : MonoBehaviour
         if ( IsEnoughtItems())
         {
             if (airAtack.enabled == false)
+            {
                 airAtack.enabled = true;
+
+            }
             else if (mightyPunch.enabled == false)
+            {
                 mightyPunch.enabled = true;
+
+            }  
             counter = 0;
         }
     }

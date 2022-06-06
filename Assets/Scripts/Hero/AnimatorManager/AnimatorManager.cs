@@ -27,7 +27,8 @@ public class AnimatorManager : MonoBehaviour
 
     public void SetAtack(bool value)
     {
-        animator.SetInteger(atackType, Random.Range(0, countOfAtackTypies));
+        if(!GetAtack())
+            animator.SetInteger(atackType, Random.Range(0, countOfAtackTypies));
         animator.SetBool(atack, value);
     }
 
