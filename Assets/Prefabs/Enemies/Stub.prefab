@@ -169,7 +169,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1376580881820964136, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -525,7 +525,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 7
+  MaxDistance: 3
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -670,9 +670,9 @@ AudioSource:
   m_GameObject: {fileID: 1170057372993304372}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2084770953553347408, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -889,6 +889,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  lowHPSoundAt: 30
 --- !u!114 &803238464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,13 +957,10 @@ MonoBehaviour:
   _chargingSource: {fileID: 0}
   _specialAttackSource: {fileID: 0}
   _footstepsSource: {fileID: 8783070326343200674}
-  _damagedSource: {fileID: 0}
+  _damagedSource: {fileID: 3122632168350073217}
   _deathSource: {fileID: 0}
   _attackSounds:
-  - {fileID: 8300000, guid: 38f4d4ba2cacefa41b1a4dc1a1f522c9, type: 3}
-  - {fileID: 8300000, guid: a06689051b981c1409b94142987980e7, type: 3}
-  - {fileID: 8300000, guid: 8232b10b4d084bd4d81c829e3b30b32d, type: 3}
-  - {fileID: 8300000, guid: d93401022e1918143933775eb9d36bb9, type: 3}
+  - {fileID: 8300000, guid: f7dc871f0c5f8c9418cff4997f758718, type: 3}
   _chargingSounds: []
   _specialAttackSounds: []
   _footstepsSounds: []
@@ -971,7 +969,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 446389da75ec1024b934a8165ce47502, type: 3}
   - {fileID: 8300000, guid: 9126d89c7df803b499309f0da3a2beec, type: 3}
   - {fileID: 8300000, guid: 46c46525c1a3a234388328cf91d4f539, type: 3}
-  _deathSounds: []
+  - {fileID: 8300000, guid: e51a865394478554bb2e92967e37ce33, type: 3}
+  - {fileID: 8300000, guid: 3f7fef46d59440544a70c47349f36d4a, type: 3}
+  - {fileID: 8300000, guid: a793c6431a6143642847644cc7e8b0af, type: 3}
+  - {fileID: 8300000, guid: 8dc5cf66541163c489c3c8accfc0b8f2, type: 3}
+  _deathSounds:
+  - {fileID: 8300000, guid: 209487c005544a0469e4cad585677993, type: 3}
 --- !u!1 &1706606679599367134
 GameObject:
   m_ObjectHideFlags: 0
