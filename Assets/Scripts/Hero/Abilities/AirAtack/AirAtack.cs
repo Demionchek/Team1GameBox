@@ -8,9 +8,11 @@ public class AirAtack : MonoBehaviour
 {
     [SerializeField] private PlayerAbilitiesConfigs configs;
     [SerializeField] private GameObject markerPrefab;
+    [SerializeField] private float effectDelTimer = 0.3f;
 
     private AnimatorManager animatorManager;
     private StarterAssetsInputs inputs;
+    private PlayerEffects playerEffects;
     private Energy energy;
     private bool isAirAtackCooled = true;
 
@@ -25,6 +27,7 @@ public class AirAtack : MonoBehaviour
         inputs = GetComponent<StarterAssetsInputs>();
         animatorManager = GetComponent<AnimatorManager>();
         energy = GetComponent<Energy>();
+        playerEffects = GetComponent<PlayerEffects>();
     }
 
     void Update()
@@ -54,7 +57,10 @@ public class AirAtack : MonoBehaviour
             UpdateUI.Invoke();
             animatorManager.SetAirAtack(false);
             AirHit();
-            StartCoroutine(PondCorutine(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), 0.1f));
+            var slamEffect =  Instantiate(playerEffects.GroundSlam, transform.position, Quaternion.identity);
+            slamEffect.Play();
+            Destroy(slamEffect, effectDelTimer);
+            //StartCoroutine(PondCorutine(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), 0.1f));
             StartCoroutine(BlockThrowAxe());
             StartCoroutine(CoolDown());
         }
