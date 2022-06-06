@@ -24,17 +24,14 @@ public class DeathArena : MonoBehaviour
         if (_isActive) EnemiesAlive--;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Activate()
     {
-        if (other.TryGetComponent(out ThirdPersonController controller))
-        {
-            EnemyController.EnemyDeathAction += DeathCounter;
-            spawner.ArenaSummon();
-            _isActive = true;
-            _barier.SetActive(true);
-            StartCoroutine(CheckIfEnemiesAreAlive());
-            _collider.enabled = false;
-        }
+        EnemyController.EnemyDeathAction += DeathCounter;
+        spawner.ArenaSummon();
+        _isActive = true;
+        _barier.SetActive(true);
+        StartCoroutine(CheckIfEnemiesAreAlive());
+        _collider.enabled = false;
     }
 
     private IEnumerator CheckIfEnemiesAreAlive()
