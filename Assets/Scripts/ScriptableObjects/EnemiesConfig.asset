@@ -20,7 +20,7 @@ MonoBehaviour:
   likhoSpecialAttackCooldownTime: 3
   likhoSpecialAttackDelay: 0.5
   likhoSpecialAttackDamage: 0
-  likhoDamage: 0
+  likhoDamage: 15
   likhoHealth: 0
   giantReactDistance: 7
   giantStoppingDistance: 7
@@ -29,7 +29,7 @@ MonoBehaviour:
   giantSpecialAttackCooldownTime: 3
   giantSpecialAttackDelay: 0.5
   giantSpecialAttackDamage: 0
-  giantDamage: 0
+  giantDamage: 20
   giantHealth: 0
   sniperReactDistance: 7
   sniperStoppingDistance: 7
@@ -47,5 +47,5 @@ MonoBehaviour:
   normalSpecialAttackCooldownTime: 0
   normalSpecialAttackDelay: 0
   normalSpecialAttackDamage: 0
-  normalDamage: 0
+  normalDamage: 5
   normalHealth: 0
