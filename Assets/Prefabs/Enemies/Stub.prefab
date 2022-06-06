@@ -323,12 +323,13 @@ MonoBehaviour:
   _specialAttackSource: {fileID: 0}
   _footstepsSource: {fileID: 8783070326343200674}
   _damagedSource: {fileID: 3122632168350073217}
-  _deathSource: {fileID: 0}
+  _deathSource: {fileID: 4822856474606654825}
   _attackSounds:
   - {fileID: 8300000, guid: f7dc871f0c5f8c9418cff4997f758718, type: 3}
   _chargingSounds: []
   _specialAttackSounds: []
-  _footstepsSounds: []
+  _footstepsSounds:
+  - {fileID: 8300000, guid: ec68ad9359afd53488b34b001108c736, type: 3}
   _damagedSounds:
   - {fileID: 8300000, guid: 2de103d2df3e6c34e87a9bde0f8a5122, type: 3}
   - {fileID: 8300000, guid: 446389da75ec1024b934a8165ce47502, type: 3}
@@ -1423,9 +1424,97 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1296279174367358970, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296279174367358970, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849010717583737305, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849010717583737305, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849010717583737305, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849010717583737305, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3861812187543327327, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
+    - target: {fileID: 4849010717583737305, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5200002390201242449, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
       propertyPath: m_Name
       value: Stubs Sounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421653603892331626, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421653603892331626, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421653603892331626, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271655247684834167, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271655247684834167, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340128984056745234, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340128984056745234, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ec68ad9359afd53488b34b001108c736, type: 3}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666794896193927954, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666794896193927954, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
@@ -1447,5 +1536,10 @@ AudioSource:
 --- !u!82 &3122632168350073217 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1296279174367358970, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+  m_PrefabInstance: {fileID: 4226802398918733435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &4822856474606654825 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8666794896193927954, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
   m_PrefabInstance: {fileID: 4226802398918733435}
   m_PrefabAsset: {fileID: 0}
