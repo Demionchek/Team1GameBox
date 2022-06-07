@@ -324,6 +324,7 @@ MonoBehaviour:
   _footstepsSource: {fileID: 8783070326343200674}
   _damagedSource: {fileID: 3122632168350073217}
   _deathSource: {fileID: 4822856474606654825}
+  _stubSound: {fileID: 5523931294864391819}
   _attackSounds:
   - {fileID: 8300000, guid: f7dc871f0c5f8c9418cff4997f758718, type: 3}
   _chargingSounds: []
@@ -1625,5 +1626,10 @@ AudioSource:
 --- !u!82 &4822856474606654825 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8666794896193927954, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+  m_PrefabInstance: {fileID: 4226802398918733435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5523931294864391819 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
   m_PrefabInstance: {fileID: 4226802398918733435}
   m_PrefabAsset: {fileID: 0}
