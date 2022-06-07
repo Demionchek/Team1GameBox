@@ -9,6 +9,7 @@ public class AirAtack : MonoBehaviour
     [SerializeField] private PlayerAbilitiesConfigs configs;
     [SerializeField] private GameObject markerPrefab;
     [SerializeField] private float effectDelTimer = 0.3f;
+    [SerializeField] private GameObject airAtackUi;
 
     private AnimatorManager animatorManager;
     private StarterAssetsInputs inputs;
@@ -30,6 +31,7 @@ public class AirAtack : MonoBehaviour
         animatorManager = GetComponent<AnimatorManager>();
         energy = GetComponent<Energy>();
         playerEffects = GetComponent<PlayerEffects>();
+        airAtackUi.SetActive(true);
     }
 
     void Update()
