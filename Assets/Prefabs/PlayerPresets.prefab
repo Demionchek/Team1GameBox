@@ -286,6 +286,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: airHitArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: dashCDArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: swingsArray.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -298,9 +306,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 77d9d2cfa1144434b9b158fb73838176, type: 3}
     - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: airHitArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 68048f41016ac394c8aed3ec6faa4894, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: axeAppearArray.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: dashCDArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ad1df0e10dfd6704e84bb93bb32057b2, type: 3}
     - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: swingsArray.Array.data[0]
       value: 
@@ -318,9 +334,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 14075595b95879848b35d07bde4a9087, type: 3}
     - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: takeDamageArray.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: axeAppearArray.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: c7298dc194803fe469727d8383bfb0cf, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: takeDamageArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6713a0cf072043d43a53c59b2a9416e4, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: takeDamageArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 334ef1da8ae35ad42b269f1853769404, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: takeDamageArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e925f9f71b7d8b04895f12f3adc33bab, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: takeDamageArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 45086b8bd7382f640a3f60d3fb8f29c6, type: 3}
+    - target: {fileID: 1851583358453012767, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: takeDamageArray.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5262f51b7a7bbf444ab3d860e2bfbad6, type: 3}
     - target: {fileID: 2002089021637328882, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: _saver
       value: 
@@ -341,6 +381,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3972631499892162042, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e81b2d02eec35f54888cc36424e2cc1c, type: 3}
+    - target: {fileID: 3972631501501166697, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c7298dc194803fe469727d8383bfb0cf, type: 3}
     - target: {fileID: 4309151521464968087, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: timeToReturn
       value: 1
