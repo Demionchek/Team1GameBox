@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackMarkers: {fileID: 0}
   _enemySpawner: {fileID: 0}
-  _enemiesCount: 3
+  _enemiesCount: 4
   _hutOnLegs: {fileID: 0}
   _hutSpeed: 15
   _hutRunTime: 4

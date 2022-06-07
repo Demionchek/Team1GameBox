@@ -2480,6 +2480,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
       value: 0.4234133
       objectReference: {fileID: 0}
+    - target: {fileID: 6137966564330505449, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: _enemyPacks.Array.size
       value: 4
