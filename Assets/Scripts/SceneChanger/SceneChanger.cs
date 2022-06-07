@@ -4,11 +4,13 @@ using UnityEngine.UI;
 
 public class SceneChanger : MonoBehaviour
 {
+    [SerializeField] private Button _continueButton;
+    [SerializeField] private Saver _saver;
+
     private const string firstLevelSceneName = "Village";
     private const string mainMenuSceneName = "MainMenu";
     private const string winSceneName = "WinScene";
-    [SerializeField] private Button _continueButton;
-    [SerializeField] private Saver _saver;
+
     private void Start()
     {
         if (_saver.LevelToSave != 0)
