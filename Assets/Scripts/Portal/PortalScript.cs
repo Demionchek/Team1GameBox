@@ -12,6 +12,9 @@ public class PortalScript : MonoBehaviour, IUse
     [SerializeField] private float _coolDown = 1f;
     [SerializeField] private bool _isNextLevel;
     [SerializeField] private int _nextLevelNum;
+
+    [SerializeField] private FadeInOut fadeinOutScreen;
+
     private bool _isCooled = true;
 
     public void Use(CharacterController controller)
@@ -26,7 +29,7 @@ public class PortalScript : MonoBehaviour, IUse
         }
 
         if (_isCooled && _isNextLevel)
-        {
+        {            
             if (_nextLevelNum != 3)
             {
              _saver.SaveCheckPoint(0);
@@ -35,8 +38,14 @@ public class PortalScript : MonoBehaviour, IUse
             _saver.SaveHealth(health);
             int energy = (int)controller.GetComponent<Energy>().CurrentEnergy;
             _saver.SaveEnergy(energy);
-            SceneManager.LoadScene(_nextLevelNum);
-
+            try
+            {
+                StartFade(_nextLevelNum);
+            }
+            catch
+            {
+                Debug.Log("Cant fade in to next level");
+            }
         }
     }
 
@@ -66,5 +75,10 @@ public class PortalScript : MonoBehaviour, IUse
     {
         yield return new WaitForSeconds(_coolDown);
         _isCooled = true;
+    }
+
+    private void StartFade(int sceneIndex)
+    {
+        fadeinOutScreen.FadeInAndLoadScene(sceneIndex);
     }
 }

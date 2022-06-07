@@ -2533,6 +2533,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e2e5dd4e9e2d84ea5d95bd406866ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &929521592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6137966564330505448, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+  m_PrefabInstance: {fileID: 929521590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d7910c7b11fc942876e565b54791e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1021464810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40865,6 +40876,10 @@ PrefabInstance:
       propertyPath: _nextLevelNum
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4312771656606939225, guid: 4ae12ba6acfae4949b9d01088a62e526, type: 3}
+      propertyPath: fadeinOutScreen
+      value: 
+      objectReference: {fileID: 929521592}
     - target: {fileID: 4406460267851110245, guid: 4ae12ba6acfae4949b9d01088a62e526, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
