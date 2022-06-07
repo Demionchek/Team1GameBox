@@ -57,6 +57,10 @@ public class Health : MonoBehaviour, IDamageable
             if (TryGetComponent<EnemyController>(out EnemyController enemyController))
             {
                 enemyController.IsAlive = false;
+                if (enemyController._enemyType == EnemyController.EnemyType.Normal)
+                {
+
+                }
             }
             else if (TryGetComponent<YagaController>(out YagaController yagaController))
             {

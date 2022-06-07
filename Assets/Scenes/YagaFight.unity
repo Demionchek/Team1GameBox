@@ -1794,6 +1794,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6662421361899642451, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386470761471391306, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
 --- !u!1 &739709277
@@ -4122,6 +4130,18 @@ PrefabInstance:
     - target: {fileID: 7690895737987162133, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.42341325
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406087233812428381, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_InitialEventName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406087233812428381, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8888214268028623593, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}

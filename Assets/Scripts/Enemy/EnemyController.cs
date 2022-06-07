@@ -10,7 +10,7 @@ public class EnemyController : EnemyStateMachine
     [SerializeField] public EnemiesConfigs EnemiesConfigs;
     [Range(0.1f, 5), SerializeField] public float DOMoveSpeed = 0.7f;
     [Header("EnemyType")]
-    [SerializeField] private EnemyType _enemyType;
+    [SerializeField] public EnemyType _enemyType;
     [SerializeField] private float _maxSpecialMoveDistance = 7f;
     [SerializeField] private float _maxSpecialMoveHeight = 0.5f;
     [Header("SpecialAttackAnimation")]
@@ -19,7 +19,7 @@ public class EnemyController : EnemyStateMachine
     private CapsuleCollider _capsule;
     private EnemyAnimations _enemyAnimations;
 
-    private enum EnemyType
+    public enum EnemyType
     {
         Likho,
         CyberGiant,
