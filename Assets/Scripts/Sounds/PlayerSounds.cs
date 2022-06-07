@@ -18,7 +18,11 @@ public class PlayerSounds : MonoBehaviour
     [Space(5)]
     [SerializeField] private AudioSource dashSound;
     [Space(5)]
+    [SerializeField] private AudioSource dashCDSound;
+    [Space(5)]
     [SerializeField] private AudioSource airAttackSound;
+    [Space(5)]
+    [SerializeField] private AudioSource airHitSound;
     [Space(5)]
     [SerializeField] private AudioSource takeDamageSound;
     [Space(5)]
@@ -34,7 +38,19 @@ public class PlayerSounds : MonoBehaviour
     [Space(5)]
     [SerializeField] private AudioSource throwCDSound;
     [Space(5)]
+    [SerializeField] private AudioSource pickUpSound;
+    [Space(5)]
+    [SerializeField] private AudioSource HealSound;
+    [Space(5)]
+    [SerializeField] private AudioSource EnergySound;
+    [Space(5)]
+    [SerializeField] private AudioSource portalSound;
+    [Space(5)]
+    [SerializeField] private AudioSource arenaSound;
+    [Space(5)]
     [Header("Clips Arrays")]
+    [Space(5)]
+    [SerializeField] private AudioClip[] airHitArray;
     [Space(5)]
     [SerializeField] private AudioClip[] stepsArray;
     [Space(5)]
@@ -50,8 +66,34 @@ public class PlayerSounds : MonoBehaviour
     [Space(5)]
     [SerializeField] private AudioClip[] dashArray;
     [Space(5)]
+    [SerializeField] private AudioClip[] dashCDArray;
+    [Space(5)]
     [SerializeField] private AudioClip[] groundedArray;
 
+    public void PlayArenaSound()
+    {
+        arenaSound.Play();
+    }
+
+    public void PlayPortalSound()
+    {
+        portalSound.Play();
+    }
+
+    public void PlayPickUpSound()
+    {
+        pickUpSound.Play();
+    }
+
+    public void PlayEnergySound()
+    {
+        EnergySound.Play();
+    }
+
+    public void PlayHealSound()
+    {
+        HealSound.Play();
+    }
 
     public void KickCDSound()
     {
@@ -94,6 +136,20 @@ public class PlayerSounds : MonoBehaviour
     public void PlayKickSound()
     {
         kickSound.Play();
+    }
+
+    public void PlayDashCDSound()
+    {
+        int r = Random.Range(0, dashCDArray.Length);
+        dashCDSound.clip = dashCDArray[r];
+        dashCDSound.Play();
+    }
+
+    public void PlayAirHitSound()
+    {
+        int r = Random.Range(0, airHitArray.Length);
+        airHitSound.clip = airHitArray[r];
+        airHitSound.Play();
     }
 
     public void PlayDamagedSound()

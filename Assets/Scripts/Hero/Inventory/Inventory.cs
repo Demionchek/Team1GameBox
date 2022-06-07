@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject healthItemPrefab;
     [SerializeField] private GameObject energyItemPrefab;
 
-
+    private PlayerSounds playerSounds;
     private Item[,] inventory;
     private StarterAssetsInputs playerInputs;
 
@@ -26,6 +26,7 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        playerSounds = GetComponent<PlayerSounds>();
         inventory = new Item[maxInventorySlots, countOfItemsInSlot];
         playerInputs = GetComponent<StarterAssetsInputs>();
     }
@@ -51,6 +52,7 @@ public class Inventory : MonoBehaviour
 
     public bool AddItem<T>(T item) where T : Item
     {
+        playerSounds.PlayPickUpSound();
         var dimensionIndex = GetItemType(item);
         var emptySlot = FindFirstEmptySlot(dimensionIndex);
         if (emptySlot != -1)
@@ -65,9 +67,15 @@ public class Inventory : MonoBehaviour
     private int GetItemType<T>(T item) where T : Item
     {
         if (item.TryGetComponent<HealthItem>(out HealthItem healthItem))
+        {
+            playerSounds.PlayHealSound();
             return (int) ItemType.HealthPotion;
+        }
         else if (item.TryGetComponent<EnergyItem>(out EnergyItem energyItem))
+        {
+            playerSounds.PlayEnergySound();
             return (int) ItemType.EnergyPotion;
+        }
         else
             return -1;
     }

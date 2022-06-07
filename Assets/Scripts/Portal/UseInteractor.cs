@@ -10,9 +10,11 @@ public class UseInteractor : MonoBehaviour
     [SerializeField] private float hitDistance;
     [SerializeField] private int countToHit;
     private CharacterController _controller;
+    private PlayerSounds _sound;
 
     private void Start()
     {
+        _sound = GetComponent<PlayerSounds>();
         _controller = GetComponent<CharacterController>();
     }
     public void TryInteract()
@@ -28,6 +30,14 @@ public class UseInteractor : MonoBehaviour
             {
                 if (hit.transform != null && hit.transform.TryGetComponent<IUse>(out IUse use))
                 {
+                    if (hit.collider.TryGetComponent(out PortalScript portal))
+                    {
+                        _sound.PlayPortalSound();
+                    }
+                    else
+                    {
+                        _sound.PlayArenaSound();
+                    }
                     use.Use(_controller);
 #if(UNITY_EDITOR)
                     Debug.Log("use " + hit.transform.name);

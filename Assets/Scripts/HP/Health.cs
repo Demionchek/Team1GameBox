@@ -89,6 +89,7 @@ public class Health : MonoBehaviour, IDamageable
             {
                 enemyController.IsAlive = false;
                 _enemySounds.PlayDeathSound();
+                _enemySounds.StopStubSound();
             }
             else if (TryGetComponent<YagaController>(out YagaController yagaController))
             {
