@@ -24,12 +24,14 @@ public class MIghtyPunch : MonoBehaviour
     private MousePositionManager mouseMangaer;
     private ThirdPersonController playerController;
     private PlayerInput inputSystem;
+    private PlayerSounds sound;
 
     private float sprintSpeed;
     private bool isMightyPunchCooled = true;
 
     void Start()
     {
+        sound = GetComponent<PlayerSounds>();
         playerInputs = GetComponent<StarterAssetsInputs>();
         animatorManager = GetComponent<AnimatorManager>();
         mouseMangaer = GetComponent<MeleeAtack>().GetMouseManager();
@@ -83,6 +85,7 @@ public class MIghtyPunch : MonoBehaviour
         yield return new WaitForSeconds(configs.mightyPunchCooldown);
         playerInputs.mightyPunch = false;
         isMightyPunchCooled = true;
+        sound.KickCDSound();
     }
 
     private void TryUpdateUI()

@@ -14,11 +14,13 @@ public class DashMove : MonoBehaviour
     private bool isDashCooled;
     private Energy playerEnergy;
     private PlayerEffects playerEffects;
+    private PlayerSounds playerSounds;
 
     public UnityEvent UpdateUI;
 
     private void Start()
     {
+        playerSounds = GetComponent<PlayerSounds>();
         playerEffects = GetComponent<PlayerEffects>();
         personController = GetComponent<ThirdPersonController>();
         inputs = GetComponent<StarterAssetsInputs>();
@@ -72,5 +74,6 @@ public class DashMove : MonoBehaviour
     {
         yield return new WaitForSeconds(playerConfigs.dashCooldown);
         isDashCooled = true;
+        playerSounds.PlayDashCDSound();
     }
 }
