@@ -6,9 +6,9 @@ using StarterAssets;
 public class DeathArena : MonoBehaviour
 {
     [SerializeField] private GameObject _barier;
-    [SerializeField] private GameObject _forestWall; 
     [SerializeField] private EnemySpawner spawner;
     private bool _isActive;
+    private SphereCollider _collider;
 
     private const float k_delay = 1f;
     public int EnemiesAlive { get; set; }
@@ -16,6 +16,7 @@ public class DeathArena : MonoBehaviour
     private void Start()
     {
         _barier.SetActive(false);
+        _collider = GetComponent<SphereCollider>();
     }
 
     private void DeathCounter()
@@ -23,13 +24,17 @@ public class DeathArena : MonoBehaviour
         if (_isActive) EnemiesAlive--;
     }
 
-    public void Activate()
+    private void OnTriggerEnter(Collider other)
     {
-        EnemyController.EnemyDeathAction += DeathCounter;
-        spawner.ArenaSummon();
-        _isActive = true;
-        _barier.SetActive(true);
-        StartCoroutine(CheckIfEnemiesAreAlive());
+        if (other.TryGetComponent(out ThirdPersonController controller))
+        {
+            EnemyController.EnemyDeathAction += DeathCounter;
+            spawner.ArenaSummon();
+            _isActive = true;
+            _barier.SetActive(true);
+            StartCoroutine(CheckIfEnemiesAreAlive());
+            _collider.enabled = false;
+        }
     }
 
     private IEnumerator CheckIfEnemiesAreAlive()
@@ -41,7 +46,6 @@ public class DeathArena : MonoBehaviour
             if (EnemiesAlive <= 0)
             {
                 _isActive = false;
-                _forestWall.SetActive(false);
             }
         }
         _barier.SetActive(false);
