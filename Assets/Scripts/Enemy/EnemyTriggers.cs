@@ -13,7 +13,6 @@ public class EnemyTriggers : MonoBehaviour
         int i = _saver.CheckPointToSave;
         if (i < nextCheckPoint)
         {
-            Debug.Log("AllOff");
             _spawn = true;
             foreach (var pack in _packs)
             {
@@ -26,7 +25,6 @@ public class EnemyTriggers : MonoBehaviour
     {
         if (other.TryGetComponent(out CharacterController controller))
         {
-            Debug.Log("enter");
             if (_spawn)
             {
                 foreach (var pack in _packs)
