@@ -4,8 +4,9 @@ using StarterAssets;
 using System;
 using UnityEngine.SceneManagement;
 
-public class PortalScript : MonoBehaviour , IUse
+public class PortalScript : MonoBehaviour, IUse
 {
+    [SerializeField] private GameObject UIobj;
     [SerializeField] private Transform _teleportationTarget;
     [SerializeField] private Saver _saver;
     [SerializeField] private float _coolDown = 1f;
@@ -44,6 +45,28 @@ public class PortalScript : MonoBehaviour , IUse
             catch
             {
                 Debug.Log("Cant fade in to next level");
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out CharacterController controller))
+        {
+            if (UIobj != null)
+            {
+                UIobj.SetActive(true);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out CharacterController controller))
+        {
+            if (UIobj != null)
+            {
+                UIobj.SetActive(false);
             }
         }
     }

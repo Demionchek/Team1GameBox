@@ -45,6 +45,7 @@ public class DeathArena : MonoBehaviour
             }
         }
         _barier.SetActive(false);
+        EnemiesAlive = 0;
         EnemyController.EnemyDeathAction -= DeathCounter;
     }
 }
