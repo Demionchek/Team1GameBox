@@ -2044,8 +2044,8 @@ MonoBehaviour:
   Target: {fileID: 0}
   _kettle: {fileID: 0}
   AttackDistance: 6
-  _attackCooldown: 5
-  _markerDelay: 2
+  _attackCooldown: 2
+  _markerDelay: 1
 --- !u!114 &7756935160170860503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89280019563a6e74aacee967af984e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 300
+  _hp: 500
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -2087,7 +2087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 7756935160170860500}
-  _castSpeed: 0.7
+  _castSpeed: 0.5
 --- !u!95 &7756935160170860490
 Animator:
   serializedVersion: 3
