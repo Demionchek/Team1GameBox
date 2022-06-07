@@ -13,7 +13,8 @@ public class EnemyEnablingOnMap : MonoBehaviour
         {
             if (i < _saver.CheckPointToSave)
             {
-                _enemyPacks[i].SetActive(false);
+                if(_enemyPacks[i] != null)
+                    _enemyPacks[i].SetActive(false);
             }
         }
     }

@@ -55,24 +55,31 @@ public class Health : MonoBehaviour, IDamageable
             CheckDeath();
 
 
-
-            if (_isPlayer)
+            try
             {
-                 HPChanged();
-                _playerSounds.PlayDamagedSound();
-                if (Hp < lowHPSoundAt)
+                if (_isPlayer)
                 {
-                    _playerSounds.PlayLowHPSound();
+                    HPChanged();
+                    _playerSounds.PlayDamagedSound();
+                    if (Hp < lowHPSoundAt)
+                    {
+                        _playerSounds.PlayLowHPSound();
+                    }
+                }
+                else if (_isBoss)
+                {
+                    _bossSounds.PlayDamagedSound();
+                }
+                else
+                {
+                    _enemySounds.PlayDamagedSound();
                 }
             }
-            else if (_isBoss)
+            catch
             {
-                _bossSounds.PlayDamagedSound();
+                Debug.Log("Что-то не то со звуками из скрипта  Health, cs 60 и далее");
             }
-            else
-            {
-                _enemySounds.PlayDamagedSound();
-            }
+
         }
     }
 
