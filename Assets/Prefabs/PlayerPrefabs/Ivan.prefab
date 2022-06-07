@@ -2940,6 +2940,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 8
+  lowHPSoundAt: 30
 --- !u!114 &4416926083347132228
 MonoBehaviour:
   m_ObjectHideFlags: 0
