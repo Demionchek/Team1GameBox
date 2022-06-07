@@ -40,12 +40,14 @@ public class Inventory : MonoBehaviour
     {
         if (playerInputs.inventoryFirstSlot)
         {
+            playerSounds.PlayHealSound();
             UseItem(0);
             playerInputs.inventoryFirstSlot = false;
         }
         else if (playerInputs.inventorySecondSlot)
         {
             UseItem(1);
+            playerSounds.PlayEnergySound();
             playerInputs.inventorySecondSlot = false;
         }
     }
@@ -68,12 +70,12 @@ public class Inventory : MonoBehaviour
     {
         if (item.TryGetComponent<HealthItem>(out HealthItem healthItem))
         {
-            playerSounds.PlayHealSound();
+
             return (int) ItemType.HealthPotion;
         }
         else if (item.TryGetComponent<EnergyItem>(out EnergyItem energyItem))
         {
-            playerSounds.PlayEnergySound();
+
             return (int) ItemType.EnergyPotion;
         }
         else
