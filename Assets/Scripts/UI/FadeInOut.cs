@@ -1,19 +1,59 @@
+using DG.Tweening;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FadeInOut : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
 
-    private Animator animator;
-    private readonly int fadeOut = Animator.StringToHash("FadeOut");
+    private Tween fadeTween;
 
-    void Start()
+    public void Start()
     {
-        animator = GetComponent<Animator>();
+       canvasGroup.alpha = 1;
+       FadeOut(5f);
     }
 
-    public void StartFade()
+    public void FadeInAndLoadScene(int index)
     {
-        animator.SetTrigger(fadeOut);
+        var duration = 2f;
+        FadeIn(duration);
+        StartCoroutine(WaitAndLoadScene(index,duration));
+    }
+
+    private IEnumerator WaitAndLoadScene(int index,float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(index);
+    }
+
+    public void FadeIn(float duration)
+    {
+        Fade(1f, duration, () =>
+        {
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+        });
+    }    
+
+    public void FadeOut(float duration)
+    {
+        Fade(0f, duration, () =>
+        {
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+        });
+    }
+
+    private void Fade(float endValue, float duration, TweenCallback onEnd)
+    {
+        if(fadeTween != null)
+        {
+            fadeTween.Kill(false);
+        }
+
+        fadeTween = canvasGroup.DOFade(endValue, duration);
+        fadeTween.onComplete += onEnd;
     }
 }
