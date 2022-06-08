@@ -25,6 +25,7 @@ public class ItemDrop : MonoBehaviour
     {
         counter++;
         yield return new WaitForSeconds(timeToSpawnAfterDeath);
-        Instantiate(drop,transform.position,Quaternion.identity);
+        var positionToSpawn = transform.position + Vector3.up * 0.1f;
+        Instantiate(drop,positionToSpawn,Quaternion.identity);
     }
 }
