@@ -71,6 +71,7 @@ public class PauseHandler : MonoBehaviour
     {
         UsePause(true, 0);
         playerInputs.isPaused = true;
+        playerInputs.move = Vector2.zero;
     }
 
     public void Unpause()
