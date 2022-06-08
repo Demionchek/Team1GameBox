@@ -9,11 +9,13 @@ public class AirAtack : MonoBehaviour
     [SerializeField] private PlayerAbilitiesConfigs configs;
     [SerializeField] private GameObject markerPrefab;
     [SerializeField] private float effectDelTimer = 0.3f;
+    [SerializeField] private GameObject airAtackUi;
 
     private AnimatorManager animatorManager;
     private StarterAssetsInputs inputs;
     private PlayerEffects playerEffects;
     private Energy energy;
+    private PlayerSounds playerSounds;
     private bool isAirAtackCooled = true;
 
     public bool IsAirAtack { get { return !animatorManager.isGrounded() && inputs.atack; } }
@@ -24,10 +26,12 @@ public class AirAtack : MonoBehaviour
 
     void Start()
     {
+        playerSounds = GetComponent<PlayerSounds>();
         inputs = GetComponent<StarterAssetsInputs>();
         animatorManager = GetComponent<AnimatorManager>();
         energy = GetComponent<Energy>();
         playerEffects = GetComponent<PlayerEffects>();
+        airAtackUi.SetActive(true);
     }
 
     void Update()
@@ -68,6 +72,7 @@ public class AirAtack : MonoBehaviour
 
     private void AirHit()
     {
+        playerSounds.PlayAirHitSound();
         float height = transform.position.y + transform.localScale.y;
         Vector3 rayPos = new Vector3(transform.position.x, height, transform.position.z);
         Ray ray = new Ray(rayPos, transform.forward);
@@ -118,6 +123,7 @@ public class AirAtack : MonoBehaviour
         isAirAtackCooled = false;
         yield return new WaitForSecondsRealtime(configs.airAtackCooldown);
         isAirAtackCooled = true;
+        playerSounds.AirAttackCDSound();
     }
 
     private IEnumerator BlockThrowAxe()

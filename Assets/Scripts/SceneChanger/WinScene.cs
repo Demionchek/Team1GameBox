@@ -3,7 +3,8 @@ using UnityEngine;
 public class WinScene : MonoBehaviour
 {
     private Health health;
-    
+    [SerializeField] private FadeInOut fadeInOut;
+
     private void Start()
     {
         if (TryGetComponent<Health>(out Health health))
@@ -18,7 +19,6 @@ public class WinScene : MonoBehaviour
 
     private void SetWinScene()
     {
-        SceneChanger changer = new SceneChanger();
-        changer.LoadWinScene();
+        fadeInOut.FadeInAndLoadScene(4);
     }
 }

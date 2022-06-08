@@ -18,6 +18,11 @@ public class AirAtackUI : MonoBehaviour
 
     private void Update()
     {
+        CheckUiChagne();
+    }
+
+    private void CheckUiChagne()
+    {
         if (!animatorManager.isGrounded())
             UpdateAtackIcon();
         else if (slot.sprite != atackSprite)

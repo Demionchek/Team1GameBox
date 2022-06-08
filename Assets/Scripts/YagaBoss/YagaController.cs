@@ -70,7 +70,7 @@ public class YagaController : MonoBehaviour
                     _isAttacking = true;
 
                     if (CreateConeMarker != null)
-                        CreateConeMarker(transform.position, Target.position, _markerDelay);
+                        CreateConeMarker(transform.position, Target.position+Vector3.up, _markerDelay);
 
                 }
                 break;

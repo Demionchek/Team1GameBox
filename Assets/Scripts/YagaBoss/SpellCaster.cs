@@ -6,6 +6,8 @@ using StarterAssets;
 public class SpellCaster : MonoBehaviour
 {
     [SerializeField] private AttackMarkersController attackMarkers;
+    [SerializeField] private Renderer _waterRenderer;
+    [SerializeField] private Transform spawnPoint; 
     [Range(0, 1), SerializeField] private float _summonChance = 0.5f;
 
     private Material material;
@@ -21,7 +23,7 @@ public class SpellCaster : MonoBehaviour
 
     private void Awake()
     {
-        material = GetComponent<Renderer>().material;
+        material = _waterRenderer.material;
         summons = GetComponent<YagaSummons>();
     }
 
@@ -38,17 +40,17 @@ public class SpellCaster : MonoBehaviour
                 break;
             case _pondSpell:
                 material.color = Color.blue;
-                attackMarkers.CreateBossPondSpell(transform.position, timeToDel);
+                attackMarkers.CreateBossPondSpell(spawnPoint.position, timeToDel);
                 ChanceOfSummon(controller, timeToDel);
                 break;
             case _ConesNPondSpell:
                 material.color = Color.black;
-                attackMarkers.CreateBossPondSpell(transform.position, timeToDel);
-                attackMarkers.CreateMultyCones(transform.position, timeToDel);
+                attackMarkers.CreateBossPondSpell(spawnPoint.position, timeToDel);
+                attackMarkers.CreateMultyCones(spawnPoint.position, timeToDel);
                 break;
             case _multyConeSpell:
                 material.color = Color.red;
-                attackMarkers.CreateMultyCones(transform.position, timeToDel);
+                attackMarkers.CreateMultyCones(spawnPoint.position, timeToDel);
                 ChanceOfSummon(controller, timeToDel);
                 break;
         }
@@ -58,7 +60,7 @@ public class SpellCaster : MonoBehaviour
     {
         material.color = Color.green;
         yield return new WaitForSeconds(time);
-        attackMarkers.CreateClowdSpell(controller, transform.position);
+        attackMarkers.CreateClowdSpell(controller, spawnPoint.position);
     }
 
     private void ChanceOfSummon(ThirdPersonController controller, float timeToDel)

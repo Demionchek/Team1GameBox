@@ -10,7 +10,7 @@ public class EnemySounds : MonoBehaviour
     [SerializeField] private AudioSource _footstepsSource;
     [SerializeField] private AudioSource _damagedSource;
     [SerializeField] private AudioSource _deathSource;
-
+    [SerializeField] private AudioSource _stubSound;
     [Space (20)]
     
     [SerializeField] private AudioClip[] _attackSounds;
@@ -19,6 +19,8 @@ public class EnemySounds : MonoBehaviour
     [SerializeField] private AudioClip[] _footstepsSounds;
     [SerializeField] private AudioClip[] _damagedSounds;
     [SerializeField] private AudioClip[] _deathSounds;
+
+    public void StopStubSound() => _stubSound.Stop();
 
     public void PlayAttackSound()
     {

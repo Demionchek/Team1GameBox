@@ -108,6 +108,7 @@ public class EnemySpawner : MonoBehaviour
                 enemyController.Target = _controller.transform;
                 enemiesOnArena[i].transform.position = point;
                 enemiesOnArena[i].SetActive(true);
+                enemyController.Revive();
                 enemyController.Agressive();
             }
         }

@@ -14,7 +14,7 @@ public class AttackMarkersController : MonoBehaviour
     [SerializeField] private GameObject _rayMarkerPrefab;
     [SerializeField] private GameObject _coneMarkerPrefab;
 
-    private const float _yPosCorrection = 0.01f;
+    private const float _yPosCorrection = 0.2f;
     private const int _multyConesCount = 3;
     private const float k_Angle = 120f;
 
