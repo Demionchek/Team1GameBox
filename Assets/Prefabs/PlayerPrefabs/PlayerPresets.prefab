@@ -763,10 +763,6 @@ PrefabInstance:
       propertyPath: playerRotationSpeed
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 8697813075947007674, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
-      propertyPath: aimColliderLayerMask.m_Bits
-      value: 8187
-      objectReference: {fileID: 0}
     - target: {fileID: 8800532875544861488, guid: 00d078ebafe1b944c8bde7d6284d412b, type: 3}
       propertyPath: _saver
       value: 
