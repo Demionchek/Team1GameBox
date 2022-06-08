@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 2061367705241531482}
   - component: {fileID: 7912709045091802272}
   - component: {fileID: 6062260385354742603}
+  - component: {fileID: 3713549647687038344}
   m_Layer: 6
   m_Name: Stub
   m_TagString: Enemy
@@ -342,6 +343,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8dc5cf66541163c489c3c8accfc0b8f2, type: 3}
   _deathSounds:
   - {fileID: 8300000, guid: 209487c005544a0469e4cad585677993, type: 3}
+--- !u!114 &3713549647687038344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351292218140174661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52686c2b6591e8144851b2fa26aead0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _callRadius: 7
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _countToFind: 30
 --- !u!1 &1706606679599367134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,11 +1454,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1041437919588097098, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
   m_PrefabInstance: {fileID: 3713984181067144489}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &7242876543143595614 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6271655247684834167, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
-  m_PrefabInstance: {fileID: 3713984181067144489}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &8698471598792202563 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5421653603892331626, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
@@ -1464,5 +1477,10 @@ AudioSource:
 --- !u!82 &5011051399135530457 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+  m_PrefabInstance: {fileID: 3713984181067144489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7242876543143595614 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6271655247684834167, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
   m_PrefabInstance: {fileID: 3713984181067144489}
   m_PrefabAsset: {fileID: 0}

@@ -18,6 +18,7 @@ public class EnemyController : EnemyStateMachine
     [SerializeField] private AnimationClip _specialAttack;
     private CapsuleCollider _capsule;
     private EnemyAnimations _enemyAnimations;
+    private EnemySocials _enemySocials;
 
     public enum EnemyType
     {
@@ -74,7 +75,7 @@ public class EnemyController : EnemyStateMachine
         Agent = GetComponent<NavMeshAgent>();
         _enemyAnimations = GetComponent<EnemyAnimations>();
         _capsule = GetComponent<CapsuleCollider>();
-        
+        _enemySocials = GetComponent<EnemySocials>();
     }
 
     private void Start()
@@ -115,23 +116,12 @@ public class EnemyController : EnemyStateMachine
 
     private void Update()
     {
-        
         if (Target != null)
         {
             EnemyBehaviour();
-            //AnimatorUpdater();
         }
     }
 
-    //private void AnimatorUpdater()
-    //{
-    //    if (CurrState != lastState)
-    //    {
-    //        Debug.Log($" {CurrState}  {lastState}");
-    //        lastState = CurrState;
-    //        _enemyAnimations.OnStateChange(CurrState);
-    //    }
-    //}
 
     public void Revive()
     {
@@ -178,9 +168,10 @@ public class EnemyController : EnemyStateMachine
         switch (CurrState)
         {
             case _idleState:
-                
+
                 if (distanceToTarget <= EnemiesConfigs.normalReactDistance)
                 {
+                    _enemySocials.CallNearbyEnemies();
                     CurrState = _moveState;
                 }
                 SetState(new IdleState(this));
@@ -278,14 +269,14 @@ public class EnemyController : EnemyStateMachine
         if (Physics.Raycast(ray, out hit))
         {
 #if (UNITY_EDITOR)
-        Debug.DrawLine(ray.origin, hit.point, Color.red);
+            Debug.DrawLine(ray.origin, hit.point, Color.red);
 #endif
             if (hit.collider.TryGetComponent(out CharacterController controller))
             {
                 return true;
             }
         }
-                return false;
+        return false;
     }
 
     private void CheckSight(float distanceToTarget)
@@ -380,7 +371,13 @@ public class EnemyController : EnemyStateMachine
         Agent.enabled = true;
     }
 
-    public void Agressive() => StartCoroutine(SetToMoveState());
+    public void Agressive()
+    {
+        if (CurrState == _idleState && IsAlive)
+        {
+            StartCoroutine(SetToMoveState());
+        }
+    }
 
     private IEnumerator SetToMoveState()
     {
