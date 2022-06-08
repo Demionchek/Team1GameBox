@@ -3,7 +3,8 @@ using UnityEngine;
 public class UnlockSystemManager : MonoBehaviour
 {
     [SerializeField] private int countOfItemsToUnlock;
-    [SerializeField] private Saver saver; 
+    [SerializeField] private Saver saver;
+    [SerializeField] private UnlockSystemUI unlockUi;
 
     private AirAtack airAtack;
     private MIghtyPunch mightyPunch;
@@ -37,7 +38,7 @@ public class UnlockSystemManager : MonoBehaviour
             airAtack.enabled = true;
         }
 
-        if (counter >= countOfItemsToUnlock*2)
+        if (counter >= countOfItemsToUnlock * 2)
         {
             mightyPunch.enabled = true;
         }
@@ -46,6 +47,7 @@ public class UnlockSystemManager : MonoBehaviour
     public void TryUnlock(int scrollNum)
     {
         counter++;
+        unlockUi.UpdateUi();
         saver.SaveCollectableNum(counter);
         saver.SaveScrolls(scrollNum);
         if ( IsEnoughtItems())
@@ -57,7 +59,6 @@ public class UnlockSystemManager : MonoBehaviour
             else if (mightyPunch.enabled == false)
             {
                 mightyPunch.enabled = true;
-
             }  
                 counter = 0;
         }
