@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class AreaSpawner : MonoBehaviour
 {
-   [SerializeField] private GameObject spawnObject;
+   [SerializeField] private GameObject[] spawnObjects;
    [SerializeField] private Vector3 objectSize;
    [SerializeField] private int objectsCount;
    [SerializeField] private int spawnTryCount = 100;
@@ -65,10 +65,16 @@ public class AreaSpawner : MonoBehaviour
 
    private GameObject SpawnObject(Vector3 randomPosition)
    {
-      GameObject spawnedObject = Instantiate(spawnObject, randomPosition, Quaternion.identity, transform);
+      GameObject spawnedObject = RandomSpawnObject(randomPosition);
       spawnedObject.transform.localScale = RandomScale();
       spawnedObject.transform.eulerAngles = RandomEulerAngle();
       return spawnedObject;
+   }
+
+   private GameObject RandomSpawnObject(Vector3 randomPosition)
+   {
+      GameObject spawnObject = spawnObjects[Random.Range(0, spawnObjects.Length)];
+      return Instantiate(spawnObject, randomPosition, Quaternion.identity, transform);
    }
 
    private Vector3 RandomScale()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2774001177944335879}
   - component: {fileID: 115910611026825933}
   - component: {fileID: 8673133753177842253}
-  - component: {fileID: 7821686902079886880}
+  - component: {fileID: 115680107313165058}
   m_Layer: 11
   m_Name: Telega
   m_TagString: Untagged
@@ -99,8 +99,8 @@ MonoBehaviour:
   shaderVariableName: _Alpha
   fadeTo: 0.5
   fadeFrom: 1
---- !u!64 &7821686902079886880
-MeshCollider:
+--- !u!65 &115680107313165058
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,7 +109,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4286092641501487531, guid: 9bd88d3bbe8615442a49ae060a44af85, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 274.41907, y: 632.36, z: 342.33972}
+  m_Center: {x: -0.00048828125, y: 64.742584, z: -0.0009841919}
