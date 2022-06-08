@@ -75,6 +75,8 @@ public class PauseHandler : MonoBehaviour
 
     public void Unpause()
     {
+        if(isSettings)
+            ChangeSettingsBar();  
         UsePause(false,1);
         playerInputs.isPaused = false;
         playerInputs.atack = false;
