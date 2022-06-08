@@ -1011,6 +1011,7 @@ GameObject:
   - component: {fileID: 5682216413847939563}
   - component: {fileID: 2681183328024646140}
   - component: {fileID: -8179222041804519137}
+  - component: {fileID: 4690496550137741229}
   m_Layer: 6
   m_Name: Likho
   m_TagString: Enemy
@@ -1233,6 +1234,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _countToFind: 30
+--- !u!65 &4690496550137741229
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961363368977298225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.306199, z: 1}
+  m_Center: {x: 0, y: 0.65309954, z: 0}
 --- !u!1 &7710480804112752305
 GameObject:
   m_ObjectHideFlags: 0

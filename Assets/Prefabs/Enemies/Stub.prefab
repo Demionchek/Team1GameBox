@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 7912709045091802272}
   - component: {fileID: 6062260385354742603}
   - component: {fileID: 3713549647687038344}
+  - component: {fileID: 6302961749959305720}
   m_Layer: 6
   m_Name: Stub
   m_TagString: Enemy
@@ -360,6 +361,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _countToFind: 30
+--- !u!65 &6302961749959305720
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351292218140174661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 3.8650177, z: 1.3}
+  m_Center: {x: 0, y: 1.4325088, z: 0}
 --- !u!1 &1706606679599367134
 GameObject:
   m_ObjectHideFlags: 0

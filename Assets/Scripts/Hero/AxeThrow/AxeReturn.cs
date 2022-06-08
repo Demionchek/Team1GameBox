@@ -44,8 +44,7 @@ public class AxeReturn : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller)
-            && other.gameObject.layer != layersToIgnore)
+        if (!other.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
         {
             rigidBody.isKinematic = true;
             if (other.transform.TryGetComponent(out IDamageable damageable) && counter == 0)

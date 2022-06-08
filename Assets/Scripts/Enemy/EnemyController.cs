@@ -19,7 +19,7 @@ public class EnemyController : EnemyStateMachine
     private CapsuleCollider _capsule;
     private EnemyAnimations _enemyAnimations;
     private EnemySocials _enemySocials;
-
+    private BoxCollider _boxCollider;
     public enum EnemyType
     {
         Likho,
@@ -105,6 +105,8 @@ public class EnemyController : EnemyStateMachine
                 Agent.stoppingDistance = EnemiesConfigs.normalStoppingDistance;
                 break;
         }
+        _boxCollider = GetComponent<BoxCollider>();
+        _boxCollider.isTrigger = true;
         _stopDistanceCorrection += Agent.stoppingDistance;
         CurrState = _idleState;
         SpecialAnimLength = _specialAttack.length;
@@ -128,6 +130,7 @@ public class EnemyController : EnemyStateMachine
         IsAlive = true;
         Agent.enabled = true;
         _capsule.enabled = true;
+        _boxCollider.enabled = true;
         CurrState = _moveState;
         GetComponent<Health>().Revive();
         GetComponent<Animator>().SetTrigger("Revive");
@@ -188,6 +191,7 @@ public class EnemyController : EnemyStateMachine
                 }
                 break;
             case _deadState:
+                _boxCollider.enabled = false;
                 _capsule.enabled = false;
                 Agent.enabled = false;
                 break;
@@ -254,6 +258,7 @@ public class EnemyController : EnemyStateMachine
 
                 break;
             case _deadState:
+                _boxCollider.enabled = false;
                 _capsule.enabled = false;
                 Agent.enabled = false;
                 break;
@@ -350,6 +355,7 @@ public class EnemyController : EnemyStateMachine
 
                 break;
             case _deadState:
+                _boxCollider.enabled = false;
                 _capsule.enabled = false;
                 Agent.enabled = false;
                 break;
