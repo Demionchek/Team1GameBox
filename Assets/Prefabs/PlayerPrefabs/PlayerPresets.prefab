@@ -504,6 +504,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: saver
+      value: 
+      objectReference: {fileID: 2720519723248160275}
     - target: {fileID: 8399645091220033060, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -18,6 +18,8 @@ public class DeathArena : MonoBehaviour
         _barier.SetActive(false);
     }
 
+    public void OffBarier() => _forestWall.SetActive(false);
+
     private void DeathCounter()
     {
         if (_isActive) EnemiesAlive--;
