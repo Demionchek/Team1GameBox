@@ -179,7 +179,6 @@ public class EnemyController : EnemyStateMachine
                 SetState(new IdleState(this));
                 break;
             case _moveState:
-                GetPathPoints();
                 CheckSight(distanceToTarget);
                 break;
             case _attackState:
@@ -298,6 +297,7 @@ public class EnemyController : EnemyStateMachine
         }
         else
         {
+            Rotate();
             SetState(new MoveState(this));
         }
     }
