@@ -275,7 +275,7 @@ MonoBehaviour:
   playersHand: {fileID: 3604050082556616600}
   layersToIgnore:
     serializedVersion: 2
-    m_Bits: 4484
+    m_Bits: 4492
   timeToReturn: 1
 --- !u!1001 &2720519722337734127
 PrefabInstance:
