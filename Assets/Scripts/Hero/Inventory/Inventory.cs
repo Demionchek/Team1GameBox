@@ -54,14 +54,15 @@ public class Inventory : MonoBehaviour
 
     public bool AddItem<T>(T item) where T : Item
     {
-        playerSounds.PlayPickUpSound();
+
         var dimensionIndex = GetItemType(item);
         var emptySlot = FindFirstEmptySlot(dimensionIndex);
         if (emptySlot != -1)
         {
             HideObject(item);
             TryUpdateUI(dimensionIndex, emptySlot, false);
-            inventory[dimensionIndex, emptySlot] = item;
+            inventory[dimensionIndex, emptySlot] = item; 
+            playerSounds.PlayPickUpSound();
         }
         return emptySlot != -1;
     }
