@@ -76,6 +76,7 @@ public class EnemyController : EnemyStateMachine
         _enemyAnimations = GetComponent<EnemyAnimations>();
         _capsule = GetComponent<CapsuleCollider>();
         _enemySocials = GetComponent<EnemySocials>();
+        _boxCollider = GetComponent<BoxCollider>();
     }
 
     private void Start()
@@ -105,7 +106,6 @@ public class EnemyController : EnemyStateMachine
                 Agent.stoppingDistance = EnemiesConfigs.normalStoppingDistance;
                 break;
         }
-        _boxCollider = GetComponent<BoxCollider>();
         _boxCollider.isTrigger = true;
         _stopDistanceCorrection += Agent.stoppingDistance;
         CurrState = _idleState;
@@ -123,7 +123,6 @@ public class EnemyController : EnemyStateMachine
             EnemyBehaviour();
         }
     }
-
 
     public void Revive()
     {
@@ -330,10 +329,13 @@ public class EnemyController : EnemyStateMachine
                 CheckSight(distanceToTarget);
                 break;
             case _attackState:
-                SetState(new AttackState(this));
                 if (distanceToTarget >= Agent.stoppingDistance && !_isAttaking)
                 {
                     CurrState = _moveState;
+                }
+                else
+                {
+                    SetState(new AttackState(this));
                 }
                 break;
             case _chargeState:
@@ -345,12 +347,16 @@ public class EnemyController : EnemyStateMachine
                 break;
             case _specialState:
 
-                SetState(new SpecialJumpAttack(this));
 
                 if (!_isSpecialAttacking && Agent.enabled)
                 {
                     Agent.velocity = Vector3.zero;
                     CurrState = _moveState;
+                }
+                else
+                {
+                    SetState(new SpecialJumpAttack(this));
+
                 }
 
                 break;
@@ -379,7 +385,7 @@ public class EnemyController : EnemyStateMachine
 
     public void Agressive()
     {
-        if (CurrState == _idleState && IsAlive)
+        if (CurrState != _moveState || CurrState != _chargeState || CurrState != _attackState || CurrState != _specialState)
         {
             StartCoroutine(SetToMoveState());
         }

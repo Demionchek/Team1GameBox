@@ -7,7 +7,7 @@ public class YagaSummons : MonoBehaviour
     [SerializeField] private AttackMarkersController _attackMarkers;
     [Header("Minions")]
     [SerializeField] private EnemySpawner _enemySpawner;
-    [SerializeField] private int _enemiesCount; 
+    [SerializeField] public int EnemiesCount; 
     [Header("Hut")]
     [SerializeField] private GameObject _hutOnLegs;
     [SerializeField] private float _hutSpeed;
@@ -20,19 +20,14 @@ public class YagaSummons : MonoBehaviour
     private int _lastSummon;
     private const int _rocketsSummon = 0;
     private const int _hutSummon = 1;
-    private const int _minionsSummon = 2;
-    private const int _summonsCount = 3;
+    //private const int _minionsSummon = 2;
+    private const int _summonsCount = 2;
     private Rigidbody _hutRb;
 
 
     private void Start()
     {
         _hutRb = _hutOnLegs.GetComponent<Rigidbody>();
-    }
-
-    private void Update()
-    {
-        //Debug.Log($"Hut pos = {_hutOnLegs.transform.position}");
     }
 
     public void GetNewRandomSummon(ThirdPersonController controller, float timeToDel)
@@ -45,9 +40,9 @@ public class YagaSummons : MonoBehaviour
             case _rocketsSummon:
                 StartCoroutine(RocketsDelayCor(_rocketsDelay, controller, timeToDel));
                 break;
-            case _minionsSummon:
-                _enemySpawner.EnemySummon(_enemiesCount);
-                break;
+            //case _minionsSummon:
+            //    _enemySpawner.EnemySummon(EnemiesCount);
+            //    break;
             case _hutSummon:
                 StartCoroutine(HutOnLegsRun(timeToDel, controller));
                 break;
@@ -58,7 +53,6 @@ public class YagaSummons : MonoBehaviour
     {
         _rotator.Rotate(0, Random.Range(0, 360),0);
         Vector3 pos = _rotator.GetChild(0).position;
-        //_attackMarkers.CreateHutRaySpell(pos, controller.transform.position, delay);
         Vector3 lookDir = controller.transform.position;
 
         yield return new WaitForSeconds(delay);
