@@ -110,5 +110,6 @@ public class AxeThrow : MonoBehaviour
     private void resetThrowAxeState()
     {
         animatorManager.SetAxeThrow(false);
+        input.throwAxe = false;
     }
 }
