@@ -12,11 +12,11 @@ public class DialogueStarter : MonoBehaviour
     {
         if (isStartingDialog)
         {
-            NodeParser.EndDialog += SetPlayerActive;
-            controller.CanMove = false;
-            controller.GetComponent<MeleeAtack>().enabled = false;
-            personController = controller;
-            dialogueManager.StartDialogue();
+            //NodeParser.EndDialog += SetPlayerActive;
+            //controller.CanMove = false;
+            //controller.GetComponent<MeleeAtack>().enabled = false;
+            //personController = controller;
+            //dialogueManager.StartDialogue();
         }
     }
 
