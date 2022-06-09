@@ -11,6 +11,8 @@ public class CheckPoint : MonoBehaviour
     private Material _material;
     [SerializeField] public int _pointNumber;
     [SerializeField] public Transform _spawnPoint;
+    [SerializeField] private Color _emissionColor;
+    [SerializeField] private float _emissionAmount;
     public int PointNumber { get { return _pointNumber; } }
     public Transform SpawnPoint { get { return _spawnPoint; } }
     private void Start()
@@ -19,13 +21,14 @@ public class CheckPoint : MonoBehaviour
         if (_saver.CheckPointToSave < PointNumber)
         {
             _isActivated = false;
-            _material.color = Color.white;
+            _material.SetColor("_EmissionColor", Color.black);
             _visualEffect.Stop();
         }
         else
         {
             _isActivated = true;
-            _material.color = Color.cyan;
+            _material.SetColor("_EmissionColor", _emissionColor * _emissionAmount);
+            Debug.Log(_material.GetColor("_EmissionColor"));
             _visualEffect.Play();
         }
     }
