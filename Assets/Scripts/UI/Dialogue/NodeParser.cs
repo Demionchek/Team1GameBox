@@ -55,11 +55,10 @@ public class NodeParser : MonoBehaviour
         {
             dialogue.text = dataParts[2];
             yield return new WaitForSeconds(4f);
-            playerInputs.atack = false;
             NextNode("exit");
         }
         if(dataParts[0] == "End")
-        {
+        {            
             FindStartNode(node.GetGrapgh());
             dialoguePanel.SetActive(false);
         }
