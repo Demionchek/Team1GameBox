@@ -20,6 +20,5 @@ public class DialogueGrapgh : NodeGraph
         {
             Debug.Log("DIALOGUE GRAPH TRYFINDSTARTNODE EXCEPTION");
         }
-            
     }
 }

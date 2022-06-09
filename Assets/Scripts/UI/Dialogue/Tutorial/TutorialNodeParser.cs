@@ -20,10 +20,13 @@ public class TutorialNodeParser : MonoBehaviour
     public static event Action EndDialog;
 
     private Coroutine parser;
+    private ThirdPersonController playersController;
 
     private void Start()
     {
         FindStartNode(graph);
+        if (playerInputs.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
+            playersController = controller;
     }
 
     private void FindStartNode(DialogueGrapgh grap)
@@ -45,6 +48,10 @@ public class TutorialNodeParser : MonoBehaviour
     {
         graph = dialogueGrapgh;
         graph.TryFindStartNode();
+
+            playersController.CanMove = false;
+            playersController.GetComponent<MeleeAtack>().enabled = false;
+
         StartCoroutine(ParseNode());
     }
 
@@ -71,6 +78,9 @@ public class TutorialNodeParser : MonoBehaviour
             FindStartNode(node.GetGrapgh());
             tutorialPanel.SetActive(false);
             EndDialog?.Invoke();
+
+            playersController.CanMove = true;
+            playersController.GetComponent<MeleeAtack>().enabled = true;
         }
         else
         {
@@ -80,11 +90,22 @@ public class TutorialNodeParser : MonoBehaviour
 
     private string CenterText(string inputLine)
     {
-        var stringList = inputLine.Split('.');
+        var stringList = inputLine.Split(' ');
         StringBuilder builder = new StringBuilder();
         foreach(var element in stringList)
         {
-            builder.Append(element + Environment.NewLine);
+                if (element.StartsWith("“"))
+                {
+                    builder.Append("<color=red>" + element + "</color>" + " ");
+                }
+                else if(element.EndsWith("."))
+                {
+                    builder.Append(element + Environment.NewLine);
+                }
+                else
+                {
+                    builder.Append(element+ " ");
+                }
         }
         return builder.ToString();
     }

@@ -5,6 +5,7 @@ public class StartTutorialNode : MonoBehaviour
 {
     [SerializeField] private TutorialNodeParser tutorialManager;
     [SerializeField] private DialogueGrapgh tutorialDialogue;
+
     private ThirdPersonController personController;
 
     private void OnTriggerEnter(Collider other)
@@ -14,10 +15,15 @@ public class StartTutorialNode : MonoBehaviour
             tutorialDialogue.TryFindStartNode();
             personController = controller;
             TutorialNodeParser.EndDialog += SetPlayerActive;
-            controller.CanMove = false;
-            controller.GetComponent<MeleeAtack>().enabled = false;
+            SetPlayerInactive();
             tutorialManager.StartNode(tutorialDialogue);
         }
+    }
+
+    private void SetPlayerInactive()
+    {
+            personController.CanMove = false;
+            personController.GetComponent<MeleeAtack>().enabled = false;
     }
 
     private void SetPlayerActive()

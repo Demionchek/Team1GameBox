@@ -11,6 +11,7 @@ public class UnlockSystemManager : MonoBehaviour
     private AirAtack airAtack;
     private MIghtyPunch mightyPunch;
     private int counter;
+    private int tutorialId;
 
     private void Start()
     {
@@ -48,7 +49,7 @@ public class UnlockSystemManager : MonoBehaviour
 
     public void TryUnlock(int scrollNum)
     {        
-        StartTutorialUi(counter);
+        StartTutorialUi(tutorialId);
         counter++;
         unlockUi.UpdateUi();
         saver.SaveCollectableNum(counter);
@@ -72,8 +73,9 @@ public class UnlockSystemManager : MonoBehaviour
         return counter >= countOfItemsToUnlock;
     }
 
-    private void StartTutorialUi(int tutorialId)
+    private void StartTutorialUi(int tutorialID)
     {
-        tutorialManager.StartNode(tutorialGraph[tutorialId]);
+        tutorialId++;
+        tutorialManager.StartNode(tutorialGraph[tutorialID]);
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 public class DialogueStarter : MonoBehaviour
 {
     [SerializeField] private NodeParser dialogueManager;
-    [SerializeField] private ThirdPersonController controller;
     [SerializeField] private bool isStartingDialog;
     private ThirdPersonController personController;
 
@@ -31,6 +30,8 @@ public class DialogueStarter : MonoBehaviour
             dialogueManager.StartDialogue();
         }
     }
+
+
 
     private void SetPlayerActive()
     {
