@@ -7,7 +7,8 @@ public class DeathArena : MonoBehaviour
 {
     [SerializeField] private GameObject _barier;
     [SerializeField] private GameObject _forestWall; 
-    [SerializeField] private EnemySpawner spawner;
+    [SerializeField] private EnemySpawner _spawner;
+    [SerializeField] private TotemInteract _totemInteract;
     private bool _isActive;
 
     private const float k_delay = 1f;
@@ -28,7 +29,7 @@ public class DeathArena : MonoBehaviour
     public void Activate()
     {
         EnemyController.EnemyDeathAction += DeathCounter;
-        spawner.ArenaSummon();
+        _spawner.ArenaSummon();
         _isActive = true;
         _barier.SetActive(true);
         StartCoroutine(CheckIfEnemiesAreAlive());
@@ -47,6 +48,7 @@ public class DeathArena : MonoBehaviour
             }
         }
         _barier.SetActive(false);
+        _totemInteract.SaveArena();
         EnemiesAlive = 0;
         EnemyController.EnemyDeathAction -= DeathCounter;
     }
