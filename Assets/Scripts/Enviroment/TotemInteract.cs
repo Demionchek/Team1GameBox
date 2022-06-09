@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class TotemInteract : MonoBehaviour, IUse
 {
-    [SerializeField, Range(1, 2)] private int _arenaNum;
+    [SerializeField, Range(1, 2)] public int _arenaNum;
     [SerializeField] private DeathArena _arena;
-    [SerializeField] private Saver _saver;
+    [SerializeField] public Saver _pSaver;
     [SerializeField] private PortalUIScript _portalUIScript;
     private bool _isOff;
 
     private void Start()
     {
-        _saver.LoadArenas();
-        if (_saver.ArenaNumToSave >= _arenaNum)
+        _pSaver.LoadArenas();
+        if (_pSaver.ArenaNumToSave >= _arenaNum)
         {
             _isOff = true;
             _arena.OffBarier();
@@ -25,10 +25,12 @@ public class TotemInteract : MonoBehaviour, IUse
         if (!_isOff)
         {
             _arena.Activate();
-            _saver.SaveArenaNum(_arenaNum);
+            _pSaver.SaveArenaNum(_arenaNum);
             _isOff = true;
         }
     }
+
+    public void SaveArena() => _pSaver.SaveArenaNum(_arenaNum);
 
     private void OnTriggerEnter(Collider other)
     {
