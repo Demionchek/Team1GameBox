@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 6970609739068313155}
   - component: {fileID: 5140968830765070985}
   - component: {fileID: 6735620390476674063}
-  - component: {fileID: 859509875736077939}
-  - component: {fileID: 612805867474755491}
+  - component: {fileID: 2799355268132545430}
   m_Layer: 11
   m_Name: Boloto_Izba_2
   m_TagString: Untagged
@@ -100,8 +99,8 @@ MonoBehaviour:
   shaderVariableName: _Alpha
   fadeTo: 0.5
   fadeFrom: 1
---- !u!65 &859509875736077939
-BoxCollider:
+--- !u!64 &2799355268132545430
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,19 +109,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 566, y: 1378.9, z: 651.9}
-  m_Center: {x: 0, y: 278.11, z: 0}
---- !u!65 &612805867474755491
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6654243932839664476}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 566, y: 519.1, z: 776.1}
-  m_Center: {x: 0, y: 707.2, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5311732883252212473, guid: 1b47f184cb4ec0b47aecce3f0e1affd8, type: 3}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5911117317809009697}
   - component: {fileID: 8497297061869945067}
   - component: {fileID: 8492968656673370671}
-  - component: {fileID: 1710916514877897232}
+  - component: {fileID: 4036058857025066889}
   m_Layer: 11
   m_Name: Boloto_Terem
   m_TagString: Untagged
@@ -99,8 +99,8 @@ MonoBehaviour:
   shaderVariableName: _Alpha
   fadeTo: 0.5
   fadeFrom: 1
---- !u!65 &1710916514877897232
-BoxCollider:
+--- !u!64 &4036058857025066889
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,6 +109,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 814.058, y: 1341.7, z: 841.7656}
-  m_Center: {x: 0, y: 491.83316, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2061052848440323389, guid: 66105b58304c4904bb25ce6b8b4d305e, type: 3}

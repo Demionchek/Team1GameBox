@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 894796187461298970}
   - component: {fileID: 3138449485052633040}
   - component: {fileID: 4231489965535679492}
-  - component: {fileID: 5365594586221949252}
+  - component: {fileID: 876784191693415057}
   m_Layer: 11
   m_Name: Boloto_Kryltso_1
   m_TagString: Untagged
@@ -100,8 +100,8 @@ MonoBehaviour:
   shaderVariableName: _Alpha
   fadeTo: 0.5
   fadeFrom: 1
---- !u!65 &5365594586221949252
-BoxCollider:
+--- !u!64 &876784191693415057
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,9 +110,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 312.79736, y: 813.1, z: 317.9465}
-  m_Center: {x: 0, y: 393.4, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3826379592832604761, guid: 9f0406dd63b46914db2726509552a6fe, type: 3}
 --- !u!1 &5996564784240010889
 GameObject:
   m_ObjectHideFlags: 0

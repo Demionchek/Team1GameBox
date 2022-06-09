@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 6052636111769575176}
   - component: {fileID: 8366490947238423490}
   - component: {fileID: 5771514426150906703}
-  - component: {fileID: 422619798871069592}
-  - component: {fileID: 6810363835389367135}
+  - component: {fileID: 8216760957907331098}
   m_Layer: 11
   m_Name: Boloto_Kryltso_Izby_2
   m_TagString: Untagged
@@ -100,8 +99,8 @@ MonoBehaviour:
   shaderVariableName: _Alpha
   fadeTo: 0.5
   fadeFrom: 1
---- !u!65 &422619798871069592
-BoxCollider:
+--- !u!64 &8216760957907331098
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,19 +109,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 376.2, y: 519.86273, z: 465.1}
-  m_Center: {x: 0, y: 260.7767, z: 0}
---- !u!65 &6810363835389367135
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8006066706483333655}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 401.76657, y: 508.5, z: 644.3447}
-  m_Center: {x: 0, y: 485.9, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1939759299939738800, guid: 69693d86d078e3a44b0e88fa6a0bd9e3, type: 3}
