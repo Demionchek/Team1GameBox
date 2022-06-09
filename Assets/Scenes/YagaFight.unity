@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 19ecbb5b1fa98144c8c9a3a13ce7af9a, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 6cae1729f9397654d889731399322380, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -212,6 +212,10 @@ PrefabInstance:
     - target: {fileID: 8053963951071057038, guid: 145789cc6d5c47245a2ebd8ebccc85c5, type: 3}
       propertyPath: m_Name
       value: Stone_17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053963951071057038, guid: 145789cc6d5c47245a2ebd8ebccc85c5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 145789cc6d5c47245a2ebd8ebccc85c5, type: 3}
@@ -407,6 +411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mashroom_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3577744010729350867, guid: caf02ad555325084585242e9aa122d69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4246159512102091881, guid: caf02ad555325084585242e9aa122d69, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -548,6 +556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_01 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
 --- !u!4 &78172186 stripped
@@ -610,6 +622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &85563198 stripped
@@ -627,6 +643,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -728,6 +748,10 @@ PrefabInstance:
     - target: {fileID: 1277450983712599599, guid: fc6257d103527fd4e9296984bcf1058a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277450983712599599, guid: fc6257d103527fd4e9296984bcf1058a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1941537742917334165, guid: fc6257d103527fd4e9296984bcf1058a, type: 3}
       propertyPath: m_RootOrder
@@ -872,6 +896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &179350523 stripped
@@ -981,6 +1009,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &197594844 stripped
@@ -1068,6 +1100,10 @@ PrefabInstance:
     - target: {fileID: 2881816974489351659, guid: 9c181c1b1bd0e7c46a9ee06b6b454c3e, type: 3}
       propertyPath: m_Name
       value: stone_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881816974489351659, guid: 9c181c1b1bd0e7c46a9ee06b6b454c3e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3221645938738114385, guid: 9c181c1b1bd0e7c46a9ee06b6b454c3e, type: 3}
       propertyPath: m_RootOrder
@@ -1169,7 +1205,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &257559263
 Transform:
@@ -1303,6 +1339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &285828904 stripped
@@ -1365,6 +1405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stolb_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5114236923277237332, guid: 0cecaf23412be394eaf717acdbc46c41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cecaf23412be394eaf717acdbc46c41, type: 3}
 --- !u!4 &286130911 stripped
@@ -1382,6 +1426,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -1444,6 +1492,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -1614,6 +1666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_02 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8707365242697520123, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -1719,6 +1775,10 @@ PrefabInstance:
     - target: {fileID: 5114236923277237332, guid: 0cecaf23412be394eaf717acdbc46c41, type: 3}
       propertyPath: m_Name
       value: Stolb_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114236923277237332, guid: 0cecaf23412be394eaf717acdbc46c41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cecaf23412be394eaf717acdbc46c41, type: 3}
@@ -1948,6 +2008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_03 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8451331195130049151, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -2044,6 +2108,10 @@ PrefabInstance:
     - target: {fileID: 5121628361319345734, guid: 95a536d9e2a59994bb78b74d50a34a67, type: 3}
       propertyPath: m_Name
       value: Boloto_Izba_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121628361319345734, guid: 95a536d9e2a59994bb78b74d50a34a67, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5501284896878966012, guid: 95a536d9e2a59994bb78b74d50a34a67, type: 3}
       propertyPath: m_RootOrder
@@ -2224,6 +2292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boloto_Izba_1
       objectReference: {fileID: 0}
+    - target: {fileID: 2506470457044300866, guid: 29d73799e03981c4e9251eeaa6ab6c6c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2991257896132718328, guid: 29d73799e03981c4e9251eeaa6ab6c6c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2293,6 +2365,10 @@ PrefabInstance:
     - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8451331195130049151, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_RootOrder
@@ -2545,6 +2621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_01 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
 --- !u!4 &484451703 stripped
@@ -2562,6 +2642,10 @@ PrefabInstance:
     - target: {fileID: 4142275668263705, guid: fc16daf6f968b064ebd2b3a7c827bd8f, type: 3}
       propertyPath: m_Name
       value: Pier_Straight
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142275668263705, guid: fc16daf6f968b064ebd2b3a7c827bd8f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 812169434477402531, guid: fc16daf6f968b064ebd2b3a7c827bd8f, type: 3}
       propertyPath: m_RootOrder
@@ -2624,6 +2708,10 @@ PrefabInstance:
     - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8707365242697520123, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_RootOrder
@@ -2690,7 +2778,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &497661850
 Transform:
@@ -2784,6 +2872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &500610878 stripped
@@ -2849,6 +2941,10 @@ PrefabInstance:
     - target: {fileID: 5338011610623316717, guid: bd051d8ae4d169942a798609b1e0b73f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338011610623316717, guid: bd051d8ae4d169942a798609b1e0b73f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd051d8ae4d169942a798609b1e0b73f, type: 3}
@@ -3151,6 +3247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8707365242697520123, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3213,6 +3313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mashroom_3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8542344995249910435, guid: 58a8c22c4ad04d746b8ab296a8480c06, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9063302037747574809, guid: 58a8c22c4ad04d746b8ab296a8480c06, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -3274,6 +3378,10 @@ PrefabInstance:
     - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8707365242697520123, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_RootOrder
@@ -3492,6 +3600,10 @@ PrefabInstance:
     - target: {fileID: -5629293568743107924, guid: df713590617a03a4784f3b66ff8ad7dd, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -5624543535580069947, guid: df713590617a03a4784f3b66ff8ad7dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -5146748350317341972, guid: df713590617a03a4784f3b66ff8ad7dd, type: 3}
       propertyPath: m_Layer
@@ -3753,6 +3865,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 4491824521064472752, guid: df713590617a03a4784f3b66ff8ad7dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4541073840158017345, guid: df713590617a03a4784f3b66ff8ad7dd, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -3991,6 +4107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_06
       objectReference: {fileID: 0}
+    - target: {fileID: 5426935976530570276, guid: 0b3db14820f99914fb54bb46c762df71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5827558379285286430, guid: 0b3db14820f99914fb54bb46c762df71, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -4098,6 +4218,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -4275,6 +4399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stolb_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5114236923277237332, guid: 0cecaf23412be394eaf717acdbc46c41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cecaf23412be394eaf717acdbc46c41, type: 3}
 --- !u!4 &669807651 stripped
@@ -4292,6 +4420,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -4354,6 +4486,10 @@ PrefabInstance:
     - target: {fileID: 8542344995249910435, guid: 58a8c22c4ad04d746b8ab296a8480c06, type: 3}
       propertyPath: m_Name
       value: Mashroom_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542344995249910435, guid: 58a8c22c4ad04d746b8ab296a8480c06, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9063302037747574809, guid: 58a8c22c4ad04d746b8ab296a8480c06, type: 3}
       propertyPath: m_RootOrder
@@ -4518,6 +4654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &706494407 stripped
@@ -4627,6 +4767,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &713329370 stripped
@@ -4644,6 +4788,10 @@ PrefabInstance:
     - target: {fileID: 1277450983712599599, guid: fc6257d103527fd4e9296984bcf1058a, type: 3}
       propertyPath: m_Name
       value: Barrel_broken
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277450983712599599, guid: fc6257d103527fd4e9296984bcf1058a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1941537742917334165, guid: fc6257d103527fd4e9296984bcf1058a, type: 3}
       propertyPath: m_RootOrder
@@ -4867,6 +5015,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6106870192162985444, guid: ed4f313f97b472340a4d808975083872, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8589523081974357722, guid: ed4f313f97b472340a4d808975083872, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -4929,6 +5081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HexStone (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -4990,6 +5146,10 @@ PrefabInstance:
     - target: {fileID: 1947575887069069935, guid: 2c9798c4c16d28c4c907e79c2af0f70c, type: 3}
       propertyPath: m_Name
       value: Stone_09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947575887069069935, guid: 2c9798c4c16d28c4c907e79c2af0f70c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7623584858531227692, guid: 2c9798c4c16d28c4c907e79c2af0f70c, type: 3}
       propertyPath: m_RootOrder
@@ -5144,6 +5304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &766139327 stripped
@@ -5196,6 +5360,10 @@ PrefabInstance:
     - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_02 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8707365242697520123, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_RootOrder
@@ -5338,6 +5506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_01 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
 --- !u!4 &808220741 stripped
@@ -5399,6 +5571,10 @@ PrefabInstance:
     - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
       propertyPath: m_Name
       value: Koluchka (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
@@ -5636,6 +5812,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mashroom_4 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4368562658032942137, guid: 6aeaac18a9e869f42827ece1fca8078e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aeaac18a9e869f42827ece1fca8078e, type: 3}
 --- !u!4 &900452426 stripped
@@ -5832,6 +6012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HexStone (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5998,6 +6182,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -6186,6 +6374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_04
       objectReference: {fileID: 0}
+    - target: {fileID: 8504750436569558469, guid: 905c32024176c604ba680e84c70faf3e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905c32024176c604ba680e84c70faf3e, type: 3}
 --- !u!4 &1056280566 stripped
@@ -6294,6 +6486,10 @@ PrefabInstance:
     - target: {fileID: 7669987266978322908, guid: defcc2cfd8e33c24c90b1d9cd899eb49, type: 3}
       propertyPath: m_Name
       value: stone_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669987266978322908, guid: defcc2cfd8e33c24c90b1d9cd899eb49, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: defcc2cfd8e33c24c90b1d9cd899eb49, type: 3}
@@ -6600,6 +6796,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5338011610623316717, guid: bd051d8ae4d169942a798609b1e0b73f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd051d8ae4d169942a798609b1e0b73f, type: 3}
 --- !u!4 &1154033442 stripped
@@ -6661,6 +6861,10 @@ PrefabInstance:
     - target: {fileID: 4368562658032942137, guid: 6aeaac18a9e869f42827ece1fca8078e, type: 3}
       propertyPath: m_Name
       value: Mashroom_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368562658032942137, guid: 6aeaac18a9e869f42827ece1fca8078e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aeaac18a9e869f42827ece1fca8078e, type: 3}
@@ -6759,6 +6963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &1189908708 stripped
@@ -6856,6 +7064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &1197868184 stripped
@@ -6930,6 +7142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &1200107702 stripped
@@ -6951,6 +7167,10 @@ PrefabInstance:
     - target: {fileID: 7129472107890330687, guid: 97bfc8670156bd447820de0ffae77095, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129472107890330687, guid: 97bfc8670156bd447820de0ffae77095, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7618729061932308101, guid: 97bfc8670156bd447820de0ffae77095, type: 3}
       propertyPath: m_RootOrder
@@ -7203,7 +7423,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1243184027
 Transform:
@@ -7283,6 +7503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
 --- !u!4 &1249372921 stripped
@@ -7300,6 +7524,10 @@ PrefabInstance:
     - target: {fileID: 8073201629255785903, guid: 9459131068849b7458e9d516824ea651, type: 3}
       propertyPath: m_Name
       value: ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073201629255785903, guid: 9459131068849b7458e9d516824ea651, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8881686391257630485, guid: 9459131068849b7458e9d516824ea651, type: 3}
       propertyPath: m_RootOrder
@@ -7495,6 +7723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HexStone (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -7556,6 +7788,10 @@ PrefabInstance:
     - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_02 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8707365242697520123, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_RootOrder
@@ -7682,6 +7918,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_01
       objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
 --- !u!4 &1290238312 stripped
@@ -7699,6 +7939,10 @@ PrefabInstance:
     - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8707365242697520123, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_RootOrder
@@ -7806,6 +8050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
 --- !u!4 &1306223892 stripped
@@ -7867,6 +8115,10 @@ PrefabInstance:
     - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
@@ -7930,6 +8182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
 --- !u!4 &1325025182 stripped
@@ -7982,6 +8238,10 @@ PrefabInstance:
     - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8451331195130049151, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_RootOrder
@@ -8114,6 +8374,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -8277,6 +8541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_03 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8451331195130049151, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -8338,6 +8606,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -8432,6 +8704,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 395769876215121783, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717067210673686039, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3560698898831923840, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
       propertyPath: _hutOnLegs
       value: 
@@ -8444,6 +8724,14 @@ PrefabInstance:
       propertyPath: _attackMarkers
       value: 
       objectReference: {fileID: 1956616879}
+    - target: {fileID: 3728910789699308488, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605090867527954966, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4868531928797222807, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -8491,6 +8779,14 @@ PrefabInstance:
     - target: {fileID: 4868531928797222811, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
       propertyPath: m_Name
       value: Kettle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868531928797222811, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5155072814458179317, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8983751465020903087, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
       propertyPath: attackMarkers
@@ -8620,6 +8916,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 623408506313326126, guid: f834a62774e224c43bcd09c3fb52bff4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 623408506313326127, guid: f834a62774e224c43bcd09c3fb52bff4, type: 3}
       propertyPath: m_Convex
       value: 0
@@ -8640,6 +8940,10 @@ PrefabInstance:
     - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8451331195130049151, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_RootOrder
@@ -8782,6 +9086,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
 --- !u!4 &1482751179 stripped
@@ -8873,6 +9181,10 @@ PrefabInstance:
     - target: {fileID: 7129472107890330687, guid: 97bfc8670156bd447820de0ffae77095, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129472107890330687, guid: 97bfc8670156bd447820de0ffae77095, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7618729061932308101, guid: 97bfc8670156bd447820de0ffae77095, type: 3}
       propertyPath: m_RootOrder
@@ -8971,6 +9283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_05
       objectReference: {fileID: 0}
+    - target: {fileID: 4623143061420690169, guid: effe1e6ee6eaebf488ca6072003d496a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6879786926257341864, guid: effe1e6ee6eaebf488ca6072003d496a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -9033,6 +9349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_03 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8451331195130049151, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -9094,6 +9414,10 @@ PrefabInstance:
     - target: {fileID: 4142275668263705, guid: fc16daf6f968b064ebd2b3a7c827bd8f, type: 3}
       propertyPath: m_Name
       value: Pier_Straight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142275668263705, guid: fc16daf6f968b064ebd2b3a7c827bd8f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 812169434477402531, guid: fc16daf6f968b064ebd2b3a7c827bd8f, type: 3}
       propertyPath: m_RootOrder
@@ -9297,6 +9621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_03
       objectReference: {fileID: 0}
+    - target: {fileID: 7850727882480174225, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8451331195130049151, guid: c9032cb74763b2a4fa466c8c05de731d, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -9377,6 +9705,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -9484,6 +9816,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stolb_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5114236923277237332, guid: 0cecaf23412be394eaf717acdbc46c41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cecaf23412be394eaf717acdbc46c41, type: 3}
 --- !u!4 &1622661028 stripped
@@ -9545,6 +9881,10 @@ PrefabInstance:
     - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
@@ -9819,6 +10159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 7129472107890330687, guid: 97bfc8670156bd447820de0ffae77095, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7618729061932308101, guid: 97bfc8670156bd447820de0ffae77095, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -9925,6 +10269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &1741323144 stripped
@@ -9942,6 +10290,10 @@ PrefabInstance:
     - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_Name
       value: HexStone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352032515446068482, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
       propertyPath: m_RootOrder
@@ -10044,7 +10396,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1778269604
 Transform:
@@ -10139,6 +10491,10 @@ PrefabInstance:
     - target: {fileID: 3577744010729350867, guid: caf02ad555325084585242e9aa122d69, type: 3}
       propertyPath: m_Name
       value: Mashroom_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577744010729350867, guid: caf02ad555325084585242e9aa122d69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4246159512102091881, guid: caf02ad555325084585242e9aa122d69, type: 3}
       propertyPath: m_RootOrder
@@ -10351,6 +10707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &1822182965 stripped
@@ -10513,6 +10873,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1277450983712599599, guid: fc6257d103527fd4e9296984bcf1058a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1941537742917334165, guid: fc6257d103527fd4e9296984bcf1058a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10609,6 +10973,10 @@ PrefabInstance:
     - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_Name
       value: Derevo_lysoe_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676123976464229725, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8707365242697520123, guid: 02e09fef1b750c24a8f794341b153501, type: 3}
       propertyPath: m_RootOrder
@@ -10802,6 +11170,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_11
       objectReference: {fileID: 0}
+    - target: {fileID: 1040213207925434440, guid: dd39ca5415d97b14eb802afda0ca391d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1988876765532723197, guid: dd39ca5415d97b14eb802afda0ca391d, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -10907,6 +11279,10 @@ PrefabInstance:
     - target: {fileID: 8016213907136807907, guid: b30358f83dea1354bbd71a9e4315fdd9, type: 3}
       propertyPath: m_Name
       value: stone_28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016213907136807907, guid: b30358f83dea1354bbd71a9e4315fdd9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b30358f83dea1354bbd71a9e4315fdd9, type: 3}
@@ -11106,6 +11482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Koluchka (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7516914071411515379, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590f655e2658b3740ac24a7dadba03aa, type: 3}
 --- !u!4 &2054015418 stripped
@@ -11158,6 +11538,10 @@ PrefabInstance:
     - target: {fileID: 8542344995249910435, guid: 58a8c22c4ad04d746b8ab296a8480c06, type: 3}
       propertyPath: m_Name
       value: Mashroom_3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542344995249910435, guid: 58a8c22c4ad04d746b8ab296a8480c06, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 9063302037747574809, guid: 58a8c22c4ad04d746b8ab296a8480c06, type: 3}
       propertyPath: m_RootOrder
@@ -11383,13 +11767,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.173807e-12, z: 2.757126e+36, w: 4.1026697e+36}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -11463,6 +11847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mashroom_4 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4368562658032942137, guid: 6aeaac18a9e869f42827ece1fca8078e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aeaac18a9e869f42827ece1fca8078e, type: 3}
 --- !u!4 &2100786002 stripped
@@ -11534,6 +11922,10 @@ PrefabInstance:
     - target: {fileID: 3577744010729350867, guid: caf02ad555325084585242e9aa122d69, type: 3}
       propertyPath: m_Name
       value: Mashroom_2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577744010729350867, guid: caf02ad555325084585242e9aa122d69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4246159512102091881, guid: caf02ad555325084585242e9aa122d69, type: 3}
       propertyPath: m_RootOrder
@@ -11641,6 +12033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Derevo_lysoe_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3635970710133126900, guid: 034857da828f7794191790f3494402ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034857da828f7794191790f3494402ac, type: 3}
 --- !u!4 &2132784944 stripped
@@ -11702,6 +12098,10 @@ PrefabInstance:
     - target: {fileID: 5338011610623316717, guid: bd051d8ae4d169942a798609b1e0b73f, type: 3}
       propertyPath: m_Name
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338011610623316717, guid: bd051d8ae4d169942a798609b1e0b73f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd051d8ae4d169942a798609b1e0b73f, type: 3}
@@ -11917,7 +12317,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &4440751517802742332
 GameObject:
@@ -11936,7 +12336,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &4440751517802742333
 MeshCollider:
@@ -12010,7 +12410,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &5073266326571062893
 BoxCollider:
@@ -12164,6 +12564,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1168175250868142983, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6984515409995666794, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12248,6 +12652,10 @@ PrefabInstance:
       propertyPath: _hp
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 8422258951054329514, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
 --- !u!1 &7818570227094874557
@@ -12264,5 +12672,5 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
