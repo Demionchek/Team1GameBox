@@ -87,7 +87,7 @@ public class UiManager : MonoBehaviour
     
     public void AirAtackCooldownSprite()
     {
-        Debug.Log("NO IMAGE TO UPDATE, COZ WE DONT HAVE SINGLE IMAGE FOR AIR ATACK IN UI");
+        StartCoroutine(UpdateAbilityCooldownSprite(airAtackImage, configs.airAtackCooldown));
     }    
 
     public void DashCooldownSprite()

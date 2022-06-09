@@ -8,7 +8,6 @@ public class UnlockSystemUI : MonoBehaviour
 
     [Header("AirAtack")]
     [SerializeField] private Image blockImageForAirAtack;
-    [SerializeField] private GameObject airAtackUnlockUi;
 
     public void UpdateUi()
     {
@@ -20,9 +19,6 @@ public class UnlockSystemUI : MonoBehaviour
         if(blockImageForAirAtack.fillAmount > 0)
         {
             blockImageForAirAtack.fillAmount -= 0.5f;
-            if (blockImageForAirAtack.fillAmount == 0)
-                airAtackUnlockUi.SetActive(false);
-            return;
         }
         else
         {
