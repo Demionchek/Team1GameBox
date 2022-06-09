@@ -1,4 +1,5 @@
 using StarterAssets;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,8 +12,11 @@ public class NodeParser : MonoBehaviour
     [SerializeField] private Image speakerImage;
     [SerializeField] private StarterAssetsInputs playerInputs;
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private float dialogueDelay = 0.1f;
 
     public DialogueGrapgh graph;
+
+    public static event Action EndDialog;
 
     private Coroutine parser;
 
@@ -54,13 +58,15 @@ public class NodeParser : MonoBehaviour
         if(dataParts[0] == "DialogueNode")
         {
             dialogue.text = dataParts[2];
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(dialogueDelay);
+            yield return new WaitUntil(() => playerInputs.atack);
             NextNode("exit");
         }
         if(dataParts[0] == "End")
         {            
             FindStartNode(node.GetGrapgh());
             dialoguePanel.SetActive(false);
+            EndDialog?.Invoke();
         }
     }
 
