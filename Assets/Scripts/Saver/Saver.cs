@@ -17,6 +17,7 @@ class SaveData
     public int SavedPassedArenas;
     public int SavedCollectedCount;
     public string SavedStringScrolls;
+    public int SavedDialogSkip;
 }
 
 public class Saver : MonoBehaviour
@@ -33,6 +34,8 @@ public class Saver : MonoBehaviour
     public int SecondScroll { get;private set; }
     public int ThirdScroll { get; private set; }
     public int FourthScroll { get; private set; }
+    public int DialogToSkip { get; private set; }
+
     private int[] Scrolls = new int[4];
     private string ScrollsStringToSave;
 
@@ -74,6 +77,10 @@ public class Saver : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/MySavedScrolls.dat"))
         {
             File.Delete(Application.persistentDataPath + "/MySavedScrolls.dat");
+        }
+        if (File.Exists(Application.persistentDataPath + "/MySavedDialog.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/MySavedDialog.dat");
         }
         Debug.Log("Progress Data Cleared!");
     }
@@ -125,17 +132,38 @@ public class Saver : MonoBehaviour
             }
             catch
             {
-                Debug.Log($"Is String empty? '{ScrollsStringToSave}' ");
             }
 
         }
-        Debug.Log($"Loaded Scrolls = {Scrolls}");
+    }
+
+    public void SaveDialog(int dialog)
+    {
+        DialogToSkip = dialog;
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/MySavedDialog.dat");
+        SaveData data = new SaveData();
+        data.SavedDialogSkip = DialogToSkip;
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    public void LoadDialog()
+    {
+        if (File.Exists(Application.persistentDataPath + "/MySavedDialog.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/MySavedDialog.dat", FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+            DialogToSkip = data.SavedDialogSkip;
+        }
+
     }
 
     public void SaveArenaNum(int arenaNum)
     {
         ArenaNumToSave = arenaNum;
-        Debug.Log($"Saved point = {ArenaNumToSave}");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedArena.dat");
         SaveData data = new SaveData();
@@ -160,7 +188,6 @@ public class Saver : MonoBehaviour
     public void SaveCollectableNum(int collectable)
     {
         CollectToSave = collectable;
-        Debug.Log($"Saved point = {CollectToSave}");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedCollectable.dat");
         SaveData data = new SaveData();
@@ -185,7 +212,6 @@ public class Saver : MonoBehaviour
     public void SaveCheckPoint(int checkPointNumber)
     {
         CheckPointToSave = checkPointNumber;
-        Debug.Log($"Saved point = {CheckPointToSave}");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedCheckPoint.dat");
         SaveData data = new SaveData();
@@ -209,7 +235,6 @@ public class Saver : MonoBehaviour
 
     public void SaveLevel(int levelNumber)
     {
-        Debug.Log($"Saved level = {LevelToSave}");
         LevelToSave = levelNumber;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedLevel.dat");
@@ -234,7 +259,6 @@ public class Saver : MonoBehaviour
 
     public void SaveHealth(int health)
     {
-        Debug.Log($"Saved Health = {HealthToSave}");
         HealthToSave = health;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedHealth.dat");
@@ -262,7 +286,6 @@ public class Saver : MonoBehaviour
 
     public void SaveEnergy(int energy)
     {
-        Debug.Log($"Saved level = {LevelToSave}");
         EnergyToSave = energy;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedEnergy.dat");
@@ -291,7 +314,6 @@ public class Saver : MonoBehaviour
 
     public void SaveHealthPacks(int hPacks)
     {
-        Debug.Log($"Saved level = {LevelToSave}");
         HealthPacksToSave = hPacks;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedHealthPacks.dat");
@@ -315,7 +337,6 @@ public class Saver : MonoBehaviour
 
     public void SaveEnergyPacks(int ePacks)
     {
-        Debug.Log($"Saved level = {LevelToSave}");
         EnergyPacksToSave = ePacks;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedEnergyPacks.dat");
