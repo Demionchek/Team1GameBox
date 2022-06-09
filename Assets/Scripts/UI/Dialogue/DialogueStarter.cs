@@ -29,7 +29,6 @@ public class DialogueStarter : MonoBehaviour
             controller1.GetComponent<MeleeAtack>().enabled = false;
             personController = controller1;
             dialogueManager.StartDialogue();
-
         }
     }
 

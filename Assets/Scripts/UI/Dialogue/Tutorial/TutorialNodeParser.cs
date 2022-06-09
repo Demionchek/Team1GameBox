@@ -1,6 +1,7 @@
 using StarterAssets;
 using System;
 using System.Collections;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using XNode;
@@ -43,6 +44,7 @@ public class TutorialNodeParser : MonoBehaviour
     public void StartNode(DialogueGrapgh dialogueGrapgh)
     {
         graph = dialogueGrapgh;
+        graph.TryFindStartNode();
         StartCoroutine(ParseNode());
     }
 
@@ -59,7 +61,7 @@ public class TutorialNodeParser : MonoBehaviour
         if (dataParts[0] == "Tutorial")
         {
             tutorialImage.sprite = node.GetSprite();
-            tutorialText.text = dataParts[1];
+            tutorialText.text = CenterText(dataParts[1]);
             yield return new WaitForSeconds(dialogueDelay);
             yield return new WaitUntil(() => playerInputs.atack);
             NextNode("exit");
@@ -70,6 +72,21 @@ public class TutorialNodeParser : MonoBehaviour
             tutorialPanel.SetActive(false);
             EndDialog?.Invoke();
         }
+        else
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    private string CenterText(string inputLine)
+    {
+        var stringList = inputLine.Split('.');
+        StringBuilder builder = new StringBuilder();
+        foreach(var element in stringList)
+        {
+            builder.Append(element + Environment.NewLine);
+        }
+        return builder.ToString();
     }
 
     private void NextNode(string fieldName)

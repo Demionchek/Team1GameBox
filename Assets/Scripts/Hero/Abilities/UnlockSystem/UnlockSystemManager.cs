@@ -5,6 +5,8 @@ public class UnlockSystemManager : MonoBehaviour
     [SerializeField] private int countOfItemsToUnlock;
     [SerializeField] private Saver saver;
     [SerializeField] private UnlockSystemUI unlockUi;
+    [SerializeField] private TutorialNodeParser tutorialManager;
+    [SerializeField] private DialogueGrapgh[] tutorialGraph = new DialogueGrapgh[4];
 
     private AirAtack airAtack;
     private MIghtyPunch mightyPunch;
@@ -35,30 +37,31 @@ public class UnlockSystemManager : MonoBehaviour
     {
         if (counter >= countOfItemsToUnlock)
         {
-            airAtack.enabled = true;
+            mightyPunch.enabled = true;
         }
 
         if (counter >= countOfItemsToUnlock * 2)
         {
-            mightyPunch.enabled = true;
+            airAtack.enabled = true;
         }
     } 
 
     public void TryUnlock(int scrollNum)
-    {
+    {        
+        StartTutorialUi(counter);
         counter++;
         unlockUi.UpdateUi();
         saver.SaveCollectableNum(counter);
         saver.SaveScrolls(scrollNum);
         if ( IsEnoughtItems())
         {
-            if (airAtack.enabled == false)
-            {
-                airAtack.enabled = true;
-            }
-            else if (mightyPunch.enabled == false)
+            if (mightyPunch.enabled == false)
             {
                 mightyPunch.enabled = true;
+            }
+            else if (airAtack.enabled == false)
+            {
+                airAtack.enabled = true;
             }  
                 counter = 0;
         }
@@ -67,5 +70,10 @@ public class UnlockSystemManager : MonoBehaviour
     private bool IsEnoughtItems()
     {
         return counter >= countOfItemsToUnlock;
+    }
+
+    private void StartTutorialUi(int tutorialId)
+    {
+        tutorialManager.StartNode(tutorialGraph[tutorialId]);
     }
 }

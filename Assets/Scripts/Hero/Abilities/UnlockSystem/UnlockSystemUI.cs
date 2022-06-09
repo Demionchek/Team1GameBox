@@ -16,13 +16,13 @@ public class UnlockSystemUI : MonoBehaviour
 
     private void UpdateImage()
     {
-        if(blockImageForAirAtack.fillAmount > 0)
+        if(blockImageForMightyPunch.fillAmount > 0)
         {
-            blockImageForAirAtack.fillAmount -= 0.5f;
+            blockImageForMightyPunch.fillAmount -= 0.5f;
         }
         else
         {
-            blockImageForMightyPunch.fillAmount -= 0.5f;
+            blockImageForAirAtack.fillAmount -= 0.5f;
         }
     }
 }
