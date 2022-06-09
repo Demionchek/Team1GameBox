@@ -5,14 +5,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using XNode;
 
-public class NodeParser : MonoBehaviour
+public class TutorialNodeParser : MonoBehaviour
 {
-    [SerializeField] private Text dialogue;
+    [Header("Tutorial windows")]
+    [SerializeField] private Text tutorialText;
+    [SerializeField] private Image tutorialImage;
+    [SerializeField] private GameObject tutorialPanel;
     [SerializeField] private StarterAssetsInputs playerInputs;
-    [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private float dialogueDelay = 0.1f;
 
-    public DialogueGrapgh graph;
+    private DialogueGrapgh graph;
 
     public static event Action EndDialog;
 
@@ -38,8 +40,9 @@ public class NodeParser : MonoBehaviour
         }
     }
 
-    public void StartDialogue()
+    public void StartNode(DialogueGrapgh dialogueGrapgh)
     {
+        graph = dialogueGrapgh;
         StartCoroutine(ParseNode());
     }
 
@@ -50,34 +53,35 @@ public class NodeParser : MonoBehaviour
         string[] dataParts = data.Split('/');
         if (dataParts[0] == "Start")
         {
-            dialoguePanel.SetActive(true);
+            tutorialPanel.SetActive(true);
             NextNode("exit");
         }
-        if(dataParts[0] == "DialogueNode")
+        if (dataParts[0] == "Tutorial")
         {
-            dialogue.text = dataParts[2];
+            tutorialImage.sprite = node.GetSprite();
+            tutorialText.text = dataParts[1];
             yield return new WaitForSeconds(dialogueDelay);
             yield return new WaitUntil(() => playerInputs.atack);
             NextNode("exit");
         }
-        if(dataParts[0] == "End")
-        {            
+        if (dataParts[0] == "End")
+        {
             FindStartNode(node.GetGrapgh());
-            dialoguePanel.SetActive(false);
+            tutorialPanel.SetActive(false);
             EndDialog?.Invoke();
         }
     }
 
-    public void NextNode(string fieldName)
+    private void NextNode(string fieldName)
     {
-        if(parser != null)
+        if (parser != null)
         {
             StopCoroutine(parser);
             parser = null;
         }
-        foreach(NodePort port in graph.current.Ports)
+        foreach (NodePort port in graph.current.Ports)
         {
-            if(port.fieldName == fieldName)
+            if (port.fieldName == fieldName)
             {
                 graph.current = port.Connection.node as BaseNode;
                 break;
