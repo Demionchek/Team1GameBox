@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3595332680675866022}
   - component: {fileID: 3595332680675866017}
   - component: {fileID: 3595332680675866016}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyTrigger (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,6 +65,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _saver: {fileID: 0}
   nextCheckPoint: 6
 --- !u!65 &3595332680675866017
@@ -104,7 +107,7 @@ GameObject:
   - component: {fileID: 3595332680809363285}
   - component: {fileID: 3595332680809363284}
   - component: {fileID: 3595332680809363287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3825412476399166971}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyTriggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}

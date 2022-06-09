@@ -12,7 +12,7 @@ public class FadeInOut : MonoBehaviour
     public void Start()
     {
        canvasGroup.alpha = 1;
-       FadeOut(5f);
+       FadeOut(1.5f);
     }
 
     public void FadeInAndLoadScene(int index)

@@ -1,4 +1,4 @@
-﻿    using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -77,7 +77,7 @@ namespace StarterAssets
 
         // Dashing
         [HideInInspector] public bool IsDashing { get; set; }
-        
+
         // Atacking
         [HideInInspector] public bool isAtacking { get; set; }
 
@@ -89,7 +89,7 @@ namespace StarterAssets
         private float _cinemachineTargetPitch;
 
         // player
-        private float _speed;
+        public float Speed { get; set; }
         private float _animationBlend;
         [HideInInspector] public float _targetRotation = 0.0f;
         private float _rotationVelocity;
@@ -114,10 +114,10 @@ namespace StarterAssets
         public CharacterController Controller { get; set; }
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
-
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+        public bool CanMove;
 
         private bool IsCurrentDeviceMouse
         {
@@ -144,7 +144,7 @@ namespace StarterAssets
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
+            CanMove = true;
             _hasAnimator = TryGetComponent(out _animator);
             Controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
@@ -177,7 +177,7 @@ namespace StarterAssets
 
         private void LateUpdate()
         {
-         //   CameraRotation();
+            //   CameraRotation();
         }
 
         private void AssignAnimationIDs()
@@ -249,15 +249,20 @@ namespace StarterAssets
             {
                 // creates curved result rather than a linear one giving a more organic speed change
                 // note T in Lerp is clamped, so we don't need to clamp our speed
-                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude,
+                Speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude,
                     Time.deltaTime * SpeedChangeRate);
 
                 // round speed to 3 decimal places
-                _speed = Mathf.Round(_speed * 1000f) / 1000f;
+                Speed = Mathf.Round(Speed * 1000f) / 1000f;
             }
             else
             {
-                _speed = targetSpeed;
+                Speed = targetSpeed;
+            }
+
+            if (!CanMove)
+            {
+                targetSpeed = 0;
             }
 
             _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
@@ -268,13 +273,13 @@ namespace StarterAssets
 
             // note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is a move input rotate player when the player is moving
-            if (_input.move != Vector2.zero)
+            if (_input.move != Vector2.zero && CanMove)
             {
-                    _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
-                                      _mainCamera.transform.eulerAngles.y;
-                    float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
-                        RotationSmoothTime);
-                
+                _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
+                                  _mainCamera.transform.eulerAngles.y;
+                float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
+                    RotationSmoothTime);
+
                 if (!isAtacking)
                 {
                     // rotate to face input direction relative to camera position
@@ -285,15 +290,23 @@ namespace StarterAssets
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
+            if (!CanMove)
+            {
+                targetDirection = Vector3.zero;
+            }
+
             // move the player
-            Controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
+            Controller.Move(targetDirection.normalized * (Speed * Time.deltaTime) +
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
             // update animator if using character
             if (_hasAnimator)
             {
                 _animator.SetFloat(_animIDSpeed, _animationBlend);
-                _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+                if (CanMove)
+                {
+                    _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+                }
             }
         }
 
@@ -320,7 +333,7 @@ namespace StarterAssets
                 }
 
                 // Jump
-                if (_input.jump /* && _jumpTimeoutDelta <= 0.0f */)
+                if (_input.jump && CanMove /*&& _jumpTimeoutDelta <= 0.0f */)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
@@ -339,7 +352,7 @@ namespace StarterAssets
                     _jumpTimeoutDelta -= Time.deltaTime;
                 }
             }
-            else if (!Grounded && !isDoubleJumped && _input.jump)
+            else if (!Grounded && !isDoubleJumped && _input.jump && CanMove)
             {
                 //doubleJump
                 if (_input.jump && !isDoubleJumped  /* && _jumpTimeoutDelta <= 0.0f */)

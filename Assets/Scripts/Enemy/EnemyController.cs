@@ -18,7 +18,8 @@ public class EnemyController : EnemyStateMachine
     [SerializeField] private AnimationClip _specialAttack;
     private CapsuleCollider _capsule;
     private EnemyAnimations _enemyAnimations;
-
+    private EnemySocials _enemySocials;
+    private BoxCollider _boxCollider;
     public enum EnemyType
     {
         Likho,
@@ -74,7 +75,8 @@ public class EnemyController : EnemyStateMachine
         Agent = GetComponent<NavMeshAgent>();
         _enemyAnimations = GetComponent<EnemyAnimations>();
         _capsule = GetComponent<CapsuleCollider>();
-        
+        _enemySocials = GetComponent<EnemySocials>();
+        _boxCollider = GetComponent<BoxCollider>();
     }
 
     private void Start()
@@ -104,6 +106,7 @@ public class EnemyController : EnemyStateMachine
                 Agent.stoppingDistance = EnemiesConfigs.normalStoppingDistance;
                 break;
         }
+        _boxCollider.isTrigger = true;
         _stopDistanceCorrection += Agent.stoppingDistance;
         CurrState = _idleState;
         SpecialAnimLength = _specialAttack.length;
@@ -115,29 +118,18 @@ public class EnemyController : EnemyStateMachine
 
     private void Update()
     {
-        
         if (Target != null)
         {
             EnemyBehaviour();
-            //AnimatorUpdater();
         }
     }
-
-    //private void AnimatorUpdater()
-    //{
-    //    if (CurrState != lastState)
-    //    {
-    //        Debug.Log($" {CurrState}  {lastState}");
-    //        lastState = CurrState;
-    //        _enemyAnimations.OnStateChange(CurrState);
-    //    }
-    //}
 
     public void Revive()
     {
         IsAlive = true;
         Agent.enabled = true;
         _capsule.enabled = true;
+        _boxCollider.enabled = true;
         CurrState = _moveState;
         GetComponent<Health>().Revive();
         GetComponent<Animator>().SetTrigger("Revive");
@@ -178,15 +170,16 @@ public class EnemyController : EnemyStateMachine
         switch (CurrState)
         {
             case _idleState:
-                
+
                 if (distanceToTarget <= EnemiesConfigs.normalReactDistance)
                 {
+                    _enemySocials.CallNearbyEnemies();
                     CurrState = _moveState;
                 }
                 SetState(new IdleState(this));
                 break;
             case _moveState:
-                GetPathPoints();
+                //GetPathPoints();
                 CheckSight(distanceToTarget);
                 break;
             case _attackState:
@@ -197,6 +190,7 @@ public class EnemyController : EnemyStateMachine
                 }
                 break;
             case _deadState:
+                _boxCollider.enabled = false;
                 _capsule.enabled = false;
                 Agent.enabled = false;
                 break;
@@ -263,6 +257,7 @@ public class EnemyController : EnemyStateMachine
 
                 break;
             case _deadState:
+                _boxCollider.enabled = false;
                 _capsule.enabled = false;
                 Agent.enabled = false;
                 break;
@@ -278,14 +273,14 @@ public class EnemyController : EnemyStateMachine
         if (Physics.Raycast(ray, out hit))
         {
 #if (UNITY_EDITOR)
-        Debug.DrawLine(ray.origin, hit.point, Color.red);
+            Debug.DrawLine(ray.origin, hit.point, Color.red);
 #endif
             if (hit.collider.TryGetComponent(out CharacterController controller))
             {
                 return true;
             }
         }
-                return false;
+        return false;
     }
 
     private void CheckSight(float distanceToTarget)
@@ -303,6 +298,7 @@ public class EnemyController : EnemyStateMachine
         }
         else
         {
+            //Rotate();
             SetState(new MoveState(this));
         }
     }
@@ -334,10 +330,13 @@ public class EnemyController : EnemyStateMachine
                 CheckSight(distanceToTarget);
                 break;
             case _attackState:
-                SetState(new AttackState(this));
                 if (distanceToTarget >= Agent.stoppingDistance && !_isAttaking)
                 {
                     CurrState = _moveState;
+                }
+                else
+                {
+                    SetState(new AttackState(this));
                 }
                 break;
             case _chargeState:
@@ -349,16 +348,21 @@ public class EnemyController : EnemyStateMachine
                 break;
             case _specialState:
 
-                SetState(new SpecialJumpAttack(this));
 
                 if (!_isSpecialAttacking && Agent.enabled)
                 {
                     Agent.velocity = Vector3.zero;
                     CurrState = _moveState;
                 }
+                else
+                {
+                    SetState(new SpecialJumpAttack(this));
+
+                }
 
                 break;
             case _deadState:
+                _boxCollider.enabled = false;
                 _capsule.enabled = false;
                 Agent.enabled = false;
                 break;
@@ -380,7 +384,13 @@ public class EnemyController : EnemyStateMachine
         Agent.enabled = true;
     }
 
-    public void Agressive() => StartCoroutine(SetToMoveState());
+    public void Agressive()
+    {
+        if (CurrState != _moveState || CurrState != _chargeState || CurrState != _attackState || CurrState != _specialState)
+        {
+            StartCoroutine(SetToMoveState());
+        }
+    }
 
     private IEnumerator SetToMoveState()
     {

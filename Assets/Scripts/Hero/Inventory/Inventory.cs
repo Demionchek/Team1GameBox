@@ -40,28 +40,29 @@ public class Inventory : MonoBehaviour
     {
         if (playerInputs.inventoryFirstSlot)
         {
-            playerSounds.PlayHealSound();
-            UseItem(0);
+            if(UseItem(0))
+                playerSounds.PlayHealSound();
             playerInputs.inventoryFirstSlot = false;
         }
         else if (playerInputs.inventorySecondSlot)
         {
-            UseItem(1);
-            playerSounds.PlayEnergySound();
+            if(UseItem(1))
+                playerSounds.PlayEnergySound();
             playerInputs.inventorySecondSlot = false;
         }
     }
 
     public bool AddItem<T>(T item) where T : Item
     {
-        playerSounds.PlayPickUpSound();
+
         var dimensionIndex = GetItemType(item);
         var emptySlot = FindFirstEmptySlot(dimensionIndex);
         if (emptySlot != -1)
         {
             HideObject(item);
             TryUpdateUI(dimensionIndex, emptySlot, false);
-            inventory[dimensionIndex, emptySlot] = item;
+            inventory[dimensionIndex, emptySlot] = item; 
+            playerSounds.PlayPickUpSound();
         }
         return emptySlot != -1;
     }
@@ -107,7 +108,7 @@ public class Inventory : MonoBehaviour
             UpdateUI(dimensionIndex, slotId, isUsed);
     } 
 
-    public void UseItem(int dimensionIndex)
+    public bool UseItem(int dimensionIndex)
     {
         var lastItemInInventory = FindLastItemInInventory(dimensionIndex);
         if (lastItemInInventory != -1)
@@ -117,6 +118,7 @@ public class Inventory : MonoBehaviour
             TryUpdateUI(dimensionIndex, lastItemInInventory, true);
             inventory[dimensionIndex, lastItemInInventory] = null;
         }
+        return lastItemInInventory != -1;
     }
 
     private int FindLastItemInInventory(int dimensionIndex)

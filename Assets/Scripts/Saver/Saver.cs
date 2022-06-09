@@ -1,11 +1,23 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.Audio;
 using UnityEditor;
+
+[Serializable]
+class SaveData
+{
+    public int SavedCheckPoint;
+    public int SavedLevel;
+    public int SavedHealth;
+    public int SavedEnergy;
+    public int SavedHealthPacks;
+    public int SavedEnergyPacks;
+    public int SavedPassedArenas;
+    public int SavedCollectedCount;
+    public string SavedStringScrolls;
+}
 
 public class Saver : MonoBehaviour
 {
@@ -15,9 +27,16 @@ public class Saver : MonoBehaviour
     public int EnergyToSave { get; private set; }
     public int HealthPacksToSave { get; private set; }
     public int EnergyPacksToSave { get; private set; }
+    public int ArenaNumToSave { get; private set; }
+    public int CollectToSave { get; private set; }
+    public int FirstScroll { get; private set; }
+    public int SecondScroll { get;private set; }
+    public int ThirdScroll { get; private set; }
+    public int FourthScroll { get; private set; }
+    private int[] Scrolls = new int[4];
+    private string ScrollsStringToSave;
 
-    
-    //[MenuItem("Utils/Clear progress")]
+    [MenuItem("Utils/Clear progress")]
     public static void ClearProgress()
     {
         if (File.Exists(Application.persistentDataPath + "/MySavedCheckPoint.dat"))
@@ -44,6 +63,18 @@ public class Saver : MonoBehaviour
         {
             File.Delete(Application.persistentDataPath + "/MySavedEnergyPacks.dat");
         }
+        if (File.Exists(Application.persistentDataPath + "/MySavedArena.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/MySavedArena.dat");
+        }
+        if (File.Exists(Application.persistentDataPath + "/MySavedCollectable.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/MySavedCollectable.dat");
+        }
+        if (File.Exists(Application.persistentDataPath + "/MySavedScrolls.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/MySavedScrolls.dat");
+        }
         Debug.Log("Progress Data Cleared!");
     }
 
@@ -55,6 +86,100 @@ public class Saver : MonoBehaviour
         LoadEnergy();
         LoadEnergyPacks();
         LoadHealthPacks();
+        LoadScrollsNums();
+    }
+
+    public void SaveScrolls(int ScrollNum)
+    {
+        Scrolls[ScrollNum] = 1;
+        ScrollsStringToSave = $"{Scrolls[0]}|{Scrolls[1]}|{Scrolls[2]}|{Scrolls[3]}";
+        Debug.Log($"Saved Collection = {ScrollsStringToSave}");
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/MySavedScrolls.dat");
+        SaveData data = new SaveData();
+        data.SavedStringScrolls = ScrollsStringToSave;
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    public void LoadScrollsNums()
+    {
+        if (File.Exists(Application.persistentDataPath + "/MySavedScrolls.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/MySavedScrolls.dat", FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+            ScrollsStringToSave = data.SavedStringScrolls;
+            try
+            {
+                string[] Numbers = ScrollsStringToSave.Split('|');
+                for (int i = 0; i < Scrolls.Length; i++)
+                {
+                    Scrolls[i] = Int32.Parse(Numbers[i]);
+                }
+                FirstScroll = Scrolls[0];
+                SecondScroll = Scrolls[1];
+                ThirdScroll = Scrolls[2];
+                FourthScroll = Scrolls[3];
+            }
+            catch
+            {
+                Debug.Log($"Is String empty? '{ScrollsStringToSave}' ");
+            }
+
+        }
+        Debug.Log($"Loaded Scrolls = {Scrolls}");
+    }
+
+    public void SaveArenaNum(int arenaNum)
+    {
+        ArenaNumToSave = arenaNum;
+        Debug.Log($"Saved point = {ArenaNumToSave}");
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/MySavedArena.dat");
+        SaveData data = new SaveData();
+        data.SavedPassedArenas = ArenaNumToSave;
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    public void LoadArenas()
+    {
+        if (File.Exists(Application.persistentDataPath + "/MySavedArena.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/MySavedArena.dat", FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+            ArenaNumToSave = data.SavedPassedArenas;
+        }
+
+    }
+
+    public void SaveCollectableNum(int collectable)
+    {
+        CollectToSave = collectable;
+        Debug.Log($"Saved point = {CollectToSave}");
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/MySavedCollectable.dat");
+        SaveData data = new SaveData();
+        data.SavedCollectedCount = CollectToSave;
+        bf.Serialize(file, data);
+        file.Close();
+    }
+    public void LoadCollectable()
+    {
+        if (File.Exists(Application.persistentDataPath + "/MySavedCollectable.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/MySavedCollectable.dat", FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+            CollectToSave = data.SavedCollectedCount;
+        }
+        
+
     }
 
     public void SaveCheckPoint(int checkPointNumber)
@@ -79,7 +204,7 @@ public class Saver : MonoBehaviour
             file.Close();
             CheckPointToSave = data.SavedCheckPoint;
         }
-        Debug.Log($"Loaded point = {CheckPointToSave}");
+
     }
 
     public void SaveLevel(int levelNumber)
@@ -212,14 +337,5 @@ public class Saver : MonoBehaviour
         }
     }
 }
-[Serializable]
-class SaveData
-{
-    public int SavedCheckPoint;
-    public int SavedLevel;
-    public int SavedHealth;
-    public int SavedEnergy;
-    public int SavedHealthPacks;
-    public int SavedEnergyPacks;
-}
+
 

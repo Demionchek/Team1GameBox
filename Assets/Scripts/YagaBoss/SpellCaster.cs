@@ -6,6 +6,7 @@ using StarterAssets;
 public class SpellCaster : MonoBehaviour
 {
     [SerializeField] private AttackMarkersController attackMarkers;
+    [SerializeField] private EnemySpawner _spawner;
     [SerializeField] private Renderer _waterRenderer;
     [SerializeField] private Transform spawnPoint; 
     [Range(0, 1), SerializeField] private float _summonChance = 0.5f;
@@ -32,6 +33,7 @@ public class SpellCaster : MonoBehaviour
         int r = Random.Range(0, _spellCount);
         while (r == _lastSpell) r = Random.Range(0, _spellCount);
         _lastSpell = r;
+        _spawner.EnemySummon(summons.EnemiesCount);
         switch (_lastSpell)
         {
             case _clowdSpell:

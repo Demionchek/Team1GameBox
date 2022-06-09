@@ -283,4 +283,5 @@ MonoBehaviour:
   input: {fileID: 0}
   aimColliderLayerMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 8179
+  playerRotationSpeed: 5

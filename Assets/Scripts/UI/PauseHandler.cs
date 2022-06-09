@@ -71,10 +71,13 @@ public class PauseHandler : MonoBehaviour
     {
         UsePause(true, 0);
         playerInputs.isPaused = true;
+        playerInputs.move = Vector2.zero;
     }
 
     public void Unpause()
     {
+        if(isSettings)
+            ChangeSettingsBar();  
         UsePause(false,1);
         playerInputs.isPaused = false;
         playerInputs.atack = false;

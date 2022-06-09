@@ -10,6 +10,7 @@ public class Health : MonoBehaviour, IDamageable
     private EnemySounds _enemySounds;
     private PlayerSounds _playerSounds;
     private BossSounds _bossSounds;
+    private EnemySocials _enemySocials;
 
     public static Action HPChanged;
 
@@ -31,6 +32,7 @@ public class Health : MonoBehaviour, IDamageable
         if (TryGetComponent(out EnemySounds enemySounds))
         {
             _enemySounds = enemySounds;
+            _enemySocials = GetComponent<EnemySocials>();
         }
         if (TryGetComponent(out BossSounds bossSounds))
         {
@@ -73,6 +75,7 @@ public class Health : MonoBehaviour, IDamageable
                 else
                 {
                     _enemySounds.PlayDamagedSound();
+                    _enemySocials.CallNearbyEnemies();
                 }
             }
             catch

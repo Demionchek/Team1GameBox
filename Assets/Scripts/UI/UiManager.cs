@@ -87,7 +87,7 @@ public class UiManager : MonoBehaviour
     
     public void AirAtackCooldownSprite()
     {
-        StartCoroutine(UpdateAbilityCooldownSprite(airAtackImage,configs.airAtackCooldown));
+        StartCoroutine(UpdateAbilityCooldownSprite(airAtackImage, configs.airAtackCooldown));
     }    
 
     public void DashCooldownSprite()
