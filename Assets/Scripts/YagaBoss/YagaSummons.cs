@@ -24,7 +24,6 @@ public class YagaSummons : MonoBehaviour
     private const int _summonsCount = 2;
     private Rigidbody _hutRb;
 
-
     private void Start()
     {
         _hutRb = _hutOnLegs.GetComponent<Rigidbody>();
@@ -74,7 +73,7 @@ public class YagaSummons : MonoBehaviour
         while (counter <= _rocketsCount)
         {
             yield return new WaitForSeconds(delay);
-            _attackMarkers.CreateEnemyPondMarker(controller.transform.position, timeToDel);
+            _attackMarkers.CreateRocketMarker(controller.transform.position, timeToDel);
             counter++;
         }
     }
