@@ -806,6 +806,7 @@ GameObject:
   - component: {fileID: 6924716217851296202}
   - component: {fileID: 6924716217851296203}
   - component: {fileID: 1660309516}
+  - component: {fileID: 7017193565284931985}
   m_Layer: 0
   m_Name: HutSkelet
   m_TagString: Untagged
@@ -825,6 +826,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1580675323071539039}
+  - {fileID: 4021167582605188596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -893,6 +895,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7017193565284931985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924716217851296204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7899c38ed9b0f0f4d8ea05006f067112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hutChargingSource: {fileID: 0}
+  _rocketsSource: {fileID: 0}
+  _specialAttackSource: {fileID: 0}
+  _footstepsSource: {fileID: 733523368345757721}
+  _damagedSource: {fileID: 0}
+  _deathSource: {fileID: 0}
+  _hutChargeSounds: []
+  _rocketsSounds: []
+  _specialAttackSounds: []
+  _footstepsSounds:
+  - {fileID: 8300000, guid: 59100c8acf10d804abaddfb4a4a426cf, type: 3}
+  - {fileID: 8300000, guid: 08ad377a677ceeb40b336aa724c26065, type: 3}
+  - {fileID: 8300000, guid: 892bf8235437bfa41aa97dc2ae5d420f, type: 3}
+  - {fileID: 8300000, guid: 5fd3096ec73ac584e8897240f573e02e, type: 3}
+  _damagedSounds: []
+  _deathSounds: []
 --- !u!1 &7050378739645577771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,3 +1347,70 @@ Transform:
   m_Father: {fileID: 7221723676610626524}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2893962947310314869
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6924716217851296200}
+    m_Modifications:
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196475314376382132, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+      propertyPath: m_Name
+      value: Hut Sounds
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+--- !u!4 &4021167582605188596 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2298917648335730817, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+  m_PrefabInstance: {fileID: 2893962947310314869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &733523368345757721 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2451247281377152364, guid: 04f1f4e7b69d41c468880cfaf0457c8e, type: 3}
+  m_PrefabInstance: {fileID: 2893962947310314869}
+  m_PrefabAsset: {fileID: 0}
