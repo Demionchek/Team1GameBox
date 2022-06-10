@@ -12434,6 +12434,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -3.933838
       objectReference: {fileID: 0}
+    - target: {fileID: 6492891450384374138, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 10753
+      objectReference: {fileID: 0}
     - target: {fileID: 7690895737987162130, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: field of view
       value: 50
@@ -12525,7 +12529,7 @@ GameObject:
   - component: {fileID: 7585669133687396155}
   - component: {fileID: 4617762746815585969}
   - component: {fileID: 4440751517802742333}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pCylinder192
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12599,7 +12603,7 @@ GameObject:
   - component: {fileID: 5809180029879651237}
   - component: {fileID: 261312110457644350}
   - component: {fileID: 5073266326571062893}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: pCylinder383
   m_TagString: Untagged
   m_Icon: {fileID: 0}
