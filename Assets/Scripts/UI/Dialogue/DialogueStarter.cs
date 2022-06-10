@@ -5,6 +5,7 @@ public class DialogueStarter : MonoBehaviour
 {
     [SerializeField] private NodeParser dialogueManager;
     [SerializeField] private bool isStartingDialog;
+    [SerializeField] private DialogueGrapgh dialogueToStart;
     private ThirdPersonController personController;
 
     private void Start()
@@ -27,7 +28,7 @@ public class DialogueStarter : MonoBehaviour
             controller1.CanMove = false;
             controller1.GetComponent<MeleeAtack>().enabled = false;
             personController = controller1;
-            dialogueManager.StartDialogue();
+            dialogueManager.StartDialogue(dialogueToStart);
         }
     }
 
