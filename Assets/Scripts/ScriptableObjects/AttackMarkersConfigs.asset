@@ -22,7 +22,7 @@ MonoBehaviour:
   bossClowdMarkerLifetime: 6
   bossClowdMarkerSlowing: 0.5
   bossClowdEffectTimer: 3
-  bossPondMarkerSize: 22
+  bossPondMarkerSize: 18
   bossPondMarkerDamage: 10
   bossRayMarkerLength: 60
   bossRayMarkerWidth: 7

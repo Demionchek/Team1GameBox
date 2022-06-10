@@ -11,7 +11,6 @@ public class NodeParser : MonoBehaviour
     [SerializeField] private StarterAssetsInputs playerInputs;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private float dialogueDelay = 0.5f;
-    [SerializeField] private Button button;
 
     private bool _next; 
 
@@ -23,14 +22,9 @@ public class NodeParser : MonoBehaviour
     private ThirdPersonController playersController;
 
 
-    private void OnDestroy()
-    {
-        button.onClick.RemoveAllListeners();
-    }
 
     private void Start()
     {
-        button.onClick.AddListener(Next);
         FindStartNode(graph);
         if (playerInputs.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
             playersController = controller;
