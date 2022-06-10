@@ -307,7 +307,7 @@ AudioSource:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0.02
+      value: 0
       inSlope: -0.020007975
       outSlope: -0.020007975
       tangentMode: 0
@@ -407,7 +407,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1004,7 +1004,7 @@ AudioSource:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0.02
+      value: 0
       inSlope: -0.020007975
       outSlope: -0.020007975
       tangentMode: 0

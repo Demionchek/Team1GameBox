@@ -170,7 +170,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -3692540649477438995, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
   m_audioClip: {fileID: 8300000, guid: 815618dcabb4b2d4bb3bdd9a7f8957d8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.604
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -548,8 +548,8 @@ AudioSource:
   m_GameObject: {fileID: 5203000762755115273}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5945977590188174395, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
+  m_audioClip: {fileID: 8300000, guid: dd1917f3b7e23c4408916b66e1aca9c8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -929,7 +929,7 @@ AudioSource:
   m_GameObject: {fileID: 5203000762861574056}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 6052156913758290534, guid: 311b61ced599bb44799a762eb370aa91, type: 2}
+  OutputAudioMixerGroup: {fileID: -3118347892536224964, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1056,7 +1056,7 @@ AudioSource:
   m_GameObject: {fileID: 5203000762990686420}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 8245991000524374326, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
+  OutputAudioMixerGroup: {fileID: -3858715640687801045, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
   m_audioClip: {fileID: 8300000, guid: d3e24c6ac7e03ab458c93f1e9b2e2b4c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2124,8 +2124,8 @@ AudioSource:
   m_GameObject: {fileID: 5203000764063228284}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5789941103440286031, guid: 311b61ced599bb44799a762eb370aa91, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 77d9d2cfa1144434b9b158fb73838176, type: 3}
+  OutputAudioMixerGroup: {fileID: -8081192198940811548, guid: fc22d74dd434b97468a3565a529e83c6, type: 2}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
