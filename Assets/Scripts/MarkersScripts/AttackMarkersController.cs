@@ -61,7 +61,7 @@ public class AttackMarkersController : MonoBehaviour
     private IEnumerator PondCorutine(Vector3 pos, float timeToDel)
     {
         pos.y += _yPosCorrection;
-        GameObject pond = Instantiate(_pondMarkerPrefab, pos, Quaternion.Euler(0,0,180));
+        GameObject pond = Instantiate(_pondMarkerPrefab, pos, Quaternion.identity);
         float delay = timeToDel / 3;
         var pondScript = pond.GetComponent<MarkerDamageScript>();
         var pondMaterial = pond.GetComponent<Renderer>().material;
@@ -142,7 +142,7 @@ public class AttackMarkersController : MonoBehaviour
     private IEnumerator ConeCorutine(Vector3 pos, Vector3 target, float timeToDel)
     {
         pos.y += _yPosCorrection;
-        GameObject cone = Instantiate(_coneMarkerPrefab, pos, Quaternion.Euler(0,0,180));
+        GameObject cone = Instantiate(_coneMarkerPrefab, pos, Quaternion.identity);
         if (_yagaSingleConeEffect != null)
         {
             pos.y += 1;
