@@ -11,7 +11,7 @@ public class UnlockSystemManager : MonoBehaviour
     private AirAtack airAtack;
     private MIghtyPunch mightyPunch;
     private int counter;
-    private int tutorialId;
+    private static int tutorialId;
 
     private void Start()
     {
