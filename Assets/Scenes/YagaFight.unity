@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -699,6 +699,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5992863895636504051, guid: e3ab3c8569639134eb80718c6626a971, type: 3}
   m_PrefabInstance: {fileID: 96142523}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &123280830
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7392473362392345117, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_Name
+      value: PostProcessing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.801693
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.137794
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -48.02102
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
 --- !u!1 &131876845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7166971559774134653, guid: df713590617a03a4784f3b66ff8ad7dd, type: 3}
@@ -12345,6 +12402,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPresets
       objectReference: {fileID: 0}
+    - target: {fileID: 3770550657161981626, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142289049924326184, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4142289049924326185, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_LocalPosition.y
       value: 11.565
@@ -12368,6 +12433,10 @@ PrefabInstance:
     - target: {fileID: 6137966563313722828, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -3.933838
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690895737987162130, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: field of view
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7690895737987162133, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_LocalPosition.y

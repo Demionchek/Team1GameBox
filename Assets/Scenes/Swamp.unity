@@ -13181,6 +13181,63 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.29, y: 30.28, z: 7}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &196248281
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7392473362392345117, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_Name
+      value: PostProcessing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.801693
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.137794
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -48.02102
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392473362392345119, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 772bb50eefcb3f5428aa2c67a5dcde99, type: 3}
 --- !u!1 &196248820
 GameObject:
   m_ObjectHideFlags: 0
@@ -57294,6 +57351,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPresets
       objectReference: {fileID: 0}
+    - target: {fileID: 3770550657161981626, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770550657161981626, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142289049924326184, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4142289049924326184, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_Lens.FarClipPlane
       value: 200
@@ -57337,6 +57406,10 @@ PrefabInstance:
     - target: {fileID: 6908799197307779779, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: _enemyPacks.Array.data[3]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690895737987162130, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: field of view
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7690895737987162130, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: far clip plane
