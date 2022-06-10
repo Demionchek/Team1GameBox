@@ -39,7 +39,7 @@ public class Saver : MonoBehaviour
     private int[] Scrolls = new int[4];
     private string ScrollsStringToSave;
 
-    [MenuItem("Utils/Clear progress")]
+    //[MenuItem("Utils/Clear progress")]
     public static void ClearProgress()
     {
         if (File.Exists(Application.persistentDataPath + "/MySavedCheckPoint.dat"))
