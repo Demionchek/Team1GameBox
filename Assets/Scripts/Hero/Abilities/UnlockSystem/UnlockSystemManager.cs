@@ -79,8 +79,12 @@ public class UnlockSystemManager : MonoBehaviour
             else if (airAtack.enabled == false)
             {
                 airAtack.enabled = true;
-            }  
+                counter = 4;
+            }
+            if (counter !=4)
+            {
                 counter = 0;
+            }
         }
     }
 
