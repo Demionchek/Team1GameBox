@@ -5016,6 +5016,10 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 452920522}
+    - target: {fileID: 1662299736407534868, guid: 2e16b6de23274934fb848896e8660b40, type: 3}
+      propertyPath: dialogueToStart
+      value: 
+      objectReference: {fileID: 11400000, guid: 538f43f0c96d7bd47a802a51433bb5dd, type: 2}
     - target: {fileID: 1662299736407534869, guid: 2e16b6de23274934fb848896e8660b40, type: 3}
       propertyPath: m_Size.x
       value: 7.5208497

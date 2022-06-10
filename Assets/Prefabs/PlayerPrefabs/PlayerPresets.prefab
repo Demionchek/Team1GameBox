@@ -162,8 +162,7 @@ MonoBehaviour:
   dialogue: {fileID: 3908700650270690092}
   playerInputs: {fileID: 7400889128310670605}
   dialoguePanel: {fileID: 2233619516800155218}
-  dialogueDelay: 0.1
-  graph: {fileID: 11400000, guid: 7af647fa48efcc64fb989c29a59bb747, type: 2}
+  dialogueDelay: 0.5
 --- !u!1 &6053424659078647203
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +255,7 @@ MonoBehaviour:
   tutorialImage: {fileID: 6802353073953576684}
   tutorialPanel: {fileID: 7581730298496046619}
   playerInputs: {fileID: 7400889128310670605}
-  dialogueDelay: 0.1
+  dialogueDelay: 0.5
 --- !u!1001 &1628937611164723978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -264,6 +263,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2720519723002769577}
     m_Modifications:
+    - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: far clip plane
       value: 100
