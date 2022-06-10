@@ -1461,6 +1461,94 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stubs Sounds
       objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: MaxDistance
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.53531903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
+      value: 0.6926776
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.24919128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
+      value: -1.7725184
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -0.3452734
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].inSlope
+      value: -0.33346638
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].inSlope
+      value: -0.33346638
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outSlope
+      value: -1.7725184
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -0.3452734
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outSlope
+      value: -0.33346638
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].outSlope
+      value: -0.33346638
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
+      value: 0.342478
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
+      value: 0.31906414
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502915246407536880, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df357c5f872c3541aa9d912e6b65041, type: 3}
 --- !u!4 &4465695794754142563 stripped
