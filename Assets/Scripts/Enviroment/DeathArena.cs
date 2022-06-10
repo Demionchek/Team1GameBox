@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using System;
 
 public class DeathArena : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class DeathArena : MonoBehaviour
     private const float k_delay = 1f;
     public int EnemiesAlive { get; set; }
 
+    public static event Action<bool> ArenaActivated;
     private void Start()
     {
         _barier.SetActive(false);
@@ -29,6 +31,7 @@ public class DeathArena : MonoBehaviour
     public void Activate()
     {
         EnemyController.EnemyDeathAction += DeathCounter;
+        ArenaActivated?.Invoke(true);
         _spawner.ArenaSummon();
         _isActive = true;
         _barier.SetActive(true);
@@ -47,6 +50,7 @@ public class DeathArena : MonoBehaviour
                 _forestWall.SetActive(false);
             }
         }
+        ArenaActivated?.Invoke(false);
         _barier.SetActive(false);
         _totemInteract.SaveArena();
         EnemiesAlive = 0;

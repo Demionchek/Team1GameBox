@@ -328,7 +328,6 @@ MonoBehaviour:
   _deathSource: {fileID: 5461772220066162235}
   _stubSound: {fileID: 5011051399135530457}
   _attackSounds:
-  - {fileID: 8300000, guid: 38f4d4ba2cacefa41b1a4dc1a1f522c9, type: 3}
   - {fileID: 8300000, guid: f7dc871f0c5f8c9418cff4997f758718, type: 3}
   _chargingSounds: []
   _specialAttackSounds: []
