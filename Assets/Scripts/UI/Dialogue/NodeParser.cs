@@ -11,6 +11,9 @@ public class NodeParser : MonoBehaviour
     [SerializeField] private StarterAssetsInputs playerInputs;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private float dialogueDelay = 0.5f;
+    [SerializeField] private Button button;
+
+    private bool _next; 
 
     private DialogueGrapgh graph;
 
@@ -19,8 +22,15 @@ public class NodeParser : MonoBehaviour
     private Coroutine parser;
     private ThirdPersonController playersController;
 
+
+    private void OnDestroy()
+    {
+        button.onClick.RemoveAllListeners();
+    }
+
     private void Start()
     {
+        button.onClick.AddListener(Next);
         FindStartNode(graph);
         if (playerInputs.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
             playersController = controller;
@@ -41,6 +51,10 @@ public class NodeParser : MonoBehaviour
         }
     }
 
+    public void Next()
+    {
+        _next = true;
+    }
     public void StartDialogue(DialogueGrapgh dialogueGrapgh)
     {
         graph = dialogueGrapgh;
@@ -58,6 +72,7 @@ public class NodeParser : MonoBehaviour
         BaseNode node = graph.current;
         string data = node.GetString();
         string[] dataParts = data.Split('/');
+        Time.timeScale = 0f;
         if (dataParts[0] == "Start")
         {
             dialoguePanel.SetActive(true);
@@ -66,15 +81,16 @@ public class NodeParser : MonoBehaviour
         if(dataParts[0] == "DialogueNode")
         {
             dialogue.text = dataParts[2];
-            yield return new WaitForSeconds(dialogueDelay);
+            yield return new WaitForSecondsRealtime(dialogueDelay);
             yield return new WaitUntil(() => playerInputs.atack);
+            _next = false;
             NextNode("exit");
         }
         if(dataParts[0] == "End")
         { 
             dialoguePanel.SetActive(false);
             EndDialog?.Invoke();
-
+            Time.timeScale = 1f;
             playersController.CanMove = true;
             playersController.GetComponent<MeleeAtack>().enabled = true;
         }

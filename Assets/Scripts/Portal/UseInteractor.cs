@@ -25,7 +25,6 @@ public class UseInteractor : MonoBehaviour
         RaycastHit[] hits = new RaycastHit[countToHit];
         if (Physics.SphereCastNonAlloc(ray, hitRadius, hits, hitDistance, _interactWith) > 0)
         {
-            Debug.Log("HasHits");
             foreach (RaycastHit hit in hits)
             {
                 if (hit.transform != null && hit.transform.TryGetComponent<IUse>(out IUse use))
@@ -34,9 +33,13 @@ public class UseInteractor : MonoBehaviour
                     {
                         _sound.PlayPortalSound();
                     }
-                    else
+                    else if (hit.collider.TryGetComponent(out TotemInteract totemInteract))
                     {
                         _sound.PlayArenaSound();
+                    }
+                    else
+                    {
+
                     }
                     use.Use(_controller);
 #if(UNITY_EDITOR)
