@@ -22536,6 +22536,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1779659382, guid: 852a427275b18444d901c2c41ae868f4, type: 3}
+      propertyPath: _saver
+      value: 
+      objectReference: {fileID: 1731593841}
+    - target: {fileID: 1779659382, guid: 852a427275b18444d901c2c41ae868f4, type: 3}
       propertyPath: _isNextLevel
       value: 1
       objectReference: {fileID: 0}
@@ -22543,6 +22547,10 @@ PrefabInstance:
       propertyPath: _nextLevelNum
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1779659382, guid: 852a427275b18444d901c2c41ae868f4, type: 3}
+      propertyPath: fadeinOutScreen
+      value: 
+      objectReference: {fileID: 929521592}
     - target: {fileID: 428819822927798391, guid: 852a427275b18444d901c2c41ae868f4, type: 3}
       propertyPath: m_Name
       value: portal_6
