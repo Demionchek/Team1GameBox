@@ -54,7 +54,7 @@ public class DialogueStarter : MonoBehaviour
         if (inOut != null)
         {
             inOut.FadeIn(1f);
-            yagaUI.SetActive(false);
+            Destroy(yagaUI);
             spawner.OffAllEnemies();
         }
         personController.CanMove = false;

@@ -10751,7 +10751,7 @@ PrefabInstance:
     - target: {fileID: 1662299736407534868, guid: 2e16b6de23274934fb848896e8660b40, type: 3}
       propertyPath: yagaUI
       value: 
-      objectReference: {fileID: 739709277}
+      objectReference: {fileID: 159039124}
     - target: {fileID: 1662299736407534868, guid: 2e16b6de23274934fb848896e8660b40, type: 3}
       propertyPath: isFinal
       value: 1
@@ -13021,7 +13021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756935160170860503, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
       propertyPath: _hp
-      value: 500
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8422258951054329514, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
       propertyPath: m_LightProbeUsage

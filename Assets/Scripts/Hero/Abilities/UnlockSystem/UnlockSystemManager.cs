@@ -80,6 +80,7 @@ public class UnlockSystemManager : MonoBehaviour
             {
                 airAtack.enabled = true;
                 counter = 4;
+                saver.SaveCollectableNum(counter);
             }
             if (counter !=4)
             {
