@@ -18,11 +18,11 @@ MonoBehaviour:
   rayMarkerWidth: 2
   rayMarkerDamage: 30
   bossClowdMarkerSize: 8
-  bossClowdMarkerSpeed: 1.5
+  bossClowdMarkerSpeed: 2
   bossClowdMarkerLifetime: 6
   bossClowdMarkerSlowing: 0.5
   bossClowdEffectTimer: 3
-  bossPondMarkerSize: 10
+  bossPondMarkerSize: 22
   bossPondMarkerDamage: 10
   bossRayMarkerLength: 60
   bossRayMarkerWidth: 7
@@ -30,6 +30,6 @@ MonoBehaviour:
   bossSingleConeMarkerLength: 8
   bossSingleConeMarkerWidth: 5
   bossConeMarkerDamage: 15
-  bossMultyConeMarkerLength: 15
-  bossMultyConeMarkerWidth: 7
+  bossMultyConeMarkerLength: 25
+  bossMultyConeMarkerWidth: 10
   bossMultyConeMarkerDamage: 20

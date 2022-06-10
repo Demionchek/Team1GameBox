@@ -3527,7 +3527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df713590617a03a4784f3b66ff8ad7dd, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df713590617a03a4784f3b66ff8ad7dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8955,6 +8955,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6745973509659537379, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.308
+      objectReference: {fileID: 0}
     - target: {fileID: 8983751465020903087, guid: 5e33cdfb83e07dc4aac4cdbd4999b589, type: 3}
       propertyPath: _spawner
       value: 
@@ -11223,6 +11227,14 @@ PrefabInstance:
       value: MarkersController
       objectReference: {fileID: 0}
     - target: {fileID: 8959322806773069670, guid: 14262ef78b5ffa340baba3f675cb588f, type: 3}
+      propertyPath: _ClowdEffect
+      value: 
+      objectReference: {fileID: 2209698861422569187, guid: cce4fb48f5019a545ad29477f952d54b, type: 3}
+    - target: {fileID: 8959322806773069670, guid: 14262ef78b5ffa340baba3f675cb588f, type: 3}
+      propertyPath: _RocketsEffect
+      value: 
+      objectReference: {fileID: 4012142143411380251, guid: 98c67ea59d56c6a44a923cddfcddf45a, type: 3}
+    - target: {fileID: 8959322806773069670, guid: 14262ef78b5ffa340baba3f675cb588f, type: 3}
       propertyPath: _markersConfigs
       value: 
       objectReference: {fileID: 11400000, guid: 963ac8d5bc67cc44aafe2102849bbf13, type: 2}
@@ -11230,9 +11242,21 @@ PrefabInstance:
       propertyPath: _targetMask.m_Bits
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8959322806773069670, guid: 14262ef78b5ffa340baba3f675cb588f, type: 3}
+      propertyPath: _BigAOEMarkerPrefab
+      value: 
+      objectReference: {fileID: 7920639370178831388, guid: a391b7764c53fa043821fc8bd9fbc7b7, type: 3}
+    - target: {fileID: 8959322806773069670, guid: 14262ef78b5ffa340baba3f675cb588f, type: 3}
+      propertyPath: _yagaMultyConeMarkerPrefab
+      value: 
+      objectReference: {fileID: 669283987096830455, guid: 025688b546ec9404794fafb260d160cd, type: 3}
+    - target: {fileID: 8959322806773069670, guid: 14262ef78b5ffa340baba3f675cb588f, type: 3}
+      propertyPath: _yagaSingleConeMarkerPrefab
+      value: 
+      objectReference: {fileID: 669283987096830455, guid: f83dde3967683cd4b85bfbc2af395ced, type: 3}
     - target: {fileID: 8959322806773069671, guid: 14262ef78b5ffa340baba3f675cb588f, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8959322806773069671, guid: 14262ef78b5ffa340baba3f675cb588f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12845,7 +12869,7 @@ PrefabInstance:
     - target: {fileID: 7756935160170860502, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
       propertyPath: fadeInOut
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1448141685}
     - target: {fileID: 7756935160170860502, guid: 7020270cced2ebb47b28fb9b5c60d5da, type: 3}
       propertyPath: m_Enabled
       value: 0

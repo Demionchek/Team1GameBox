@@ -14,6 +14,13 @@ public class AttackMarkersController : MonoBehaviour
     [SerializeField] private GameObject _rayMarkerPrefab;
     [SerializeField] private GameObject _coneMarkerPrefab;
 
+    [Header("Boss Effects")]
+    [SerializeField] private GameObject _yagaSingleConeMarkerPrefab;
+    [SerializeField] private GameObject _yagaMultyConeMarkerPrefab;
+    [SerializeField] private GameObject _BigAOEMarkerPrefab;
+    [SerializeField] private GameObject _ClowdEffect;
+    [SerializeField] private GameObject _RocketsEffect;
+
     private const float _yPosCorrection = 0.2f;
     private const int _multyConesCount = 3;
     private const float k_Angle = 120f;
@@ -164,12 +171,10 @@ public class AttackMarkersController : MonoBehaviour
 
     private IEnumerator ClowdSpellCorutine(ThirdPersonController controller, Vector3 pos)
     {
-        GameObject clowd = Instantiate(_pondMarkerPrefab, pos, Quaternion.identity);
+        pos.y += 1f;
+        GameObject clowd = Instantiate(_ClowdEffect, pos, Quaternion.identity);
         var clowdMarkerScript = clowd.GetComponent<MarkerDamageScript>();
-        var clowdMaterial = clowd.GetComponent<Renderer>().material;
         clowdMarkerScript.PondResize(_markersConfigs.bossClowdMarkerSize);
-        MaterialSetAlfa(clowdMaterial, Color.magenta);
-        clowd.AddComponent<ClowdScript>();
         var clowdFollow = clowd.GetComponent<ClowdScript>();
         clowdFollow.Position = pos;
         clowdFollow.Controller = controller;
