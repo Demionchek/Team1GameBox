@@ -76,11 +76,11 @@ public class AttackMarkersController : MonoBehaviour
         var rayMarkScript = rayMark.GetComponent<MarkerDamageScript>();
         var rayMaterial = rayMark.transform.GetChild(0).GetComponent<Renderer>().material;
         rayMarkScript.RayResize(_markersConfigs.rayMarkerWidth, _markersConfigs.rayMarkerLength);
-        MaterialSetAlfa(rayMaterial, Color.green);
+        rayMaterial.color = Color.green;
         yield return new WaitForSeconds(delay);
-        MaterialSetAlfa(rayMaterial, Color.yellow);
+        rayMaterial.color = Color.yellow;
         yield return new WaitForSeconds(delay);
-        MaterialSetAlfa(rayMaterial, Color.red);
+        rayMaterial.color = Color.red;
         yield return new WaitForSeconds(delay);
         rayMarkScript.TryToHit(_markersConfigs.rayMarkerDamage, _targetMask);
         Destroy(rayMark);

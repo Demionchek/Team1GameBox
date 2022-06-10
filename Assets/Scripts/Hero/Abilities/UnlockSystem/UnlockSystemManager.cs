@@ -36,14 +36,30 @@ public class UnlockSystemManager : MonoBehaviour
 
     private void UnlockOnLoad()
     {
+        if (counter == 1)
+        {
+            unlockUi.UpdateUi();
+        }
         if (counter >= countOfItemsToUnlock)
         {
             mightyPunch.enabled = true;
+            unlockUi.UpdateUi();
+            unlockUi.UpdateUi();
+        }
+        if (counter == 3)
+        {
+            unlockUi.UpdateUi();
+            unlockUi.UpdateUi();
+            unlockUi.UpdateUi();
         }
 
         if (counter >= countOfItemsToUnlock * 2)
         {
             airAtack.enabled = true;
+            unlockUi.UpdateUi();
+            unlockUi.UpdateUi();
+            unlockUi.UpdateUi();
+            unlockUi.UpdateUi();
         }
     } 
 
