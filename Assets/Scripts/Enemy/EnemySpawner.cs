@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<Enemy> bossMinions;
     [SerializeField] private List<Enemy> arenaMinions;
     [SerializeField] private List<GameObject> enemiesOnBossScene;
-    [SerializeField] private List<GameObject> enemiesOnArena;
+    [SerializeField] public List<GameObject> EnemiesOnArena;
     [SerializeField] private Transform ArenaPos;
     [SerializeField] private Transform BossArenaPos;
     [SerializeField] private float _spawnMaxDistance;
@@ -53,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
             for (int j = 0; j < arenaMinions[i].count; j++)
             {
                 GameObject enemyObject = Instantiate(arenaMinions[i].prefab);
-                enemiesOnArena.Add(enemyObject);
+                EnemiesOnArena.Add(enemyObject);
                 enemyObject.SetActive(false);
             }
         }
@@ -84,7 +84,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator ArenaSummonCorutine()
     {
-        for (int i = 0; i < enemiesOnArena.Count; i++)
+        for (int i = 0; i < EnemiesOnArena.Count; i++)
         {
             yield return new WaitForSeconds(_spawnDelay);
             Vector3 point;
@@ -96,18 +96,17 @@ public class EnemySpawner : MonoBehaviour
 #endif
             }
 
-            if (i > enemiesOnArena.Count)
+            if (i > EnemiesOnArena.Count)
             {
-                StopCoroutine(BossSummonCorutine(enemiesOnArena.Count));
+                StopCoroutine(BossSummonCorutine(EnemiesOnArena.Count));
                 break;
             }
             else
             {
-                deathArena.EnemiesAlive++;
-                var enemyController = enemiesOnArena[i].GetComponent<EnemyController>();
+                var enemyController = EnemiesOnArena[i].GetComponent<EnemyController>();
                 enemyController.Target = _controller.transform;
-                enemiesOnArena[i].transform.position = point;
-                enemiesOnArena[i].SetActive(true);
+                EnemiesOnArena[i].transform.position = point;
+                EnemiesOnArena[i].SetActive(true);
                 enemyController.Revive();
                 enemyController.Agressive();
             }

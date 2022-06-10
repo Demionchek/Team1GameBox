@@ -33,6 +33,7 @@ public class DeathArena : MonoBehaviour
         EnemyController.EnemyDeathAction += DeathCounter;
         ArenaActivated?.Invoke(true);
         _spawner.ArenaSummon();
+        EnemiesAlive = _spawner.EnemiesOnArena.Count -1;
         _isActive = true;
         _barier.SetActive(true);
         StartCoroutine(CheckIfEnemiesAreAlive());
@@ -40,7 +41,7 @@ public class DeathArena : MonoBehaviour
 
     private IEnumerator CheckIfEnemiesAreAlive()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(15f);
         while (_isActive)
         {
             yield return new WaitForSeconds(k_delay);
