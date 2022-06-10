@@ -143,7 +143,7 @@ public class AttackMarkersController : MonoBehaviour
         Material[] conesMaterial = new Material[_multyConesCount];
         for (int i = 0; i < cones.Length; i++)
         {
-            cones[i] = Instantiate(_coneMarkerPrefab, pos, Quaternion.Euler(0, r, 0));
+            cones[i] = Instantiate(_coneMarkerPrefab, pos, Quaternion.Euler(0, r, 180));
             conesScript[i] = cones[i].GetComponent<MarkerDamageScript>();
             conesScript[i].ConeResize(_markersConfigs.bossMultyConeMarkerWidth, _markersConfigs.bossMultyConeMarkerLength);
             conesMaterial[i] = cones[i].GetComponent<Renderer>().material;
