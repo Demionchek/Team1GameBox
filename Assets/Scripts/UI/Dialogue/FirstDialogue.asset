@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -520, y: -88}
+  position: {x: -632, y: -56}
   ports:
     keys:
     - exit
@@ -290,7 +290,7 @@ MonoBehaviour:
   - {fileID: 4341128970218435370}
   - {fileID: -6032629746488666944}
   - {fileID: -1229997348004801902}
-  current: {fileID: -6032629746488666944}
+  current: {fileID: -7237838815274968627, guid: 23728e7bbbfd45f4aa441fdbff86aa9e, type: 2}
 --- !u!114 &838820780319537073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -392, y: 40}
+  position: {x: -424, y: 40}
   ports:
     keys:
     - entry

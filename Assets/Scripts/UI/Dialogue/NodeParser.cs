@@ -1,4 +1,5 @@
 using StarterAssets;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,24 +12,36 @@ public class NodeParser : MonoBehaviour
     [SerializeField] private Image speakerImage;
     [SerializeField] private StarterAssetsInputs playerInputs;
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private float dialogueDelay = 0.1f;
 
-    private DialogueGrapgh graph;
+    public DialogueGrapgh graph;
+
+    public static event Action EndDialog;
 
     private Coroutine parser;
-    private ThirdPersonController playersController;
 
     private void Start()
     {
-        if(playerInputs.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
+        FindStartNode(graph);
+    }
+
+    private void FindStartNode(DialogueGrapgh grap)
+    {
+        if (grap != null)
         {
-            playersController = controller;
+            foreach (BaseNode b in grap.nodes)
+            {
+                if (b.GetString() == "Start")
+                {
+                    graph.current = b;
+                    break;
+                }
+            }
         }
     }
 
-    public void StartDialogue(DialogueGrapgh dialogueGrapgh)
+    public void StartDialogue()
     {
-        graph = dialogueGrapgh;
-        graph.TryFindStartNode();
         StartCoroutine(ParseNode());
     }
 
@@ -40,27 +53,20 @@ public class NodeParser : MonoBehaviour
         if (dataParts[0] == "Start")
         {
             dialoguePanel.SetActive(true);
-
-            playersController.CanMove = false;
-            playersController.GetComponent<MeleeAtack>().enabled = false;
-
             NextNode("exit");
         }
         if(dataParts[0] == "DialogueNode")
         {
             dialogue.text = dataParts[2];
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(dialogueDelay);
+            yield return new WaitUntil(() => playerInputs.atack);
             NextNode("exit");
         }
         if(dataParts[0] == "End")
-        { 
+        {            
+            FindStartNode(node.GetGrapgh());
             dialoguePanel.SetActive(false);
-<<<<<<< Updated upstream
-=======
             EndDialog?.Invoke();
-            playersController.CanMove = true;
-            playersController.GetComponent<MeleeAtack>().enabled = true;
->>>>>>> Stashed changes
         }
     }
 

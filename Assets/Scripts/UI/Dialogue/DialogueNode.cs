@@ -8,6 +8,18 @@ public class DialogueNode : BaseNode
     public string speakerName;
     public string dialogueLine;
     public Sprite speakerImage;
+    //public RectTransform backGroundImage;
+    //public float backHeight;
+
+    //public override float GetHeight()
+    //{
+    //    return backHeight;
+    //}
+
+    //public override RectTransform GetRect()
+    //{
+    //    return backGroundImage;
+    //}
 
     public override string GetString()
     {
