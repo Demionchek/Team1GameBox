@@ -63,13 +63,14 @@ public class TutorialNodeParser : MonoBehaviour
         if (dataParts[0] == "Start")
         {
             tutorialPanel.SetActive(true);
+            Time.timeScale = 0f;
             NextNode("exit");
         }
         if (dataParts[0] == "Tutorial")
         {
             tutorialImage.sprite = node.GetSprite();
             tutorialText.text = CenterText(dataParts[1]);
-            yield return new WaitForSeconds(dialogueDelay);
+            yield return new WaitForSecondsRealtime(dialogueDelay);
             yield return new WaitUntil(() => playerInputs.atack);
             NextNode("exit");
         }
@@ -78,7 +79,7 @@ public class TutorialNodeParser : MonoBehaviour
             FindStartNode(node.GetGrapgh());
             tutorialPanel.SetActive(false);
             EndDialog?.Invoke();
-
+            Time.timeScale = 1f;
             playersController.CanMove = true;
             playersController.GetComponent<MeleeAtack>().enabled = true;
         }

@@ -75,6 +75,7 @@ public class UnlockSystemManager : MonoBehaviour
             if (mightyPunch.enabled == false)
             {
                 mightyPunch.enabled = true;
+                saver.SaveCollectableNum(counter);
             }
             else if (airAtack.enabled == false)
             {
@@ -82,6 +83,7 @@ public class UnlockSystemManager : MonoBehaviour
                 counter = 4;
                 saver.SaveCollectableNum(counter);
             }
+            saver.SaveCollectableNum(counter);
             if (counter !=4)
             {
                 counter = 0;
