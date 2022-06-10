@@ -155,6 +155,14 @@ public class EnemySpawner : MonoBehaviour
             currentEnemyFromList = 0;
         }
     }
+
+    public void OffAllEnemies()
+    {
+        foreach (GameObject enemy in enemiesOnBossScene)
+        {
+            enemy.SetActive(false);
+        }
+    }
 }
 
 [System.Serializable]

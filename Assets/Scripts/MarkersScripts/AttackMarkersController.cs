@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using UnityEngine.VFX;
 
 public class AttackMarkersController : MonoBehaviour
 {
@@ -15,13 +16,14 @@ public class AttackMarkersController : MonoBehaviour
     [SerializeField] private GameObject _coneMarkerPrefab;
 
     [Header("Boss Effects")]
-    [SerializeField] private GameObject _yagaSingleConeMarkerPrefab;
-    [SerializeField] private GameObject _yagaMultyConeMarkerPrefab;
-    [SerializeField] private GameObject _BigAOEMarkerPrefab;
+    [SerializeField] private VisualEffect _yagaSingleConeEffect;
+    [SerializeField] private GameObject _conesObj;
+    [SerializeField] private VisualEffect[] _yagaMultyConeEffects;
+    [SerializeField] private VisualEffect _BigAOEEffect;
     [SerializeField] private GameObject _ClowdEffect;
-    [SerializeField] private GameObject _RocketsEffect;
+    [SerializeField] private VisualEffect _rocketsEffect;
 
-    private const float _yPosCorrection = 0.2f;
+    private const float _yPosCorrection = 0.4f;
     private const int _multyConesCount = 3;
     private const float k_Angle = 120f;
 
@@ -32,6 +34,8 @@ public class AttackMarkersController : MonoBehaviour
         YagaController.CreateConeMarker += CreateSingeConeMarker;
     }
 
+    public void CreateRocketMarker(Vector3 pos, float timeToDel)
+    => StartCoroutine(RocketsCorutine(pos, timeToDel));
     public void CreateEnemyPondMarker(Vector3 pos, float timeToDel) 
         => StartCoroutine(PondCorutine(pos, timeToDel));
     public void CreateEnemyRayMarker(Vector3 pos, Vector3 target, float timeToDel) 
@@ -68,6 +72,27 @@ public class AttackMarkersController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         MaterialSetAlfa(pondMaterial, Color.red);
         yield return new WaitForSeconds(delay);
+        pondScript.TryToHit(_markersConfigs.jumpMarkerDamage, _targetMask);
+        Destroy(pond);
+    }
+
+    private IEnumerator RocketsCorutine(Vector3 pos, float timeToDel)
+    {
+        pos.y += _yPosCorrection;
+        GameObject pond = Instantiate(_pondMarkerPrefab, pos, Quaternion.identity);
+
+        float delay = timeToDel / 3;
+        var pondScript = pond.GetComponent<MarkerDamageScript>();
+        var pondMaterial = pond.GetComponent<Renderer>().material;
+        pondScript.PondResize(_markersConfigs.jumpMarkerSize);
+        MaterialSetAlfa(pondMaterial, Color.green);
+        yield return new WaitForSeconds(delay);
+        MaterialSetAlfa(pondMaterial, Color.yellow);
+        yield return new WaitForSeconds(delay);
+        MaterialSetAlfa(pondMaterial, Color.red);
+        yield return new WaitForSeconds(delay);
+        _rocketsEffect.transform.position = pos;
+        _rocketsEffect.Play();
         pondScript.TryToHit(_markersConfigs.jumpMarkerDamage, _targetMask);
         Destroy(pond);
     }
@@ -117,8 +142,15 @@ public class AttackMarkersController : MonoBehaviour
     private IEnumerator ConeCorutine(Vector3 pos, Vector3 target, float timeToDel)
     {
         pos.y += _yPosCorrection;
-        target.y = pos.y;
         GameObject cone = Instantiate(_coneMarkerPrefab, pos, Quaternion.identity);
+        if (_yagaSingleConeEffect != null)
+        {
+            pos.y += 1;
+            _yagaSingleConeEffect.transform.position = pos;
+            target.y = pos.y;
+            _yagaSingleConeEffect.transform.LookAt(target);
+        }
+        target.y = pos.y;
         cone.transform.LookAt(target);
         var coneScript = cone.GetComponent<MarkerDamageScript>();
         var coneMaterial = cone.GetComponent<Renderer>().material;
@@ -130,6 +162,7 @@ public class AttackMarkersController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         MaterialSetAlfa(coneMaterial, Color.red);
         yield return new WaitForSeconds(delay);
+        _yagaSingleConeEffect.Play();
         coneScript.TryToHit(_markersConfigs.bossConeMarkerDamage, _targetMask);
         Destroy(cone);
     }
@@ -141,9 +174,10 @@ public class AttackMarkersController : MonoBehaviour
         GameObject[] cones = new GameObject[_multyConesCount];
         MarkerDamageScript[] conesScript = new MarkerDamageScript[_multyConesCount];
         Material[] conesMaterial = new Material[_multyConesCount];
+        _conesObj.transform.Rotate(0,r,0);
         for (int i = 0; i < cones.Length; i++)
         {
-            cones[i] = Instantiate(_coneMarkerPrefab, pos, Quaternion.Euler(0, r, 0));
+            cones[i] = Instantiate(_coneMarkerPrefab, pos, Quaternion.Euler(0, r, 180));
             conesScript[i] = cones[i].GetComponent<MarkerDamageScript>();
             conesScript[i].ConeResize(_markersConfigs.bossMultyConeMarkerWidth, _markersConfigs.bossMultyConeMarkerLength);
             conesMaterial[i] = cones[i].GetComponent<Renderer>().material;
@@ -162,6 +196,10 @@ public class AttackMarkersController : MonoBehaviour
             MaterialSetAlfa(conesMaterial[i], Color.red);
         }
         yield return new WaitForSeconds(delay);
+        foreach (VisualEffect effect in _yagaMultyConeEffects)
+        {
+            effect.Play();
+        }
         for (int i = 0; i < cones.Length; i++)
         {
             conesScript[i].TryToHit(_markersConfigs.bossConeMarkerDamage, _targetMask);
@@ -199,6 +237,8 @@ public class AttackMarkersController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         MaterialSetAlfa(pondMaterial, Color.red);
         yield return new WaitForSeconds(delay);
+        _BigAOEEffect.transform.position = pos;
+        _BigAOEEffect.Play();
         pondScript.TryToHit(_markersConfigs.bossPondMarkerDamage, _targetMask);
         Destroy(pond);
     }

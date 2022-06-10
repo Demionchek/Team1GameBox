@@ -40,7 +40,7 @@ public class DeathArena : MonoBehaviour
 
     private IEnumerator CheckIfEnemiesAreAlive()
     {
-        yield return new WaitForSeconds(k_delay);
+        yield return new WaitForSeconds(10f);
         while (_isActive)
         {
             yield return new WaitForSeconds(k_delay);

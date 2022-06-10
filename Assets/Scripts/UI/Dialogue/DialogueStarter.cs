@@ -1,22 +1,38 @@
 using StarterAssets;
 using UnityEngine;
+using UnityEditor;
+using System.Collections;
 
 public class DialogueStarter : MonoBehaviour
 {
     [SerializeField] private NodeParser dialogueManager;
-    [SerializeField] private bool isStartingDialog;
+    [SerializeField] private bool isFinal;
     [SerializeField] private DialogueGrapgh dialogueToStart;
-    private ThirdPersonController personController;
+    [SerializeField] private ThirdPersonController personController;
+    [SerializeField] private FadeInOut inOut;
+    [SerializeField] private Health yaga;
+    [SerializeField] private GameObject yagaUI;
+    [SerializeField] private EnemySpawner spawner; 
 
     private void Start()
     {
-        if (isStartingDialog)
+        if (yaga != null)
         {
-            //NodeParser.EndDialog += SetPlayerActive;
-            //controller.CanMove = false;
-            //controller.GetComponent<MeleeAtack>().enabled = false;
-            //personController = controller;
-            //dialogueManager.StartDialogue();
+            StartCoroutine(CheckYagaHealth());
+        }
+    }
+
+    private IEnumerator CheckYagaHealth()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.3f);
+            if (yaga.Hp < 1)
+            {
+                StartFinal();
+                break;
+            }
+
         }
     }
 
@@ -32,13 +48,29 @@ public class DialogueStarter : MonoBehaviour
         }
     }
 
-
+    public void StartFinal()
+    {
+        NodeParser.EndDialog += SetPlayerActive;
+        if (inOut != null)
+        {
+            inOut.FadeIn(1f);
+            Destroy(yagaUI);
+            spawner.OffAllEnemies();
+        }
+        personController.CanMove = false;
+        personController.GetComponent<MeleeAtack>().enabled = false;
+        dialogueManager.StartDialogue(dialogueToStart);
+    }
 
     private void SetPlayerActive()
     {
         personController.CanMove = true;
         personController.GetComponent<MeleeAtack>().enabled = true;
         NodeParser.EndDialog -= SetPlayerActive;
+        if (isFinal && inOut != null)
+        {
+            inOut.FadeInAndLoadScene(0);
+        }
         Destroy(this);
     }
 }

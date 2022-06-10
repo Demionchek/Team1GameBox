@@ -13,7 +13,7 @@ public class Health : MonoBehaviour, IDamageable
     private EnemySocials _enemySocials;
 
     public static Action HPChanged;
-
+    public static event Action YagaDied;
     public float Hp { get; set; }
     public float FullHP { get; private set; }
 
@@ -103,6 +103,7 @@ public class Health : MonoBehaviour, IDamageable
             }
             else if (TryGetComponent<YagaController>(out YagaController yagaController))
             {
+                Debug.Log("YagaDied");
                 yagaController.IsAlive = false;
                 _bossSounds.PlayDeathSound();
             }
