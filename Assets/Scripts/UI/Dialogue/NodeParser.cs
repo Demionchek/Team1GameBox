@@ -12,32 +12,23 @@ public class NodeParser : MonoBehaviour
     [SerializeField] private StarterAssetsInputs playerInputs;
     [SerializeField] private GameObject dialoguePanel;
 
-    public DialogueGrapgh graph;
+    private DialogueGrapgh graph;
 
     private Coroutine parser;
+    private ThirdPersonController playersController;
 
     private void Start()
     {
-        FindStartNode(graph);
-    }
-
-    private void FindStartNode(DialogueGrapgh grap)
-    {
-        if (grap != null)
+        if(playerInputs.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
         {
-            foreach (BaseNode b in grap.nodes)
-            {
-                if (b.GetString() == "Start")
-                {
-                    graph.current = b;
-                    break;
-                }
-            }
+            playersController = controller;
         }
     }
 
-    public void StartDialogue()
+    public void StartDialogue(DialogueGrapgh dialogueGrapgh)
     {
+        graph = dialogueGrapgh;
+        graph.TryFindStartNode();
         StartCoroutine(ParseNode());
     }
 
@@ -49,6 +40,10 @@ public class NodeParser : MonoBehaviour
         if (dataParts[0] == "Start")
         {
             dialoguePanel.SetActive(true);
+
+            playersController.CanMove = false;
+            playersController.GetComponent<MeleeAtack>().enabled = false;
+
             NextNode("exit");
         }
         if(dataParts[0] == "DialogueNode")
@@ -58,9 +53,14 @@ public class NodeParser : MonoBehaviour
             NextNode("exit");
         }
         if(dataParts[0] == "End")
-        {            
-            FindStartNode(node.GetGrapgh());
+        { 
             dialoguePanel.SetActive(false);
+<<<<<<< Updated upstream
+=======
+            EndDialog?.Invoke();
+            playersController.CanMove = true;
+            playersController.GetComponent<MeleeAtack>().enabled = true;
+>>>>>>> Stashed changes
         }
     }
 
