@@ -100,7 +100,7 @@ public class TutorialNodeParser : MonoBehaviour
                 }
                 else if(element.EndsWith("."))
                 {
-                    builder.Append(element + Environment.NewLine);
+                    builder.Append(element + "\n");
                 }
                 else
                 {

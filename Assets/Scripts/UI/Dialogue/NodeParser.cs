@@ -44,7 +44,8 @@ public class NodeParser : MonoBehaviour
     public void StartDialogue(DialogueGrapgh dialogueGrapgh)
     {
         graph = dialogueGrapgh;
-        graph.TryFindStartNode();
+        //graph.TryFindStartNode();
+        FindStartNode(graph);
 
         playersController.CanMove = false;
         playersController.GetComponent<MeleeAtack>().enabled = false;
@@ -70,8 +71,7 @@ public class NodeParser : MonoBehaviour
             NextNode("exit");
         }
         if(dataParts[0] == "End")
-        {            
-            FindStartNode(node.GetGrapgh());
+        { 
             dialoguePanel.SetActive(false);
             EndDialog?.Invoke();
 
