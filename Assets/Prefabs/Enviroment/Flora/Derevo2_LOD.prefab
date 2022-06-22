@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4131668010148245699}
   - component: {fileID: 5690661629035686736}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Derevo2_LOD
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5401138356862764672}
   - component: {fileID: 8369817412945344168}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Elka_LOD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
