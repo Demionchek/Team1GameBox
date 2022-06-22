@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 8656853699160566478}
   - component: {fileID: 4660558661064027008}
   - component: {fileID: 3873663173840876494}
-  - component: {fileID: 4451656835423850781}
+  - component: {fileID: 5987548048459798762}
   m_Layer: 11
   m_Name: Derevo_01(Clone)
   m_TagString: Untagged
@@ -150,7 +150,7 @@ MonoBehaviour:
   shaderVariableName: _Alpha
   fadeTo: 0.5
   fadeFrom: 1
---- !u!136 &4451656835423850781
+--- !u!136 &5987548048459798762
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +160,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 58.5
-  m_Height: 1099.7
+  m_Radius: 0.47
+  m_Height: 10.1
   m_Direction: 1
-  m_Center: {x: 38.77, y: 275.45862, z: 22.5}
+  m_Center: {x: 0.3, y: 2.754586, z: 0.3}

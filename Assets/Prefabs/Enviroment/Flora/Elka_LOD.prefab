@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 8965748285916877024}
   - component: {fileID: 7522515274030729625}
   - component: {fileID: 4547784552858541415}
-  - component: {fileID: 7367199824928588266}
+  - component: {fileID: 737813859710957825}
   m_Layer: 11
   m_Name: Elka_01(Clone)
   m_TagString: Untagged
@@ -150,7 +150,7 @@ MonoBehaviour:
   shaderVariableName: _Alpha
   fadeTo: 0.5
   fadeFrom: 1
---- !u!136 &7367199824928588266
+--- !u!136 &737813859710957825
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +160,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 59.9
-  m_Height: 1039.7
+  m_Radius: 0.6
+  m_Height: 11.25
   m_Direction: 1
-  m_Center: {x: 0, y: 447.2, z: -14.7}
+  m_Center: {x: 0.00000011920929, y: 3.8991668, z: -0.18}
