@@ -7,6 +7,7 @@ public class YagaController : MonoBehaviour
 {
     [SerializeField] public Transform Target;
     [SerializeField] private SpellCaster _kettle;
+    [SerializeField] private AttackMarkersController _attackMarkersController;
     [SerializeField] public float AttackDistance;
     [SerializeField] private float _attackCooldown;
     [SerializeField] private float _markerDelay;
@@ -26,8 +27,6 @@ public class YagaController : MonoBehaviour
 
     private bool _isAttacking;
     private bool _isAttackCooled;
-
-    public static event Action<Vector3, Vector3, float> CreateConeMarker;
 
     public int CurrentState { get; private set; }
     public float CastDealy { get; set; }
@@ -69,8 +68,7 @@ public class YagaController : MonoBehaviour
                 {
                     _isAttacking = true;
 
-                    if (CreateConeMarker != null)
-                        CreateConeMarker(transform.position, Target.position+Vector3.up, _markerDelay);
+                        _attackMarkersController.CreateSingeConeMarker(transform.position, Target.position, _markerDelay);
 
                 }
                 break;

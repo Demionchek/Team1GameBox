@@ -39,9 +39,6 @@ public class YagaSummons : MonoBehaviour
             case _rocketsSummon:
                 StartCoroutine(RocketsDelayCor(_rocketsDelay, controller, timeToDel));
                 break;
-            //case _minionsSummon:
-            //    _enemySpawner.EnemySummon(EnemiesCount);
-            //    break;
             case _hutSummon:
                 StartCoroutine(HutOnLegsRun(timeToDel, controller));
                 break;
@@ -73,6 +70,7 @@ public class YagaSummons : MonoBehaviour
         while (counter <= _rocketsCount)
         {
             yield return new WaitForSeconds(delay);
+
             _attackMarkers.CreateRocketMarker(controller.transform.position, timeToDel);
             counter++;
         }

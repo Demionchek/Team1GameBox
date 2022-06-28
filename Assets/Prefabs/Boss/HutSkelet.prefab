@@ -230,7 +230,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2208029872743775717}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 0a68306a854887e4d85797966ede6a8a, type: 3}
   m_Controller: {fileID: 9100000, guid: 21ba7ef58e503ee468122d1e87089039, type: 2}
   m_CullingMode: 1
@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 6924716217851296202}
   - component: {fileID: 6924716217851296203}
   - component: {fileID: 1660309516}
-  - component: {fileID: 7017193565284931985}
+  - component: {fileID: 8711872074454215}
   m_Layer: 0
   m_Name: HutSkelet
   m_TagString: Untagged
@@ -895,7 +895,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7017193565284931985
+--- !u!114 &8711872074454215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

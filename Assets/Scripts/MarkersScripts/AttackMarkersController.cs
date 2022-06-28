@@ -17,7 +17,7 @@ public class AttackMarkersController : MonoBehaviour
 
     [Header("Boss Effects")]
     [SerializeField] private VisualEffect _yagaSingleConeEffect;
-    [SerializeField] private GameObject _conesObj;
+    [SerializeField] private Transform _conesTransform;
     [SerializeField] private VisualEffect[] _yagaMultyConeEffects;
     [SerializeField] private VisualEffect _BigAOEEffect;
     [SerializeField] private GameObject _ClowdEffect;
@@ -31,7 +31,6 @@ public class AttackMarkersController : MonoBehaviour
     {
         LikhoChargingState.CreateMarker += CreateEnemyPondMarker;
         GiantChargeState.CreateMarker += CreateEnemyRayMarker;
-        YagaController.CreateConeMarker += CreateSingeConeMarker;
     }
 
     public void CreateRocketMarker(Vector3 pos, float timeToDel)
@@ -141,8 +140,10 @@ public class AttackMarkersController : MonoBehaviour
 
     private IEnumerator ConeCorutine(Vector3 pos, Vector3 target, float timeToDel)
     {
-        pos.y += _yPosCorrection;
         GameObject cone = Instantiate(_coneMarkerPrefab, pos, Quaternion.identity);
+        target.y = pos.y;
+        cone.transform.LookAt(target);
+        cone.transform.Rotate(0, 0, 180);
         if (_yagaSingleConeEffect != null)
         {
             pos.y += 1;
@@ -150,8 +151,6 @@ public class AttackMarkersController : MonoBehaviour
             target.y = pos.y;
             _yagaSingleConeEffect.transform.LookAt(target);
         }
-        target.y = pos.y;
-        cone.transform.LookAt(target);
         var coneScript = cone.GetComponent<MarkerDamageScript>();
         var coneMaterial = cone.GetComponent<Renderer>().material;
         coneScript.ConeResize(_markersConfigs.bossSingleConeMarkerWidth, _markersConfigs.bossSingleConeMarkerLength);
@@ -174,7 +173,6 @@ public class AttackMarkersController : MonoBehaviour
         GameObject[] cones = new GameObject[_multyConesCount];
         MarkerDamageScript[] conesScript = new MarkerDamageScript[_multyConesCount];
         Material[] conesMaterial = new Material[_multyConesCount];
-        _conesObj.transform.Rotate(0,r,0);
         for (int i = 0; i < cones.Length; i++)
         {
             cones[i] = Instantiate(_coneMarkerPrefab, pos, Quaternion.Euler(0, r, 180));
@@ -184,6 +182,8 @@ public class AttackMarkersController : MonoBehaviour
             MaterialSetAlfa(conesMaterial[i], Color.green);
             r += k_Angle;
         }
+        Vector3 currRotation = cones[0].transform.eulerAngles;
+        _conesTransform.Rotate(0, currRotation.y,0);
         float delay = timeToDel / 3;
         yield return new WaitForSeconds(delay);
         for (int i = 0; i < cones.Length; i++)
@@ -248,6 +248,5 @@ public class AttackMarkersController : MonoBehaviour
     {
         LikhoChargingState.CreateMarker -= CreateEnemyPondMarker;
         GiantChargeState.CreateMarker -= CreateEnemyRayMarker;
-        YagaController.CreateConeMarker -= CreateSingeConeMarker;
     }
 }
