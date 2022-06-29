@@ -53079,13 +53079,6 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.033333335
-    functionName: resetAtackState
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 0.5
     functionName: ThirdSlashEffect
     data: 
@@ -53102,6 +53095,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.6666667
     functionName: AttackSphereCast
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.4333333
+    functionName: resetAtackState
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

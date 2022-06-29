@@ -21,6 +21,7 @@ namespace StarterAssets
 		public bool inventorySecondSlot;
 		public bool pause;
 		public bool isPaused;
+		public bool groundSlam;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -89,7 +90,12 @@ namespace StarterAssets
 				&& animatorManager.isGrounded() && !isPaused)
 			MightyPunchInput(value.isPressed);
 		}
-		
+
+		public void OnGroundSlam(InputValue value)
+        {
+			GroundSlamInput(value.isPressed);
+        }
+
 		public void OnInventoryFirstSlot(InputValue value)
 		{
 			if (!isPaused)
@@ -158,7 +164,12 @@ namespace StarterAssets
 		{
 			mightyPunch = newMightyPunchInputState;
 		}
-		
+
+		public void GroundSlamInput(bool newGroundSlamInputState)
+		{
+			groundSlam = newGroundSlamInputState;
+		}
+
 		public void InventoryFirstSlotInput(bool newInventoryFirstSlotInputState)
 		{
 			inventoryFirstSlot = newInventoryFirstSlotInputState;
