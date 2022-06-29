@@ -10,14 +10,14 @@ public class UnlockSystemManager : MonoBehaviour
 
     private AirAtack airAtack;
     private MIghtyPunch mightyPunch;
-    private int counter;
+    public int Counter { get; private set; }
     private static int tutorialId;
 
     private void Start()
     {
         TryGetComponent();
         saver.LoadCollectable();
-        counter = saver.CollectToSave;
+        Counter = saver.CollectToSave;
         UnlockOnLoad();
     }
 
@@ -36,24 +36,24 @@ public class UnlockSystemManager : MonoBehaviour
 
     private void UnlockOnLoad()
     {
-        if (counter == 1)
+        if (Counter == 1)
         {
             unlockUi.UpdateUi();
         }
-        if (counter >= countOfItemsToUnlock)
+        if (Counter >= countOfItemsToUnlock)
         {
             mightyPunch.enabled = true;
             unlockUi.UpdateUi();
             unlockUi.UpdateUi();
         }
-        if (counter == 3)
+        if (Counter == 3)
         {
             unlockUi.UpdateUi();
             unlockUi.UpdateUi();
             unlockUi.UpdateUi();
         }
 
-        if (counter >= countOfItemsToUnlock * 2)
+        if (Counter >= countOfItemsToUnlock * 2)
         {
             airAtack.enabled = true;
             unlockUi.UpdateUi();
@@ -66,34 +66,34 @@ public class UnlockSystemManager : MonoBehaviour
     public void TryUnlock(int scrollNum)
     {        
         StartTutorialUi(tutorialId);
-        counter++;
+        Counter++;
         unlockUi.UpdateUi();
-        saver.SaveCollectableNum(counter);
+        saver.SaveCollectableNum(Counter);
         saver.SaveScrolls(scrollNum);
         if ( IsEnoughtItems())
         {
             if (mightyPunch.enabled == false)
             {
                 mightyPunch.enabled = true;
-                saver.SaveCollectableNum(counter);
+                saver.SaveCollectableNum(Counter);
             }
             else if (airAtack.enabled == false)
             {
                 airAtack.enabled = true;
-                counter = 4;
-                saver.SaveCollectableNum(counter);
+                Counter = 4;
+                saver.SaveCollectableNum(Counter);
             }
-            saver.SaveCollectableNum(counter);
-            if (counter !=4)
+            saver.SaveCollectableNum(Counter);
+            if (Counter !=4)
             {
-                counter = 0;
+                Counter = 0;
             }
         }
     }
 
     private bool IsEnoughtItems()
     {
-        return counter >= countOfItemsToUnlock;
+        return Counter >= countOfItemsToUnlock;
     }
 
     private void StartTutorialUi(int tutorialID)
