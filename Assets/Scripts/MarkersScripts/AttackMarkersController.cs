@@ -205,6 +205,8 @@ public class AttackMarkersController : MonoBehaviour
             conesScript[i].TryToHit(_markersConfigs.bossConeMarkerDamage, _targetMask);
             Destroy(cones[i]);
         }
+        yield return new WaitForSeconds(1f);
+        _conesTransform.rotation = Quaternion.Euler(0,0,0);
     }
 
     private IEnumerator ClowdSpellCorutine(ThirdPersonController controller, Vector3 pos)
