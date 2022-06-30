@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalUIScript : MonoBehaviour
+public class InteractUIScript : MonoBehaviour
 {
     private MeshRenderer m_MeshRenderer;
 

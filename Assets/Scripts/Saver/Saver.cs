@@ -39,64 +39,64 @@ public class Saver : MonoBehaviour
     private int[] Scrolls = new int[4];
     private string ScrollsStringToSave;
 
-#if(UNITY_EDITOR)
-    [MenuItem("Utils/Clear progress")]
-    public static void ClearProgress()
-    {
-        if (File.Exists(Application.persistentDataPath + "/MySavedCheckPoint.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedCheckPoint.dat");
-        }
-        if (File.Exists(Application.persistentDataPath + "/MySavedLevel.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedLevel.dat");
-        }
-        if (File.Exists(Application.persistentDataPath + "/MySavedHealth.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedHealth.dat");
-        }
-        if (File.Exists(Application.persistentDataPath + "/MySavedEnergy.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedEnergy.dat");
-        }
-        if (File.Exists(Application.persistentDataPath + "/MySavedHealthPacks.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedHealthPacks.dat");
-        }
-        if (File.Exists(Application.persistentDataPath + "/MySavedEnergyPacks.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedEnergyPacks.dat");
-        }
-        if (File.Exists(Application.persistentDataPath + "/MySavedArena.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedArena.dat");
-        }
-        if (File.Exists(Application.persistentDataPath + "/MySavedCollectable.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedCollectable.dat");
-        }
-        if (File.Exists(Application.persistentDataPath + "/MySavedScrolls.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedScrolls.dat");
-        }
-        if (File.Exists(Application.persistentDataPath + "/MySavedDialog.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/MySavedDialog.dat");
-        }
-        Debug.Log("Progress Data Cleared!");
-    }
-#endif
+//#if(UNITY_EDITOR)
+//    [MenuItem("Utils/Clear progress")]
+//    public static void ClearProgress()
+//    {
+//        if (File.Exists(Application.persistentDataPath + "/MySavedCheckPoint.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedCheckPoint.dat");
+//        }
+//        if (File.Exists(Application.persistentDataPath + "/MySavedLevel.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedLevel.dat");
+//        }
+//        if (File.Exists(Application.persistentDataPath + "/MySavedHealth.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedHealth.dat");
+//        }
+//        if (File.Exists(Application.persistentDataPath + "/MySavedEnergy.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedEnergy.dat");
+//        }
+//        if (File.Exists(Application.persistentDataPath + "/MySavedHealthPacks.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedHealthPacks.dat");
+//        }
+//        if (File.Exists(Application.persistentDataPath + "/MySavedEnergyPacks.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedEnergyPacks.dat");
+//        }
+//        if (File.Exists(Application.persistentDataPath + "/MySavedArena.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedArena.dat");
+//        }
+//        if (File.Exists(Application.persistentDataPath + "/MySavedCollectable.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedCollectable.dat");
+//        }
+//        if (File.Exists(Application.persistentDataPath + "/MySavedScrolls.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedScrolls.dat");
+//        }
+//        if (File.Exists(Application.persistentDataPath + "/MySavedDialog.dat"))
+//        {
+//            File.Delete(Application.persistentDataPath + "/MySavedDialog.dat");
+//        }
+//        Debug.Log("Progress Data Cleared!");
+//    }
+//#endif
 
-    private void Awake()
-    {
-        LoadLevel();
-        LoadCheckPoint();
-        LoadHealth();
-        LoadEnergy();
-        LoadEnergyPacks();
-        LoadHealthPacks();
-        LoadScrollsNums();
-    }
+    //private void Awake()
+    //{
+    //    LoadLevel();
+    //    LoadCheckPoint();
+    //    LoadHealth();
+    //    LoadEnergy();
+    //    LoadEnergyPacks();
+    //    LoadHealthPacks();
+    //    LoadScrollsNums();
+    //}
 
     public void SaveScrolls(int ScrollNum)
     {

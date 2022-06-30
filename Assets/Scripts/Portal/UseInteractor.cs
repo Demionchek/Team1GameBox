@@ -33,7 +33,7 @@ public class UseInteractor : MonoBehaviour
                     {
                         _sound.PlayPortalSound();
                     }
-                    else if (hit.collider.TryGetComponent(out TotemInteract totemInteract))
+                    else if (hit.collider.TryGetComponent(out Totem totemInteract))
                     {
                         _sound.PlayArenaSound();
                     }

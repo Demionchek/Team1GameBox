@@ -1,11 +1,28 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using System.IO;
+using UnityEditor;
 
 public class SavingSystem
 {
+#if(UNITY_EDITOR)
+    [MenuItem("Utils/Clear progress")]
+#endif
+    public static void ClearProgress()
+    {
+        if (File.Exists(Application.persistentDataPath + "/PlayerSaveData.txt"))
+        {
+            File.Delete(Application.persistentDataPath + "/PlayerSaveData.txt");
+        }
+        if (File.Exists(Application.persistentDataPath + "/WorldSaveData.txt"))
+        {
+            File.Delete(Application.persistentDataPath + "/WorldSaveData.txt");
+        }
+#if(UNITY_EDITOR)
+        Debug.Log("DataCleared!");
+#endif
+    }
+
     public void SavePlayerData(CharacterController controller)
     {
         Inventory inventory = controller.GetComponent<Inventory>();
@@ -33,19 +50,42 @@ public class SavingSystem
 #endif
     }
 
-    public void SaveWorldData()
+    public void SaveWorldData(int level, int checkPoint, int passedArena, List<int> collectedScrollsID)
     {
+        WorldData worldData = new WorldData
+        {
+            Level = level,
+            CheckPoint = checkPoint,
+            PassedArena = passedArena,
+            CollectedScrolls = collectedScrollsID
+        };
+        string json = JsonUtility.ToJson(worldData);
+        File.WriteAllText(Application.persistentDataPath + "/WorldSaveData.txt", json);
+#if (UNITY_EDITOR)
+        Debug.Log("WorldDataSaved!");
+#endif
+    }
 
+    public void LoadWorldData(ref WorldData worldData)
+    {
+        if (File.Exists(Application.persistentDataPath + "/WorldSaveData.txt"))
+        {
+            string savedString = File.ReadAllText(Application.persistentDataPath + "/WorldSaveData.txt");
+            worldData = JsonUtility.FromJson<WorldData>(savedString);
+#if (UNITY_EDITOR)
+            Debug.Log("WorldDataLoaded!");
+#endif
+        }
     }
 
     public void LoadPlayerData(ref PlayerData playerData)
     {
         if (File.Exists(Application.persistentDataPath + "/PlayerSaveData.txt"))
         {
-            string saveString = File.ReadAllText(Application.dataPath + "/PlayerSaveData.txt");
-            playerData = JsonUtility.FromJson<PlayerData>(saveString);
+            string savedString = File.ReadAllText(Application.persistentDataPath + "/PlayerSaveData.txt");
+            playerData = JsonUtility.FromJson<PlayerData>(savedString);
 #if (UNITY_EDITOR)
-            Debug.Log("PlayerDataLoaded!");
+            Debug.Log("PlayerDataLoaded!");          
 #endif
         }
     }
@@ -56,7 +96,7 @@ public class WorldData
     public int Level;
     public int CheckPoint;
     public int PassedArena;
-    public int[] CollectedScrolls;
+    public List<int> CollectedScrolls;
 }
 
 

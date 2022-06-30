@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class ScrollsActivator : MonoBehaviour
 {
-    [SerializeField] private SavingSystem _saveSystem;
     [SerializeField] private UnlockItems[] _scrolls;
 
     void Start()
     {
-        if (_scrolls != null)
+        SavingSystem savingSystem = new SavingSystem();
+        WorldData worldData = new WorldData();
+        savingSystem.LoadWorldData(ref worldData);
+
+        if (_scrolls != null && worldData.CollectedScrolls != null)
         {
             foreach (var scroll in _scrolls)
             {
-                
+                foreach(int id in worldData.CollectedScrolls)
+                {
+                    if (id == scroll.GetInstanceID())
+                    {
+                        scroll.gameObject.SetActive(false);
+                    }
+                }
             }
         }
     }

@@ -9,7 +9,7 @@ public class DeathArena : MonoBehaviour
     [SerializeField] private GameObject _barier;
     [SerializeField] private GameObject _forestWall; 
     [SerializeField] private EnemySpawner _spawner;
-    [SerializeField] private TotemInteract _totemInteract;
+    [SerializeField] private Totem _totem;
     private bool _isActive;
 
     private const float k_delay = 1f;
@@ -50,11 +50,14 @@ public class DeathArena : MonoBehaviour
                 _isActive = false;
                 _forestWall.SetActive(false);
             }
+            else
+            {
+                ArenaActivated?.Invoke(false);
+                _barier.SetActive(false);
+                _totem.ArenaPassed();
+                EnemiesAlive = 0;
+            }
         }
-        ArenaActivated?.Invoke(false);
-        _barier.SetActive(false);
-        _totemInteract.SaveArena();
-        EnemiesAlive = 0;
         EnemyController.EnemyDeathAction -= DeathCounter;
     }
 }

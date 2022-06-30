@@ -1,42 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class TotemInteract : MonoBehaviour, IUse
+public class Totem : MonoBehaviour, IUse
 {
-    [SerializeField, Range(1, 2)] public int _arenaNum;
+    [SerializeField] public int _arenaNum;
     [SerializeField] private DeathArena _arena;
-    [SerializeField] public Saver _pSaver;
-    [SerializeField] private PortalUIScript _portalUIScript;
+    [SerializeField] private InteractUIScript _interactUIScript;
+    private SavingSystem _savingSystem;
     private bool _isOff;
+
+    public static event Action<int> ArenaNum;
 
     private void Start()
     {
-        _pSaver.LoadArenas();
-        if (_pSaver.ArenaNumToSave >= _arenaNum)
+        _savingSystem = new SavingSystem();
+        WorldData worldData = new WorldData();
+        _savingSystem.LoadWorldData(ref worldData);
+        if (worldData.PassedArena >= _arenaNum)
         {
             _isOff = true;
             _arena.OffBarier();
         }
+        _interactUIScript.ChangeUIState(false);
     }
+
+    public void ArenaPassed() => ArenaNum(_arenaNum);
 
     public void Use(CharacterController controller)
     {
         if (!_isOff)
         {
             _arena.Activate();
-            _pSaver.SaveArenaNum(_arenaNum);
             _isOff = true;
         }
     }
-
-    public void SaveArena() => _pSaver.SaveArenaNum(_arenaNum);
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out CharacterController controller))
         {
-            _portalUIScript.ChangeUIState(true);
+            _interactUIScript.ChangeUIState(true);
         }
     }
 
@@ -44,7 +47,7 @@ public class TotemInteract : MonoBehaviour, IUse
     {
         if (other.TryGetComponent(out CharacterController controller))
         {
-            _portalUIScript.ChangeUIState(false);
+            _interactUIScript.ChangeUIState(false);
         }
     }
 }
