@@ -13,7 +13,7 @@ public class AttackState : EnemyStates
     {
 
         _enemyController.Agent.isStopped = true;
-
+        _enemyController.Agent.velocity = Vector3.zero;
         yield break;
     }
 }

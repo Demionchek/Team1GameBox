@@ -2,22 +2,25 @@ using UnityEngine;
 
 public class UnlockSystemManager : MonoBehaviour
 {
-    [SerializeField] private int countOfItemsToUnlock;
-    [SerializeField] private Saver saver;
-    [SerializeField] private UnlockSystemUI unlockUi;
-    [SerializeField] private TutorialNodeParser tutorialManager;
-    [SerializeField] private DialogueGrapgh[] tutorialGraph = new DialogueGrapgh[4];
+    [SerializeField] private int _countOfItemsToUnlock;
+    [SerializeField] private UnlockSystemUI _unlockUi;
+    [SerializeField] private TutorialNodeParser _tutorialManager;
+    [SerializeField] private DialogueGrapgh[] _tutorialGraph = new DialogueGrapgh[4];
 
-    private AirAtack airAtack;
-    private MIghtyPunch mightyPunch;
-    private int counter;
-    private static int tutorialId;
+    private AirAtack _airAtack;
+    private MightyPunch _mightyPunch;
+    private static int _tutorialId;
+    private PlayerData _playerData;
+    public int Counter { get; private set; }
 
     private void Start()
     {
+        SavingSystem savingSystem = new SavingSystem();
+        _playerData = new PlayerData();
+        savingSystem.LoadPlayerData(ref _playerData);
+        _tutorialId = _playerData.ScrollsCountData;
         TryGetComponent();
-        saver.LoadCollectable();
-        counter = saver.CollectToSave;
+        Counter = _playerData.ScrollsCountData;
         UnlockOnLoad();
     }
 
@@ -25,8 +28,8 @@ public class UnlockSystemManager : MonoBehaviour
     {
         try
         {
-            airAtack = GetComponent<AirAtack>();
-            mightyPunch = GetComponent<MIghtyPunch>();
+            _airAtack = GetComponent<AirAtack>();
+            _mightyPunch = GetComponent<MightyPunch>();
         }
         catch
         {
@@ -36,69 +39,63 @@ public class UnlockSystemManager : MonoBehaviour
 
     private void UnlockOnLoad()
     {
-        if (counter == 1)
+        if (Counter == 1)
         {
-            unlockUi.UpdateUi();
+            _unlockUi.UpdateUi();
         }
-        if (counter >= countOfItemsToUnlock)
+        if (Counter >= _countOfItemsToUnlock)
         {
-            mightyPunch.enabled = true;
-            unlockUi.UpdateUi();
-            unlockUi.UpdateUi();
+            _mightyPunch.enabled = true;
+            _unlockUi.UpdateUi();
+            _unlockUi.UpdateUi();
         }
-        if (counter == 3)
+        if (Counter == 3)
         {
-            unlockUi.UpdateUi();
-            unlockUi.UpdateUi();
-            unlockUi.UpdateUi();
+            _unlockUi.UpdateUi();
+            _unlockUi.UpdateUi();
+            _unlockUi.UpdateUi();
         }
-
-        if (counter >= countOfItemsToUnlock * 2)
+        if (Counter >= _countOfItemsToUnlock * 2)
         {
-            airAtack.enabled = true;
-            unlockUi.UpdateUi();
-            unlockUi.UpdateUi();
-            unlockUi.UpdateUi();
-            unlockUi.UpdateUi();
+            _airAtack.enabled = true;
+            _unlockUi.UpdateUi();
+            _unlockUi.UpdateUi();
+            _unlockUi.UpdateUi();
+            _unlockUi.UpdateUi();
         }
     } 
 
-    public void TryUnlock(int scrollNum)
+    public void TryUnlock()
     {        
-        StartTutorialUi(tutorialId);
-        counter++;
-        unlockUi.UpdateUi();
-        saver.SaveCollectableNum(counter);
-        saver.SaveScrolls(scrollNum);
+        StartTutorialUi(_tutorialId);
+        Counter++;
+        _unlockUi.UpdateUi();
         if ( IsEnoughtItems())
         {
-            if (mightyPunch.enabled == false)
+            if (_mightyPunch.enabled == false)
             {
-                mightyPunch.enabled = true;
-                saver.SaveCollectableNum(counter);
+                _mightyPunch.enabled = true;
             }
-            else if (airAtack.enabled == false)
+            else if (_airAtack.enabled == false)
             {
-                airAtack.enabled = true;
-                counter = 4;
-                saver.SaveCollectableNum(counter);
+                _airAtack.enabled = true;
+                Counter = 4;
             }
-            saver.SaveCollectableNum(counter);
-            if (counter !=4)
+            if (Counter !=4)
             {
-                counter = 0;
+                Counter = 0;
             }
         }
     }
 
     private bool IsEnoughtItems()
     {
-        return counter >= countOfItemsToUnlock;
+        return Counter >= _countOfItemsToUnlock;
     }
 
     private void StartTutorialUi(int tutorialID)
     {
-        tutorialId++;
-        tutorialManager.StartNode(tutorialGraph[tutorialID]);
+        _tutorialId++;
+        _tutorialManager.StartNode(_tutorialGraph[tutorialID]);
     }
 }

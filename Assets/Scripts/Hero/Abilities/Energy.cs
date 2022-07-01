@@ -4,10 +4,12 @@ public class Energy : MonoBehaviour
 {
     [SerializeField] private int energy;
     public float CurrentEnergy { get; set; }
+    public float MaxEnergy { get; private set; }
 
     private void Start()
     {
         CurrentEnergy = energy;
+        MaxEnergy = energy;
     }
     public bool CheckEnergyAvailable(float abilitiyCost)
     {

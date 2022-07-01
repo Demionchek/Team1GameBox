@@ -22,9 +22,9 @@ TagManager:
   - Cullable
   - Portals
   - Culling_Ground
-  - 
-  - 
-  - 
+  - RenderAbove
+  - EnemyRenderAbove
+  - Axe
   - 
   - 
   - 

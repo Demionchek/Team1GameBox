@@ -8,17 +8,18 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private UiManager uiManager;
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private float _damage = 10;
-    [SerializeField] private Saver _saver;
     [SerializeField] private float _teleportDelay = 0.5f;
     [Header("CheckPoints")]
     [SerializeField] private CheckPoint[] checkPoints;
 
+    private SavingSystem _savingSystem;
     private Health _health;
     private Energy _energy;
     private Inventory _inventory;
 
     private void Start()
     {
+        _savingSystem = new SavingSystem();
         _health = controller.GetComponent<Health>();
         _energy = controller.GetComponent<Energy>();
         _inventory = controller.GetComponent<Inventory>();
@@ -32,9 +33,12 @@ public class Teleporter : MonoBehaviour
     {
         Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
 
+        WorldData worldData = new WorldData();
+        _savingSystem.LoadWorldData(ref worldData);
+
         foreach (var point in checkPoints)
         {
-            if (_saver.CheckPointToSave == point.PointNumber)
+            if (worldData.CheckPoint == point.PointNumber)
             {
                 spawnPosition = point.SpawnPoint.position;
                 break;
@@ -47,14 +51,26 @@ public class Teleporter : MonoBehaviour
 
     private void SetPlayersData()
     {
-        _saver.LoadEnergy();
-        _saver.LoadHealth();
-        _saver.LoadHealthPacks();
-        _saver.LoadEnergyPacks();
-        _inventory.AddCountOfItem(ItemType.HealthPotion, _saver.HealthPacksToSave);
-        _inventory.AddCountOfItem(ItemType.EnergyPotion, _saver.EnergyPacksToSave);
-        _health.Hp = _saver.HealthToSave;
-        _energy.CurrentEnergy = _saver.EnergyToSave;
+        PlayerData playerData = new PlayerData();
+        _savingSystem.LoadPlayerData(ref playerData);
+        _inventory.AddCountOfItem(ItemType.HealthPotion, playerData.HealthPacksData);
+        _inventory.AddCountOfItem(ItemType.EnergyPotion, playerData.EnergyPacksData);
+        if (playerData.HealthData != 0)
+        {
+            _health.Hp = playerData.HealthData;
+        }
+        else
+        {
+            _health.Hp = _health.FullHP;
+        }
+        if (playerData.EnergyData != 0)
+        {
+            _energy.CurrentEnergy = playerData.EnergyData;
+        }
+        else
+        {
+            _energy.CurrentEnergy = _energy.MaxEnergy;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,9 +89,12 @@ public class Teleporter : MonoBehaviour
 
         Vector3 spawnPosition = checkPoints[0].SpawnPoint.position;
 
+        WorldData worldData = new WorldData();
+        _savingSystem.LoadWorldData(ref worldData);
+
         foreach (var point in checkPoints)
         {
-            if (_saver.CheckPointToSave == point.PointNumber)
+            if (worldData.CheckPoint == point.PointNumber)
             {
                 spawnPosition = point.SpawnPoint.position;
                 break;

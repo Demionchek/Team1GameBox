@@ -1565,7 +1565,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8907565799658202447}
   - component: {fileID: 4146324613832969699}
-  m_Layer: 0
+  - component: {fileID: 6844629261247837942}
+  m_Layer: 15
   m_Name: liho_uv:group3group6pSphere77
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1672,6 +1673,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0014406145, y: -0.0038363636, z: -0.17703891}
     m_Extent: {x: 0.63980067, y: 0.96774805, z: 0.6861999}
   m_DirtyAABB: 0
+--- !u!114 &6844629261247837942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910958465374421626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9710089345de924c857a9c7d52eb9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyController: {fileID: 6991446463954760582}
 --- !u!1001 &4592740636347278267
 PrefabInstance:
   m_ObjectHideFlags: 0

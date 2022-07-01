@@ -18,8 +18,6 @@ public class AirAtack : MonoBehaviour
     private PlayerSounds playerSounds;
     private bool isAirAtackCooled = true;
 
-    public bool IsAirAtack { get { return !animatorManager.isGrounded() && inputs.atack; } }
-
     private const int hitCount = 15;
 
     public UnityEvent UpdateUI;
@@ -41,11 +39,11 @@ public class AirAtack : MonoBehaviour
 
     private void CheckAirAtack()
     {
-        if (IsAirAtack && AirAtackAvailable())
+        if (AirAtackAvailable() && inputs.groundSlam)
         {
-            animatorManager.SetAirAtack(IsAirAtack);
+            animatorManager.SetAirAtack(true);
+            TryUseAirAtack();
         }
-        TryUseAirAtack();
     }
 
     public bool AirAtackAvailable()
@@ -59,12 +57,9 @@ public class AirAtack : MonoBehaviour
         {
             energy.UseEnergy(configs.airAtackCost);
             UpdateUI.Invoke();
-            animatorManager.SetAirAtack(false);
-            AirHit();
-            var slamEffect =  Instantiate(playerEffects.GroundSlam, transform.position, Quaternion.identity);
-            slamEffect.Play();
-            Destroy(slamEffect, effectDelTimer);
-            //StartCoroutine(PondCorutine(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), 0.1f));
+
+            inputs.groundSlam = false;
+            
             StartCoroutine(BlockThrowAxe());
             StartCoroutine(CoolDown());
         }
@@ -116,12 +111,21 @@ public class AirAtack : MonoBehaviour
         material.color = color - newAlfa;
         return material;
     }
-    ///
+    
+    public void AirAtackHit()
+    {
+        animatorManager.SetAirAtack(false);
+        var slamEffect = Instantiate(playerEffects.GroundSlam, transform.position, Quaternion.identity);
+        slamEffect.Play();
+        Destroy(slamEffect, effectDelTimer);
+        AirHit();
+    }
 
     private IEnumerator CoolDown()
     {
         isAirAtackCooled = false;
         yield return new WaitForSecondsRealtime(configs.airAtackCooldown);
+        inputs.groundSlam = false;
         isAirAtackCooled = true;
         playerSounds.AirAttackCDSound();
     }

@@ -8,7 +8,6 @@ public class PortalScript : MonoBehaviour, IUse
 {
     [SerializeField] private GameObject UIobj;
     [SerializeField] private Transform _teleportationTarget;
-    [SerializeField] private Saver _saver;
     [SerializeField] private float _coolDown = 1f;
     [SerializeField] private bool _isNextLevel;
     [SerializeField] private int _nextLevelNum;
@@ -32,15 +31,12 @@ public class PortalScript : MonoBehaviour, IUse
         {            
             if (_nextLevelNum != 3)
             {
-             _saver.SaveCheckPoint(0);
+                ClearCheckPoints();
             }
-            int health = (int)controller.GetComponent<Health>().Hp;
-            _saver.SaveHealth(health);
-            int energy = (int)controller.GetComponent<Energy>().CurrentEnergy;
-            _saver.SaveEnergy(energy);
             try
             {
                 StartFade(_nextLevelNum);
+                SavePlayerData(controller);
             }
             catch
             {
@@ -48,6 +44,22 @@ public class PortalScript : MonoBehaviour, IUse
             }
         }
     }
+
+    private void SavePlayerData(CharacterController controller)
+    {
+        SavingSystem savingSystem = new SavingSystem();
+        PlayerData playerData = new PlayerData();
+        savingSystem.SavePlayerData(controller);
+    }
+
+    private void ClearCheckPoints()
+    {
+        SavingSystem savingSystem = new SavingSystem();
+        WorldData worldData = new WorldData();
+        savingSystem.LoadWorldData(ref worldData);
+        savingSystem.SaveWorldData(worldData.Level, 0, worldData.PassedArena, worldData.CollectedScrolls);
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

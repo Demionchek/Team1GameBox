@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
     [SerializeField] private GameObject _deathScreen;
-    [SerializeField] private Saver _saver;
 
     public void PlayersDeath()
     {
@@ -28,6 +27,9 @@ public class PlayerDeath : MonoBehaviour
 
     private void Restart()
     {
-        SceneManager.LoadScene(_saver.LevelToSave);
+        SavingSystem savingSystem = new SavingSystem();
+        WorldData worldData = new WorldData();
+        savingSystem.LoadWorldData(ref worldData);
+        SceneManager.LoadScene(worldData.Level);
     }
 }

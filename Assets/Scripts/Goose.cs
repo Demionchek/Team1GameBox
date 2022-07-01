@@ -5,7 +5,7 @@ using UnityEngine;
 public class Goose : MonoBehaviour, IUse
 {
     [SerializeField] private AudioSource honkSource;
-    [SerializeField] private PortalUIScript uIScript;
+    [SerializeField] private InteractUIScript uIScript;
     [SerializeField] private AudioClip[] honks;
 
     public void Use(CharacterController controller)

@@ -812,7 +812,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4017255308001282372}
   - component: {fileID: 9111292169419408017}
-  m_Layer: 0
+  - component: {fileID: 2142036650228995523}
+  m_Layer: 15
   m_Name: pCylinder49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,6 +926,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.061551034, y: -0.33170563, z: 0.33687994}
     m_Extent: {x: 0.98287123, y: 1.2785006, z: 0.7661735}
   m_DirtyAABB: 0
+--- !u!114 &2142036650228995523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300578265587573231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9710089345de924c857a9c7d52eb9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyController: {fileID: 7729486799591362589}
 --- !u!1 &5420796314108467640
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,11 +52,8 @@ public class Health : MonoBehaviour, IDamageable
     {
         if (_layerMask == mask)
         {
-            Debug.Log($"Damaged {gameObject.name}");
             Hp -= damage;
             CheckDeath();
-
-
             try
             {
                 if (_isPlayer)
@@ -80,7 +77,9 @@ public class Health : MonoBehaviour, IDamageable
             }
             catch
             {
+#if(UNITY_EDITOR)
                 Debug.Log("Что-то не то со звуками из скрипта  Health, cs 60 и далее");
+#endif
             }
 
         }

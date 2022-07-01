@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 54fe6f1be27564449bea0950d5d3c978
+guid: c74d5c203b0741c4f868f81082995d2e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Pen Idle
+    second: StumpIdle
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Pen Idle
+      name: StumpIdle
       takeName: Take 001
       internalID: 0
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -48,11 +48,11 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 1
+      loopBlendOrientation: 0
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
@@ -122,7 +122,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 05e937efd4c38cd4eb76890cfc1c0e7d, type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: ffb143a7f9f20ca48822e943f31efaab, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1

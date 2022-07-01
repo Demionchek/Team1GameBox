@@ -6,7 +6,7 @@ using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Energy))]
-public class MIghtyPunch : MonoBehaviour
+public class MightyPunch : MonoBehaviour
 {
     [SerializeField] private PlayerAbilitiesConfigs configs;
     [SerializeField] private GameObject prefab;

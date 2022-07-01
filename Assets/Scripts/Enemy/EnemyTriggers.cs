@@ -3,14 +3,15 @@ using UnityEngine;
 public class EnemyTriggers : MonoBehaviour
 {
     [SerializeField] private GameObject[] _packs;
-    [SerializeField] private Saver _saver;
     [SerializeField] private int nextCheckPoint;
     private bool _spawn;
 
     private void Start()
     {
-        _saver.LoadCheckPoint();
-        int i = _saver.CheckPointToSave;
+        SavingSystem savingSystem = new SavingSystem();
+        WorldData worldData = new WorldData();
+        savingSystem.LoadWorldData(ref worldData);
+        int i = worldData.CheckPoint;
         if (i < nextCheckPoint)
         {
             _spawn = true;
