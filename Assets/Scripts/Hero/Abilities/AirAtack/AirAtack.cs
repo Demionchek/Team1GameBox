@@ -125,6 +125,7 @@ public class AirAtack : MonoBehaviour
     {
         isAirAtackCooled = false;
         yield return new WaitForSecondsRealtime(configs.airAtackCooldown);
+        inputs.groundSlam = false;
         isAirAtackCooled = true;
         playerSounds.AirAttackCDSound();
     }

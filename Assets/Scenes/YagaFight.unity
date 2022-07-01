@@ -13896,6 +13896,10 @@ PrefabInstance:
       propertyPath: _tutorialManager
       value: 
       objectReference: {fileID: 1098135125822094413}
+    - target: {fileID: 6253297918789794967, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: _countOfItemsToUnlock
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6455015999502140493, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -14420,7 +14424,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0020779364
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1769114866010989225, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
 --- !u!114 &1098135125822094413 stripped
 MonoBehaviour:
