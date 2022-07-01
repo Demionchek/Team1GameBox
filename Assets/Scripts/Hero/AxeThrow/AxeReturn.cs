@@ -7,10 +7,9 @@ public class AxeReturn : MonoBehaviour
     [SerializeField] private PlayerAbilitiesConfigs configs;
     [SerializeField] private float timeToRelocateAfterCollision;
     [SerializeField] private Transform playersHand;
-    [SerializeField] private LayerMask layersToIgnore;
+    [SerializeField] private int enemyLayer;
     [SerializeField] private float timeToReturn;
 
-    private int counter = 0;
     private Rigidbody rigidBody;
     public bool isActive { get; set; }
 
@@ -34,25 +33,23 @@ public class AxeReturn : MonoBehaviour
     private IEnumerator ReturnAxe()
     {
         yield return new WaitForSeconds(timeToRelocateAfterCollision);
-        counter = 0;
         gameObject.SetActive(false);
         gameObject.transform.parent = playersHand;
         gameObject.transform.localPosition = new Vector3(0, 0, 0);
         gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        rigidBody.velocity = Vector3.zero;
         isActive = false;
     }    
     
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (!other.TryGetComponent<ThirdPersonController>(out ThirdPersonController controller))
+        if (collision.gameObject.layer == enemyLayer)
         {
-            rigidBody.isKinematic = true;
-            if (other.transform.TryGetComponent(out IDamageable damageable) && counter == 0)
+            if (collision.gameObject.TryGetComponent(out IDamageable damageable))
             {
-                gameObject.transform.parent = other.transform;
-                counter++;
+                gameObject.transform.parent = collision.transform;
                 damageable.TakeDamage((int)configs.axeThrowDmg, configs.enemyLayer);
-            }    
+            }
         }
         StartCoroutine(ReturnAxe());
     }
