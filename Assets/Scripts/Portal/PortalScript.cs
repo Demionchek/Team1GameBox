@@ -36,12 +36,20 @@ public class PortalScript : MonoBehaviour, IUse
             try
             {
                 StartFade(_nextLevelNum);
+                SavePlayerData(controller);
             }
             catch
             {
                 Debug.Log("Cant fade in to next level");
             }
         }
+    }
+
+    private void SavePlayerData(CharacterController controller)
+    {
+        SavingSystem savingSystem = new SavingSystem();
+        PlayerData playerData = new PlayerData();
+        savingSystem.SavePlayerData(controller);
     }
 
     private void ClearCheckPoints()

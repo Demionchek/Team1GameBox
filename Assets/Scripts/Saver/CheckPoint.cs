@@ -8,6 +8,7 @@ public class CheckPoint : MonoBehaviour, IUse
     [SerializeField] public int _pointNumber;
     [SerializeField] public Transform _spawnPoint;
     [SerializeField] private VisualEffect _visualEffect;
+    [SerializeField] private InteractUIScript _UIscript;
     [SerializeField] private Color _emissionColor;
     [SerializeField] private float _emissionAmount;
     private SavingSystem _savingSystem;
@@ -19,9 +20,14 @@ public class CheckPoint : MonoBehaviour, IUse
 
     private void Start()
     {
+        if (_UIscript != null)
+        {
+            _UIscript.ChangeUIState(false);
+        }
         _savingSystem = new SavingSystem();
         WorldData worldData = new WorldData();
         _savingSystem.LoadWorldData(ref worldData);
+        _collectedScrollsIDs = worldData.CollectedScrolls;
         _passedArena = worldData.PassedArena;
         if (worldData.CheckPoint < PointNumber)
         {
@@ -34,10 +40,7 @@ public class CheckPoint : MonoBehaviour, IUse
             _visualEffect.Play();
         }
         UnlockItems.Collected += AddScrollIDToList;
-        Totem.ArenaNum += AddArenaNum;
     }
-
-    private void AddArenaNum(int num) => _passedArena = num;
 
     private void AddScrollIDToList(int ID) => _collectedScrollsIDs.Add(ID);
 
@@ -51,8 +54,23 @@ public class CheckPoint : MonoBehaviour, IUse
             _visualEffect.Play();
             _isActivated = true;
             UnlockItems.Collected -= AddScrollIDToList;
-            Totem.ArenaNum -= AddArenaNum;
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent<CharacterController>( out CharacterController controller)     
+                && _UIscript !=null && !_isActivated)
+        {
+            _UIscript.ChangeUIState(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent<CharacterController>(out CharacterController controller) && _UIscript != null)
+        {
+            _UIscript.ChangeUIState(false);
+        }
+    }
 }

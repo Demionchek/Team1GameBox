@@ -2609,6 +2609,7 @@ MonoBehaviour:
   inventorySecondSlot: 0
   pause: 0
   isPaused: 0
+  groundSlam: 0
   analogMovement: 0
   cursorLocked: 0
   cursorInputForLook: 0
@@ -2974,11 +2975,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf91f1056a37d124bb4c4ec84fc9d4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countOfItemsToUnlock: 2
-  saver: {fileID: 0}
-  unlockUi: {fileID: 0}
-  tutorialManager: {fileID: 0}
-  tutorialGraph:
+  _countOfItemsToUnlock: 0
+  _unlockUi: {fileID: 0}
+  _tutorialManager: {fileID: 0}
+  _tutorialGraph:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -2996,7 +2996,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deathScreen: {fileID: 0}
-  _saver: {fileID: 0}
 --- !u!114 &1676433502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3011,7 +3010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactWith:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 4104
   hitRadius: 2
   hitDistance: 2
   countToHit: 10

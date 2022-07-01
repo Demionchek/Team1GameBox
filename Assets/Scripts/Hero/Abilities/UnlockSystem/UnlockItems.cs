@@ -3,6 +3,7 @@ using System;
 
 public class UnlockItems : MonoBehaviour
 {
+    [SerializeField] public int ItemID;
     public static event Action<int> Collected;
 
     private void OnTriggerEnter(Collider other)
@@ -10,7 +11,7 @@ public class UnlockItems : MonoBehaviour
         if (other.TryGetComponent<UnlockSystemManager>(out UnlockSystemManager unlockManager))
         {
             unlockManager.TryUnlock();
-            Collected?.Invoke(gameObject.GetInstanceID());
+            Collected?.Invoke(ItemID);
             Destroy(gameObject);
         }
     }

@@ -33,9 +33,12 @@ public class UseInteractor : MonoBehaviour
                     {
                         _sound.PlayPortalSound();
                     }
-                    else if (hit.collider.TryGetComponent(out Totem totemInteract))
+                    else if (hit.collider.TryGetComponent(out Totem totem))
                     {
-                        _sound.PlayArenaSound();
+                        if (!totem.IsOff)
+                        {
+                            _sound.PlayArenaSound();
+                        }
                     }
                     else
                     {
@@ -50,7 +53,9 @@ public class UseInteractor : MonoBehaviour
         }
         else
         {
+#if (UNITY_EDITOR)
             Debug.Log("NoHits");
+#endif
         }
     }
 }

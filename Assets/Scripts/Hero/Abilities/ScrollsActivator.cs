@@ -18,7 +18,7 @@ public class ScrollsActivator : MonoBehaviour
             {
                 foreach(int id in worldData.CollectedScrolls)
                 {
-                    if (id == scroll.GetInstanceID())
+                    if (id == scroll.ItemID)
                     {
                         scroll.gameObject.SetActive(false);
                     }

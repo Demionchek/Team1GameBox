@@ -8738,7 +8738,7 @@ PrefabInstance:
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _saver
       value: 
-      objectReference: {fileID: 1731593841}
+      objectReference: {fileID: 0}
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _pointNumber
       value: 4
@@ -22405,7 +22405,7 @@ PrefabInstance:
     - target: {fileID: 1779659382, guid: 852a427275b18444d901c2c41ae868f4, type: 3}
       propertyPath: _saver
       value: 
-      objectReference: {fileID: 1731593841}
+      objectReference: {fileID: 0}
     - target: {fileID: 1779659382, guid: 852a427275b18444d901c2c41ae868f4, type: 3}
       propertyPath: _isNextLevel
       value: 1
@@ -36381,7 +36381,7 @@ PrefabInstance:
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _saver
       value: 
-      objectReference: {fileID: 1731593841}
+      objectReference: {fileID: 0}
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _pointNumber
       value: 1
@@ -57661,6 +57661,30 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6253297918789794967, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: _unlockUi
+      value: 
+      objectReference: {fileID: 929521596}
+    - target: {fileID: 6253297918789794967, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: _tutorialManager
+      value: 
+      objectReference: {fileID: 929521595}
+    - target: {fileID: 6253297918789794967, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: _tutorialGraph.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8364d0560164d6742ab6e0ffefaf8157, type: 2}
+    - target: {fileID: 6253297918789794967, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: _tutorialGraph.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee8c4441c09aef94fb4e51fe025993df, type: 2}
+    - target: {fileID: 6253297918789794967, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: _tutorialGraph.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c3bef1e64baa37408a16cd52a037a58, type: 2}
+    - target: {fileID: 6253297918789794967, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+      propertyPath: _tutorialGraph.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: b0c34e87d897e2244a02db0f7de637f1, type: 2}
     - target: {fileID: 6492891450384374138, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
       propertyPath: GroundLayers.m_Bits
       value: 10753
@@ -57761,6 +57785,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a113a6d61266aa84e817dfc46c7e9cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &929521595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 335735809813180581, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+  m_PrefabInstance: {fileID: 929521590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a32b4a13e743a74cb1812924b25b796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &929521596 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3633441271162356371, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
+  m_PrefabInstance: {fileID: 929521590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99acb2cae77e3ec4abcfdf349b3be052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &930875482
@@ -62478,7 +62524,7 @@ PrefabInstance:
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _saver
       value: 
-      objectReference: {fileID: 1731593841}
+      objectReference: {fileID: 0}
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _pointNumber
       value: 0
@@ -77328,7 +77374,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1779659382, guid: 852a427275b18444d901c2c41ae868f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 852a427275b18444d901c2c41ae868f4, type: 3}
 --- !u!1 &1325502155
 GameObject:
@@ -98243,7 +98290,7 @@ PrefabInstance:
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _saver
       value: 
-      objectReference: {fileID: 1731593841}
+      objectReference: {fileID: 0}
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _pointNumber
       value: 2
@@ -99598,7 +99645,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _damage: 10
-  _saver: {fileID: 1731593841}
   _teleportDelay: 0.5
   checkPoints:
   - {fileID: 459805985}
@@ -102200,17 +102246,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730404450}
   m_Mesh: {fileID: 1184328106605431527, guid: ff7ea93d0e5399542afeb628e48bcbda, type: 3}
---- !u!114 &1731593841 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2720519723248160275, guid: 86ff26a37467ffc47a2ee04e861e3897, type: 3}
-  m_PrefabInstance: {fileID: 929521590}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31906269592a24b40beb557d65304b4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1733281102
 GameObject:
   m_ObjectHideFlags: 0
@@ -118075,7 +118110,7 @@ PrefabInstance:
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _saver
       value: 
-      objectReference: {fileID: 1731593841}
+      objectReference: {fileID: 0}
     - target: {fileID: 5614868597017744953, guid: d6103842402a3bb4d905ced0e72090b7, type: 3}
       propertyPath: _pointNumber
       value: 3
