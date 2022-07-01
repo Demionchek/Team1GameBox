@@ -79,7 +79,7 @@ public class CullingManager : MonoBehaviour
             foreach (Collider collider in colliders)
             {
                 Cullable cullable = collider.GetComponent<Cullable>();
-                Debug.Assert(cullable != null, "Found an object on the occlusion layer without the occlusion component!");
+                Debug.Log("Found an object on the occlusion layer without the occlusion component!");
 
                 if (!occludingObjects.Contains(cullable))
                 {
@@ -100,7 +100,14 @@ public class CullingManager : MonoBehaviour
             if (foundIndex < 0)
             {
                 // This object isnt in the old list, so we need to mark it as occluding
-                cullable.Occluding = true;
+                try
+                {
+                    cullable.Occluding = true;
+                }
+                catch
+                {
+                    Debug.Log("Cs 104 cullingManager script exception");
+                }
             }
             else
             {
