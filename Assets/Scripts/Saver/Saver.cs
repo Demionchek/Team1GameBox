@@ -39,6 +39,7 @@ public class Saver : MonoBehaviour
     private int[] Scrolls = new int[4];
     private string ScrollsStringToSave;
 
+#if(UNITY_EDITOR)
     [MenuItem("Utils/Clear progress")]
     public static void ClearProgress()
     {
@@ -84,6 +85,7 @@ public class Saver : MonoBehaviour
         }
         Debug.Log("Progress Data Cleared!");
     }
+#endif
 
     private void Awake()
     {
@@ -100,7 +102,6 @@ public class Saver : MonoBehaviour
     {
         Scrolls[ScrollNum] = 1;
         ScrollsStringToSave = $"{Scrolls[0]}|{Scrolls[1]}|{Scrolls[2]}|{Scrolls[3]}";
-        Debug.Log($"Saved Collection = {ScrollsStringToSave}");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySavedScrolls.dat");
         SaveData data = new SaveData();

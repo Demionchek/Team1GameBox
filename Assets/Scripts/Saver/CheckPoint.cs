@@ -34,19 +34,24 @@ public class CheckPoint : MonoBehaviour
         {
                 int scene = SceneManager.GetActiveScene().buildIndex;
                 _saver.SaveLevel(scene);
+            CharacterController character = controller.GetComponent<CharacterController>();
+            SavingSystem savingSystem = new SavingSystem();
+            savingSystem.SavePlayerData(character);
+            PlayerData playerData = new PlayerData();
+            savingSystem.LoadPlayerData(ref playerData);
             if (!_isActivated)
             {
                 _visualEffect.Play();
-                var inventory = controller.GetComponent<Inventory>();
-                var health = controller.GetComponent<Health>();
-                var energy = controller.GetComponent<Energy>();
-                int hPacks = inventory.GetCountOfItem(ItemType.HealthPotion);
-                int ePacks = inventory.GetCountOfItem(ItemType.EnergyPotion);
-                _saver.SaveCheckPoint(PointNumber);
-                _saver.SaveHealth((int)health.Hp);
-                _saver.SaveEnergy((int)energy.CurrentEnergy);
-                _saver.SaveHealthPacks(hPacks);
-                _saver.SaveEnergyPacks(ePacks);
+                //var inventory = controller.GetComponent<Inventory>();
+                //var health = controller.GetComponent<Health>();
+                //var energy = controller.GetComponent<Energy>();
+                //int hPacks = inventory.GetCountOfItem(ItemType.HealthPotion);
+                //int ePacks = inventory.GetCountOfItem(ItemType.EnergyPotion);
+                //_saver.SaveCheckPoint(PointNumber);
+                //_saver.SaveHealth((int)health.Hp);
+                //_saver.SaveEnergy((int)energy.CurrentEnergy);
+                //_saver.SaveHealthPacks(hPacks);
+                //_saver.SaveEnergyPacks(ePacks);
                 _isActivated = true;
             }
         }
