@@ -452,9 +452,7 @@ MonoBehaviour:
   configs: {fileID: 11400000, guid: 57dd49d133fd59743b32d275a9701359, type: 2}
   timeToRelocateAfterCollision: 0.1
   playersHand: {fileID: 3604050082556616600}
-  layersToIgnore:
-    serializedVersion: 2
-    m_Bits: 4492
+  enemyLayer: 0
   timeToReturn: 1
 --- !u!1001 &2720519722337734127
 PrefabInstance:
@@ -692,9 +690,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3633441271162356371}
     - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: _unlockUi
+      value: 
+      objectReference: {fileID: 3633441271162356371}
+    - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: tutorialManager
       value: 
       objectReference: {fileID: 335735809813180581}
+    - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: _tutorialManager
+      value: 
+      objectReference: {fileID: 335735809813180581}
+    - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: _countOfItemsToUnlock
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: tutorialGraph.Array.data[0]
       value: 
@@ -709,6 +719,22 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 0c3bef1e64baa37408a16cd52a037a58, type: 2}
     - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
       propertyPath: tutorialGraph.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: b0c34e87d897e2244a02db0f7de637f1, type: 2}
+    - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: _tutorialGraph.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8364d0560164d6742ab6e0ffefaf8157, type: 2}
+    - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: _tutorialGraph.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee8c4441c09aef94fb4e51fe025993df, type: 2}
+    - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: _tutorialGraph.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c3bef1e64baa37408a16cd52a037a58, type: 2}
+    - target: {fileID: 8289181969762562424, guid: 91c687c4626af4c4799542635206a26c, type: 3}
+      propertyPath: _tutorialGraph.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: b0c34e87d897e2244a02db0f7de637f1, type: 2}
     - target: {fileID: 8399645091220033060, guid: 91c687c4626af4c4799542635206a26c, type: 3}

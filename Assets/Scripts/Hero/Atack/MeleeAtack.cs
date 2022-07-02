@@ -26,7 +26,7 @@ public class MeleeAtack : MonoBehaviour
         if (input.atack && animatorManager.isGrounded())
         {
             animatorManager.SetAtack(true);
-            mousePositionManager.SmoothLookAtMouseDirection();
+            mousePositionManager.LookAtMouseDirection();
             animatorManager.CheckBackwardRun();
         }
     }
