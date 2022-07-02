@@ -21,12 +21,12 @@ MonoBehaviour:
   airAtackCost: 25
   airAtackCooldown: 15
   airAtackRange: 5
-  mightyPunchDamage: 10
+  mightyPunchDamage: 15
   mightyPunchCost: 5
   mightyPunchCooldown: 5
   mightyPunchRange: 3
   mightyPunchForce: 6
   dashTime: 0.1
-  dashSpeed: 20
-  dashCost: 5
+  dashSpeed: 50
+  dashCost: 0
   dashCooldown: 2

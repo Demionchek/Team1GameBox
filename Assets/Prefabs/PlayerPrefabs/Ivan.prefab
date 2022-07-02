@@ -2609,6 +2609,7 @@ MonoBehaviour:
   inventorySecondSlot: 0
   pause: 0
   isPaused: 0
+  groundSlam: 0
   analogMovement: 0
   cursorLocked: 0
   cursorInputForLook: 0
@@ -2955,12 +2956,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12898c6839c5b124fa7d04b46141d742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
   _damageTo:
     serializedVersion: 2
     m_Bits: 64
-  hitRadius: 1
-  hitDistance: 1
+  hitRadius: 0.9
+  hitDistance: 0.9
   countToDamage: 5
 --- !u!114 &8289181969762562424
 MonoBehaviour:

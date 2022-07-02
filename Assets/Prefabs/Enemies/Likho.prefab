@@ -1125,12 +1125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12898c6839c5b124fa7d04b46141d742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
   _damageTo:
     serializedVersion: 2
     m_Bits: 8
-  hitRadius: 1
-  hitDistance: 1
+  hitRadius: 1.2
+  hitDistance: 1.2
   countToDamage: 5
 --- !u!136 &5850893554784570907
 CapsuleCollider:
